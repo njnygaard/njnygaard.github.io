@@ -1,3 +1,7 @@
 body {
-    font-family: Sans-Serif;
+    font-family: sans-serif;
+    max-width: 500px;
+    margin-right: 20%;
+    margin-left: 20%;
+    min-width: 300px;
 }
