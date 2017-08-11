@@ -73,3 +73,78 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/njnygaard
 
 ==================================================================
+==================================================================
+https://keybase.io/njnygaard
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nygaard.site
+  * I am njnygaard (https://keybase.io/njnygaard) on keybase.
+  * I have a public key with fingerprint 5A83 875A 89F6 FFA4 8844  227F A18E 9C35 A869 8292
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120343dbca9a747dda78499ce1a7403c7a4e05470d4319923dfe810de2d16930adb0a",
+      "fingerprint": "5a83875a89f6ffa48844227fa18e9c35a8698292",
+      "host": "keybase.io",
+      "key_id": "a18e9c35a8698292",
+      "kid": "010158b9e1d34f8416c901bf507799802fdf981c202f776052e3876558ffddad77a90a",
+      "uid": "3b076ce3e5a003356c01e8b7a95f2e19",
+      "username": "njnygaard"
+    },
+    "service": {
+      "hostname": "nygaard.site",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1502479755,
+  "expire_in": 157680000,
+  "prev": "c628030cf9a6a5a5b80c42c4d5544ff85394145ed73e20b5c181ec63470e2d1c",
+  "seqno": 27,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMNvAnicbZJtUFRVHMZBkJAkNIQgGaZuzuAALee+nPuyMxo4KWpkVhgwIMt9OXe9
+Luwuuwu6KRKg5rLCGAKJVoiNDNpsQBMQEqMYQuY6TtSQqzTypWkwYYLZcRoS7CzF
+t86He95+z3Of/zlnODIkKCK4rf4T2KFVNwTfGmopC8qrX+k+REgWxUnoDxEmtNSh
+YgXZHQaTphB6ApAUoBlakWRREDmGUxSR4xlBkBGJp4CWOZFBADIcUBiaFASKVlTE
+k0BBlEKyAg1ERQIikUqomtmIbFabZnZgWyjyNM/hr6CyqioyPM8wFMWpIskjQabx
+BivwlEBh4T6LPaDA4STRjnSaBa/hiWEp3v/wy7kBCXlJQKRCMyrPkKwsAFJSIeA4
+QeABpSqqwJMyhUccxwJIIRyIhZBXVVyjwnGisJS7bMmOlgDHyohGUASApiErAxLx
+EoagSiFSCIB2ZDOLJQjT5v1mp1EUbQpRkUrg5XJNRoGTDZSyjPwL6OyaA2Gx1WZx
+WGRLMd7Z53BY7fqA0uG0BtADSDL8Z2KQNLOCDxIrypHNrlnMhJ7EpOzQAq4kBBTD
+CRyEqQQ6aNVsyKAFCMixPMAt8B9Uji1lluIBDWRVEFkRilDigcxQMqNAyDCqykNa
+YEgGIoWjEQUkKJM8iWSWxtccuFeZCJRVarYQeorDOUUj9rRrRrPoKLMhouL6UEFo
+UHBEUNjKFYEXFhSxas3yu/smP2pRZ/VWmjd7jh0NOdJTPPUoOaOsszfU1zQzNV1E
+zF26nd7jiejLNrUeH5tLbdrS2NO5UJGdn3une3I6cmLgh+3rtLZM12z7zvQzz7ye
+M+gLO/DipYabIdPeDfS7Hrjmsfz84PHikda8SH4oeft3PvCep+2lzdYTH6zdJp+K
+0E282p/SbeFrL84W0jsGWhXj+7O/n70gn946emfP1riRGwVdyjsLetNDT13Fa0m6
+m5me0l21myL7YzsWBs4tZIzunLxoS5k61//F51cfaMQsHB08TNukYWOMs+CJWt/O
+drnvdtQfuZD7c2MefXZ13Za/3rrqppIdKwr9zZ1fRw2kjF+Z+WqoLrpkd6uL21S5
+Cz6Iyk3fM1x7ssA/X5XlPX+5v7Hxo5xbz1bHX8/eEB7WUXNw63nXmE5ojvlx7+ES
+V1FK5mJSffxISHxDYm9MjStn6O2Y/WcY7+QLgja/0THtvRE3Htvvj5z4ZVVh3xPd
+7e6ajL6E6l9Pf/lwPCGuyG/wzz+X1G7yIZQQbVws5fOr3OG6n3yxvzVx1940NdS+
+UpU2k/thWmNUWEaU6+l9r/Xe3sSX57O7Pv778pWWjI6ZrDnfscelPbbvTybPMavv
+dxYYw09lNdf5ffT6u1piatijHe6Qa2tDN65rSUr/Y32ec+xpb9y3sfeit6Ud/ZOp
+/DTyjZHZ3c7P3PqSfwBEDb2G
+=nYXN
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/njnygaard
+
+==================================================================
