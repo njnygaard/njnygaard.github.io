@@ -6,18 +6,18 @@
     <description>Recent content in Blogs on My New Hugo Site goopagoo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Aug 2017 18:14:50 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2017 18:24:14 -0700</lastBuildDate>
     
 	<atom:link href="http://nygaard.site/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>000001</title>
-      <link>http://nygaard.site/blog/000001/</link>
-      <pubDate>Fri, 11 Aug 2017 18:14:50 -0700</pubDate>
+      <title>Trying Out Hugo for Blog Posts</title>
+      <link>http://nygaard.site/blog/trying-out-hugo-for-blog-posts/</link>
+      <pubDate>Fri, 11 Aug 2017 18:24:14 -0700</pubDate>
       
-      <guid>http://nygaard.site/blog/000001/</guid>
-      <description>This is the real title. Why won&amp;rsquo;t you post that?</description>
+      <guid>http://nygaard.site/blog/trying-out-hugo-for-blog-posts/</guid>
+      <description>There are some things to work out, but I like the fact that you can write Markdown with some metadata and end up with html output.</description>
     </item>
     
   </channel>
