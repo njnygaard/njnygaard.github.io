@@ -3,29 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://nygaard.site/blog/trying-out-hugo-for-blog-posts/</loc>
+    <loc>http://nygaard.site/post/trying-out-hugo-for-blog-posts/</loc>
     <lastmod>2017-08-11T18:24:14-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nygaard.site/blog/</loc>
-    <lastmod>2017-08-11T18:24:14-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nygaard.site/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nygaard.site/</loc>
+    <loc>http://nygaard.site/post/</loc>
     <lastmod>2017-08-11T18:24:14-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://nygaard.site/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nygaard.site/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nygaard.site/</loc>
+    <lastmod>2017-08-11T18:24:14-07:00</lastmod>
     <priority>0</priority>
   </url>
   
