@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Nikhil Nygaard 2017. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 11 Aug 2017 18:24:14 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2017 22:22:22 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Testing Markdown Syntax</title>
+      <link>https://www.nygaard.site/post/testing-markdown-syntax/</link>
+      <pubDate>Fri, 11 Aug 2017 22:22:22 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/testing-markdown-syntax/</guid>
+      <description>Testing Markdown Syntax I&amp;rsquo;d like to know what kind of things I can do with this blog.
+The following is a list:
+- Item 1 - Item A * Another thing. + More * Other things.
+ Numbered list Similarly numbered list.  Imbedded List Spelling mistake  Another spelling mistake.     echo &amp;quot;I love you&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config  import ( &amp;quot;idiocy&amp;quot; &amp;quot;log&amp;quot; ) func func main() { log.</description>
+    </item>
     
     <item>
       <title>Trying Out Hugo for Blog Posts</title>
