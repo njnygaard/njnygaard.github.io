@@ -1,12 +1,12 @@
 baseURL = "https://www.nygaard.site/"
 languageCode = "en-us"
-title = "cat ~/goals.txt > /dev/null"
+title = "cat ~/dreams.txt > /dev/null"
 theme = "blackburn"
 publishDir = "../"
 author = "Nikhil Nygaard"
 
 # Shown in the side menu
-copyright = "&copy; 2017. All rights reserved."
+copyright = "&copy; Nikhil Nygaard 2017. All rights reserved."
 canonifyurls = true
 paginate = 10
 
@@ -17,9 +17,9 @@ paginate = 10
 [params]
   # Shown in the home page
   subtitle = "A LARGE PROPERLY FORMATTED DATA FILE"
-  brand = "Blackburn"
-  googleAnalytics = "Your Google Analytics tracking ID"
-  disqus = "Your Disqus shortname"
+  brand = "Nygaard"
+#  googleAnalytics = "Your Google Analytics tracking ID"
+#  disqus = "Your Disqus shortname"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
   highlightjs_extra_languages = ["yaml"]
