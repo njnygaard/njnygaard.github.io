@@ -8,6 +8,15 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/contact/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/</loc>
     <lastmod>2017-08-11T18:24:14-07:00</lastmod>
     <priority>0</priority>

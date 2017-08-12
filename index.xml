@@ -6,7 +6,7 @@
     <description>Recent content on cat ~/goals.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Fri, 11 Aug 2017 18:24:14 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
@@ -19,6 +19,15 @@
       
       <guid>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</guid>
       <description>There are some things to work out, but I like the fact that you can write Markdown with some metadata and end up with html output.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.nygaard.site/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.nygaard.site/contact/</guid>
+      <description>Please?</description>
     </item>
     
   </channel>
