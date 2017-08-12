@@ -3,17 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://nygaard.site/posts/first-post/</loc>
+    <lastmod>2017-08-11T18:01:42-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nygaard.site/first-non-post/</loc>
+    <lastmod>2017-08-11T18:01:33-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nygaard.site/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://nygaard.site/</loc>
+    <lastmod>2017-08-11T18:01:42-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://nygaard.site/posts/</loc>
+    <lastmod>2017-08-11T18:01:42-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nygaard.site/tags/</loc>
     <priority>0</priority>
   </url>
   
