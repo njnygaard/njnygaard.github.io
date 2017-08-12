@@ -60,45 +60,45 @@ paginate = 10
   # by entering your username or ID.
 
   # SNS microblogging
-  twitter = "*"
-  gnusocial = "*" # Specify href (e.g. https://quitter.se/yourusername)
-  facebook = "*"
-  googleplus = "*"
-  weibo = "*"
-  tumblr = "*"
+  twitter = "nopedotcom"
+#  gnusocial = "*" # Specify href (e.g. https://quitter.se/yourusername)
+#  facebook = "*"
+#  googleplus = "*"
+#  weibo = "*"
+#  tumblr = "*"
 
   # SNS photo/video sharing
-  instagram = "*"
-  flickr = "*"
-  photo500px = "*"
-  pinterest = "*"
-  youtube = "*"
-  vimeo = "*"
-  vine = "*"
-  slideshare = "*"
+#  instagram = "*"
+#  flickr = "*"
+#  photo500px = "*"
+#  pinterest = "*"
+#  youtube = "*"
+#  vimeo = "*"
+#  vine = "*"
+#  slideshare = "*"
 
   # SNS career oriented
-  linkedin = "*"
-  xing = "*"
+#  linkedin = "*"
+#  xing = "*"
 
   # SNS news
-  reddit = "*"
-  hackernews = "*"
+#  reddit = "*"
+#  hackernews = "*"
 
   # Techie
   github = "njnygaard"
   gitlab = "droneprime"
-  bitbucket = "*"
-  stackoverflow = "*"
-  serverfault = "*"
+#  bitbucket = "*"
+#  stackoverflow = "*"
+#  serverfault = "*"
 
   # Gaming
-  steam = "*"
-  mobygames = "*"
+#  steam = "*"
+#  mobygames = "*"
 
   # Music
-  lastfm = "*"
-  discogs = "*"
+#  lastfm = "*"
+#  discogs = "*"
 
   # Other
-  keybase = "*"
+  keybase = "njnygaard"
