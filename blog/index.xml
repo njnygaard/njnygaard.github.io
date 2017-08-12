@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site goopagoo</title>
-    <link>http://nygaard.site/</link>
-    <description>Recent content on My New Hugo Site goopagoo</description>
+    <title>Blogs on My New Hugo Site goopagoo</title>
+    <link>http://nygaard.site/blog/</link>
+    <description>Recent content in Blogs on My New Hugo Site goopagoo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Aug 2017 18:14:50 -0700</lastBuildDate>
     
-	<atom:link href="http://nygaard.site/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://nygaard.site/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
