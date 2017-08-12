@@ -1,4 +1,4 @@
-baseURL = "http://nygaard.site/"
+baseURL = "https://www.nygaard.site/"
 languageCode = "en-us"
 title = "cat ~/goals.txt > /dev/null"
 theme = "blackburn"
@@ -26,8 +26,8 @@ paginate = 10
   dateFormat = "02 Jan 2006, 15:04"
   # Include any custom CSS and/or JS files
   # (relative to /static folder)
-  custom_css = ["css/my.css"]
-  custom_js = ["js/my.js"]
+#  custom_css = ["css/my.css"]
+#  custom_js = ["js/my.js"]
 
 [menu]
   # Shown in the side menu.

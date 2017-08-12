@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cat ~/goals.txt &gt; /dev/null</title>
-    <link>http://nygaard.site/post/</link>
+    <link>https://www.nygaard.site/post/</link>
     <description>Recent content in Posts on cat ~/goals.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Fri, 11 Aug 2017 18:24:14 -0700</lastBuildDate>
     
-	<atom:link href="http://nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Trying Out Hugo for Blog Posts</title>
-      <link>http://nygaard.site/post/trying-out-hugo-for-blog-posts/</link>
+      <link>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</link>
       <pubDate>Fri, 11 Aug 2017 18:24:14 -0700</pubDate>
       
-      <guid>http://nygaard.site/post/trying-out-hugo-for-blog-posts/</guid>
+      <guid>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</guid>
       <description>There are some things to work out, but I like the fact that you can write Markdown with some metadata and end up with html output.</description>
     </item>
     
