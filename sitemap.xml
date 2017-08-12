@@ -8,7 +8,16 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/about/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

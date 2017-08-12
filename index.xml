@@ -23,11 +23,20 @@
     
     <item>
       <title></title>
+      <link>https://www.nygaard.site/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.nygaard.site/about/</guid>
+      <description>#GOAT Or something like that.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://www.nygaard.site/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.nygaard.site/contact/</guid>
-      <description>Please?</description>
+      <description>There&amp;rsquo;s a bunch of ways listed in the sidebar over there.</description>
     </item>
     
   </channel>
