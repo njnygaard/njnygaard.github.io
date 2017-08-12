@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cat ~/goals.txt &gt; /dev/null</title>
+    <title>cat ~/dreams.txt &gt; /dev/null</title>
     <link>https://www.nygaard.site/</link>
-    <description>Recent content on cat ~/goals.txt &gt; /dev/null</description>
+    <description>Recent content on cat ~/dreams.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <copyright>&amp;copy; Nikhil Nygaard 2017. All rights reserved.</copyright>
     <lastBuildDate>Fri, 11 Aug 2017 18:24:14 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
