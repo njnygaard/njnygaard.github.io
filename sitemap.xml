@@ -3,51 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/testing-markdown-syntax/</loc>
+    <loc>https://njnygaard.github.io/post/testing-markdown-syntax/</loc>
     <lastmod>2017-08-11T22:22:22-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</loc>
+    <loc>https://njnygaard.github.io/post/trying-out-hugo-for-blog-posts/</loc>
     <lastmod>2017-08-11T18:24:14-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/about/</loc>
+    <loc>https://njnygaard.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/contact/</loc>
+    <loc>https://njnygaard.github.io/contact/</loc>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/about/</loc>
+    <loc>https://njnygaard.github.io/about/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/contact/</loc>
+    <loc>https://njnygaard.github.io/contact/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/</loc>
+    <loc>https://njnygaard.github.io/post/</loc>
     <lastmod>2017-08-11T22:22:22-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/</loc>
+    <loc>https://njnygaard.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/topics/</loc>
+    <loc>https://njnygaard.github.io/topics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/</loc>
+    <loc>https://njnygaard.github.io/</loc>
     <lastmod>2017-08-11T22:22:22-07:00</lastmod>
     <priority>0</priority>
   </url>

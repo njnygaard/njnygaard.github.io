@@ -1,4 +1,4 @@
-baseURL = "https://www.nygaard.site/"
+baseURL = "https://njnygaard.github.io/"
 languageCode = "en-us"
 title = "cat ~/dreams.txt > /dev/null"
 theme = "blackburn"
