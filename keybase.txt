@@ -4,7 +4,7 @@ https://keybase.io/njnygaard
 
 I hereby claim:
 
-  * I am an admin of https://njnygaard.github.io
+  * I am an admin of https://www.nygaard.site
   * I am njnygaard (https://keybase.io/njnygaard) on keybase.
   * I have a public key with fingerprint 5A83 875A 89F6 FFA4 8844  227F A18E 9C35 A869 8292
 
@@ -22,16 +22,16 @@ To do so, I am signing this object:
       "username": "njnygaard"
     },
     "service": {
-      "hostname": "njnygaard.github.io",
+      "hostname": "www.nygaard.site",
       "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1503006298,
+  "ctime": 1503007476,
   "expire_in": 157680000,
-  "prev": "06a731b724eb091872a44558b6ecce7567f5c8e1a7edafce4b3abc7fc847662e",
-  "seqno": 32,
+  "prev": "b9e8ac105689fa957814db0fd4c293bfecfc93a80f153348dcecfb9102521dad",
+  "seqno": 33,
   "tag": "signature"
 }
 
@@ -41,30 +41,30 @@ which yields the signature:
 Version: Keybase OpenPGP v2.0.73
 Comment: https://keybase.io/crypto
 
-yMNzAnicbVJtUFRVGF4WkI8QHGWIlRHkNo0aROd+nnt3IqaPMUKLTCQRkLkf57IX
-2L3L7kLgRhQVZjEk/GCpICUkURqbgCAox0T5aKBwalAaEKQJgmk0A0McBbqX8k/T
-+XHOec953uc873Pei+u9DYFeDZV1dLNSVu01eP54gSGtJviAGxNUqRgzu7FctLag
-PAk5XVm5ioSZMYATgKRISRB5jocUlCQeshTHiQjXQkCKkKcQoCkIJIrEOY4gJRmx
-OJAQIeEMRwJeEgCPxWKyYstGDrtDsbk0WppnSRZqMyczssxTLEtRBAFlHmcRJ5La
-BcOxBEdoiRbVqWdo4gTeieIUVTvTgqw1ef+Dv68b4DQrcAiXSEpmKZwROYALMg0g
-5DgWELIkcywuEtoOQgbQBNIEMTTNyrJWowQhz63pLlijIwUAGRGRiOYBIEmaEQGO
-WEED0TKBcE4HOpHDxluRhrbl2Iqzed4hYSWxmHZcqIhId1Yv5b+QuGzFZSkQ/qnL
-7lBdqqjmaQCLy2V3mnUCV7Fdz3gFCVn/cmUJik3S/NQyCpHDqag2zIxrSNGl6OQ4
-DUgAGIJjYzFUZFccKEvRETRkWKAN/R1UqJvE8JDEBUhQSAAczkKCpyjNAoFBoogg
-zUCZFln9p5HEyyKiBJIXRCiLLAUZhkCYXl2+TcXMJKHp5LM1TqeSbeNdBQ6ElfSc
-z/AxeAUa1vka9UYzBAZsuN9+b5wOWUWXYU3yik9m4kLGJ2b/8AlTd5TkO7urr+kH
-wK3OhqWmBOxt70tIP2Q4/MuVtob+II/75RHLtYn8qqSuDzq9qbBQ183KzaapF73e
-HZgweUvtM1ujTm3+q/6G38Lgn0UB+/eo+SeCj0zmpfZXWIyTt9whauW+MLYoNfdJ
-sbHV/+ab48s5npMPJSSV110dUcsjmpd3ZE4nx0eN9fi7iueqjDl3LaHPz7WvrLTO
-3W1ZvvN4Ucal7VffMc39duoZa+wIKfz0UVtnYNlR4tvF6PhNF0pvS16BUZNpcYef
-KneExq94n50fiC45Plma173Qsb7+2fiYjPdd1zcYHzs4GdBx79ytYD+rz5nV8i/b
-WuM6gjsiyz7eHjMxmvic97au0eTOpT+sEZ5zl3de9Aw9HBS/8M3svDncfqMmxrQF
-vVdt/GrbdOKFsKR7Bw7v/fH1xe4Frn3WMZ7y+ZaeoaaE9kLDUtOlByK/rtx3sNFY
-OhCZ6Fna9Gne0Ud/loOmnliHDy3/+mFaqecFvi9TvBZasThDY8a3xGIqo8svsnrP
-mUHrxke+31GrHmnZ1RCDRm8f44VGn0MzvW+nn+ht9Lx6cuN8b0THxO7rtu9Mn/WG
-WCN+922O/kJy79w9Nps8HVX7dH9T+ByzNfalsy2vVUWOVZAPDu9PyonrzIFuY3dd
-yTB2Bzt2OmWqrX64Nn38yvLf99LDAg==
-=EwKe
+yMNwAnicbZJrTBRXFMcXESKgKZGK1VQkE6kk5XHvvGcFU0qkBZJSGlrlIds7M3dg
+eOwuuwsrsLTWxUYhAR+R2gRssBVLCyZFqZCoLFVQ5FECgSotbUlpJYhW1PaDltq7
+BL91Pszce+7v/Od/zrnX1vkaAn2a6xq5L/UDx3wGe5tKDZkN6x9XUrJFLaeMlVQh
+Xv7gIhXbHaZCXaWMFIA0YFhGlRUkIYEVVBUJIitJCoZkCxhFQCwGHCsAlWWgJNGM
+qmERAhXTKuQlBiBVBoiKojTdnIdtVptudhBZDomMKJC3pPGahlhRZFmaFjQERSwp
+DDngJZGWaJKYb7F7M4g5GdlxjG4hMbIxLdv7H/65bwA5UZYwVBlWE1nIKxKAssYB
+QZAkEdCaqkkiVGiyEgQecDQmhniOEzWN1KgKApKWfZcuyzEyEHgFM5hDADAMxysA
+YlEmEKfRGEpe0I5tZlSMCW0uMJfnIWRTqaooioTLdAV7O+stZQVxOp0xK1CMXXdg
+ImC1WRwWxVJETvMdDqvd6M12lFuXcSybVoRMsm5WSTNJRhm22XWLmTJCQioO3asM
+OcAAQCbFR1F4n1W3YZPuJTiBFwF5vP/BZUSS9EZECgQcT4ZA6hBEyJJZaSqr0BIj
+a1jRFIlBItAgxzCsqCokIksQ0BwNSYcob2klZgtlZBjiE+URTbueZ0aOUhumqr7r
+zVlt8Ak0+Put8t4yQ2BA8PO7VzTxwrMkw82FuK+Gw8Sw8fxV8Ru7mOGg246AjHvp
+lz46nuMPV3NRvmdip9a8k0lHVNwLaoe/P950dcMlPWWw74H76FRbz8ESLbcyy/Ty
+eGBr35qzARfPG0HmodqXQlyJD093l2fMdYuRP40F9eX8VjGdVJoUmuyXkI1C/ihx
+1aYlN27XKgrfiH52ZPPlxeKxdP6fwwuzu8K7h0c7xq3Tqa89WT+WK3a2eXrYM7tc
+sXOPGL+DzUvtm2uu586ot3vTg7MyzKdHwtp2txy/uWRxz4c2m/90bqruuXGkbu7G
+Ej9O2RuvZXviikff/H6hNc9/MnJb/7a0key5mbSL/W1L9ZHC+wW9Cam9Z/cPnSze
+GcO6uu/Xw2zPt6dqkOeXjK0Rn/543/fnqj2TKNzz9kDTYTWlPPZCtWnLWx8rRV84
+UWnl5PCxz2v5TxK2/vvwQ9+h3Z0541M4jp+48s1QqH55toU9GXFopvXWE9dn9N39
+T8X3huJ9Ns50r3Paf3CV7emay+qAI6fOvxIy/uL1q4Xu/oEd1T25dxflC2g03jXN
+31rrrrmzo2KD+1fb9p0HcuI8njJzai2qfb1zdkjoevpuYf3Rgq8HG/KUgegOAwcW
+Te1765P/ijixd/Zcyp3uusQtxuj+SlPcFfVRS1PwB9NZaxvCna/+3ebJTT0XbXDv
+m+mzNM0nwonR+ZbUB/8BN4XIMA==
+=7YTd
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
