@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>Posts &middot; cat ~/dreams.txt &gt; /dev/null</title>
+  <title>Cloudflare and Hugo &middot; cat ~/dreams.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/dreams.txt &gt; /dev/null" href="https://njnygaard.github.io/post/index.xml" />
   
 
   
@@ -104,10 +102,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://njnygaard.github.io/post/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -220,24 +214,103 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>Cloudflare and Hugo</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  
-  <h2>2017</h2>
-  <ul>
-  
-    <li><time>17 Aug 2017, 14:34</time> - <a href="https://njnygaard.github.io/post/cloudflare-and-hugo/">Cloudflare and Hugo</a></li>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Aug 2017, 14:34</time>
+  </div>
 
   
-    <li><time>11 Aug 2017, 22:22</time> - <a href="https://njnygaard.github.io/post/testing-markdown-syntax/">Testing Markdown Syntax</a></li>
 
   
-    <li><time>11 Aug 2017, 18:24</time> - <a href="https://njnygaard.github.io/post/trying-out-hugo-for-blog-posts/">Trying Out Hugo for Blog Posts</a></li>
 
   
-  </ul>
+
+</div>
+
+  <p>Well, you don&rsquo;t really need a Markdown title in the post, because the theme/Hugo will blast a huge one at the top.</p>
+
+<p>I had some issues getting the GitHub page to properly forward to the resources I wanted. I opened a ticket with them to that effect.</p>
+
+<pre><code>curl https://njnygaard.github.io/css/side-menu.css -v
+*   Trying 151.101.193.147...
+* TCP_NODELAY set
+* Connected to njnygaard.github.io (151.101.193.147) port 443 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+* Server certificate: www.github.com
+* Server certificate: DigiCert SHA2 High Assurance Server CA
+* Server certificate: DigiCert High Assurance EV Root CA
+&gt; GET /css/side-menu.css HTTP/1.1
+&gt; Host: njnygaard.github.io
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 301 Moved Permanently
+&lt; Server: GitHub.com
+&lt; Content-Type: text/html
+&lt; Location: http://www.nygaard.site/css/side-menu.css
+&lt; X-GitHub-Request-Id: 1614:1DFC6:9A673C:A5FE05:599605C9
+&lt; Content-Length: 178
+&lt; Accept-Ranges: bytes
+&lt; Date: Thu, 17 Aug 2017 21:08:25 GMT
+&lt; Via: 1.1 varnish
+&lt; Age: 0
+&lt; Connection: keep-alive
+&lt; X-Served-By: cache-sjc3138-SJC
+&lt; X-Cache: MISS
+&lt; X-Cache-Hits: 0
+&lt; X-Timer: S1503004106.616215,VS0,VE24
+&lt; Vary: Accept-Encoding
+&lt; X-Fastly-Request-ID: bf71de7f975b228136a6a6c9f9a97cf51bdaa9cb
+&lt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor=&quot;white&quot;&gt;
+&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+* Connection #0 to host njnygaard.github.io left intact
+</code></pre>
+
+<p>You can see that when you set the base name to the correct domain, it redirects to the wrong URL.</p>
+
+
   
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://njnygaard.github.io/post/testing-markdown-syntax/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://njnygaard.github.io/post/testing-markdown-syntax/">Testing Markdown Syntax</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>

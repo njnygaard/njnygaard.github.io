@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Nikhil Nygaard 2017. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 11 Aug 2017 22:22:22 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 17 Aug 2017 14:34:23 -0700</lastBuildDate>
     
 	<atom:link href="https://njnygaard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloudflare and Hugo</title>
+      <link>https://njnygaard.github.io/post/cloudflare-and-hugo/</link>
+      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      
+      <guid>https://njnygaard.github.io/post/cloudflare-and-hugo/</guid>
+      <description>Well, you don&amp;rsquo;t really need a Markdown title in the post, because the theme/Hugo will blast a huge one at the top.
+I had some issues getting the GitHub page to properly forward to the resources I wanted. I opened a ticket with them to that effect.
+curl https://njnygaard.github.io/css/side-menu.css -v * Trying 151.101.193.147... * TCP_NODELAY set * Connected to njnygaard.github.io (151.101.193.147) port 443 (#0) * TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 * Server certificate: www.</description>
+    </item>
     
     <item>
       <title>Testing Markdown Syntax</title>
