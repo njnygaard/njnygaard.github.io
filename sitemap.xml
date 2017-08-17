@@ -3,56 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://njnygaard.github.io/post/cloudflare-and-hugo/</loc>
+    <loc>https://www.nygaard.site/post/cloudflare-and-hugo/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/post/testing-markdown-syntax/</loc>
+    <loc>https://www.nygaard.site/post/testing-markdown-syntax/</loc>
     <lastmod>2017-08-11T22:22:22-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/post/trying-out-hugo-for-blog-posts/</loc>
+    <loc>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</loc>
     <lastmod>2017-08-11T18:24:14-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/about/</loc>
+    <loc>https://www.nygaard.site/about/</loc>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/contact/</loc>
+    <loc>https://www.nygaard.site/contact/</loc>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/about/</loc>
+    <loc>https://www.nygaard.site/about/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/contact/</loc>
+    <loc>https://www.nygaard.site/contact/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/post/</loc>
+    <loc>https://www.nygaard.site/post/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/tags/</loc>
+    <loc>https://www.nygaard.site/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/topics/</loc>
+    <loc>https://www.nygaard.site/topics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://njnygaard.github.io/</loc>
+    <loc>https://www.nygaard.site/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
   </url>

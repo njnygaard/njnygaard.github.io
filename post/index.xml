@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cat ~/dreams.txt &gt; /dev/null</title>
-    <link>https://njnygaard.github.io/post/</link>
+    <link>https://www.nygaard.site/post/</link>
     <description>Recent content in Posts on cat ~/dreams.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Nikhil Nygaard 2017. All rights reserved.</copyright>
     <lastBuildDate>Thu, 17 Aug 2017 14:34:23 -0700</lastBuildDate>
     
-	<atom:link href="https://njnygaard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cloudflare and Hugo</title>
-      <link>https://njnygaard.github.io/post/cloudflare-and-hugo/</link>
+      <link>https://www.nygaard.site/post/cloudflare-and-hugo/</link>
       <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
       
-      <guid>https://njnygaard.github.io/post/cloudflare-and-hugo/</guid>
+      <guid>https://www.nygaard.site/post/cloudflare-and-hugo/</guid>
       <description>Well, you don&amp;rsquo;t really need a Markdown title in the post, because the theme/Hugo will blast a huge one at the top.
 I had some issues getting the GitHub page to properly forward to the resources I wanted. I opened a ticket with them to that effect.
 curl https://njnygaard.github.io/css/side-menu.css -v * Trying 151.101.193.147... * TCP_NODELAY set * Connected to njnygaard.github.io (151.101.193.147) port 443 (#0) * TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 * Server certificate: www.</description>
@@ -25,10 +25,10 @@ curl https://njnygaard.github.io/css/side-menu.css -v * Trying 151.101.193.147..
     
     <item>
       <title>Testing Markdown Syntax</title>
-      <link>https://njnygaard.github.io/post/testing-markdown-syntax/</link>
+      <link>https://www.nygaard.site/post/testing-markdown-syntax/</link>
       <pubDate>Fri, 11 Aug 2017 22:22:22 -0700</pubDate>
       
-      <guid>https://njnygaard.github.io/post/testing-markdown-syntax/</guid>
+      <guid>https://www.nygaard.site/post/testing-markdown-syntax/</guid>
       <description>Testing Markdown Syntax I&amp;rsquo;d like to know what kind of things I can do with this blog.
 The following is a list:
 - Item 1 - Item A * Another thing. + More * Other things.
@@ -37,10 +37,10 @@ The following is a list:
     
     <item>
       <title>Trying Out Hugo for Blog Posts</title>
-      <link>https://njnygaard.github.io/post/trying-out-hugo-for-blog-posts/</link>
+      <link>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</link>
       <pubDate>Fri, 11 Aug 2017 18:24:14 -0700</pubDate>
       
-      <guid>https://njnygaard.github.io/post/trying-out-hugo-for-blog-posts/</guid>
+      <guid>https://www.nygaard.site/post/trying-out-hugo-for-blog-posts/</guid>
       <description>There are some things to work out, but I like the fact that you can write Markdown with some metadata and end up with html output.</description>
     </item>
     
