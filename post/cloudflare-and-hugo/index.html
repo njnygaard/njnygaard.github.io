@@ -234,52 +234,60 @@
 
 </div>
 
-  <p>Well, you don&rsquo;t really need a Markdown title in the post, because the theme/Hugo will blast a huge one at the top.</p>
+  
 
-<p>I had some issues getting the GitHub page to properly forward to the resources I wanted. I opened a ticket with them to that effect.</p>
+<p>Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.</p>
 
-<pre><code>curl https://njnygaard.github.io/css/side-menu.css -v
-*   Trying 151.101.193.147...
-* TCP_NODELAY set
-* Connected to njnygaard.github.io (151.101.193.147) port 443 (#0)
-* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-* Server certificate: www.github.com
-* Server certificate: DigiCert SHA2 High Assurance Server CA
-* Server certificate: DigiCert High Assurance EV Root CA
-&gt; GET /css/side-menu.css HTTP/1.1
-&gt; Host: njnygaard.github.io
-&gt; User-Agent: curl/7.54.0
-&gt; Accept: */*
-&gt;
-&lt; HTTP/1.1 301 Moved Permanently
-&lt; Server: GitHub.com
-&lt; Content-Type: text/html
-&lt; Location: http://www.nygaard.site/css/side-menu.css
-&lt; X-GitHub-Request-Id: 1614:1DFC6:9A673C:A5FE05:599605C9
-&lt; Content-Length: 178
-&lt; Accept-Ranges: bytes
-&lt; Date: Thu, 17 Aug 2017 21:08:25 GMT
-&lt; Via: 1.1 varnish
-&lt; Age: 0
-&lt; Connection: keep-alive
-&lt; X-Served-By: cache-sjc3138-SJC
-&lt; X-Cache: MISS
-&lt; X-Cache-Hits: 0
-&lt; X-Timer: S1503004106.616215,VS0,VE24
-&lt; Vary: Accept-Encoding
-&lt; X-Fastly-Request-ID: bf71de7f975b228136a6a6c9f9a97cf51bdaa9cb
-&lt;
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
-&lt;body bgcolor=&quot;white&quot;&gt;
-&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
-&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-* Connection #0 to host njnygaard.github.io left intact
+<h1 id="motivation">Motivation</h1>
+
+<p>I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.</p>
+
+<p><a href="aws.png"><img src="aws.png" alt="AWS Bill" /></a></p>
+
+<p>That&rsquo;s quite a bit of money for something that I really wanted as a note store. I had originally envisioned some more <a href="https://gitlab.com/droneprime/nygaard.site">in-depth features</a>, but my side project has taken priority. More on that later.</p>
+
+<h1 id="solution">Solution</h1>
+
+<p><a href="https://pages.github.com/">GitHub Pages</a> offers a solution where you can host a static site from a repository. That&rsquo;s great! By default, you get one conventional hostname that points to <code>username.github.io</code> when you create a repo of the same name in your account.</p>
+
+<p>So that&rsquo;s nice, but it is not really easy to manage a bunch of flat files and HTML. It would be super nice if I could just write notes in markdown like I&rsquo;ve been doing for years and have that be a magical website.</p>
+
+<p>Enter <a href="https://gohugo.io/">Hugo</a>. Use Hugo to manage your content as Markdown and it does the gross things like CSS for you. Also it is written in Golang, so I&rsquo;m naturally a fanboy.</p>
+
+<p>That all worked great but there were issues with HTTPS. I need that man. I thought CloudFlare would fix that for me, but there were some nuances about the configuration there too.</p>
+
+<h1 id="issues">Issues</h1>
+
+<p>I&rsquo;ll just share the result of my suffering with you.</p>
+
+<h2 id="cloudflare">Cloudflare</h2>
+
+<h3 id="dns-tab">DNS Tab</h3>
+
+<p><a href="dns.png"><img src="dns.png" alt="DNS" /></a></p>
+
+<h3 id="page-rules-tab">Page Rules Tab</h3>
+
+<p><a href="page-rules.png"><img src="page-rules.png" alt="Page Rules" /></a></p>
+
+<h2 id="github-pages">GitHub Pages</h2>
+
+<h3 id="cname-file">CNAME File</h3>
+
+<p><a href="cname.png"><img src="cname.png" alt="CNAME" /></a></p>
+
+<h2 id="hugo">Hugo</h2>
+
+<h3 id="config-toml">config.toml</h3>
+
+<pre><code class="language-yaml">baseURL = &quot;https://www.nygaard.site/&quot;
 </code></pre>
 
-<p>You can see that when you set the base name to the correct domain, it redirects to the wrong URL.</p>
+<p>And that was it!</p>
+
+<h1 id="resolution">Resolution</h1>
+
+<p>I was able to get my beautiful site hosting all my CSS via HTTPS. I will update this if I think of more steps.</p>
 
 
   
