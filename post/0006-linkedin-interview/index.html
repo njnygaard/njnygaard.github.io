@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>Cloudflare and Hugo &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>LinkedIn Interview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -223,7 +223,7 @@
 
 
 <div class="header">
-  <h1>Cloudflare and Hugo</h1>
+  <h1>LinkedIn Interview</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -232,7 +232,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>17 Aug 2017, 14:34</time>
+    <time>05 Oct 2017, 14:23</time>
   </div>
 
   
@@ -243,68 +243,75 @@
 
 </div>
 
-  
+  <p>I interviewed today with LinkedIn and <!--[Karrick McDermott][1]--> <code>[REDACTED]</code>. He was intimidatingly knowledgeable and described a work environment that I really hope to join. I hope that I have the skill set necessary.</p>
 
-<p>Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.</p>
+<p>What follows are notes of the responses for my edification, not necessarily how I answered.</p>
 
-<h1 id="motivation">Motivation</h1>
+<blockquote>
+<p>Describe what happens when we type <code>ssh shell.linkedin.com</code> and hit enter.</p>
+</blockquote>
 
-<p>I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.</p>
+<ul>
+<li>When you hit enter, your shell gets the string you entered on the command line. In this case, we send the string to bash.</li>
+<li>Bash will parse the string for whitespace and take <code>arg[0]</code> as the name of the executable you intend to execute.</li>
+<li>It will lookup said executable in several locations:
 
-<p><a href="aws.png"><img src="aws.png" alt="AWS Bill" /></a></p>
+<ul>
+<li>builtins</li>
+<li>functions</li>
+<li>aliases</li>
+<li><code>$PATH</code></li>
+</ul></li>
+<li>As an aside: Why must <code>cd</code> be a &ldquo;builtin&rdquo;?
 
-<p>That&rsquo;s quite a bit of money for something that I really wanted as a note store. I had originally envisioned some more <a href="https://gitlab.com/droneprime/nygaard.site">in-depth features</a>, but my side project has taken priority. More on that later.</p>
+<ul>
+<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process&rsquo;s environment unchanged.</li>
+</ul></li>
+<li>Once it finds what you mean by that <code>arg[0]</code>, it will <code>fork</code> and call the executable you intend to run.</li>
+<li>Now <code>ssh</code> gets that list of arguments can use something like <code>getopts</code> to parse meaning out of that.</li>
+<li>Assuming that the argument parsing went well, we can now try to resolve the hostname that <code>ssh</code> has been passed.</li>
+<li>This involves looking in <code>/etc/hosts</code> for matching hostname:ip pairs, or failing that, will read <code>resolve.conf</code> to find a DNS server to execute a recursive DNS lookup.</li>
+<li>This is likely encapsulated in a syscall to the kernel. DNS resolution happens over UDP.</li>
+<li>Once you have the IP, you can then establish a TCP connection to the server on port 22 (magic number).</li>
+<li>After the TCP connection is established, you can look here for the <a href="../0005-ssh-review/">SSH Review</a></li>
+</ul>
 
-<h1 id="solution">Solution</h1>
+<blockquote>
+<p>You have a system where 10000 clients need to access 10GB of information from a server. The data changes a few sectors a day.</p>
+</blockquote>
 
-<p><a href="https://pages.github.com/">GitHub Pages</a> offers a solution where you can host a static site from a repository. That&rsquo;s great! By default, you get one conventional hostname that points to <code>username.github.io</code> when you create a repo of the same name in your account.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Rsync"><code>rsync</code></a> is the key to this question. With <code>rsync</code>, you can establish a connection to a remote server and synchronize files over the connection, sending only what needs to be sent.</li>
+<li>Karrick shared with me a utility he discovered in the interview process, <a href="https://github.com/addthis/ssync"><code>ssync</code></a>, which solves the distributed portion of this challenge too.</li>
+<li>Without <code>ssync</code>, you will run in to the issue that when a change happens on the server, all the clients are notified. This will cause a bottleneck at the server.</li>
+<li>To mitigate this, you can setup a self-similar hierarchy whereby the server has 10 nodes it broadcasts to and those nodes synchronize files with it. Each of those nodes in-turn has 10 nodes. Once the files are synchronized to any level, the next level will get a notification.</li>
+</ul>
 
-<p>So that&rsquo;s nice, but it is not really easy to manage a bunch of flat files and HTML. It would be super nice if I could just write notes in markdown like I&rsquo;ve been doing for years and have that be a magical website.</p>
+<blockquote>
+<p>You just inherited a software system that has no metrics. Describe what you do in the first quarter to allow you to sleep at night.</p>
+</blockquote>
 
-<p>Enter <a href="https://gohugo.io/">Hugo</a>. Use Hugo to manage your content as Markdown and it does the gross things like CSS for you. Also it is written in Golang, so I&rsquo;m naturally a fanboy.</p>
-
-<p>That all worked great but there were issues with HTTPS. I need that man. I thought CloudFlare would fix that for me, but there were some nuances about the configuration there too.</p>
-
-<h1 id="issues">Issues</h1>
-
-<p>I&rsquo;ll just share the result of my suffering with you.</p>
-
-<h2 id="cloudflare">Cloudflare</h2>
-
-<h3 id="dns-tab">DNS Tab</h3>
-
-<p><a href="dns.png"><img src="dns.png" alt="DNS" /></a></p>
-
-<h3 id="page-rules-tab">Page Rules Tab</h3>
-
-<p><a href="page-rules.png"><img src="page-rules.png" alt="Page Rules" /></a></p>
-
-<h2 id="github-pages">GitHub Pages</h2>
-
-<h3 id="cname-file">CNAME File</h3>
-
-<p><a href="cname.png"><img src="cname.png" alt="CNAME" /></a></p>
-
-<h2 id="hugo">Hugo</h2>
-
-<h3 id="config-toml">config.toml</h3>
-
-<pre><code class="language-yaml">baseURL = &quot;https://www.nygaard.site/&quot;
-</code></pre>
-
-<p>And that was it!</p>
-
-<h1 id="resolution">Resolution</h1>
-
-<p>I was able to get my beautiful site hosting all my CSS via HTTPS. I will update this if I think of more steps.</p>
+<ul>
+<li>Firstly, I would get a trial of SignalFX, because it is the only platform of this kind that I know.</li>
+<li>SignalFX has a fork of <code>collectd</code> that it uses to gather information from nodes.</li>
+<li>Giving SignalFX your AWS credentials will allow it to identify all the hosts that you run. EC2, RDS, other things.</li>
+<li>Once that data is in SignalFX, you can begin to create dashboards and setup alerts.</li>
+<li>Those alerts can be piped to PagerDudy or Karrick&rsquo;s recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
+</ul>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
+    <a href="https://www.nygaard.site/post/0005-ssh-review/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
   <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a>
+    </nav>
     
   </div>
   <div class="pure-u-2-24">
@@ -312,14 +319,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/">Elasticsearch Takeaways</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

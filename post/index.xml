@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Oct 2017 12:25:31 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 14:23:44 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LinkedIn Interview</title>
+      <link>https://www.nygaard.site/post/0006-linkedin-interview/</link>
+      <pubDate>Thu, 05 Oct 2017 14:23:44 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0006-linkedin-interview/</guid>
+      <description>I interviewed today with LinkedIn and [REDACTED]. He was intimidatingly knowledgeable and described a work environment that I really hope to join. I hope that I have the skill set necessary.
+What follows are notes of the responses for my edification, not necessarily how I answered.
+ Describe what happens when we type ssh shell.linkedin.com and hit enter.
+  When you hit enter, your shell gets the string you entered on the command line.</description>
+    </item>
     
     <item>
       <title>SSH Review</title>

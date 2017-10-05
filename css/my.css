@@ -1,0 +1,25 @@
+blockquote{
+    background: lightgray;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    padding-left: 1em;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
+    padding-right: 1em;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace,monospace;
+    font-size: 1em;
+    color: rgba(0, 150, 0, 1);
+    background: rgba(229, 229, 229,1);
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+
+}
+
+a > code {
+    color: rgba(173, 0, 0, 1);
+}
