@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0001-first-post/</loc>
+    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0004-elasticsearch-takeaways/</loc>
+    <lastmod>2017-09-28T16:27:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0002-testing-markdown-syntax/</loc>
+    <lastmod>2017-08-11T22:22:22-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/about/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/contact/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/</loc>
+    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
