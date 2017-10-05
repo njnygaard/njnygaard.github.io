@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Oct 2017 22:48:47 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 12:25:31 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>First Post</title>
-      <link>https://www.nygaard.site/post/0001-first-post/</link>
-      <pubDate>Wed, 04 Oct 2017 22:48:47 -0700</pubDate>
+      <title>SSH Review</title>
+      <link>https://www.nygaard.site/post/0005-ssh-review/</link>
+      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/post/0001-first-post/</guid>
-      <description>Just testing out Hugo new site configuration. I liked Blackburn. I really want it to work.</description>
+      <guid>https://www.nygaard.site/post/0005-ssh-review/</guid>
+      <description>Detail and SSH connection Symmetrical Encryption  One key can be used to encrypt messages Alice-&amp;gt;Bob but can also be used to decrypt messages Bob-&amp;gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &amp;ldquo;Shared Secret&amp;rdquo; || &amp;ldquo;Secret Key&amp;rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm  Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.</description>
     </item>
     
     <item>
@@ -40,18 +40,6 @@
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
 
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
-    </item>
-    
-    <item>
-      <title>Testing Markdown Syntax</title>
-      <link>https://www.nygaard.site/post/0002-testing-markdown-syntax/</link>
-      <pubDate>Fri, 11 Aug 2017 22:22:22 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0002-testing-markdown-syntax/</guid>
-      <description>Testing Markdown Syntax I&amp;rsquo;d like to know what kind of things I can do with this blog.
-The following is a list:
-- Item 1 - Item A * Another thing. + More * Other things.
- Numbered list Similarly numbered list.  Imbedded List Spelling mistake  Another spelling mistake.     echo &amp;quot;I love you&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config  import ( &amp;quot;idiocy&amp;quot; &amp;quot;log&amp;quot; ) func func main() { log.</description>
     </item>
     
   </channel>

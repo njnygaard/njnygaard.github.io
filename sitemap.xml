@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/0001-first-post/</loc>
-    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+    <loc>https://www.nygaard.site/post/0005-ssh-review/</loc>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
   </url>
   
   <url>
@@ -15,11 +15,6 @@
   <url>
     <loc>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0002-testing-markdown-syntax/</loc>
-    <lastmod>2017-08-11T22:22:22-07:00</lastmod>
   </url>
   
   <url>
@@ -42,7 +37,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,7 +53,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2017-10-04T22:48:47-07:00</lastmod>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
     <priority>0</priority>
   </url>
   

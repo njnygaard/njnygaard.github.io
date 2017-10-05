@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>Elasticsearch Takeaways &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>SSH Review &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -219,7 +219,7 @@
 
 
 <div class="header">
-  <h1>Elasticsearch Takeaways</h1>
+  <h1>SSH Review</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -228,7 +228,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>28 Sep 2017, 16:27</time>
+    <time>05 Oct 2017, 12:25</time>
   </div>
 
   
@@ -239,22 +239,131 @@
 
 </div>
 
-  <p>I&rsquo;ve been using <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> for my personal project for about a year now and I am enjoying the functionality. My project has an Angular 4 frontend and a Go backend. I enjoy the alignment between TypeScript and Go and how it lets me bring static(ish) typing to the <code>front -&gt; contract -&gt; back</code> of my application. I am using <a href="https://github.com/olivere/elastic">olivere&rsquo;s elasticsearch client</a> to write a good portion of the data storage as well. If &ldquo;elasticsearch-as-a-datastore&rdquo; is offensive to you, just stop reading ;)</p>
+  
 
-<p>Make an edit.</p>
+<h1 id="detail-and-ssh-connection">Detail and SSH connection</h1>
+
+<h2 id="symmetrical-encryption">Symmetrical Encryption</h2>
+
+<ul>
+<li>One key can be used to encrypt messages Alice-&gt;Bob but can also be used to decrypt messages Bob-&gt;Alice.</li>
+<li>Anyone that holds the key, can encrypt and decrypt messages.</li>
+<li>AKA &ldquo;Shared Secret&rdquo; || &ldquo;Secret Key&rdquo;</li>
+<li>SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication.</li>
+<li>Key Exchange Algorithm
+
+<ul>
+<li>Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.</li>
+<li>AES, Blowfish, 3DES, CAST128, and Arcfour are examples of algorithms that need a shared secret.</li>
+</ul></li>
+</ul>
+
+<h2 id="asymmetrical-encryption">Asymmetrical Encryption</h2>
+
+<p>To send information in a single direction, two keys are needed.
+- Public
+    + Can be freely shared with anyone.
+    + The private key cannot be derived from the public key.
+    + The public key can be used to encrypt messages that can only be decrypted by the private key.
+    + This is a one-way ability. The public key cannot decrypt the messages it encrypts.
+- Private
+    + The private key is the only component capable of decrypting messages that were encrypted using the public key.</p>
+
+<p>SSH utilizes asymmetric encryption in a few different places.
+- When it is setting up the symmetrical encryption between the client and the server.
+- When challenging the user. Is this user in my <code>~/.ssh/authorized_keys</code> file?</p>
+
+<h2 id="hashing">Hashing</h2>
+
+<h3 id="hash-based-message-authentication-codes-hmac">Hash-Based Message Authentication Codes (HMAC)</h3>
+
+<ul>
+<li>The MAC is calculated from the symmetric shared secret, the packet sequence number of the message, and the actual message itself.</li>
+<li>The MAC is sent outside of the symmetrically encrypted area of the message.</li>
+<li>It can be used at the client side to verify that the message was not tampered with.</li>
+</ul>
+
+<h1 id="overview">Overview</h1>
+
+<ul>
+<li>Client-Server</li>
+<li>The server listens on (22) a designated port.</li>
+<li>The server is responsible for:
+
+<ul>
+<li>Negotiating the symmetrically secure connection.</li>
+<li>Authenticating the connecting party.</li>
+<li>Creating that user&rsquo;s environment.</li>
+</ul></li>
+<li>The client is responsible for:
+
+<ul>
+<li>The initial TCP Handshake</li>
+<li>Negotiating for the secure connection.</li>
+<li>Verifying that the server&rsquo;s identity matches one in <code>known_hosts</code></li>
+<li>Providing credentials.</li>
+</ul></li>
+</ul>
+
+<h1 id="stage-detail">Stage Detail</h1>
+
+<h2 id="stage-1-create-the-secure-connection">Stage 1: Create the secure connection.</h2>
+
+<ul>
+<li>The client initiates an TCP connection.</li>
+<li>The server responds with the protocol versions it supports.</li>
+<li>They agree on one.</li>
+<li>The server provides its public host key. The client can use this to see if they know/trust this host.</li>
+<li>To negotiate the symmetric encryption shared secret, the client and server use the <code>Diffie-Hellman algorithm</code>.
+
+<ul>
+<li>Both parties agree on a large prime number, the seed / public key.</li>
+<li>Both parties agree on an encryption generator (likely AES)</li>
+<li>Each party then finds another prime number. This is a &lsquo;private key&rsquo; for the duration of this interaction.</li>
+<li>The private, the public seed, and the algorithm are used to generate a key which can be shared with the other party.</li>
+<li>The recipient uses their private number, the other party&rsquo;s public key (just exchanged), and the original shared prime to compute a shared secret.</li>
+<li>This results in the same key.</li>
+</ul></li>
+</ul>
+
+<h2 id="stage-2-authenticate-the-user">Stage 2: Authenticate the user.</h2>
+
+<ul>
+<li>Password Authentication (simple)
+
+<ul>
+<li>The server asks for this user&rsquo;s password.</li>
+<li>This can be sent plaintext because the channel is encrypted.</li>
+<li>This is vulnerable to brute force attacks.</li>
+</ul></li>
+<li>SSH Key pairs
+
+<ul>
+<li>Asymmetric key pairs.</li>
+<li>Negotiated via the already secure channel.</li>
+<li>The client sends the ID of the keypair it would like to authenticate against to the server.</li>
+<li>The server checks <code>authorized_keys</code> for this ID.</li>
+<li>If the key is found, the server generates a random number and uses the public key to encrypt the number.</li>
+<li>The server sends this encrypted message to the client.</li>
+<li>If the client can, it decrypts this message.</li>
+<li>The client combines the decrypted number with the shared session key and MD5 hashes this value.</li>
+<li>The client sends this hash to the server.</li>
+<li>The server has calculated this answer independently. If the the values agree, the server knows the client has said private key, and the client is authenticated.</li>
+</ul></li>
+</ul>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a>
+      <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/">Elasticsearch Takeaways</a>
     </nav>
     
   </div>
@@ -263,14 +372,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0005-ssh-review/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
