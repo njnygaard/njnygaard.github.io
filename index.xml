@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Oct 2017 14:23:44 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 21:59:01 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wordpress TLS</title>
+      <link>https://www.nygaard.site/post/0007-wordpress-tls/</link>
+      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0007-wordpress-tls/</guid>
+      <description>Background I needed to get a Wordpress site working for my side project. The installation process is all fine and dandy, until you want to do the right thing and enforce TLS for your site. I ran in to issues with mixed-content errors. Wordpress was requesting jQuery and some CSS files over the insecure routes to my domain.
+Attempted Solutions I had a redirect block in my nginx configuration, but that did not seem to solve the issue.</description>
+    </item>
     
     <item>
       <title>LinkedIn Interview</title>

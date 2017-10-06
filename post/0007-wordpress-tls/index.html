@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>Posts &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Wordpress TLS &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/post/index.xml" />
   
 
   
@@ -112,10 +110,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/post/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -235,27 +229,125 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>Wordpress TLS</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  
-  <h2>2017</h2>
-  <ul>
-  
-    <li><time>05 Oct 2017, 21:59</time> - <a href="https://www.nygaard.site/post/0007-wordpress-tls/">Wordpress TLS</a></li>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>05 Oct 2017, 21:59</time>
+  </div>
 
   
-    <li><time>05 Oct 2017, 14:23</time> - <a href="https://www.nygaard.site/post/0006-linkedin-interview/">LinkedIn Interview</a></li>
 
   
-    <li><time>05 Oct 2017, 12:25</time> - <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a></li>
 
   
-    <li><time>17 Aug 2017, 14:34</time> - <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a></li>
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/wordpress">wordpress</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/tls">tls</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/security">security</a>
+    
+  </div>
+  
+  
+
+</div>
 
   
-  </ul>
+
+<h2 id="background">Background</h2>
+
+<p>I needed to get a Wordpress site working for my side project. The installation process is all fine and dandy, until you want to do the right thing and enforce TLS for your site. I ran in to issues with mixed-content errors. Wordpress was requesting jQuery and some CSS files over the insecure routes to my domain.</p>
+
+<h2 id="attempted-solutions">Attempted Solutions</h2>
+
+<p>I had a redirect block in my nginx configuration, but that did not seem to solve the issue. Somehow these requests circumvented the server level redirection. My guess is that I do not understand that code block as well as I should.</p>
+
+<p>I want to say that there is some issue with PHP templating files, and that the requests in templated files to <code>http://*</code> fail and do not respond to <code>301</code> redirection. Things like <code>&lt;img src=&quot;http://crap.jpg&gt;</code> just fail? Does that make sense? #ToDo</p>
+
+<p>I also tried changing the &ldquo;WordPress Address (URL)&rdquo; setting to https directly. That broke the whole site. Login would not work.</p>
+
+<p>ALSO, enabling debug logging in <code>wp-config.php</code> does not work like the internet says it does. I just couldn&rsquo;t get that to work. #ToDo</p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="replace-everything-in-wp-content-with-https">Replace everything in <code>wp-content</code> with <code>https</code></h3>
+
+<p>By this I mean recursively find every reference in the <code>wp-content</code> directory and replace it with https. This is not a great solution, but it is a chance to work on your one-handed bash skill. <em>bash increased to 12</em></p>
+
+<pre><code class="language-bash">find . -type f -iname &quot;*&quot; -exec sed -i 's/http\:\/\//https:\/\//g' &quot;{}&quot; +;
+</code></pre>
+
+<h3 id="use-this-wordpress-plugin">Use this Wordpress plugin</h3>
+
+<p><a href="https://wordpress.org/plugins/really-simple-ssl/">Really Simple SSL</a></p>
+
+<p>The impetus for the brute force replacement was the friendly warnings from this plugin. The plugin worked like a charm and I am very thankful to <a href="https://www.rogierlankhorst.com/">Rogier Lankhorst</a></p>
+
+<h3 id="key-article">Key Article</h3>
+
+<p>This was the article that led me to the solution.</p>
+
+<p><a href="https://blog.sucuri.net/2016/04/troubleshooting-mixed-content-warnings-https.html">Troubleshooting Mixed Content Warnings with HTTPS</a> by Tony Perez</p>
+
+
   
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0006-linkedin-interview/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0006-linkedin-interview/">LinkedIn Interview</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'nikhilnygaard';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
