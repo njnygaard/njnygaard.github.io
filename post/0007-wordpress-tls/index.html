@@ -275,7 +275,10 @@
 
 <p>I want to say that there is some issue with PHP templating files, and that the requests in templated files to <code>http://*</code> fail and do not respond to <code>301</code> redirection. Things like <code>&lt;img src=&quot;http://crap.jpg&gt;</code> just fail? Does that make sense? #ToDo</p>
 
-<p>I also tried changing the &ldquo;WordPress Address (URL)&rdquo; setting to https directly. That broke the whole site. Login would not work.</p>
+<p>I also tried changing the &ldquo;WordPress Address (URL)&rdquo; setting to https directly. That broke the whole site. Login would not work. To fix this, I had to modify the <code>wordpress</code> database directly. I&rsquo;m thankful that the DB is intuitively organized. The command might be useful for me later:</p>
+
+<pre><code>update wp_options set option_value=&quot;http://www.flowmojo.com&quot; where option_id=1;
+</code></pre>
 
 <p>ALSO, enabling debug logging in <code>wp-config.php</code> does not work like the internet says it does. I just couldn&rsquo;t get that to work. #ToDo</p>
 
