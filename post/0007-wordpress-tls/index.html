@@ -303,6 +303,10 @@
 
 <p><a href="https://blog.sucuri.net/2016/04/troubleshooting-mixed-content-warnings-https.html">Troubleshooting Mixed Content Warnings with HTTPS</a> by Tony Perez</p>
 
+<h2 id="update">Update</h2>
+
+<p><a href="https://serverfault.com/questions/659029/how-to-solve-nginx-reverse-proxy-mixed-contenthttp-https">This answer on ServerFault</a> backs up what I thought. Requests in templates for insecure content will just be bounced. The migration path for TLS includes editing templates. In the future, it is best to make template routes request <code>//[resource]</code> to ensure that they use the same protocol from the loading page.</p>
+
 
   
 <div class="prev-next-post pure-g">
