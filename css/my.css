@@ -23,3 +23,22 @@ code, kbd, pre, samp {
 a > code {
     color: rgba(173, 0, 0, 1);
 }
+
+.Aligner {
+  min-height: 24em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}

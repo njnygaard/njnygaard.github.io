@@ -7,9 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 17 Aug 2017 14:34:23 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloudflare</title>
+      <link>https://www.nygaard.site/tags/cloudflare/</link>
+      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://www.nygaard.site/tags/hugo/</link>
+      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interview</title>
+      <link>https://www.nygaard.site/tags/interview/</link>
+      <pubDate>Thu, 05 Oct 2017 14:23:44 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://www.nygaard.site/tags/ssh/</link>
+      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/ssh/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

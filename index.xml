@@ -34,15 +34,6 @@ What follows are notes of the responses for my edification, not necessarily how 
     </item>
     
     <item>
-      <title>Elasticsearch Takeaways</title>
-      <link>https://www.nygaard.site/post/0004-elasticsearch-takeaways/</link>
-      <pubDate>Thu, 28 Sep 2017 16:27:25 -0500</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0004-elasticsearch-takeaways/</guid>
-      <description>I&amp;rsquo;ve been using Elasticsearch for my personal project for about a year now and I am enjoying the functionality. My project has an Angular 4 frontend and a Go backend. I enjoy the alignment between TypeScript and Go and how it lets me bring static(ish) typing to the front -&amp;gt; contract -&amp;gt; back of my application. I am using olivere&amp;rsquo;s elasticsearch client to write a good portion of the data storage as well.</description>
-    </item>
-    
-    <item>
       <title>Cloudflare and Hugo</title>
       <link>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</link>
       <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
@@ -50,7 +41,7 @@ What follows are notes of the responses for my edification, not necessarily how 
       <guid>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</guid>
       <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
-
+ 
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     

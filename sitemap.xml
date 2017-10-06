@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/0004-elasticsearch-takeaways/</loc>
-    <lastmod>2017-09-28T16:27:25-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
   </url>
@@ -36,7 +31,25 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/cloudflare/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/contact/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/hugo/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/interview/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,7 +60,14 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/ssh/</loc>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
   </url>
   

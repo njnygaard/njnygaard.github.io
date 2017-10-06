@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/ssh/</link>
+    <description>Recent content in Ssh on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Oct 2017 12:25:31 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.nygaard.site/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSH Review</title>
+      <link>https://www.nygaard.site/post/0005-ssh-review/</link>
+      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0005-ssh-review/</guid>
+      <description>Detail and SSH connection Symmetrical Encryption  One key can be used to encrypt messages Alice-&amp;gt;Bob but can also be used to decrypt messages Bob-&amp;gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &amp;ldquo;Shared Secret&amp;rdquo; || &amp;ldquo;Secret Key&amp;rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm  Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.</description>
+    </item>
+    
+  </channel>
+</rss>
