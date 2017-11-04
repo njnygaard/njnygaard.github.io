@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wordpress on cat ~/differing-opinions.txt &gt; /dev/null</title>
-    <link>https://www.nygaard.site/tags/wordpress/</link>
-    <description>Recent content in Wordpress on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <title>Ec2 on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/ec2/</link>
+    <description>Recent content in Ec2 on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Sat, 04 Nov 2017 15:24:27 -0700</lastBuildDate>
     
-	<atom:link href="https://www.nygaard.site/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nygaard.site/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       
       <guid>https://www.nygaard.site/post/0008-aws-instances/</guid>
       <description>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&amp;rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</description>
-    </item>
-    
-    <item>
-      <title>Wordpress TLS</title>
-      <link>https://www.nygaard.site/post/0007-wordpress-tls/</link>
-      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0007-wordpress-tls/</guid>
-      <description>Background I needed to get a Wordpress site working for my side project. The installation process is all fine and dandy, until you want to do the right thing and enforce TLS for your site. I ran in to issues with mixed-content errors. Wordpress was requesting jQuery and some CSS files over the insecure routes to my domain.
-Attempted Solutions I had a redirect block in my nginx configuration, but that did not seem to solve the issue.</description>
     </item>
     
   </channel>

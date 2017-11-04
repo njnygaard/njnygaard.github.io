@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0008-aws-instances/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0007-wordpress-tls/</loc>
     <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0006-linkedin-interview/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
   </url>
   
   <url>
@@ -31,6 +41,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/aws/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/cloudflare/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
@@ -42,14 +58,26 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/ec2/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/hugo/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/interview/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -67,7 +95,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,13 +112,13 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/wordpress/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
