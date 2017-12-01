@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>AWS Instance Resiliency &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>I3 &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,6 +36,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
+  
+  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/i3/index.xml" />
   
 
   
@@ -110,6 +112,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://www.nygaard.site/tags/i3/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -229,16 +235,20 @@
 
 
 <div class="header">
-  <h1>AWS Instance Resiliency</h1>
-  <h2></h2>
+  <h1>I3</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Nov 2017, 15:24</time>
+    <time>01 Dec 2017, 12:25</time>
   </div>
 
   
@@ -251,11 +261,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/wordpress">wordpress</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/aws">aws</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/i3">i3</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ec2">ec2</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ubuntu">ubuntu</a>
     
   </div>
   
@@ -263,66 +273,20 @@
 
 </div>
 
-  <p>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</p>
+  </header>
 
-<p>This blows my mind. I have nginx and wordpress installed on this machine, both of which are ostensibly started with systemd commands. Not only was all the data intact, but all the services were started when I switched the instance size from <code>t2.medium</code> to <code>t2.nano</code>. There was effectively no service interruption for my business site.</p>
-
-<p>I&rsquo;m not going to go in to an analysis now of how this was actually accomplished by AWS. Mostly, writing this stuff down solidifies the thought in my head. Welcome to the future indeed.</p>
-
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://www.nygaard.site/post/0007-wordpress-tls/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://www.nygaard.site/post/0007-wordpress-tls/">Wordpress TLS</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0010-running-i3/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <p>
+  I wanted to switch to i3, a tiling window manager. There are some things that are better, and some things that I miss. I run Ubuntu 16.04 LTS and Unity provides a lot of functionality that makes using the computer effortless. The motivation for using i3 is that, while developing, I end up tiling all my windows in separate workspaces anyways. It seems like the natural functionality of i3 better fits my use-case.
+  </p>
 
   
-<div id="disqus_thread"></div>
-<script type="text/javascript">
+  <footer>
+    <a href="https://www.nygaard.site/post/0010-running-i3/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'nygaard';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  
 </div>
 
 </div>
@@ -345,4 +309,3 @@
 
 </body>
 </html>
-

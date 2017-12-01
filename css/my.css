@@ -24,6 +24,10 @@ a > code {
     color: rgba(173, 0, 0, 1);
 }
 
+a {
+  color: #00aaff;
+}
+
 .Aligner {
   min-height: 24em;
   display: flex;

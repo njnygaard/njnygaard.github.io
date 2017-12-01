@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 04 Nov 2017 15:24:27 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 12:25:59 -0800</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Running I3</title>
+      <link>https://www.nygaard.site/post/0010-running-i3/</link>
+      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0010-running-i3/</guid>
+      <description>I wanted to switch to i3, a tiling window manager. There are some things that are better, and some things that I miss. I run Ubuntu 16.04 LTS and Unity provides a lot of functionality that makes using the computer effortless. The motivation for using i3 is that, while developing, I end up tiling all my windows in separate workspaces anyways. It seems like the natural functionality of i3 better fits my use-case.</description>
+    </item>
     
     <item>
       <title>AWS Instance Resiliency</title>
