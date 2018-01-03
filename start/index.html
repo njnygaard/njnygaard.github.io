@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> 
+<style>
+
+body, html {
+  height: 100%;
+  display: grid;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2em;
+  color: white;
+}
+span {
+  margin: auto;
+}
+</style>
+</head>
+<body>
+	<span id="datetime"></span>
+
+</body>
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+
+var body = document.getElementsByTagName("body");
+body[0].style.backgroundColor = "#191818";
+</script>
+
+</html>
+
+
+
+

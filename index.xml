@@ -91,5 +91,14 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       <description>There&amp;rsquo;s a bunch of ways listed in the sidebar over there.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://www.nygaard.site/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.nygaard.site/start/</guid>
+      <description>    body, html { height: 100%; display: grid; font-family: &#39;Roboto Mono&#39;, monospace; font-size: 2em; color: white; } span { margin: auto; }     I&#39;m centered!  --   var dt = new Date(); document.getElementById(&#34;datetime&#34;).innerHTML = ((&#34;0&#34;+dt.getDate()).slice(-2)) +&#34;.&#34;+ ((&#34;0&#34;+(dt.getMonth()+1)).slice(-2)) +&#34;.&#34;+ (dt.getFullYear()) +&#34; &#34;+ ((&#34;0&#34;+dt.getHours()).slice(-2)) +&#34;:&#34;+ ((&#34;0&#34;+dt.getMinutes()).slice(-2)); var body = document.getElementsByTagName(&#34;body&#34;); body[0].style.backgroundColor = &#34;#191818&#34;;   </description>
+    </item>
+    
   </channel>
 </rss>
