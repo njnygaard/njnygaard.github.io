@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0011-new-years/</loc>
+    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0010-running-i3/</loc>
     <lastmod>2017-12-01T12:25:59-08:00</lastmod>
   </url>
@@ -98,7 +103,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2017-12-01T12:25:59-08:00</lastmod>
+    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,8 +154,14 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/writing/</loc>
+    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2017-12-01T12:25:59-08:00</lastmod>
+    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
     <priority>0</priority>
   </url>
   
