@@ -282,11 +282,24 @@
 
 <p>After the Zap is created, Zapier will call it every 15 minutes on behalf of the user. The Zap is an &lsquo;instance&rsquo; of the Zapier Application you created for your users and this instance is provided with the necessary credentials to act on behalf of one of your users.</p>
 
+<p>Stolen and Searched/Replaced from <a href="https://ory.gitbooks.io/hydra/content/oauth2.html#overview">Hydra Gitbook</a>:
+&gt;Examples:
+1. Peter wants to give Zapier access to his FlowMojo. Peter is the resource owner.
+2. The Authorization Server (Hydra) is responsible for managing the access request for Zapier. Hydra handles the communication between the resource owner, the consent endpoint, and the client. Hydra is the authorization server. In this case, FlowMojo would be the one who uses Hydra.
+3. Zapier is the client and was issued an id and a password by Hydra. Zapier uses these credentials to talk with Hydra.
+4. FlowMojo has a database and a frontend that allow their users to login, using their username and password. This is what an Identity Provider does.
+5. The User Agent is Peter&rsquo;s FireFox.
+6. The Consent App is a frontend app that asks the user if he is willing to give Zapier access to his pictures stored on FlowMojo. It is responsible to tell Hydra if the user accepted or rejected the request by Zapier. The Consent App uses the Identity Provider to authenticate peter, for example by using cookies or presenting a user/password login view.</p>
+
 <h2 id="choices">Choices</h2>
 
 <p>There are a ton, but given that the original author of OAuth <a href="https://hueniverse.com/auth-to-see-the-wizard-4a7c3572f618">wants nothing to do with</a> it and has said that <a href="https://hueniverse.com/oauth-2-0-and-the-road-to-hell-8eec45921529">it is a bad protocol</a>, I don&rsquo;t want to put my brain power in to learning the internals. I don&rsquo;t think OAuth2 is going away, but the points he made lead me to belive that I am not really capable of making a secure implementation within the time I&rsquo;ve given myself for this feature. I need to favor functionality over exploration on this one.</p>
 
 <p>I am going to go with <a href="https://github.com/ory/hydra">Hydra</a>. This is a standalone service that I can run as a docker container on the local instance. This brings up concurrency concerns were we to scale to multiple instances, but I envision containerizing the app itself and introducing service discovery before that happens. Hydra will just be another friend in the swarm in the future.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>I&rsquo;ve left off <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">here</a> for the night.</p>
 
 
   
