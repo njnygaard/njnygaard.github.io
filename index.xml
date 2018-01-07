@@ -18,7 +18,9 @@
       <pubDate>Sun, 07 Jan 2018 11:00:26 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0013-deploying-hydra/</guid>
-      <description>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.</description>
+      <description>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.
+As of writing, the latest Hydra image is v0.10.10. I will be using that for the tutorial.
+Compressed Steps (mac) I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</description>
     </item>
     
     <item>
