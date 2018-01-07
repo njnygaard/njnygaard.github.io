@@ -299,7 +299,29 @@
 
 <h2 id="implementation">Implementation</h2>
 
+<h2 id="current-status">Current Status</h2>
+
 <p>I&rsquo;ve left off <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">here</a> for the night.</p>
+
+<p>I got the sample of Hydra working on my local computer. The 5 minute example where you spin up the 3 docker containers that hydra needs. It spins up Hydra, Postgres, and a Node app. <strong>Note:</strong> Docker will just take command of port 3000 even though I have <code>realize</code> running on that port already. I didn&rsquo;t know you could do that.</p>
+
+<pre><code>CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS              PORTS                              NAMES
+8fe55ed3232e        oryd/hydra-consent-app-express:v0.10.0-alpha.7   &quot;/bin/sh -c 'npm s...&quot;   2 hours ago         Up 2 hours          0.0.0.0:3000-&gt;3000/tcp             hydra_consent_1
+38f89d808743        hydra_hydra                                      &quot;hydra host --dang...&quot;   2 hours ago         Up 2 hours          0.0.0.0:4444-4445-&gt;4444-4445/tcp   hydra_hydra_1
+9b1416974016        postgres:9.6                                     &quot;docker-entrypoint...&quot;   2 hours ago         Up 2 hours          0.0.0.0:5432-&gt;5432/tcp             hydra_postgresd_1
+</code></pre>
+
+<blockquote>
+<p>The bindings that the tutorial took.</p>
+</blockquote>
+
+<p>For the next step, I need to get the consent app to be FlowMojo, and the database to be our database. Seems actually pretty straightforward (- Man who was stabbed).</p>
+
+<p><a href="stabbed.png">
+<div class="pure-u-1-1">
+  <img class="pure-img" src="stabbed.png" alt="stabbed">
+</div>
+</a></p>
 
 
   
