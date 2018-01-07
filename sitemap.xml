@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0013-deploying-hydra/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0012-oauth/</loc>
     <lastmod>2018-01-06T14:38:38-08:00</lastmod>
   </url>
@@ -108,7 +113,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-01-06T14:38:38-08:00</lastmod>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -166,7 +171,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-01-06T14:38:38-08:00</lastmod>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
     <priority>0</priority>
   </url>
   
