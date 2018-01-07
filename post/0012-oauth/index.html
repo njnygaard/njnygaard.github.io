@@ -268,7 +268,19 @@
 
 </div>
 
-  <p>I need to figure out how to implement OAuth.</p>
+  
+
+<h2 id="goal">Goal</h2>
+
+<p>Implement both halves of OAuth in 2 weeks.</p>
+
+<h2 id="background">Background</h2>
+
+<p>To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created.</p>
+
+<p>When your user decides to make a Zap that involves your application, they will have to login to your App. Of course! At this point, Zapier will redirect the user to your site and you should ideally return valid OAuth2 credentials. After that has been completed, Zapier will store the Access and Refresh tokens in the Application&rsquo;s environment for that user, allowing subsequent requests to complete.</p>
+
+<p>After the Zap is created, Zapier will call it every 15 minutes on behalf of the user. The Zap is an &lsquo;instance&rsquo; of the Zapier Application you created for your users and this instance is provided with the necessary credentials to act on behalf of one of your users.</p>
 
 
   

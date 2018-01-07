@@ -18,7 +18,9 @@
       <pubDate>Sat, 06 Jan 2018 14:38:38 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0012-oauth/</guid>
-      <description>I need to figure out how to implement OAuth.</description>
+      <description>Goal Implement both halves of OAuth in 2 weeks.
+Background To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &amp;lsquo;Zap&amp;rsquo; with the Zapier Application you created.
+When your user decides to make a Zap that involves your application, they will have to login to your App.</description>
     </item>
     
     <item>
