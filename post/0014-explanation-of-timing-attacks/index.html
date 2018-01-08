@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Aws &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Explanation of Timing Attacks &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/aws/index.xml" />
   
 
   
@@ -122,10 +120,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/aws/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -251,20 +245,16 @@
 
 
 <div class="header">
-  <h1>Aws</h1>
+  <h1>Explanation of Timing Attacks</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0008-aws-instances/">AWS Instance Resiliency</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Nov 2017, 15:24</time>
+    <time>08 Jan 2018, 07:40</time>
   </div>
 
   
@@ -273,36 +263,73 @@
 
   
   
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/wordpress">wordpress</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/aws">aws</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ec2">ec2</a>
-    
-  </div>
   
   
 
 </div>
 
-  </header>
+  <blockquote>
+<p>Let&rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&rdquo;.</p>
 
-  <p>
-  I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.
-  </p>
+<p>They load up the boss&rsquo; calendar to check and based on his presence next week then load up your info.</p>
+
+<p>Only once done, do they take the time to remember the boss didn&rsquo;t want you to know wether they are in or out. So you hear back, &ldquo;sorry, can&rsquo;t tell you that&rdquo;.</p>
+
+<p>But now you follow up with &ldquo;OK, well can you still double check that my phone number is&hellip;&rdquo;</p>
+
+<p>If they respond quickly with a yes, then your file is still on their screen and the boss is in fact out next week. If there is a short pause while they look it up, then the opposite.</p>
+</blockquote>
+
+<p><a href="https://news.ycombinator.com/item?id=16075446">source</a></p>
+
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0008-aws-instances/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0013-deploying-hydra/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0013-deploying-hydra/">Deploying Hydra</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
 
   
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'nygaard';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -327,3 +354,4 @@
 
 </body>
 </html>
+
