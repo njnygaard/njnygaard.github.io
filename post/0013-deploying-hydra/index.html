@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>First Post &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Deploying Hydra &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -48,6 +48,10 @@
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
 
   
+    <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
+  
+  
+    <script src="https://www.nygaard.site/js/my.js"></script>
   
 
 </head>
@@ -91,6 +95,18 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/start/"><i class='fa fa-terminal fa-fw'></i>Start Page</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
       
         </li>
       
@@ -204,7 +220,7 @@
 
   <div>
   <div class="small-print">
-    <small>&copy; 2017. All rights reserved.</small>
+    <small>&copy; 2018. All rights reserved.</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -219,7 +235,7 @@
 
 
 <div class="header">
-  <h1>First Post</h1>
+  <h1>Deploying Hydra</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -228,7 +244,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Oct 2017, 22:48</time>
+    <time>07 Jan 2018, 11:00</time>
   </div>
 
   
@@ -236,23 +252,55 @@
   
 
   
+  
+  
+  
 
 </div>
 
-  <p>Just testing out Hugo new site configuration. I liked Blackburn. I really want it to work.</p>
+  
+
+<p>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.</p>
+
+<p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
+
+<h2 id="compressed-steps-mac">Compressed Steps (mac)</h2>
+
+<p>I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</p>
+
+<pre><code class="language-bash">echo &quot;create database hydra&quot; | mysql -uroot -proot
+
+docker run -it --rm \
+  oryd/hydra:v0.10.10 \
+  migrate sql mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true
+
+docker run -d \
+  --name ory-hydra-example--hydra \
+  -p 9009:4444 \
+  -e SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C \
+  -e DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true \
+  -e ISSUER=https://localhost:9009/ \
+  -e CONSENT_URL=http://localhost:9020/consent \
+  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \
+  oryd/hydra:v0.10.10
+</code></pre>
+
+<p>This seems to work, but my linux box is missing a monitor now. Full discussion to come.</p>
+
+<p>Monitor replaced!</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0012-oauth/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/">Elasticsearch Takeaways</a>
+      <a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a>
     </nav>
     
   </div>
@@ -261,8 +309,14 @@
   </div>
   <div class="pure-u-10-24">
     
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/">Explanation of Timing Attacks</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -280,7 +334,7 @@
         return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'nikhilnygaard';
+    var disqus_shortname = 'nygaard';
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();

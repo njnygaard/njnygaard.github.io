@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>Go &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>New Years &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/go/index.xml" />
   
 
   
@@ -102,6 +100,12 @@
       
       
         <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/start/"><i class='fa fa-terminal fa-fw'></i>Start Page</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
       
         </li>
@@ -112,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/go/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -220,7 +220,7 @@
 
   <div>
   <div class="small-print">
-    <small>&copy; 2017. All rights reserved.</small>
+    <small>&copy; 2018. All rights reserved.</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -235,20 +235,16 @@
 
 
 <div class="header">
-  <h1>Go</h1>
+  <h1>New Years</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0009-testing-mysql-with-go/">Testing Mysql With Go</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Nov 2017, 04:43</time>
+    <time>03 Jan 2018, 15:08</time>
   </div>
 
   
@@ -261,11 +257,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/mysql">mysql</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/testing">testing</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/writing">writing</a>
     
   </div>
   
@@ -273,21 +265,68 @@
 
 </div>
 
-  </header>
+  <p>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The <a href="https://gitlab.com/droneprime/njnygaard">GitLab repo</a> contains the Hugo project and the theme <a href="https://themes.gohugo.io/blackburn/">Blackburn</a>. The <a href="https://github.com/njnygaard/njnygaard.github.io">GitHub repo</a> is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</p>
 
-  <p>
-  I wanted to test my application and I realized that it wasn&rsquo;t organized in a testable fashion. My main function did a bunch of environment configuration that I couldn&rsquo;t replicate in my tests. Stuff like configure clients for Elasticsearch, Redis, SendGrid, and most importantly, MySQL.
-I use MySQL to store my user credentials, organizations (user groups), and roles. As an aside, organizations are separate entities, and roles are relations between users and organizations.
-  </p>
+<p>I use CloudFlare for DNS and I purchased my domain via NameCheap. I&rsquo;m really happy with this setup because Hugo is written in Go and potentially hackable, and it consumes MarkDown which is my favorite thing ever.</p>
 
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0009-testing-mysql-with-go/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<p>The goal of the resolution is to contribute to other repos, not just this echo chamber crap. I figure it is useful to write everyday about something technical, so that will be the bar that I set. Hopefully this pushes me to make some other public contributions.</p>
+
+<p>Maybe I&rsquo;ll just edit this post when I need some random contribution for the day?</p>
+
 
   
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0010-running-i3/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0012-oauth/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'nygaard';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -310,3 +349,4 @@ I use MySQL to store my user credentials, organizations (user groups), and roles
 
 </body>
 </html>
+

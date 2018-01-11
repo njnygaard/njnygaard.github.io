@@ -6,11 +6,53 @@
     <description>Recent content on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Dec 2017 12:25:59 -0800</lastBuildDate>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 08 Jan 2018 07:40:43 -0800</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Explanation of Timing Attacks</title>
+      <link>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</link>
+      <pubDate>Mon, 08 Jan 2018 07:40:43 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
+      <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
+They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
+Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
+    </item>
+    
+    <item>
+      <title>Deploying Hydra</title>
+      <link>https://www.nygaard.site/post/0013-deploying-hydra/</link>
+      <pubDate>Sun, 07 Jan 2018 11:00:26 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0013-deploying-hydra/</guid>
+      <description>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.
+As of writing, the latest Hydra image is v0.10.10. I will be using that for the tutorial.
+Compressed Steps (mac) I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</description>
+    </item>
+    
+    <item>
+      <title>OAuth</title>
+      <link>https://www.nygaard.site/post/0012-oauth/</link>
+      <pubDate>Sat, 06 Jan 2018 14:38:38 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0012-oauth/</guid>
+      <description>Goal Implement both halves of OAuth in 2 weeks.
+Background To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &amp;lsquo;Zap&amp;rsquo; with the Zapier Application you created.
+When your user decides to make a Zap that involves your application, they will have to login to your App.</description>
+    </item>
+    
+    <item>
+      <title>New Years</title>
+      <link>https://www.nygaard.site/post/0011-new-years/</link>
+      <pubDate>Wed, 03 Jan 2018 15:08:52 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0011-new-years/</guid>
+      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
+    </item>
     
     <item>
       <title>Running I3</title>
@@ -79,7 +121,7 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.nygaard.site/about/</guid>
-      <description>#GOAT Or something like that.</description>
+      <description>About face.</description>
     </item>
     
     <item>
@@ -89,6 +131,15 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       
       <guid>https://www.nygaard.site/contact/</guid>
       <description>There&amp;rsquo;s a bunch of ways listed in the sidebar over there.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.nygaard.site/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.nygaard.site/start/</guid>
+      <description>    body, html { height: 99%; display: grid; font-family: &#39;Roboto Mono&#39;, monospace; font-size: 2em; color: white; } span, div { margin: auto; }        --     var dt = new Date(); document.getElementById(&#34;datetime&#34;).innerHTML = ((&#34;0&#34;+dt.getDate()).slice(-2)) +&#34;.&#34;+ ((&#34;0&#34;+(dt.getMonth()+1)).slice(-2)) +&#34;.&#34;+ (dt.getFullYear()) +&#34; &#34;+ ((&#34;0&#34;+dt.getHours()).slice(-2)) +&#34;:&#34;+ ((&#34;0&#34;+dt.getMinutes()).slice(-2)); var body = document.getElementsByTagName(&#34;body&#34;); body[0].style.backgroundColor = &#34;#191818&#34;; function setFocusToTextBox(){ document.getElementById(&#34;searchbox&#34;).focus(); } setTimeout(setFocusToTextBox, 200)   </description>
     </item>
     
   </channel>

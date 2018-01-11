@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30-DEV" />
 
-  <title>LinkedIn Interview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>OAuth &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -235,7 +235,7 @@
 
 
 <div class="header">
-  <h1>LinkedIn Interview</h1>
+  <h1>OAuth</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -244,7 +244,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Oct 2017, 14:23</time>
+    <time>06 Jan 2018, 14:38</time>
   </div>
 
   
@@ -253,86 +253,85 @@
 
   
   
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/interview">interview</a>
-    
-  </div>
   
   
 
 </div>
 
-  <p>I interviewed today with LinkedIn and <!--[Karrick McDermott][1]--> <code>[REDACTED]</code>. He was intimidatingly knowledgeable and described a work environment that I really hope to join. I hope that I have the skill set necessary.</p>
+  
 
-<p>What follows are notes of the responses for my edification, not necessarily how I answered.</p>
+<h2 id="goal">Goal</h2>
+
+<p>Implement both halves of OAuth in 2 weeks.</p>
+
+<h2 id="background">Background</h2>
+
+<p>To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created.</p>
+
+<p>When your user decides to make a Zap that involves your application, they will have to login to your App. Of course! At this point, Zapier will redirect the user to your site and you should ideally return valid OAuth2 credentials. After that has been completed, Zapier will store the Access and Refresh tokens in the Application&rsquo;s environment for that user, allowing subsequent requests to complete.</p>
+
+<p>After the Zap is created, Zapier will call it every 15 minutes on behalf of the user. The Zap is an &lsquo;instance&rsquo; of the Zapier Application you created for your users and this instance is provided with the necessary credentials to act on behalf of one of your users.</p>
+
+<p>Stolen and Searched/Replaced from <a href="https://ory.gitbooks.io/hydra/content/oauth2.html#overview">Hydra Gitbook</a>:
+&gt;Examples:
+1. Peter wants to give Zapier access to his FlowMojo. Peter is the resource owner.
+2. The Authorization Server (Hydra) is responsible for managing the access request for Zapier. Hydra handles the communication between the resource owner, the consent endpoint, and the client. Hydra is the authorization server. In this case, FlowMojo would be the one who uses Hydra.
+3. Zapier is the client and was issued an id and a password by Hydra. Zapier uses these credentials to talk with Hydra.
+4. FlowMojo has a database and a frontend that allow their users to login, using their username and password. This is what an Identity Provider does.
+5. The User Agent is Peter&rsquo;s FireFox.
+6. The Consent App is a frontend app that asks the user if he is willing to give Zapier access to his pictures stored on FlowMojo. It is responsible to tell Hydra if the user accepted or rejected the request by Zapier. The Consent App uses the Identity Provider to authenticate peter, for example by using cookies or presenting a user/password login view.</p>
+
+<h2 id="choices">Choices</h2>
+
+<p>There are a ton, but given that the original author of OAuth <a href="https://hueniverse.com/auth-to-see-the-wizard-4a7c3572f618">wants nothing to do with</a> it and has said that <a href="https://hueniverse.com/oauth-2-0-and-the-road-to-hell-8eec45921529">it is a bad protocol</a>, I don&rsquo;t want to put my brain power in to learning the internals. I don&rsquo;t think OAuth2 is going away, but the points he made lead me to belive that I am not really capable of making a secure implementation within the time I&rsquo;ve given myself for this feature. I need to favor functionality over exploration on this one.</p>
+
+<p>I am going to go with <a href="https://github.com/ory/hydra">Hydra</a>. This is a standalone service that I can run as a docker container on the local instance. This brings up concurrency concerns were we to scale to multiple instances, but I envision containerizing the app itself and introducing service discovery before that happens. Hydra will just be another friend in the swarm in the future.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<h2 id="current-status">Current Status</h2>
+
+<p>I&rsquo;ve left off <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">here</a> for the night.</p>
+
+<p>I got the sample of Hydra working on my local computer. The 5 minute example where you spin up the 3 docker containers that hydra needs. It spins up Hydra, Postgres, and a Node app. <strong>Note:</strong> Docker will just take command of port 3000 even though I have <code>realize</code> running on that port already. I didn&rsquo;t know you could do that.</p>
+
+<pre><code>CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS              PORTS                              NAMES
+8fe55ed3232e        oryd/hydra-consent-app-express:v0.10.0-alpha.7   &quot;/bin/sh -c 'npm s...&quot;   2 hours ago         Up 2 hours          0.0.0.0:3000-&gt;3000/tcp             hydra_consent_1
+38f89d808743        hydra_hydra                                      &quot;hydra host --dang...&quot;   2 hours ago         Up 2 hours          0.0.0.0:4444-4445-&gt;4444-4445/tcp   hydra_hydra_1
+9b1416974016        postgres:9.6                                     &quot;docker-entrypoint...&quot;   2 hours ago         Up 2 hours          0.0.0.0:5432-&gt;5432/tcp             hydra_postgresd_1
+</code></pre>
 
 <blockquote>
-<p>Describe what happens when we type <code>ssh shell.linkedin.com</code> and hit enter.</p>
+<p>The bindings that the tutorial took.</p>
 </blockquote>
 
-<ul>
-<li>When you hit enter, your shell gets the string you entered on the command line. In this case, we send the string to bash.</li>
-<li>Bash will parse the string for whitespace and take <code>arg[0]</code> as the name of the executable you intend to execute.</li>
-<li>It will lookup said executable in several locations:
+<p>For the next step, I need to get the consent app to be FlowMojo, and the database to be our database. Seems actually pretty straightforward (- Man who was stabbed).</p>
 
-<ul>
-<li>builtins</li>
-<li>functions</li>
-<li>aliases</li>
-<li><code>$PATH</code></li>
-</ul></li>
-<li>As an aside: Why must <code>cd</code> be a &ldquo;builtin&rdquo;?
+<p><a href="stabbed.png">
+<div class="pure-u-1-1">
+  <img class="pure-img" src="stabbed.png" alt="stabbed">
+</div>
+</a></p>
 
-<ul>
-<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process&rsquo;s environment unchanged.</li>
-</ul></li>
-<li>Once it finds what you mean by that <code>arg[0]</code>, it will <code>fork</code> and call the executable you intend to run.</li>
-<li>Now <code>ssh</code> gets that list of arguments can use something like <code>getopts</code> to parse meaning out of that.</li>
-<li>Assuming that the argument parsing went well, we can now try to resolve the hostname that <code>ssh</code> has been passed.</li>
-<li>This involves looking in <code>/etc/hosts</code> for matching hostname:ip pairs, or failing that, will read <code>resolve.conf</code> to find a DNS server to execute a recursive DNS lookup.</li>
-<li>This is likely encapsulated in a syscall to the kernel. DNS resolution happens over UDP.</li>
-<li>Once you have the IP, you can then establish a TCP connection to the server on port 22 (magic number).</li>
-<li>After the TCP connection is established, you can look here for the <a href="../0005-ssh-review/">SSH Review</a></li>
-</ul>
-
-<blockquote>
-<p>You have a system where 10000 clients need to access 10GB of information from a server. The data changes a few sectors a day.</p>
-</blockquote>
-
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Rsync"><code>rsync</code></a> is the key to this question. With <code>rsync</code>, you can establish a connection to a remote server and synchronize files over the connection, sending only what needs to be sent.</li>
-<li>Karrick shared with me a utility he discovered in the interview process, <a href="https://github.com/addthis/ssync"><code>ssync</code></a>, which solves the distributed portion of this challenge too.</li>
-<li>Without <code>ssync</code>, you will run in to the issue that when a change happens on the server, all the clients are notified. This will cause a bottleneck at the server.</li>
-<li>To mitigate this, you can setup a self-similar hierarchy whereby the server has 10 nodes it broadcasts to and those nodes synchronize files with it. Each of those nodes in-turn has 10 nodes. Once the files are synchronized to any level, the next level will get a notification.</li>
-</ul>
-
-<blockquote>
-<p>You just inherited a software system that has no metrics. Describe what you do in the first quarter to allow you to sleep at night.</p>
-</blockquote>
-
-<ul>
-<li>Firstly, I would get a trial of SignalFX, because it is the only platform of this kind that I know.</li>
-<li>SignalFX has a fork of <code>collectd</code> that it uses to gather information from nodes.</li>
-<li>Giving SignalFX your AWS credentials will allow it to identify all the hosts that you run. EC2, RDS, other things.</li>
-<li>Once that data is in SignalFX, you can begin to create dashboards and setup alerts.</li>
-<li>Those alerts can be piped to PagerDudy or Karrick&rsquo;s recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
-</ul>
+<p>Tomorrow:
+- Get just Hydra running and connect it to your local DB
+    + Make sure that you can statefully see things it creates in the local DB
+    + It is very likely that you will have to start all three containers and just kill the postgres one or something
+- Get Hydra deployed as a docker container in the cloud ec2 and make sure it does the same thing
+- Replace the node app container with flowmojo as the consent application</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0005-ssh-review/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0011-new-years/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a>
+      <a href="https://www.nygaard.site/post/0011-new-years/">New Years</a>
     </nav>
     
   </div>
@@ -342,13 +341,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://www.nygaard.site/post/0007-wordpress-tls/">Wordpress TLS</a>
+      <a href="https://www.nygaard.site/post/0013-deploying-hydra/">Deploying Hydra</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://www.nygaard.site/post/0007-wordpress-tls/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://www.nygaard.site/post/0013-deploying-hydra/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
