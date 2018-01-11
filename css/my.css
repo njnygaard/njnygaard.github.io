@@ -46,8 +46,3 @@ a {
 .Aligner-item--bottom {
   align-self: flex-end;
 }
-
-.pure-img {
-    display:block;
-    margin:auto;
-}
