@@ -5,9 +5,9 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.30-DEV" />
+  <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>First Post &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>New Years &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -45,11 +45,19 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-  <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.nygaard.site/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.nygaard.site/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.nygaard.site/img/favicon-16x16.png">
+<link rel="manifest" href="https://www.nygaard.site/img/manifest.json">
+<link rel="mask-icon" href="https://www.nygaard.site/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
 
   
+    <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
   
-
+  
+    <script src="https://www.nygaard.site/js/my.js"></script>
+  
 </head>
 
 
@@ -91,6 +99,18 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/start/"><i class='fa fa-terminal fa-fw'></i>Start Page</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
       
         </li>
       
@@ -191,6 +211,12 @@
     
 
     
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://pod.disroot.org/people/69f62780d2f5013599ef3a6137633966" target="_blank"><i class="fa fa-asterisk fa-fw"></i>Diaspora</a>
+    </li>
+    
+
+    
 
     
     <li class="pure-menu-item">
@@ -204,7 +230,7 @@
 
   <div>
   <div class="small-print">
-    <small>&copy; 2017. All rights reserved.</small>
+    <small>&copy; 2018. All rights reserved.</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -219,7 +245,7 @@
 
 
 <div class="header">
-  <h1>First Post</h1>
+  <h1>New Years</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -228,7 +254,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Oct 2017, 22:48</time>
+    <time>03 Jan 2018, 15:08</time>
   </div>
 
   
@@ -236,23 +262,39 @@
   
 
   
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/writing">writing</a>
+    
+  </div>
+  
+  
 
 </div>
 
-  <p>Just testing out Hugo new site configuration. I liked Blackburn. I really want it to work.</p>
+  <p>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The <a href="https://gitlab.com/droneprime/njnygaard">GitLab repo</a> contains the Hugo project and the theme <a href="https://themes.gohugo.io/blackburn/">Blackburn</a>. The <a href="https://github.com/njnygaard/njnygaard.github.io">GitHub repo</a> is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</p>
+
+<p>I use CloudFlare for DNS and I purchased my domain via NameCheap. I&rsquo;m really happy with this setup because Hugo is written in Go and potentially hackable, and it consumes MarkDown which is my favorite thing ever.</p>
+
+<p>The goal of the resolution is to contribute to other repos, not just this echo chamber crap. I figure it is useful to write everyday about something technical, so that will be the bar that I set. Hopefully this pushes me to make some other public contributions.</p>
+
+<p>Maybe I&rsquo;ll just edit this post when I need some random contribution for the day?</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0010-running-i3/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0004-elasticsearch-takeaways/">Elasticsearch Takeaways</a>
+      <a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a>
     </nav>
     
   </div>
@@ -261,8 +303,14 @@
   </div>
   <div class="pure-u-10-24">
     
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0012-oauth/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -280,7 +328,7 @@
         return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'nikhilnygaard';
+    var disqus_shortname = 'nygaard';
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
@@ -306,6 +354,8 @@
   ga('send', 'pageview');
 
 </script>
+
+
 
 
 
