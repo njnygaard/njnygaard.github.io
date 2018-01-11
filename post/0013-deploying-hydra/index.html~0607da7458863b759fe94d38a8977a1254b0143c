@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Aws &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Deploying Hydra &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/aws/index.xml" />
   
 
   
@@ -122,10 +120,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/aws/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -251,20 +245,16 @@
 
 
 <div class="header">
-  <h1>Aws</h1>
+  <h1>Deploying Hydra</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0008-aws-instances/">AWS Instance Resiliency</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Nov 2017, 15:24</time>
+    <time>07 Jan 2018, 11:00</time>
   </div>
 
   
@@ -273,36 +263,94 @@
 
   
   
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/wordpress">wordpress</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/aws">aws</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ec2">ec2</a>
-    
-  </div>
   
   
 
 </div>
 
-  </header>
+  
 
-  <p>
-  I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.
-  </p>
+<p>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.</p>
+
+<p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
+
+<h2 id="compressed-steps-mac">Compressed Steps (mac)</h2>
+
+<p>I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</p>
+
+<pre><code class="language-bash">echo &quot;create database hydra&quot; | mysql -uroot -proot
+
+docker run -it --rm \
+  oryd/hydra:v0.10.10 \
+  migrate sql mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true
+
+docker run -d \
+  --name ory-hydra-example--hydra \
+  -p 9009:4444 \
+  -e SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C \
+  -e DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true \
+  -e ISSUER=https://localhost:9009/ \
+  -e CONSENT_URL=http://localhost:9020/consent \
+  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \
+  oryd/hydra:v0.10.10
+</code></pre>
+
+<p>This seems to work, but my linux box is missing a monitor now. Full discussion to come.</p>
+
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0008-aws-instances/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0012-oauth/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/">Explanation of Timing Attacks</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
 
   
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'nygaard';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -327,3 +375,4 @@
 
 </body>
 </html>
+
