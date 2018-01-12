@@ -274,6 +274,23 @@
 
 <p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
 
+<p>This is a target diagram for the hydra flow. <a href="https://www.ory.am/run-oauth2-server-open-source-api-security">Source</a>.</p>
+
+<p><a href="hydra-consent-flow.png">
+<div class="pure-u-1-1">
+  <img class="pure-img" src="hydra-consent-flow.png" alt="Hydra Consent Flow">
+</div>
+</a></p>
+
+<p><a href="https://github.com/ory/hydra/issues/405">https://github.com/ory/hydra/issues/405</a>
+Flow control using curl
+curl -s -k -X POST <br />
+        -H &ldquo;Content-Type: application/x-www-form-urlencoded&rdquo; <br />
+        -d grant_type=client_credentials <br />
+        -d scope=hydra <br />
+        -u &lsquo;admin:demo-password&rsquo; <br />
+        <a href="https://localhost:9000/oauth2/token">https://localhost:9000/oauth2/token</a> | jq .</p>
+
 <h2 id="compressed-steps-mac">Compressed Steps (mac)</h2>
 
 <p>I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</p>
@@ -295,132 +312,88 @@ docker run -d \
   oryd/hydra:v0.10.10
 </code></pre>
 
-<p>This seems to work, but my linux box is missing a monitor now. Full discussion to come.</p>
+<p>This works for the local installation which will get the test environment working. But this is not even close to what I need to get it to work in a production environment. I have all kinds of ports to consider.</p>
 
-<h2 id="install-configure-and-run-ory-hydra">Install, Configure and Run ORY Hydra</h2>
+<h2 id="ansible-flow">Ansible Flow</h2>
 
-<h3 id="create-a-network">Create a network</h3>
+<p>I don&rsquo;t want to document all the steps because the playbook is long. I&rsquo;ll list the high level infrastructure steps here:</p>
 
-<p>I didn&rsquo;t do this part because I want to use the host&rsquo;s network.</p>
+<ul>
+<li>Create Hydra Database
 
-<h3 id="start-a-postgresql-container">Start a PostgreSQL container</h3>
+<ul>
+<li>You have to create a database in your DB of choice so Hydra can save its data between startups.</li>
+</ul></li>
+<li>Create the Hydra Network
 
-<p>I have a database target, this is unnecessary.</p>
+<ul>
+<li>You need to create a docker network so that it is easy for the consent app to talk to the Hydra instance.</li>
+</ul></li>
+<li>Run Hydra Migrations
 
-<h3 id="install-and-run-ory-hydra">Install and run ORY Hydra</h3>
+<ul>
+<li>This sets up the tables for Hydra in the database you just created.</li>
+</ul></li>
+<li>Start Hydra
 
-<p>I have this working in production and running the migrations on the DB.</p>
+<ul>
+<li>Start the docker container for Hydra.</li>
+</ul></li>
+<li>Create Client for Consent App
 
-<pre><code class="language-bash">docker network create hydraguide
+<ul>
+<li>This basically informs hydra that there is an application out there that is allowed to connect to it.</li>
+<li>When you create the client, you create a port that will be passed as the redirect uri.</li>
+</ul></li>
+<li>Create Policy for Consent App
 
-echo &quot;create database hydra&quot; | mysql -uroot -proot
+<ul>
+<li><code>TODO</code> I&rsquo;m still not clear on what the policy does.</li>
+</ul></li>
+<li>Run Consent App
 
-docker run -it --rm \
-  oryd/hydra:v0.10.10 \
-  migrate sql mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true
+<ul>
+<li>Now we run a docker container with the consent app that knows that its <code>HYDRA_CLIENT_ID</code> is <code>consent-app</code>.</li>
+</ul></li>
+</ul>
 
-docker run -d \
-  --name hydra \
-  -p 9000:4444 \
-  --network hydraguide \
-  -e SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C \
-  -e DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true \
-  -e ISSUER=https://localhost:9000/ \
-  -e CONSENT_URL=http://localhost:9020/consent \
-  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \
-  oryd/hydra:v0.10.10
+<p>There are two sample consent apps. Only the express one is on dockerhub :(</p>
+
+<ul>
+<li><a href="https://github.com/ory/hydra-consent-app-express">ory/hydra-consent-app-express</a></li>
+<li><a href="https://github.com/ory/hydra-consent-app-go">ory/hydra-consent-app-go</a></li>
+</ul>
+
+<h2 id="https-termination">HTTPS Termination</h2>
+
+<p>I&rsquo;m going to need to consider this&hellip; :(</p>
+
+<pre><code>- HTTPS_ALLOW_TERMINATION_FROM: Whitelist one or multiple CIDR address ranges and allow them to terminate TLS connections.
+  Be aware that the X-Forwarded-Proto header must be set and must never be modifiable by anyone but
+  your proxy / gateway / load balancer. Supports ipv4 and ipv6.
+  Hydra serves http instead of https when this option is set.
+  Example: HTTPS_ALLOW_TERMINATION_FROM=127.0.0.1/32,192.168.178.0/24,2620:0:2d0:200::7/32
 </code></pre>
 
-<p><strong>NOTE:</strong> On the mac, adding <code>--network host</code> fucked shit up. Taking it out makes it work fine.</p>
+<p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/x-forwarded-headers.html">Maybe not :)</a></p>
 
-<h3 id="configure-ory-hydra">Configure ORY Hydra</h3>
+<blockquote>
+<p>Elastic Load Balancing stores the protocol used between the client and the load balancer in the X-Forwarded-Proto request header and passes the header along to your server.</p>
+</blockquote>
 
-<p>Base command layout:</p>
+<h2 id="sample-flow">Sample Flow</h2>
 
-<pre><code>docker run --rm -it \
+<p>Once you have all your infrastructure working, you can test it on the EC2 like so:</p>
+
+<h3 id="create-client">Create Client</h3>
+
+<h4 id="up">Up</h4>
+
+<pre><code class="language-bash">sudo docker run --rm -it \
   -e CLUSTER_URL=https://hydra:4444 \
   -e CLIENT_ID=admin \
   -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  &lt;command&gt;
-</code></pre>
-
-<p>Input:</p>
-
-<pre><code>docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  token client --skip-tls-verify
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>9laRUKOIxStJBn18bIZeqZTaCnm_LF9jivaoWLuoBGE.SJP4no4YJtCc5BoqoBHtyTAu78NFLgwvrFiJZSB_DHw
-</code></pre>
-
-<h3 id="setting-up-the-consent-app">Setting up the consent app</h3>
-
-<p>The consent app requires a registered OAuth 2.0 Client at ORY Hydra. Do not re-use this client for any other purposes. To create the client, use the following command:</p>
-
-<pre><code>docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  -p 9010:4445 \
-  oryd/hydra:v0.10.10 \
-  clients create --skip-tls-verify \
-    --id consent-app \
-    --secret consent-secret \
-    --name &quot;Consent App Client&quot; \
-    --grant-types client_credentials \
-    --response-types token \
-    --allowed-scopes hydra.consent
-</code></pre>
-
-<p>Create Policy:</p>
-
-<pre><code>docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  -p 9010:4445 \
-  oryd/hydra:v0.10.10 \
-  policies create --skip-tls-verify \
-    --actions get,accept,reject \
-    --description &quot;Allow consent-app to manage OAuth2 consent requests.&quot; \
-    --allow \
-    --id consent-app-policy \
-    --resources &quot;rn:hydra:oauth2:consent:requests:&lt;.*&gt;&quot; \
-    --subjects consent-app
-</code></pre>
-
-<p><a href="https://github.com/ory/hydra-consent-app-express">https://github.com/ory/hydra-consent-app-express</a>
-<a href="https://github.com/ory/hydra-consent-app-go">https://github.com/ory/hydra-consent-app-go</a></p>
-
-<pre><code>docker run -d \
-  --name consent \
-  --network hydraguide \
-  -p 9020:3000 \
-  -e HYDRA_CLIENT_ID=consent-app \
-  -e HYDRA_CLIENT_SECRET=consent-secret \
-  -e HYDRA_URL=https://hydra:4444 \
-  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
-  oryd/hydra-consent-app-express
-</code></pre>
-
-<h3 id="perform-oauth-2-0-flow">Perform OAuth 2.0 Flow</h3>
-
-<pre><code>docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
+  --network hydra \
   oryd/hydra:v0.10.10 \
   clients create --skip-tls-verify \
     --id some-consumer \
@@ -428,16 +401,29 @@ docker run -d \
     --grant-types authorization_code,refresh_token,client_credentials,implicit \
     --response-types token,code,id_token \
     --allowed-scopes openid,offline,hydra.clients \
-    --callbacks http://localhost:9010/callback
+    --callbacks http://localhost:10010/callback
 </code></pre>
 
-<p>change permissions on openid connect token</p>
+<h4 id="down">Down</h4>
 
-<pre><code>docker run --rm -it \
+<pre><code class="language-bash">sudo docker run --rm -it \
   -e CLUSTER_URL=https://hydra:4444 \
   -e CLIENT_ID=admin \
   -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
+  --network hydra \
+  oryd/hydra:v0.10.10 \
+  clients delete some-consumer --skip-tls-verify
+</code></pre>
+
+<h3 id="create-policy">Create Policy</h3>
+
+<h4 id="up-1">Up</h4>
+
+<pre><code class="language-bash">sudo docker run --rm -it \
+  -e CLUSTER_URL=https://hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydra \
   oryd/hydra:v0.10.10 \
   policies create --skip-tls-verify \
     --actions get \
@@ -448,19 +434,37 @@ docker run -d \
     --subjects &quot;&lt;.*&gt;&quot;
 </code></pre>
 
-<p>I have no idea what they&rsquo;re taliking about here with the passport.js comparison&hellip;</p>
+<h4 id="down-1">Down</h4>
 
-<pre><code>docker run --rm -it \
-  --network hydraguide \
-  -p 9010:4445 \
+<pre><code class="language-bash">sudo docker run --rm -it \
+  -e CLUSTER_URL=https://hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydra \
+  oryd/hydra:v0.10.10 \
+  policies delete openid-id_token-policy --skip-tls-verify
+</code></pre>
+
+<h3 id="create-token">Create Token</h3>
+
+<h4 id="up-2">Up</h4>
+
+<pre><code class="language-bash">sudo docker run --rm -it \
+  --network hydra \
+  -p 10010:4445 \
   oryd/hydra:v0.10.10 \
   token user --skip-tls-verify \
-    --auth-url https://localhost:9000/oauth2/auth \
+    --auth-url https://localhost:10000/oauth2/auth \
     --token-url https://hydra:4444/oauth2/token \
     --id some-consumer \
     --secret consumer-secret \
     --scopes openid,offline,hydra.clients \
-    --redirect http://localhost:9010/callback
+    --redirect http://localhost:10010/callback
+</code></pre>
+
+<h4 id="down-2">Down</h4>
+
+<pre><code class="language-bash">
 </code></pre>
 
 

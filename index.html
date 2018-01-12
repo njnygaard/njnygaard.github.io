@@ -322,7 +322,9 @@ Only once done, do they take the time to remember the boss didn&rsquo;t want you
   <p>
   I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.
 As of writing, the latest Hydra image is v0.10.10. I will be using that for the tutorial.
-Compressed Steps (mac) I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.
+This is a target diagram for the hydra flow. Source.
+ 
+https://github.com/ory/hydra/issues/405 Flow control using curl curl -s -k -X POST -H &ldquo;Content-Type: application/x-www-form-urlencoded&rdquo; -d grant_type=client_credentials -d scope=hydra -u &lsquo;admin:demo-password&rsquo; https://localhost:9000/oauth2/token | jq .
   </p>
 
   
