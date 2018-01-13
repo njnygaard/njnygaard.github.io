@@ -23,5 +23,15 @@ Turns out that the screenshot utility is available on the command line:
 &amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
     </item>
     
+    <item>
+      <title>Zapier and the OAuth2.0 Mountain</title>
+      <link>https://www.nygaard.site/post/0013-deploying-hydra/</link>
+      <pubDate>Sun, 07 Jan 2018 11:00:26 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0013-deploying-hydra/</guid>
+      <description>Background Zapier is effectively a task runner. Integrating with them would put FlowMojo in a marketplace of other productivity applications. I think it will really fuel adoption. To get in the door with Zapier, I need to become an OAuth provider.
+You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &amp;lsquo;Zap&amp;rsquo; with the Zapier Application you created.</description>
+    </item>
+    
   </channel>
 </rss>

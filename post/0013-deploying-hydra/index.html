@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Deploying Hydra &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Zapier and the OAuth2.0 Mountain &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -245,7 +245,7 @@
 
 
 <div class="header">
-  <h1>Deploying Hydra</h1>
+  <h1>Zapier and the OAuth2.0 Mountain</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -264,17 +264,46 @@
   
   
   
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bash">bash</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
+    
+  </div>
+  
   
 
 </div>
 
   
 
-<p>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.</p>
+<h2 id="background">Background</h2>
 
-<p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
+<p>Zapier is effectively a task runner. Integrating with them would put FlowMojo in a marketplace of other productivity applications. I think it will really fuel adoption. To get in the door with Zapier, I need to become an OAuth provider.</p>
 
-<p>This is a target diagram for the hydra flow. <a href="https://www.ory.am/run-oauth2-server-open-source-api-security">Source</a>.</p>
+<p>You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created. When your user decides to make a Zap that involves your application, Zapier will initiate an OAuth2.0 Authorization flow. Basically, you need to dance like a Google or Dropbox to play nice with Zapier.</p>
+
+<p>After the Zap is created, Zapier will call it every 15 minutes on behalf of the user. The Zap is an &lsquo;instance&rsquo; of the Zapier Application you created for your users and this instance is provided with the necessary credentials to act on behalf of one of your users.</p>
+
+<h2 id="choices">Choices</h2>
+
+<p>There are a ton of ways to approach an OAuth2.0 flow, but given that the original author of OAuth <a href="https://github.com/ory/hydra-consent-app-express">wants nothing to do with</a> it and has said that <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">it is a bad protocol</a>, I don&rsquo;t want to put my brain power in to learning the internals. I don&rsquo;t think OAuth2 is going away, but the points he made lead me to belive that I am not really capable of making a secure implementation. I need to favor functionality over exploration on this one.</p>
+
+<p>I am going to go with <a href="https://hub.docker.com/r/oryd/hydra/tags/">Hydra</a>. This is a standalone service that I can run as a docker container or binary on my EC2 instance. After suffering for a while, I went with the binary solution, though I still have all my container configuration should I want to go that route before I put this feature to bed.</p>
+
+<h2 id="hydra">Hydra</h2>
+
+<p><a href="https://www.ory.am/run-oauth2-server-open-source-api-security">Hydra is an authorization server that might solve this for us.</a></p>
 
 <p><a href="hydra-consent-flow.png">
 <div class="pure-u-1-1">
@@ -282,89 +311,77 @@
 </div>
 </a></p>
 
-<p><a href="https://github.com/ory/hydra/issues/405">https://github.com/ory/hydra/issues/405</a>
-Flow control using curl
-curl -s -k -X POST <br />
-        -H &ldquo;Content-Type: application/x-www-form-urlencoded&rdquo; <br />
-        -d grant_type=client_credentials <br />
-        -d scope=hydra <br />
-        -u &lsquo;admin:demo-password&rsquo; <br />
-        <a href="https://localhost:9000/oauth2/token">https://localhost:9000/oauth2/token</a> | jq .</p>
+<p>This is a state machine representing the same flow.</p>
 
-<h2 id="compressed-steps-mac">Compressed Steps (mac)</h2>
+<p><a href="consent-flow.svg">
+<div class="pure-u-1-1">
+  <img class="pure-img" src="consent-flow.svg" alt="Hydra Consent Flow">
+</div>
+</a></p>
 
-<p>I needed to get this working on mac because that is one of our development environments. The next step is to get it running on production.</p>
+<p>A verbal explanation stolen and searched/replaced from <a href="https://ory.gitbooks.io/hydra/content/oauth2.html#overview">Hydra Gitbook</a> for our specific usecase:</p>
 
-<pre><code class="language-bash">echo &quot;create database hydra&quot; | mysql -uroot -proot
+<blockquote>
+<ol>
+<li>Peter wants to give Zapier access to his FlowMojo. Peter is the resource owner.<br /></li>
+<li>The Authorization Server (Hydra) is responsible for managing the access request for Zapier. Hydra handles the communication between the resource owner, the consent endpoint, and the client. Hydra is the authorization server. In this case, FlowMojo would be the one who uses Hydra.<br /></li>
+<li>Zapier is the client and was issued an id and a password by Hydra. Zapier uses these credentials to talk with Hydra.<br /></li>
+<li>FlowMojo has a database and a frontend that allow their users to login, using their username and password. This is what an Identity Provider does.<br /></li>
+<li>The User Agent is Peter&rsquo;s FireFox.<br /></li>
+<li>The Consent App is a frontend app that asks the user if he is willing to give Zapier access to his pictures stored on FlowMojo. It is responsible to tell Hydra if the user accepted or rejected the request by Zapier. The Consent App uses the Identity Provider to authenticate peter, for example by using cookies or presenting a user/password login view.<br /></li>
+</ol>
+</blockquote>
 
-docker run -it --rm \
-  oryd/hydra:v0.10.10 \
-  migrate sql mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true
+<h2 id="sample-app-implants">Sample App Implants</h2>
 
-docker run -d \
-  --name ory-hydra-example--hydra \
-  -p 9009:4444 \
-  -e SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C \
-  -e DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true \
-  -e ISSUER=https://localhost:9009/ \
-  -e CONSENT_URL=http://localhost:9020/consent \
-  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \
-  oryd/hydra:v0.10.10
-</code></pre>
+<p>A consent app in the world of Hydra is the thing you login to. Think this:</p>
 
-<p>This works for the local installation which will get the test environment working. But this is not even close to what I need to get it to work in a production environment. I have all kinds of ports to consider.</p>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-3"></div>
+    <div class="pure-u-1 pure-u-md-1-3">
+<div class="pure-u-1">
+  <img class="pure-img" src="google.png" alt="Google Consent Ap">
+</div>
+</div>
+    <div class="pure-u-1 pure-u-md-1-3"></div>
+</div>
 
-<h2 id="ansible-flow">Ansible Flow</h2>
-
-<p>I don&rsquo;t want to document all the steps because the playbook is long. I&rsquo;ll list the high level infrastructure steps here:</p>
-
-<ul>
-<li>Create Hydra Database
-
-<ul>
-<li>You have to create a database in your DB of choice so Hydra can save its data between startups.</li>
-</ul></li>
-<li>Create the Hydra Network
-
-<ul>
-<li>You need to create a docker network so that it is easy for the consent app to talk to the Hydra instance.</li>
-</ul></li>
-<li>Run Hydra Migrations
-
-<ul>
-<li>This sets up the tables for Hydra in the database you just created.</li>
-</ul></li>
-<li>Start Hydra
-
-<ul>
-<li>Start the docker container for Hydra.</li>
-</ul></li>
-<li>Create Client for Consent App
-
-<ul>
-<li>This basically informs hydra that there is an application out there that is allowed to connect to it.</li>
-<li>When you create the client, you create a port that will be passed as the redirect uri.</li>
-</ul></li>
-<li>Create Policy for Consent App
-
-<ul>
-<li><code>TODO</code> I&rsquo;m still not clear on what the policy does.</li>
-</ul></li>
-<li>Run Consent App
-
-<ul>
-<li>Now we run a docker container with the consent app that knows that its <code>HYDRA_CLIENT_ID</code> is <code>consent-app</code>.</li>
-</ul></li>
-</ul>
-
-<p>There are two sample consent apps. Only the express one is on dockerhub :(</p>
+<p>There are two sample consent apps. Only the express one is on ory&rsquo;s DockerHub :(</p>
 
 <ul>
 <li><a href="https://github.com/ory/hydra-consent-app-express">ory/hydra-consent-app-express</a></li>
 <li><a href="https://github.com/ory/hydra-consent-app-go">ory/hydra-consent-app-go</a></li>
 </ul>
 
-<h2 id="https-termination">HTTPS Termination</h2>
+<p>So I basically just took the consent app from the go example and worked it in to my project. That was pretty straight forward. They use gorilla too for routing so I was able to spin up another server and host the app like they did on <code>4445</code>. Their documentation did not mention that you needed to run the sample application on port <code>4445</code>, so that was <a href="https://github.com/ory/hydra-consent-app-go/pull/8">a little frustrating</a>.</p>
+
+<p>After I proved that I could get my app to play like their app (communicate with a local instance of Hydra on <code>4444</code>), I decided that I needed my production environment to work to proceed with the development of routes in the go app.</p>
+
+<h2 id="push-many-things-directly-to-production">Push Many Things Directly to Production</h2>
+
+<p>I&rsquo;m just going to make an unordered list of the things I had to do:</p>
+
+<ul>
+<li>Create a migration for Hydra to ensure the table existed in my DB.</li>
+<li>Make sure <a href="https://github.com/pressly/goose">pressly/goose</a> ran migrations from the Ansible context.</li>
+<li>Upgrade to Go 1.9.2</li>
+<li>Install Go Dep (because it&rsquo;s finally ready).</li>
+<li><code>dep init</code> the project.</li>
+<li>Run <code>dep ensure</code> in the Ansible context.</li>
+<li>Create a systemd file for Hydra because I&rsquo;m not running it as a docker container.</li>
+</ul>
+
+<h2 id="go-to-bed">Go to Bed</h2>
+
+<p>This is where I&rsquo;m leaving off today. What is left is to work the routes of the consent app in to my app and present clean endpoints to a service that wants to use them. My consent app will be mushed in to my main app but I&rsquo;m not afraid of monoliths right now.</p>
+
+<h2 id="gotchas">Gotchas</h2>
+
+<h3 id="environment">Environment</h3>
+
+<p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
+
+<h3 id="https-termination">HTTPS Termination</h3>
 
 <p>I&rsquo;m going to need to consider this&hellip; :(</p>
 
@@ -381,104 +398,18 @@ docker run -d \
 <p>Elastic Load Balancing stores the protocol used between the client and the load balancer in the X-Forwarded-Proto request header and passes the header along to your server.</p>
 </blockquote>
 
-<h2 id="sample-flow">Sample Flow</h2>
-
-<p>Once you have all your infrastructure working, you can test it on the EC2 like so:</p>
-
-<h3 id="create-client">Create Client</h3>
-
-<h4 id="up">Up</h4>
-
-<pre><code class="language-bash">sudo docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydra \
-  oryd/hydra:v0.10.10 \
-  clients create --skip-tls-verify \
-    --id some-consumer \
-    --secret consumer-secret \
-    --grant-types authorization_code,refresh_token,client_credentials,implicit \
-    --response-types token,code,id_token \
-    --allowed-scopes openid,offline,hydra.clients \
-    --callbacks http://localhost:10010/callback
-</code></pre>
-
-<h4 id="down">Down</h4>
-
-<pre><code class="language-bash">sudo docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydra \
-  oryd/hydra:v0.10.10 \
-  clients delete some-consumer --skip-tls-verify
-</code></pre>
-
-<h3 id="create-policy">Create Policy</h3>
-
-<h4 id="up-1">Up</h4>
-
-<pre><code class="language-bash">sudo docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydra \
-  oryd/hydra:v0.10.10 \
-  policies create --skip-tls-verify \
-    --actions get \
-    --description &quot;Allow everyone to read the OpenID Connect ID Token public key&quot; \
-    --allow \
-    --id openid-id_token-policy \
-    --resources rn:hydra:keys:hydra.openid.id-token:public \
-    --subjects &quot;&lt;.*&gt;&quot;
-</code></pre>
-
-<h4 id="down-1">Down</h4>
-
-<pre><code class="language-bash">sudo docker run --rm -it \
-  -e CLUSTER_URL=https://hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydra \
-  oryd/hydra:v0.10.10 \
-  policies delete openid-id_token-policy --skip-tls-verify
-</code></pre>
-
-<h3 id="create-token">Create Token</h3>
-
-<h4 id="up-2">Up</h4>
-
-<pre><code class="language-bash">sudo docker run --rm -it \
-  --network hydra \
-  -p 10010:4445 \
-  oryd/hydra:v0.10.10 \
-  token user --skip-tls-verify \
-    --auth-url https://localhost:10000/oauth2/auth \
-    --token-url https://hydra:4444/oauth2/token \
-    --id some-consumer \
-    --secret consumer-secret \
-    --scopes openid,offline,hydra.clients \
-    --redirect http://localhost:10010/callback
-</code></pre>
-
-<h4 id="down-2">Down</h4>
-
-<pre><code class="language-bash">
-</code></pre>
-
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0012-oauth/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0011-new-years/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a>
+      <a href="https://www.nygaard.site/post/0011-new-years/">New Years</a>
     </nav>
     
   </div>

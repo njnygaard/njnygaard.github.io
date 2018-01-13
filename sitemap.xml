@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/post/0013-deploying-hydra/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0011-new-years/</loc>
     <lastmod>2018-01-03T15:08:52-08:00</lastmod>
   </url>
@@ -94,8 +99,26 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/express/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/go/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/hugo/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/hydra/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,6 +143,18 @@
   <url>
     <loc>https://www.nygaard.site/tags/mac/</loc>
     <lastmod>2018-01-12T12:17:32-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/oauth/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/oauth2/</loc>
+    <lastmod>2018-01-07T11:00:26-08:00</lastmod>
     <priority>0</priority>
   </url>
   
