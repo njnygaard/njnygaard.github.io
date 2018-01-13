@@ -259,6 +259,60 @@
   
     <article>
   <header>
+    <h2><a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Run Hydra on a Mac for Testing</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>13 Jan 2018, 09:45</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bash">bash</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
+Infrastructure Create Database Up echo &quot;create database hydra&quot; | mysql -uroot -proot  Down echo &quot;drop database hydra&quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/">Take Screenshot Directly to Preview</a></h2>
 
     <div class="post-meta">
@@ -677,56 +731,20 @@ What follows are notes of the responses for my edification, not necessarily how 
 </article>
 
   
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>17 Aug 2017, 14:34</time>
-  </div>
 
   
 
-  
 
+<nav class="pagination" role="pagination">
   
+  <i class="fa fa-chevron-left"></i>
   
+  <span>&nbsp;1 / 2&nbsp;</span>
   
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/cloudflare">cloudflare</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hugo">hugo</a>
-    
-  </div>
+  <a href="https://www.nygaard.site/page/2/"><i class="fa fa-chevron-right"></i></a>
   
-  
+</nav>
 
-</div>
-
-  </header>
-
-  <p>
-  Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.
-Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
- 
-That&rsquo;s quite a bit of money for something that I really wanted as a note store.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
 
 
 </div>

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 07 Jan 2018 11:00:26 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jan 2018 09:45:26 -0800</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Run Hydra on a Mac for Testing</title>
+      <link>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</link>
+      <pubDate>Sat, 13 Jan 2018 09:45:26 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</guid>
+      <description>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
+Infrastructure Create Database Up echo &amp;quot;create database hydra&amp;quot; | mysql -uroot -proot  Down echo &amp;quot;drop database hydra&amp;quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.</description>
+    </item>
     
     <item>
       <title>Zapier and the OAuth2.0 Mountain</title>

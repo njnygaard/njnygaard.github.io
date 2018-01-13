@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.33-DEV" />
+
+  <title>Run Hydra on a Mac for Testing &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://www.nygaard.site/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.nygaard.site/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.nygaard.site/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.nygaard.site/img/favicon-16x16.png">
+<link rel="manifest" href="https://www.nygaard.site/img/manifest.json">
+<link rel="mask-icon" href="https://www.nygaard.site/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+  
+    <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
+  
+  
+    <script src="https://www.nygaard.site/js/my.js"></script>
+  
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://www.nygaard.site/">Nygaard.site</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/start/"><i class='fa fa-terminal fa-fw'></i>Start Page</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/nopedotcom" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/nikhil-nygaard" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/njnygaard" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://gitlab.com/droneprime" target="_blank"><i class="fa fa-gitlab fa-fw"></i>GitLab</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/1236359/droneprime" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://pod.disroot.org/people/69f62780d2f5013599ef3a6137633966" target="_blank"><i class="fa fa-asterisk fa-fw"></i>Diaspora</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/njnygaard" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2018. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Run Hydra on a Mac for Testing</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>13 Jan 2018, 09:45</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bash">bash</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.</p>
+
+<h1 id="infrastructure">Infrastructure</h1>
+
+<h2 id="create-database">Create Database</h2>
+
+<h5 id="up">Up</h5>
+
+<pre><code class="language-sh">echo &quot;create database hydra&quot; | mysql -uroot -proot
+</code></pre>
+
+<h5 id="down">Down</h5>
+
+<pre><code class="language-sh">echo &quot;drop database hydra&quot; | mysql -uroot -proot
+</code></pre>
+
+<h2 id="export-stuff">Export Stuff</h2>
+
+<h5 id="up-1">Up</h5>
+
+<pre><code class="language-bash">export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true
+export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C
+</code></pre>
+
+<h5 id="down-1">Down</h5>
+
+<pre><code>Nothing.
+</code></pre>
+
+<h2 id="migrations">Migrations</h2>
+
+<h5 id="up-2">Up</h5>
+
+<pre><code class="language-bash">docker run -it --rm \
+  oryd/hydra:v0.10.10 \
+  migrate sql $DATABASE_URL
+</code></pre>
+
+<h5 id="down-2">Down</h5>
+
+<pre><code>Nothing.
+</code></pre>
+
+<h2 id="run-hydra-container">Run Hydra Container</h2>
+
+<h5 id="up-3">Up</h5>
+
+<pre><code class="language-bash">docker run -d \
+  --name ory-hydra-example--hydra \
+  --network hydraguide \
+  -p 9000:4444 \
+  -e SYSTEM_SECRET=$SYSTEM_SECRET \
+  -e DATABASE_URL=$DATABASE_URL \
+  -e ISSUER=https://localhost:9000/ \
+  -e CONSENT_URL=http://localhost:9020/consent \
+  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \
+  oryd/hydra:v0.10.10
+</code></pre>
+
+<h5 id="down-3">Down</h5>
+
+<pre><code>docker rm -f ory-hydra-example--hydra
+</code></pre>
+
+<h2 id="create-client-for-consent-app">Create Client for Consent App</h2>
+
+<h5 id="up-4">Up</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  -p 9010:4445 \
+  oryd/hydra:v0.10.10 \
+  clients create --skip-tls-verify \
+    --id consent-app \
+    --secret consent-secret \
+    --name &quot;Consent App Client&quot; \
+    --grant-types client_credentials \
+    --response-types token \
+    --allowed-scopes hydra.consent
+</code></pre>
+
+<h5 id="down-4">Down</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  clients delete consent-app --skip-tls-verify
+</code></pre>
+
+<h2 id="create-policy-for-consent-app">Create Policy for Consent App</h2>
+
+<h5 id="up-5">Up</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  -p 9010:4445 \
+  oryd/hydra:v0.10.10 \
+  policies create --skip-tls-verify \
+    --actions get,accept,reject \
+    --description &quot;Allow consent-app to manage OAuth2 consent requests.&quot; \
+    --allow \
+    --id consent-app-policy \
+    --resources &quot;rn:hydra:oauth2:consent:requests:&lt;.*&gt;&quot; \
+    --subjects consent-app
+</code></pre>
+
+<h5 id="down-5">Down</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  policies delete consent-app-policy --skip-tls-verify
+</code></pre>
+
+<h2 id="run-the-express-consent-app">Run the Express Consent App</h2>
+
+<h5 id="up-6">Up</h5>
+
+<pre><code>docker run -d \
+  --name ory-hydra-example--consent \
+  -p 9020:3000 \
+  --network hydraguide \
+  -e HYDRA_CLIENT_ID=consent-app \
+  -e HYDRA_CLIENT_SECRET=consent-secret \
+  -e HYDRA_URL=https://ory-hydra-example--hydra:4444 \
+  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
+  oryd/hydra-consent-app-express
+</code></pre>
+
+<h5 id="down-6">Down</h5>
+
+<pre><code>docker rm -f ory-hydra-example--consent
+</code></pre>
+
+<h1 id="flow">Flow</h1>
+
+<h2 id="create-the-consumer-client">Create the Consumer Client</h2>
+
+<h5 id="up-7">Up</h5>
+
+<pre><code class="language-bash">docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  clients create --skip-tls-verify \
+    --id some-consumer \
+    --secret consumer-secret \
+    --grant-types authorization_code,refresh_token,client_credentials,implicit \
+    --response-types token,code,id_token \
+    --allowed-scopes openid,offline,hydra.clients \
+    --callbacks http://localhost:9010/callback
+</code></pre>
+
+<h5 id="down-7">Down</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  clients delete some-consumer --skip-tls-verify
+</code></pre>
+
+<h2 id="openid-connect-policy">OpenID Connect Policy</h2>
+
+<h5 id="up-8">Up</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  policies create --skip-tls-verify \
+    --actions get \
+    --description &quot;Allow everyone to read the OpenID Connect ID Token public key&quot; \
+    --allow \
+    --id openid-id_token-policy \
+    --resources rn:hydra:keys:hydra.openid.id-token:public \
+    --subjects &quot;&lt;.*&gt;&quot;
+</code></pre>
+
+<h5 id="down-8">Down</h5>
+
+<pre><code>docker run --rm -it \
+  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
+  -e CLIENT_ID=admin \
+  -e CLIENT_SECRET=demo-password \
+  --network hydraguide \
+  oryd/hydra:v0.10.10 \
+  policies delete openid-id_token-policy --skip-tls-verify
+</code></pre>
+
+<h2 id="sample-code-flow">Sample Code Flow</h2>
+
+<h5 id="up-9">Up</h5>
+
+<pre><code>docker run --rm -it \
+  --network hydraguide \
+  -p 9010:4445 \
+  oryd/hydra:v0.10.10 \
+  token user --skip-tls-verify \
+    --auth-url https://localhost:9000/oauth2/auth \
+    --token-url https://ory-hydra-example--hydra:4444/oauth2/token \
+    --id some-consumer \
+    --secret consumer-secret \
+    --scopes openid,offline,hydra.clients \
+    --redirect http://localhost:9010/callback
+</code></pre>
+
+<h5 id="down-9">Down</h5>
+
+<pre><code>Nothing.
+</code></pre>
+
+<p>In the example, first you go to a url on <code>9000</code>. The Hydra command with <code>token user</code> gives you that.</p>
+
+<pre><code>https://localhost:9000/oauth2/auth?client_id=some-consumer&amp;redirect_uri=http%3A%2F%2Flocalhost%3A9010%2Fcallback&amp;response_type=code&amp;scope=openid+offline+hydra.clients&amp;state=oirtadrarbtihcedllziauqo&amp;nonce=qrahvnrmouzkgjtptyimjqvp
+</code></pre>
+
+<p>Upon going to that, you are immediately redirected to <code>9020</code> and you get the login page.</p>
+
+<p>After you login and submit, you are redirected to <code>9010</code>. I need to know how <code>9010</code> fits in to this.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/">Take Screenshot Directly to Preview</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'nygaard';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://www.nygaard.site/js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-107573553-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
