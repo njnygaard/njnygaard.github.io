@@ -322,6 +322,13 @@ Turns out that the screenshot utility is available on the command line:
   
   
   
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/writing">writing</a>
+    
+  </div>
+  
   
 
 </div>
@@ -337,84 +344,6 @@ Only once done, do they take the time to remember the boss didn&rsquo;t want you
   
   <footer>
     <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0013-deploying-hydra/">Deploying Hydra</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jan 2018, 11:00</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.
-As of writing, the latest Hydra image is v0.10.10. I will be using that for the tutorial.
-This is a target diagram for the hydra flow. Source.
- 
-https://github.com/ory/hydra/issues/405 Flow control using curl curl -s -k -X POST -H &ldquo;Content-Type: application/x-www-form-urlencoded&rdquo; -d grant_type=client_credentials -d scope=hydra -u &lsquo;admin:demo-password&rsquo; https://localhost:9000/oauth2/token | jq .
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0013-deploying-hydra/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0012-oauth/">OAuth</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>06 Jan 2018, 14:38</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Goal Implement both halves of OAuth in 2 weeks.
-Background To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created.
-When your user decides to make a Zap that involves your application, they will have to login to your App.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0012-oauth/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>
@@ -694,20 +623,56 @@ What follows are notes of the responses for my edification, not necessarily how 
 </article>
 
   
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Aug 2017, 14:34</time>
+  </div>
 
   
 
+  
 
-<nav class="pagination" role="pagination">
   
-  <i class="fa fa-chevron-left"></i>
   
-  <span>&nbsp;1 / 2&nbsp;</span>
   
-  <a href="https://www.nygaard.site/page/2/"><i class="fa fa-chevron-right"></i></a>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/cloudflare">cloudflare</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hugo">hugo</a>
+    
+  </div>
   
-</nav>
+  
 
+</div>
+
+  </header>
+
+  <p>
+  Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.
+Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
+ 
+That&rsquo;s quite a bit of money for something that I really wanted as a note store.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+
+  
 
 
 </div>

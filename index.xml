@@ -35,30 +35,6 @@ Only once done, do they take the time to remember the boss didn&amp;rsquo;t want
     </item>
     
     <item>
-      <title>Deploying Hydra</title>
-      <link>https://www.nygaard.site/post/0013-deploying-hydra/</link>
-      <pubDate>Sun, 07 Jan 2018 11:00:26 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0013-deploying-hydra/</guid>
-      <description>I will document how I deploy Hydra here. We use Ansible to deploy to AWS so most of this will be high-level about how we deploy to an EC2 instance.
-As of writing, the latest Hydra image is v0.10.10. I will be using that for the tutorial.
-This is a target diagram for the hydra flow. Source.
- 
-https://github.com/ory/hydra/issues/405 Flow control using curl curl -s -k -X POST -H &amp;ldquo;Content-Type: application/x-www-form-urlencoded&amp;rdquo; -d grant_type=client_credentials -d scope=hydra -u &amp;lsquo;admin:demo-password&amp;rsquo; https://localhost:9000/oauth2/token | jq .</description>
-    </item>
-    
-    <item>
-      <title>OAuth</title>
-      <link>https://www.nygaard.site/post/0012-oauth/</link>
-      <pubDate>Sat, 06 Jan 2018 14:38:38 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0012-oauth/</guid>
-      <description>Goal Implement both halves of OAuth in 2 weeks.
-Background To be able to integrate with Zapier, I need to become an OAuth provider. Zapier is effectively a task runner. You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &amp;lsquo;Zap&amp;rsquo; with the Zapier Application you created.
-When your user decides to make a Zap that involves your application, they will have to login to your App.</description>
-    </item>
-    
-    <item>
       <title>New Years</title>
       <link>https://www.nygaard.site/post/0011-new-years/</link>
       <pubDate>Wed, 03 Jan 2018 15:08:52 -0800</pubDate>
