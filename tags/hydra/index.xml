@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Jan 2018 09:45:26 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jan 2018 14:46:14 -0800</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/hydra/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>0017 Expose OAuth Endpoints</title>
+      <link>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</guid>
+      <description>Zapier Zapier gives me a list of things that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.
+ Authentication Type  OAuth V2 w/refresh  Client ID  AKA &amp;ldquo;Consumer Key&amp;rdquo; or &amp;ldquo;API Key&amp;rdquo; zapier  Client Secret  AKA &amp;ldquo;Consumer Secret&amp;rdquo; or &amp;ldquo;API Secret&amp;rdquo; asdjhalsgdhgaposdigu (some string)  Authorization URL  For now I will list what I see the consent app presenting.</description>
+    </item>
     
     <item>
       <title>Run Hydra on a Mac for Testing</title>

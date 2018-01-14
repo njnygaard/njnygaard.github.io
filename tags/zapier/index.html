@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Oauth &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Zapier &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -37,7 +37,7 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/oauth/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/zapier/index.xml" />
   
 
   
@@ -124,7 +124,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/oauth/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://www.nygaard.site/tags/zapier/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -251,7 +251,7 @@
 
 
 <div class="header">
-  <h1>Oauth</h1>
+  <h1>Zapier</h1>
 </div>
 
 <div class="content">
@@ -303,114 +303,6 @@
   
   <footer>
     <a href="https://www.nygaard.site/post/0017-expose-oauth-endpoints/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Run Hydra on a Mac for Testing</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Jan 2018, 09:45</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bash">bash</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &quot;create database hydra&quot; | mysql -uroot -proot  Down echo &quot;drop database hydra&quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0013-deploying-hydra/">Zapier and the OAuth2.0 Mountain</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jan 2018, 11:00</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bash">bash</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Background Zapier is effectively a task runner. Integrating with them would put FlowMojo in a marketplace of other productivity applications. I think it will really fuel adoption. To get in the door with Zapier, I need to become an OAuth provider.
-You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0013-deploying-hydra/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

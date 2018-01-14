@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</loc>
     <lastmod>2018-01-13T09:45:26-08:00</lastmod>
   </url>
@@ -111,7 +116,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/go/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -123,7 +128,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/hydra/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,19 +158,19 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/oauth/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/oauth2/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,8 +227,14 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/zapier/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
