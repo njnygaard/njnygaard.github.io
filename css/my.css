@@ -77,7 +77,38 @@ a {
   margin: auto;
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+
+.pure-table{
+  width: 100%;
+  margin: auto;
+}
+
+}
+
+
+@media only screen and (min-device-width : 480px){
+
 .pure-table{
   width: 75%;
   margin: auto;
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
