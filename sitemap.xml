@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0019-chicken-gumbo/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0018-chicken-stock/</loc>
+    <lastmod>2018-01-14T10:17:06-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</loc>
     <lastmod>2018-01-13T14:46:14-08:00</lastmod>
   </url>
@@ -92,6 +102,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/chicken/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/cloudflare/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
     <priority>0</priority>
@@ -117,6 +133,12 @@
   <url>
     <loc>https://www.nygaard.site/tags/go/</loc>
     <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/gumbo/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -170,13 +192,25 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/recipe/</loc>
+    <lastmod>2018-01-14T10:17:06-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/security/</loc>
     <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/soup/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -188,6 +222,18 @@
   
   <url>
     <loc>https://www.nygaard.site/start/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/stew/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/stock/</loc>
+    <lastmod>2018-01-14T10:17:06-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -234,7 +280,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
     <priority>0</priority>
   </url>
   

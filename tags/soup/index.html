@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Expose OAuth Endpoints &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Soup &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,6 +36,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
+  
+  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/soup/index.xml" />
   
 
   
@@ -120,6 +122,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://www.nygaard.site/tags/soup/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -245,16 +251,20 @@
 
 
 <div class="header">
-  <h1>Expose OAuth Endpoints</h1>
-  <h2></h2>
+  <h1>Soup</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0019-chicken-gumbo/">Chicken Gumbo</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Jan 2018, 14:46</time>
+    <time>14 Jan 2018, 10:17</time>
   </div>
 
   
@@ -267,15 +277,13 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth">oauth</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/chicken">chicken</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oauth2">oauth2</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/gumbo">gumbo</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/zapier">zapier</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/soup">soup</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/go">go</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hydra">hydra</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stew">stew</a>
     
   </div>
   
@@ -283,146 +291,21 @@
 
 </div>
 
-  
+  </header>
 
-<h1 id="zapier">Zapier</h1>
-
-<p>Zapier gives me a <a href="https://zapier.com/developer/documentation/v2/oauth-v2/">list of things</a> that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.</p>
-
-<ul>
-<li>Authentication Type
-
-<ul>
-<li><code>OAuth V2 w/refresh</code></li>
-</ul></li>
-<li>Client ID
-
-<ul>
-<li>AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo;</li>
-<li><code>zapier</code></li>
-</ul></li>
-<li>Client Secret
-
-<ul>
-<li>AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo;</li>
-<li><code>asdjhalsgdhgaposdigu</code> (some string)</li>
-</ul></li>
-<li>Authorization URL
-
-<ul>
-<li>For now I will list what I see the consent app presenting.</li>
-<li><code>http://localhost:4444/oauth2/auth?client_id=demo&amp;redirect_uri=http%3A%2F%2Flocalhost%3A4445%2Fcallback&amp;response_type=code&amp;scope=offline+openid&amp;state=demostatedemostatedemo&amp;nonce=demostatedemostatedemo</code></li>
-<li>They say that they will construct and append the querystring for me. So I don&rsquo;t think I need any of the garbage.</li>
-<li>I clearly need to expose Hydra (<code>4444</code>) as this route.</li>
-<li>I&rsquo;ll tell Zapier my string is:
-
-<ul>
-<li><code>http://localhost:4444/oauth2/auth</code></li>
-<li>OR</li>
-<li><code>http://app.flowmojo.com/api/v1/oauth2/auth</code></li>
-</ul></li>
-</ul></li>
-<li>Access Token URL
-
-<ul>
-<li>I think this one should just be:
-
-<ul>
-<li><code>http://app.flowmojo.com/api/v1/oauth2/token</code></li>
-</ul></li>
-</ul></li>
-<li>Refresh Token URL
-
-<ul>
-<li>I get a 404 for this URL
-
-<ul>
-<li><code>http://app.flowmojo.com/api/v1/oauth2/refresh</code></li>
-</ul></li>
-<li><a href="http://openid.net/specs/openid-connect-core-1_0.html#RefreshTokens">Spec</a> says this URL should be fine:
-
-<ul>
-<li><code>http://app.flowmojo.com/api/v1/oauth2/token</code></li>
-</ul></li>
-</ul></li>
-<li>Scope
-
-<ul>
-<li>&ldquo;read write offline openid&rdquo;</li>
-</ul></li>
-<li>Access Token Placement
-
-<ul>
-<li><code>[blank]</code></li>
-</ul></li>
-</ul>
-
-<h1 id="status">Status</h1>
-
-<p>I added some stuff to the zapier app and then tried the integration
-It tried to go here!</p>
-
-<pre><code>https://app.flowmojo.com/api/v1/oauth2/auth?client_id=3da2cace-d2cc-4eb5-837d-552933dcb832&amp;redirect_uri=https%3A%2F%2Fzapier.com%2Fdashboard%2Fauth%2Foauth%2Freturn%2FApp1944CLIAPI%2F&amp;response_type=code&amp;state=1515887277.0113436&amp;scope=User.Read%20Files.ReadWrite.All%20offline_access
-</code></pre>
-
-<p>That&rsquo;s progress!</p>
-
-<p>Next up, I need to configure Zapier&rsquo;s desired route to be the right one for our application.</p>
-
+  <p>
+  This is my standard Gumbo. Alton Brown posted a recipe for inspiration, but I really just do whatever I feel like. I&rsquo;m not cooking for southerners, so I can deviate from the classics. I&rsquo;m not about to go hunting for filè powder.
+ Ingredient Quantity     Red Chili Flakes    2 Teaspoons      Onion, Yellow, Chopped    1 Cup      Garlic, Clove    6      Peppers, Bell, Medium, Fresh    2      Basil Leaves    5      Flour, Wheat, All Purpose    2 Tablespoons      Butter, salted    2 Tablespoons      Tomatos, Diced No Salt    4 Cups      Celery, Diced    1 Cup      Chicken Stock, Organic    2 Cups      Okra    4 Cups      Make your roux first with the red ingredients.
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Run Hydra on a Mac for Testing</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0018-chicken-stock/">Chicken Stock</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0018-chicken-stock/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="https://www.nygaard.site/post/0019-chicken-gumbo/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'nygaard';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
 </div>
 
 </div>
@@ -447,4 +330,3 @@ It tried to go here!</p>
 
 </body>
 </html>
-

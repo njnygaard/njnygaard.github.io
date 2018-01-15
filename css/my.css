@@ -51,3 +51,33 @@ a {
     display:block;
     margin:auto;
 }
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.green {
+  color: green;
+}
+
+.center {
+  text-align:center;
+  margin: auto;
+}
+
+.pure-table{
+  width: 75%;
+  margin: auto;
+}
