@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0023-chicken-legs-wing-style/</loc>
+    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0022-mini-breakfast-casseroles/</loc>
+    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0021-roasted-tomatillo-salsa/</loc>
     <lastmod>2018-01-21T11:19:57-08:00</lastmod>
   </url>
@@ -112,6 +122,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/breakfast/</loc>
+    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/carnitas/</loc>
     <lastmod>2018-01-21T11:19:44-08:00</lastmod>
     <priority>0</priority>
@@ -119,7 +135,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/chicken/</loc>
-    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,6 +153,12 @@
   <url>
     <loc>https://www.nygaard.site/tags/ec2/</loc>
     <lastmod>2017-11-04T15:24:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/eggs/</loc>
+    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -214,13 +236,13 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-01-21T11:19:57-08:00</lastmod>
+    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/recipe/</loc>
-    <lastmod>2018-01-21T11:19:57-08:00</lastmod>
+    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -308,7 +330,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-01-21T11:19:57-08:00</lastmod>
+    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
     <priority>0</priority>
   </url>
   
