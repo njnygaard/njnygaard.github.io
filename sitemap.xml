@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0024-overnight-pizza-dough/</loc>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0023-chicken-legs-wing-style/</loc>
     <lastmod>2018-01-28T12:08:48-08:00</lastmod>
   </url>
@@ -122,6 +127,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/bread/</loc>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/breakfast/</loc>
     <lastmod>2018-01-28T12:07:08-08:00</lastmod>
     <priority>0</priority>
@@ -229,6 +240,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/pizza/</loc>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/pork/</loc>
     <lastmod>2018-01-21T11:19:44-08:00</lastmod>
     <priority>0</priority>
@@ -236,7 +253,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -330,7 +347,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
