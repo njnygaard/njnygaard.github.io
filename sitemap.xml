@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0025-roasted-birds-eye-chili-powder/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0024-overnight-pizza-dough/</loc>
     <lastmod>2018-02-10T16:52:35-08:00</lastmod>
   </url>
@@ -151,8 +156,20 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/chili/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/cloudflare/</loc>
     <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/condiment/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -253,13 +270,13 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/recipe/</loc>
-    <lastmod>2018-01-28T12:08:48-08:00</lastmod>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,6 +295,12 @@
   <url>
     <loc>https://www.nygaard.site/tags/soup/</loc>
     <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/spicy/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -347,7 +370,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
