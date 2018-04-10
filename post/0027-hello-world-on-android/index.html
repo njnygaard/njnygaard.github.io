@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Roasted Bird&#39;s Eye Chili Powder &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Hello World on Android &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -245,7 +245,7 @@
 
 
 <div class="header">
-  <h1>Roasted Bird&#39;s Eye Chili Powder</h1>
+  <h1>Hello World on Android</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -254,7 +254,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Mar 2018, 08:09</time>
+    <time>10 Apr 2018, 13:02</time>
   </div>
 
   
@@ -267,13 +267,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/recipe">recipe</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/android">android</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/condiment">condiment</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/java">java</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/chili">chili</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/spicy">spicy</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/app">app</a>
     
   </div>
   
@@ -281,48 +279,53 @@
 
 </div>
 
-  <p>Fuck yo tongue.</p>
-
-
-
-
-<table class="pure-table pure-table-striped">
-  <thead><tr>
-    
-      <th>Ingredient</th>
-    
-      <th>Quantity</th>
-    
-  </thead></tr>
-  <tbody>
   
-    <tr>
-      
-      
-        <td>
-        
-          <span class="green">
-            Chilies
-          </span>
-        </td>
-      
-        <td>
-        
-          <span class="">
-            Tub `O
-          </span>
-        </td>
-      
-    </tr>
-  
-  </tbody>
-</table>
 
-<p>Break the ends off the chilies and throw away any mushy or moldy ones. Lovingly slice them in half lengthwise. You could take the time to seed them, but that kinda defeats the purpose of making your own ridiculously hot crushed peppers.</p>
+<h2 id="motivation">Motivation</h2>
 
-<p>Use gloves if you like to touch yourself.</p>
+<p>I wanted to get my environment ready for Android development. It was pretty straightforward on the Mac, I can see it being more of a headache on other platforms.</p>
 
-<p>
+<h2 id="procedure">Procedure</h2>
+
+<p>Firstly, download <a href="https://developer.android.com/studio/index.html">Android Studio</a>. It is pretty amazing that they&rsquo;ve wrapped everything you need in a free IDE. There&rsquo;s a ton of shit for Java projects that I&rsquo;d rather not think about.</p>
+
+<p>I&rsquo;m using this <a href="https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-practicals/content/en/">training course</a>. Open it in another tab.</p>
+
+<p>The article does a great job of making the &lsquo;Hello World!&rsquo; app easy to do. I basically just followed that. There have been some UI changes to Android Studio that I noticed, but nothing that was a real blocker.</p>
+
+<h2 id="devices">Devices</h2>
+
+<p>If you want to run on your phone, you&rsquo;ll need to connect it as a <a href="https://developer.android.com/studio/run/device.html">hardware device</a>. This was a pretty easy process and I did it along side of the virtual emulated device they mention in the tutorial.</p>
+
+<h2 id="gotchas">Gotchas</h2>
+
+<h3 id="completely-remove-android-studio-mac">Completely remove Android Studio (Mac)</h3>
+
+<p>I messed up the first time by denying <code>HAXM</code> from doing stuff on my computer. That&rsquo;s a pretty strange name for something from Intel for device emulation. Suffice it to say that you need it installed during the Android Studio installation and that Intel is not <code>HAX</code>ing you.</p>
+
+<p><a href="https://stackoverflow.com/questions/28418450/i-cant-install-intel-haxm">HAXM</a></p>
+
+<pre><code class="language-bash">rm -Rf /Applications/Android\ Studio.app
+rm -Rf ~/Library/Preferences/AndroidStudio*
+rm -Rf ~/Library/Preferences/com.google.android.*
+rm -Rf ~/Library/Preferences/com.android.*
+rm -Rf ~/Library/Application\ Support/AndroidStudio*
+rm -Rf ~/Library/Logs/AndroidStudio*
+rm -Rf ~/Library/Caches/AndroidStudio*
+rm -Rf ~/.AndroidStudio*
+rm -Rf ~/AndroidStudioProjects
+rm -Rf ~/.gradle
+rm -Rf ~/.android
+rm -Rf ~/Library/Android*
+</code></pre>
+
+<p><a href="https://stackoverflow.com/questions/17625622/how-to-completely-uninstall-android-studio">Reference.</a></p>
+
+<h3 id="failed-to-find-target-with-hash-string-android-25">&ldquo;Failed to find target with hash string &lsquo;android-25&rsquo;&rdquo;</h3>
+
+<p>In the android studio: <code>⌘,</code> and select the offending API Levels to install.</p>
+
+
 
 <div class="pure-g">
 
@@ -330,54 +333,26 @@
   
   
   
-  <div class="pure-u-1-5 center">
+  <div class="pure-u-1-1 center">
     <div style="padding: 0 .2em">
-      <a href="fresh.jpg">
+      <a href="add-others.png">
         <img
           class="pure-img-responsive"
-          src="fresh.jpg"
-          alt="Fresh.">
-      </a>
-    </div>
-  </div>
-  
-
-  
-  
-  
-  
-  <div class="pure-u-1-5 center">
-    <div style="padding: 0 .2em">
-      <a href="hardware.jpg">
-        <img
-          class="pure-img-responsive"
-          src="hardware.jpg"
-          alt="Hardware.">
-      </a>
-    </div>
-  </div>
-  
-
-  
-  
-  
-  
-  <div class="pure-u-1-5 center">
-    <div style="padding: 0 .2em">
-      <a href="prepped.jpg">
-        <img
-          class="pure-img-responsive"
-          src="prepped.jpg"
-          alt="Prepped.">
+          src="add-others.png"
+          alt="Preferences Window">
       </a>
     </div>
   </div>
   
 
 </div>
-</p>
 
-<p>
+
+<p><a href="https://stackoverflow.com/questions/40457524/failed-to-find-target-with-hash-string-android-25">Reference.</a></p>
+
+<h2 id="money-shots">Money Shots</h2>
+
+
 
 <div class="pure-g">
 
@@ -385,13 +360,13 @@
   
   
   
-  <div class="pure-u-1-5 center">
+  <div class="pure-u-1-2 center">
     <div style="padding: 0 .2em">
-      <a href="roasted.jpg">
+      <a href="dev-studio.png">
         <img
           class="pure-img-responsive"
-          src="roasted.jpg"
-          alt="Roasted.">
+          src="dev-studio.png"
+          alt="Preferences Window">
       </a>
     </div>
   </div>
@@ -401,49 +376,33 @@
   
   
   
-  <div class="pure-u-1-5 center">
+  <div class="pure-u-1-2 center">
     <div style="padding: 0 .2em">
-      <a href="processed.jpg">
+      <a href="money-shot.png">
         <img
           class="pure-img-responsive"
-          src="processed.jpg"
-          alt="Processed.">
-      </a>
-    </div>
-  </div>
-  
-
-  
-  
-  
-  
-  <div class="pure-u-1-5 center">
-    <div style="padding: 0 .2em">
-      <a href="packaged.jpg">
-        <img
-          class="pure-img-responsive"
-          src="packaged.jpg"
-          alt="Packaged.">
+          src="money-shot.png"
+          alt="Preferences Window">
       </a>
     </div>
   </div>
   
 
 </div>
-</p>
+
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0024-overnight-pizza-dough/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0025-roasted-birds-eye-chili-powder/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0024-overnight-pizza-dough/">Overnight Pizza Dough</a>
+      <a href="https://www.nygaard.site/post/0025-roasted-birds-eye-chili-powder/">Roasted Bird&#39;s Eye Chili Powder</a>
     </nav>
     
   </div>
@@ -452,14 +411,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0027-hello-world-on-android/">Hello World on Android</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0027-hello-world-on-android/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
