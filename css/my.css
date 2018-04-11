@@ -67,6 +67,10 @@ a {
     color: green;
 }
 
+.lime {
+    color: #00c700;
+}
+
 .blue {
     color: blue;
 }
@@ -98,3 +102,6 @@ code {
     word-wrap: break-word;
 }
 
+.pure-img-responsive {
+    max-height: 20em;
+}
