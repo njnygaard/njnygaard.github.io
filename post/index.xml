@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 11 Apr 2018 10:00:55 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 22:37:38 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arch Toys</title>
+      <link>https://www.nygaard.site/post/0030-arch-toys/</link>
+      <pubDate>Fri, 13 Apr 2018 22:37:38 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0030-arch-toys/</guid>
+      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
+Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
+    </item>
+    
+    <item>
+      <title>Installing Arch</title>
+      <link>https://www.nygaard.site/post/0029-installing-arch/</link>
+      <pubDate>Fri, 13 Apr 2018 14:43:37 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0029-installing-arch/</guid>
+      <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&amp;rsquo;t want to spend time configuring stuff that didn&amp;rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
+    </item>
     
     <item>
       <title>Andy&#39;s Poor College Student Vietnamese Soup</title>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on cat ~/differing-opinions.txt &gt; /dev/null</title>
-    <link>https://www.nygaard.site/tags/linux/</link>
-    <description>Recent content in Linux on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <title>Arch on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/arch/</link>
+    <description>Recent content in Arch on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Apr 2018 22:37:38 -0700</lastBuildDate>
     
-	<atom:link href="https://www.nygaard.site/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nygaard.site/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -29,15 +29,6 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       
       <guid>https://www.nygaard.site/post/0029-installing-arch/</guid>
       <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&amp;rsquo;t want to spend time configuring stuff that didn&amp;rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
-    </item>
-    
-    <item>
-      <title>Running I3</title>
-      <link>https://www.nygaard.site/post/0010-running-i3/</link>
-      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0010-running-i3/</guid>
-      <description>I wanted to switch to i3, a tiling window manager. There are some things that are better, and some things that I miss. I run Ubuntu 16.04 LTS and Unity provides a lot of functionality that makes using the computer effortless. The motivation for using i3 is that, while developing, I end up tiling all my windows in separate workspaces anyways. It seems like the natural functionality of i3 better fits my use-case.</description>
     </item>
     
   </channel>

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0030-arch-toys/</loc>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0029-installing-arch/</loc>
+    <lastmod>2018-04-13T14:43:37-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/</loc>
     <lastmod>2018-04-11T10:00:55-07:00</lastmod>
   </url>
@@ -142,6 +152,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/arch/</loc>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/aws/</loc>
     <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
@@ -262,7 +278,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/linux/</loc>
-    <lastmod>2017-12-01T12:25:59-08:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -298,7 +314,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -404,7 +420,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   

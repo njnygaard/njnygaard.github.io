@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.33-DEV" />
+
+  <title>Installing Arch &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://www.nygaard.site/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.nygaard.site/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.nygaard.site/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.nygaard.site/img/favicon-16x16.png">
+<link rel="manifest" href="https://www.nygaard.site/img/manifest.json">
+<link rel="mask-icon" href="https://www.nygaard.site/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+  
+    <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
+  
+  
+    <script src="https://www.nygaard.site/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://www.nygaard.site/">Nygaard.site</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/start/"><i class='fa fa-terminal fa-fw'></i>Start Page</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/nopedotcom" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/nikhil-nygaard" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/njnygaard" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://gitlab.com/droneprime" target="_blank"><i class="fa fa-gitlab fa-fw"></i>GitLab</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/1236359/droneprime" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://pod.disroot.org/people/69f62780d2f5013599ef3a6137633966" target="_blank"><i class="fa fa-asterisk fa-fw"></i>Diaspora</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/njnygaard" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2018. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Installing Arch</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>13 Apr 2018, 14:43</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&rsquo;t want to spend time configuring stuff that didn&rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</p>
+
+<p>So what changed? I think I am more comfortable with the idea of fighting through configuration changes to get my PC the way I want it. After running Ubuntu as a daily driver for 3 years, I&rsquo;m frustrated with some of the decisions and finding myself wanting to make my own choice. With Ubuntu, there would be a lot of stuff to remove if I wanted to make these kind of decisions.</p>
+
+<p>Also, I have almost nothing important stored locally, so removing the operating system isn&rsquo;t really a burden anymore. All my configs are in a git repo, and all my pictures are with Big Brother. I got my work laptop up and running in an hour with all my creds. I think that is the main reason I feel brave about doing the installation.</p>
+
+<h2 id="installation-guide">Installation Guide</h2>
+
+<p><a href="https://wiki.archlinux.org/index.php/installation_guide">This</a> is the main article that I will be working from.</p>
+
+<p><a href="https://www.peterbeard.co/blog/post/installing-arch-on-an-encrypted-hard-drive/">AFTER</a> finishing the whole thing by myself, I found this amazing article that basically summarizes the process. Peter does a great job of highlighting the steps to get where I did. One difference is that he appears to be using <code>LVM on LUKS</code> where I opted for <code>LUKS on LVM</code>.</p>
+
+<h2 id="motivation-guide">Motivation Guide</h2>
+
+<p>When you install Arch, you&rsquo;re installing just GNU/Linux. Your goal is this:</p>
+
+
+
+<div class="pure-g">
+
+  
+  
+  
+  
+  <div class="pure-u-1-1 center">
+    <div style="padding: 0 .2em">
+      <a href="login-prompt.png">
+        <img
+          class="pure-img-responsive"
+          src="login-prompt.png"
+          alt="Clean.">
+      </a>
+    </div>
+  </div>
+  
+
+</div>
+
+
+<p>That&rsquo;s it. A login prompt. From here, you make the decisions. This guide is going to cover what I did to get to this point.</p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p>Lenovo ThinkPad T450s ~2015</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">⚪</td>
+<td align="left">Incomplete</td>
+</tr>
+
+<tr>
+<td align="center">⚫</td>
+<td align="left">Unnecessary</td>
+</tr>
+
+<tr>
+<td align="center">🔴</td>
+<td align="left">Error</td>
+</tr>
+
+<tr>
+<td align="center">🔵</td>
+<td align="left">Success</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Note:</strong> I&rsquo;m leaving this key. I mostly used it to track my progress during the installation.</p>
+
+<h2 id="task-list">Task List</h2>
+
+<ul>
+<li>🔵 <a href="#make-a-bootable-drive">Make a Bootable Drive</a>
+
+<ul>
+<li>🔵 <a href="#download-image">Download Image</a></li>
+<li>🔵 <a href="#write-drive-osx">Write Drive OSX</a></li>
+<li>🔵 <a href="#booting">Booting</a></li>
+</ul></li>
+<li>🔵 <a href="#internet-connection">Internet Connection</a></li>
+<li>🔵 <a href="#disk-encryption">Disk Encryption</a>
+
+<ul>
+<li>🔵 <a href="#drive-wipe">Drive Wipe</a></li>
+<li>🔵 <a href="#create-partition-table">Create Partition Table</a></li>
+<li>🔵 <a href="#preparing-the-logical-volumes">Preparing the logical volumes</a></li>
+<li>🔵 <a href="#preparing-the-boot-partition">Preparing the boot partition</a></li>
+</ul></li>
+<li>🔵 <a href="#installation">Installation</a>
+
+<ul>
+<li>🔵 <a href="#normal-procedure">Normal Procedure</a></li>
+<li>🔵 <a href="#bootloader">Bootloader</a></li>
+<li>🔵 <a href="#encrypted-drive-config-files">Encrypted Drive Config Files</a></li>
+<li>🔵 <a href="#encrypting-home-directory">Encrypting Home Directory</a></li>
+</ul></li>
+<li>🔵 <a href="#emergency">Emergency</a></li>
+</ul>
+
+<h2 id="make-a-bootable-drive">Make a Bootable Drive</h2>
+
+<h3 id="download-image">Download Image</h3>
+
+<p>You need to get the image you want to put on the USB Drive. I used the torrent link on <a href="https://www.archlinux.org/download/">this page</a>.</p>
+
+<h3 id="write-drive-osx">Write Drive OSX</h3>
+
+<p><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_macOS">Source Article.</a></p>
+
+<p>First, you need to identify the USB device. Open a terminal and list all storage devices with the command:</p>
+
+<pre><code>diskutil list
+</code></pre>
+
+<p>Your USB device will appear as something like /dev/disk2 (external, physical). Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.</p>
+
+<p>A USB device is normally auto-mounted in macOS, and you have to unmount (not eject) it before block-writing to it with dd. In Terminal, do:</p>
+
+<pre><code>diskutil unmountDisk /dev/disk2
+</code></pre>
+
+<p>Now copy the ISO image file to the device. The dd command is similar to its Linux counterpart, but notice the &lsquo;r&rsquo; before &lsquo;disk&rsquo; for raw mode which makes the transfer much faster:</p>
+
+<pre><code>dd if=/Users/admin/Downloads/archlinux-2018.04.01-x86_64.iso of=/dev/rdisk2 bs=1m
+</code></pre>
+
+<p>Note diskX here should not include the s1 suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that &ldquo;The disk you inserted was not readable by this computer&rdquo;. Select &lsquo;Ignore&rsquo;. The USB device will be bootable.</p>
+
+<h3 id="booting">Booting</h3>
+
+<p>To boot to this drive I had to turn off Secure Boot in my ThinkPad BIOS. [unconfirmed]</p>
+
+<h2 id="internet-connection">Internet Connection</h2>
+
+<p><a href="https://wiki.archlinux.org/index.php/Installation_guide#Connect_to_the_Internet">In the pre-installation section</a>, they recommend being able to connect to the Internet from the installation media.</p>
+
+<p>You&rsquo;re going to need to be able to get an Internet connection from the command line.</p>
+
+<p>Working set of commands:</p>
+
+<pre><code>systemctl stop dhcpcd@[TAB]
+ip link set wlp3s0 up
+wpa_supplicant -B -i wlp3s0 -c &lt;(wpa_passphrase drone50 [passphrase])
+iw dev wlp3s0 link
+dhcpcd wlp3s0
+</code></pre>
+
+<h2 id="disk-encryption">Disk Encryption</h2>
+
+<p><a href="https://wiki.archlinux.org/index.php/Disk_encryption">Source Article.</a></p>
+
+<p>We are basically swapping out the &ldquo;Partition the disks&rdquo; section of the Installation Guide in favor of the encrypted instructions.</p>
+
+<p>I think I want to use <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM">LUKS on LVM</a>. This would allow me to have only my <code>/home</code> partition encrypted. The drawback here is that each of the partitions could require a different password.</p>
+
+<h3 id="drive-wipe">Drive Wipe</h3>
+
+<p><strong>This is IRREVERSIBLE</strong></p>
+
+<p>The source article for wiping the drive securely is here: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">dm-crypt wipe on an empty disk or partition</a>. You want to do this because it will write the drive with random data that looks like the encrypted data.</p>
+
+<pre><code>cryptsetup open --type plain -d /dev/urandom /dev/sda to_be_wiped
+lsblk [verify size]
+dd if=/dev/zero of=/dev/mapper/to_be_wiped status=progress bs=1M
+cryptsetup close to_be_wiped
+</code></pre>
+
+<h3 id="create-partition-table">Create Partition Table</h3>
+
+<p><code>lsblk</code> gives a nice tree-style output of the currently available disks. <code>fdisk -l</code> can be used as well.</p>
+
+<p>I&rsquo;m going to try to use parted to create <code>/dev/sda1</code> and <code>/dev/sda2</code>. This will be the boot drive (unencrypted) and the rest of the drive (LVM).</p>
+
+<!-- 
+|Device|Partition|Size|
+|------|---------|----|
+|`/dev/sda1`|`/boot`|200MiB|
+|`/dev/sda2`|LVM|100% of Free|
+ -->
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th>Device</th>
+    
+      <th>Partition</th>
+    
+      <th>Size</th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td>
+        
+          <span class="">
+            /dev/sda1
+          </span>
+        </td>
+      
+        <td>
+        
+          <span class="">
+            /boot
+          </span>
+        </td>
+      
+        <td>
+        
+          <span class="">
+            200MiB
+          </span>
+        </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>
+        
+          <span class="">
+            /dev/sda2
+          </span>
+        </td>
+      
+        <td>
+        
+          <span class="">
+            LVM
+          </span>
+        </td>
+      
+        <td>
+        
+          <span class="">
+            100% of Free
+          </span>
+        </td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<pre><code># parted
+(parted) mkpart ESP fat32 1MiB 551MiB
+(parted) set 1 esp on
+(parted) set 1 boot on
+(parted) mkpart primary ext4 551MiB 100%
+(parted) quit
+# lsblk
+</code></pre>
+
+<h3 id="preparing-the-logical-volumes">Preparing the logical volumes</h3>
+
+<p><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes_2">Article</a></p>
+
+<p>On top of the physical partition <code>/dev/sda2</code>, we will create four logical partitions for <code>/</code>, <code>swap</code>, <code>/tmp</code>, and <code>/home</code>. The motivation here is that LVM is good at managing these logical partitions and they could be theoretically resized in the future.</p>
+
+<p>This created the logical volumes.</p>
+
+<pre><code>pvcreate /dev/sda2
+vgcreate MyVol /dev/sda2
+lvcreate -L 32G -n cryptroot MyVol
+lvcreate -L 500M -n cryptswap MyVol
+lvcreate -L 500M -n crypttmp MyVol
+lvcreate -l 100%FREE -n crypthome MyVol
+</code></pre>
+
+<p>This created my root partition and set it&rsquo;s password.</p>
+
+<pre><code>cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-cryptroot
+cryptsetup open /dev/mapper/MyVol-cryptroot root
+mkfs.ext4 /dev/mapper/root
+mount /dev/mapper/root /mnt
+</code></pre>
+
+<h3 id="preparing-the-boot-partition">Preparing the boot partition</h3>
+
+<p>Note that the instructions in the linked article mention using <code>mkfs.ext4</code>, this won&rsquo;t work with UEFI. I had to use <code>fat</code>.</p>
+
+<pre><code>mkfs.fat /dev/sda1
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+</code></pre>
+
+<h2 id="installation">Installation</h2>
+
+<p>Now that you have the drives configured properly, you&rsquo;ll want to do the installation as normal. You have the drive mounted, and now you basically have to copy stuff from the Internet on to them.</p>
+
+<h3 id="normal-procedure">Normal Procedure</h3>
+
+<p>Edit <code>/etc/pacman.d/mirrorlist</code> and put the US mirrors at the top of the list.</p>
+
+<p><code>pacstrap /mnt base</code> to install a bunch of stuff.</p>
+
+<p>Follow the rest of the instructions, they worked just fine. At the end, you come to the Bootloader installation, and that&rsquo;s where things are different.</p>
+
+<h3 id="bootloader">Bootloader</h3>
+
+<p>I picked grub.</p>
+
+<p>You have to install it after you <code>arch-chroot</code> to the new system.</p>
+
+<pre><code>pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub
+[edit /etc/default/grub]
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+
+<p>In <code>/etc/default/grub</code>:</p>
+
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root&quot;
+</code></pre>
+
+<p>To make sure that grub knows that this is your root partition. Then regenerate your <code>grub.cfg</code>:</p>
+
+<pre><code>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+
+<h3 id="encrypted-drive-config-files">Encrypted Drive Config Files</h3>
+
+<h4 id="etc-fstab"><code>/etc/fstab</code></h4>
+
+<pre><code>/dev/mapper/root        /       ext4            defaults        0       1
+/dev/sda1               /boot   ext4            defaults        0       2
+/dev/mapper/tmp         /tmp    tmpfs           defaults        0       0
+/dev/mapper/swap        none    swap            sw              0       0
+/dev/mapper/home        /home   ext4            defaults        0       2
+</code></pre>
+
+<h4 id="etc-crypttab"><code>/etc/crypttab</code></h4>
+
+<pre><code>swap   /dev/mapper/MyVol-cryptswap   /dev/urandom    swap,cipher=aes-xts-plain64,size=256
+tmp    /dev/mapper/MyVol-crypttmp    /dev/urandom    tmp,cipher=aes-xts-plain64,size=256
+home   /dev/mapper/MyVol-crypthome   /etc/luks-keys/home
+</code></pre>
+
+<h3 id="encrypting-home-directory">Encrypting Home Directory</h3>
+
+<p>Make a luks keyfile.</p>
+
+<pre><code>mkdir -m 700 /etc/luks-keys
+dd if=/dev/random of=/etc/luks-keys/home bs=1 count=256 status=progress
+</code></pre>
+
+<p>Encrypt the drive:</p>
+
+<pre><code>cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-crypthome /etc/luks-keys/home
+cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-crypthome home
+mkfs.ext4 /dev/mapper/home
+mount /dev/mapper/home /home
+</code></pre>
+
+<h2 id="emergency">Emergency</h2>
+
+<p>During installation, your new system might not boot. You usually have to change some stuff in the config files to get it to work. You can boot from the Arch USB drive, and then <code>chroot</code> over to your stuff.</p>
+
+<pre><code>cryptsetup open /dev/mapper/MyVol-cryptroot root
+mount /dev/mapper/root /mnt
+mount /dev/sda1 /mnt/boot
+arch-chroot /mnt
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I think that was about it. It is hard to recall all the steps on a different computer. I think that between this and Peter&rsquo;s article, I should be able to replicate the process. For now, it is working and I&rsquo;m going to get to installing all the fun stuff.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/">Andy&#39;s Poor College Student Vietnamese Soup</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0030-arch-toys/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://www.nygaard.site/js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-107573553-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
