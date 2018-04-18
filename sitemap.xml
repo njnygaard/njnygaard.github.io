@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/0031-keybase-filesystem/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/post/0030-arch-toys/</loc>
     <lastmod>2018-04-13T22:37:38-07:00</lastmod>
   </url>
@@ -140,11 +135,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/android/</loc>
     <lastmod>2018-04-10T13:02:13-07:00</lastmod>
     <priority>0</priority>
@@ -187,12 +177,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/calibre/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/carnitas/</loc>
     <lastmod>2018-01-21T11:19:44-08:00</lastmod>
     <priority>0</priority>
@@ -219,17 +203,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/condiment/</loc>
     <lastmod>2018-03-26T08:09:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/contact/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/cryptography/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -295,13 +268,13 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/linux/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/mac/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
+    <lastmod>2018-01-12T12:17:32-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -331,7 +304,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -372,11 +345,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/start/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/stew/</loc>
     <lastmod>2018-01-14T10:17:53-08:00</lastmod>
     <priority>0</priority>
@@ -385,12 +353,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/stock/</loc>
     <lastmod>2018-01-14T10:17:05-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/storage/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -443,7 +405,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-04-17T14:50:08-07:00</lastmod>
+    <lastmod>2018-04-13T22:37:38-07:00</lastmod>
     <priority>0</priority>
   </url>
   
