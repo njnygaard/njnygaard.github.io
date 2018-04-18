@@ -10,11 +10,15 @@ blockquote {
     padding-right: 1em;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 code, kbd, pre, samp {
     font-family: monospace, monospace;
     font-size: 1em;
-    color: rgba(0, 150, 0, 1);
-    background: rgba(229, 229, 229, 1);
+    color: rgba(255, 255, 255, 1);
+    background: rgb(42, 42, 42,1);
     padding-left: 0.2em;
     padding-right: 0.2em;
 }

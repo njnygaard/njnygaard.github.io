@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Linux &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Keybase Filesystem &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/linux/index.xml" />
   
 
   
@@ -123,10 +121,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/linux/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -252,16 +246,12 @@
 
 
 <div class="header">
-  <h1>Linux</h1>
+  <h1>Keybase Filesystem</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0031-keybase-filesystem/">Keybase Filesystem</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -294,159 +284,108 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  Keybase has a great feature called kbfs. You get 10 Gigs of storage forever. They say that it will be free going forward, and I would like to believe them because I don&rsquo;t think Keybase will ever really be popular. I would love to eat those words.
-They mention that you should not expect your files to be resilient; this is an Alpha service, so there is no guarantee of safety.
-  </p>
+<p><a href="https://keybase.io">Keybase</a> has a great feature called <a href="https://keybase.io/docs/kbfs">kbfs</a>. You get 10 Gigs of storage forever. They say that it will be free going forward, and I would like to believe them because I don&rsquo;t think Keybase will ever really be popular. I would love to eat those words.</p>
+
+<p>They mention that you should not expect your files to be resilient; this is an Alpha service, so there is no guarantee of safety. That got me thinking about use-cases. For a while I&rsquo;ve been wondering where to store my Library for <a href="https://calibre-ebook.com/download">Calibre</a>. I don&rsquo;t want to violate ToS by storing it somewhere (even though the books are all mine), but I would like to distribute access to the library between my computers. I&rsquo;ve recently run out of promotional space on Google Drive, so finding a cryptographically secure, free 10G of space on the Internet is appealing.</p>
+
+<p>I have to keep in mind that I might lose the data at any time. This isn&rsquo;t really such a bad thing because they&rsquo;re just books. I would like to keep my library going, but I won&rsquo;t be heart broken if I have to start again.</p>
+
+<p>Make sure that you have Keybase installed and that you can see the Filesystem extension like so:</p>
+
+
+
+<div class="pure-g">
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0031-keybase-filesystem/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
-</article>
-
   
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Apr 2018, 22:37</time>
+  
+  <div class="pure-u-1-1 center">
+    <div style="padding: 0 .2em">
+      <a href="kbfs-status.png">
+        <img
+          class="pure-img-responsive"
+          src="kbfs-status.png"
+          alt="Keybase Filesystem Running">
+      </a>
+    </div>
   </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>
-    
-  </div>
-  
   
 
 </div>
 
-  </header>
 
-  <p>
-  Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
-Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.
-  </p>
+<p>After you have Keybase, just make sure that Calibre is going to use a folder in that mount point for it&rsquo;s library. If you already have Calibre installed, you can run the Wizard again to configure the startup directory with a new library.</p>
 
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0030-arch-toys/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+
+
+<div class="pure-g">
 
   
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0029-installing-arch/">Installing Arch</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Apr 2018, 14:43</time>
+  
+  
+  
+  <div class="pure-u-1-1 center">
+    <div style="padding: 0 .2em">
+      <a href="wizard.png">
+        <img
+          class="pure-img-responsive"
+          src="wizard.png"
+          alt="Wizard">
+      </a>
+    </div>
   </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>
-    
-  </div>
-  
   
 
 </div>
 
-  </header>
 
-  <p>
-  I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&rsquo;t want to spend time configuring stuff that didn&rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.
-  </p>
+<h3 id="caveat">Caveat</h3>
 
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0029-installing-arch/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<p>It is important to <strong>note</strong> that the Keybase filesystem <strong>requires</strong> and Internet connection to work. There is no sync model built in to the system. This means that you do not have local copies of the files.</p>
 
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a></h2>
+<h3 id="enter-rsync">Enter <code>rsync</code></h3>
 
-    <div class="post-meta">
+<p>We can fix this though.</p>
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>01 Dec 2017, 12:25</time>
-  </div>
+<ul>
+<li>can we have rsync directly talk to keybase?</li>
+<li>will a local repo solve this?</li>
+<li>should we sync a local directory to thie missing <code>/keybase</code>?</li>
+</ul>
+
 
   
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/i3">i3</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ubuntu">ubuntu</a>
+    <a href="https://www.nygaard.site/post/0030-arch-toys/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  I wanted to switch to i3, a tiling window manager. There are some things that are better, and some things that I miss. I run Ubuntu 16.04 LTS and Unity provides a lot of functionality that makes using the computer effortless. The motivation for using i3 is that, while developing, I end up tiling all my windows in separate workspaces anyways. It seems like the natural functionality of i3 better fits my use-case.
-  </p>
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0010-running-i3/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
 
-  
 </div>
 
 </div>
@@ -471,3 +410,4 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
 
 </body>
 </html>
+
