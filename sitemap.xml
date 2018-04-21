@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/0032-loggin-with-systemd/</loc>
+    <loc>https://www.nygaard.site/post/0032-logging-with-systemd/</loc>
     <lastmod>2018-04-18T11:35:20-07:00</lastmod>
   </url>
   
@@ -140,11 +140,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/android/</loc>
     <lastmod>2018-04-10T13:02:13-07:00</lastmod>
     <priority>0</priority>
@@ -213,11 +208,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/condiment/</loc>
     <lastmod>2018-03-26T08:09:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/contact/</loc>
     <priority>0</priority>
   </url>
   
@@ -356,11 +346,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/ssh/</loc>
     <lastmod>2017-10-05T12:25:31-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/start/</loc>
     <priority>0</priority>
   </url>
   

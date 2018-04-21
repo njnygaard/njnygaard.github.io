@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.33-DEV" />
+  <meta name="generator" content="Hugo 0.39-DEV" />
 
   <title>cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -261,7 +261,7 @@
   
     <article>
   <header>
-    <h2><a href="https://www.nygaard.site/post/0032-loggin-with-systemd/">Logging with systemd</a></h2>
+    <h2><a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Logging with systemd</a></h2>
 
     <div class="post-meta">
 
@@ -293,9 +293,14 @@
   </header>
 
   <p>
-  timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no  
+  You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no  You can see all the &lsquo;units&rsquo; that you have using the following command.
   </p>
 
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
   
 </article>
 

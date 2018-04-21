@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.39-DEV" />
 
-  <title>Cloudflare &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Logging with systemd &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/cloudflare/index.xml" />
   
 
   
@@ -124,10 +122,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/cloudflare/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -253,20 +247,16 @@
 
 
 <div class="header">
-  <h1>Cloudflare</h1>
+  <h1>Logging with systemd</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>17 Aug 2017, 14:34</time>
+    <time>18 Apr 2018, 11:35</time>
   </div>
 
   
@@ -279,9 +269,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/cloudflare">cloudflare</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hugo">hugo</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/systemd">systemd</a>
     
   </div>
   
@@ -289,23 +279,81 @@
 
 </div>
 
-  </header>
+  <p>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.</p>
 
-  <p>
-  Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.
-Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
- 
-That&rsquo;s quite a bit of money for something that I really wanted as a note store.
-  </p>
+<pre><code class="language-markdown">timedatectl list-timezones
+sudo timedatectl set-timezone America/Los_Angeles
+timedatectl status
+</code></pre>
+
+<pre><code class="language-output">      Local time: Wed 2018-04-18 11:34:46 PDT
+  Universal time: Wed 2018-04-18 18:34:46 UTC
+        RTC time: Wed 2018-04-18 18:34:45
+       Time zone: America/Los_Angeles (PDT, -0700)
+ Network time on: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+</code></pre>
+
+<p>You can see all the &lsquo;units&rsquo; that you have using the following command. If you don&rsquo;t have your process running with a <code>systemd</code> unit file, you won&rsquo;t see it in this list. Don&rsquo;t fret, you can still see logs from those processes that are not managed by <code>systemd</code> but that are still journaling.</p>
+
+<pre><code class="language-markdown">systemctl list-unit-files --all | grep flow
+</code></pre>
+
+<pre><code class="language-output">flowmojo.com.service                       disabled
+</code></pre>
+
+<p>You can see here that my process is not <code>enabled</code> to boot, but it will still log to the journal if it is started.</p>
+
+<p>If you find the service listed in the unit files that systemd knows about, you can just look at the logs:</p>
+
+<pre><code class="language-markdown">journalctl -u flowmojo.com.service [-f]
+</code></pre>
+
+<p>On systems that don&rsquo;t have <code>systemd</code> running the unit file you can lookup the executable:</p>
+
+<pre><code class="language-markdown">journalctl _COMM=flowmojo.server [-f]
+</code></pre>
+
+<pre><code class="language-output">-- Logs begin at Fri 2018-04-13 22:45:05 PDT, end at Sat 2018-04-21 &gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: Running with environme&gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: External services regi&gt;
+Apr 21 11:21:57 drone flowmojo.server[13878]: INSIDE ConsentApp
+</code></pre>
+
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0030-arch-toys/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
 
   
+
 </div>
 
 </div>
@@ -330,3 +378,4 @@ That&rsquo;s quite a bit of money for something that I really wanted as a note s
 
 </body>
 </html>
+

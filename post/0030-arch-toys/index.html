@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.33-DEV" />
+  <meta name="generator" content="Hugo 0.39-DEV" />
 
   <title>Arch Toys &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -364,7 +364,7 @@ passwd drone
 
 <p>This will install <code>visudo</code>, which you can use to edit who has access to use <code>sudo</code>. Using <code>visudo</code>, uncomment the appropriate file:</p>
 
-<pre><code class="language-bash">## Uncomment to allow members of group sudo to execute any command
+<pre><code class="language-output">## Uncomment to allow members of group sudo to execute any command
  %sudo  ALL=(ALL) ALL
 </code></pre>
 
@@ -380,7 +380,20 @@ gpasswd -a drone sudo
 
 <p>It only really makes sense to do this after you have i3 installed.</p>
 
-<p>//todo</p>
+<pre><code class="language-bash">sudo pacman -S pulseaudio
+pulseaudio start
+</code></pre>
+
+<p>And then I think everything just worked. I have my i3 config configured thusly to get my buttons to work.</p>
+
+<pre><code class="language-bash">~/.config/i3/config
+</code></pre>
+
+<pre><code class="language-output">bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# Pulse Audio Controls
+</code></pre>
 
 <h2 id="network-manager">Network Manager</h2>
 
@@ -415,44 +428,6 @@ fc-cache -f # Cache all fonts
 
 <p>After looking at it more, I have no idea how my fonts are working, and I really don&rsquo;t want to touch it. Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
 
-<p>//todo</p>
-
-<h2 id="zsh">zsh</h2>
-
-<p>//todo</p>
-
-<h2 id="maim">Maim</h2>
-
-<p>//todo</p>
-
-<h2 id="i3">i3</h2>
-
-<p>//todo</p>
-
-<h2 id="go">Go</h2>
-
-<p>//todo</p>
-
-<h2 id="ansible">Ansible</h2>
-
-<p>//todo</p>
-
-<h2 id="calibre">Calibre</h2>
-
-<p>//todo</p>
-
-<h2 id="sublime-text">Sublime Text</h2>
-
-<p>//todo</p>
-
-<h2 id="intellij">IntelliJ</h2>
-
-<p>//todo</p>
-
-<h2 id="rotating-luks-keys">Rotating LUKS Keys</h2>
-
-<p>//todo</p>
-
 
   
 <div class="prev-next-post pure-g">
@@ -474,13 +449,13 @@ fc-cache -f # Cache all fonts
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://www.nygaard.site/post/0032-loggin-with-systemd/">Logging with systemd</a>
+      <a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Logging with systemd</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://www.nygaard.site/post/0032-loggin-with-systemd/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://www.nygaard.site/post/0032-logging-with-systemd/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
