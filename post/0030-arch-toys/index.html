@@ -428,6 +428,18 @@ fc-cache -f # Cache all fonts
 
 <p>After looking at it more, I have no idea how my fonts are working, and I really don&rsquo;t want to touch it. Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
 
+<h2 id="rotating-luks-keys">Rotating LUKS Keys</h2>
+
+<p>You have 8 key slots to work with. You can add a key using the following block. It will prompt you for any existing password and then add the new one.</p>
+
+<pre><code class="language-markdown">sudo cryptsetup luksAddKey /dev/mapper/MyVol-cryptroot
+</code></pre>
+
+<p>You can use this to see information about which key slots are populated.</p>
+
+<pre><code class="language-markdown">sudo cryptsetup luksDump /dev/mapper/MyVol-cryptroot
+</code></pre>
+
 
   
 <div class="prev-next-post pure-g">
