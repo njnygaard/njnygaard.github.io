@@ -324,6 +324,25 @@ Apr 21 11:21:57 drone flowmojo.server[13878]: External services regi&gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: INSIDE ConsentApp
 </code></pre>
 
+<p>You can also pipe to <code>jq</code> for maximum JS geekiness. Reshaping your logs in to whatever you want.</p>
+
+<pre><code class="language-markdonw">journalctl -u flowmojo.com.service -f -o json-pretty | jq '{message: .MESSAGE, exe: ._COMM, service:.SERVICE, err: .ERR}'
+</code></pre>
+
+<pre><code class="language-output">{
+  &quot;message&quot;: &quot;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&quot;GET /api/v1/processes HTTP/1.0\&quot; 200 321&quot;,
+  &quot;exe&quot;: &quot;flowmojo.server&quot;,
+  &quot;service&quot;: &quot;gorilla&quot;,
+  &quot;err&quot;: null
+}
+{
+  &quot;message&quot;: &quot;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&quot;GET /api/v1/instances HTTP/1.0\&quot; 200 1644&quot;,
+  &quot;exe&quot;: &quot;flowmojo.server&quot;,
+  &quot;service&quot;: &quot;gorilla&quot;,
+  &quot;err&quot;: null
+}
+</code></pre>
+
 
   
 <div class="prev-next-post pure-g">
@@ -344,8 +363,14 @@ Apr 21 11:21:57 drone flowmojo.server[13878]: INSIDE ConsentApp
   </div>
   <div class="pure-u-10-24">
     
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/">Connecting to Unsecured Networks</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

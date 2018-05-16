@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.39-DEV" />
 
-  <title>Arch &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Connecting to Unsecured Networks &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/arch/index.xml" />
   
 
   
@@ -124,10 +122,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/arch/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -253,16 +247,12 @@
 
 
 <div class="header">
-  <h1>Arch</h1>
+  <h1>Connecting to Unsecured Networks</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/">Connecting to Unsecured Networks</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -291,111 +281,100 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&rsquo;t have a choice of what to connect to. I really don&rsquo;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.
-  </p>
+<p>This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&rsquo;t have a choice of what to connect to. I really don&rsquo;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.</p>
+
+<p>However, when you get engaged, take beautiful photos on your brother-in-law&rsquo;s camera, and need to ship them to your waiting mother, you don&rsquo;t really have a choice. I&rsquo;ll try to summarize what I did here for the process:</p>
+
+<ul>
+<li>Connect to Unsecured WiFi</li>
+<li>Mount an SDCard</li>
+</ul>
+
+<h3 id="wifi">WiFi</h3>
+
+<p>You&rsquo;ll want to use <code>wpa_supplicant</code> instead of Network Manager. <code>#TODO</code> I really need to understand what Network Manager is doing under the covers that <code>wpa_supplicant</code> seems to accomplish as well. I was able to direct <code>wpa_supplicant</code> to do what I wanted, and <code>nmcli</code> seemed to fall on its face. I don&rsquo;t know if I can judge all that harshly because it is very difficult to get answers without internet in the first place.</p>
+
+<pre><code class="language-bash">sudo wpa_supplicant -Dwext -iwlp3s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre>
+
+<p>The driver mode <code>wext</code> is somewhat legacy, but any port in a storm. Here&rsquo;s the contents of <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>:</p>
+
+<pre><code class="language-output">
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+ap_scan=1
+country=US
+network={
+    ssid=&quot;OTWC_POIPU-PT_9-103&quot;
+    key_mgmt=NONE
+}
+</code></pre>
+
+<p>After running that command, you might see an output like this:</p>
+
+<pre><code class="language-output">ioctl[SIOCSIWSCAN]: Device or resource busy
+wlp3s0: CTRL-EVENT-SCAN-FAILED ret=-1 retry=1
+wlp3s0: Trying to associate with 00:0e:8e:3c:07:d7 (SSID='OTWC_POIPU-PT_9-103' freq=2412 MHz)
+wlp3s0: Associated with 00:0e:8e:3c:07:d7
+wlp3s0: CTRL-EVENT-CONNECTED - Connection to 00:0e:8e:3c:07:d7 completed [id=0 id_str=]
+</code></pre>
+
+<p>I don&rsquo;t know if you really need to run this&hellip; <code>#TODO</code></p>
+
+<pre><code class="language-bash">dhcpcd
+</code></pre>
+
+<p>You might need to remove the run lock file and kill instances of <code>wpa_supplicant</code> if you do this a bunch of times trying.</p>
+
+<pre><code class="language-bash">sudo rm /run/wpa_supplicant/wlp3s0
+killall wpa_supplicant
+</code></pre>
+
+<h3 id="sd-card">SD Card</h3>
+
+<p>You have to install exfat tools to work with the filesystem that is used on SD Cards by default. After installing these tools, everything worked beautifully.</p>
+
+<pre><code class="language-bash">yaourt exfat-utils
+[Number 1 from Community]
+mkdir -p /home/drone/media
+sudo mount.exfat-fuse /dev/mmcblk0p1 /home/drone/media
+</code></pre>
+
+<p>I use <code>sxiv</code> to look at the thumbnails and move images around. It works pretty well. I&rsquo;ll update when I find something better.</p>
+
 
   
-  <footer>
-    <a href="https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Apr 2018, 22:37</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0032-logging-with-systemd/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Logging with systemd</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
-Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0030-arch-toys/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0029-installing-arch/">Installing Arch</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Apr 2018, 14:43</time>
-  </div>
 
   
 
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&rsquo;t want to spend time configuring stuff that didn&rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0029-installing-arch/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
 </div>
 
 </div>
@@ -420,3 +399,4 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
 
 </body>
 </html>
+
