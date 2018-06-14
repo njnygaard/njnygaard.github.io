@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ide on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/ide/</link>
+    <description>Recent content in Ide on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Jun 2018 16:02:32 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.nygaard.site/tags/ide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AirBnB Style in IntelliJ</title>
+      <link>https://www.nygaard.site/post/0034-airbnb-style-in-intellij/</link>
+      <pubDate>Mon, 11 Jun 2018 16:02:32 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0034-airbnb-style-in-intellij/</guid>
+      <description>npm install jscs -g</description>
+    </item>
+    
+  </channel>
+</rss>
