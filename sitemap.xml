@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/0034-airbnb-style-in-intellij/</loc>
-    <lastmod>2018-06-11T16:02:32-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/</loc>
     <lastmod>2018-05-15T23:01:04-07:00</lastmod>
   </url>
@@ -281,18 +276,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/ide/</loc>
-    <lastmod>2018-06-11T16:02:32-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/intellij/</loc>
-    <lastmod>2018-06-11T16:02:32-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/interview/</loc>
     <lastmod>2017-10-05T14:23:44-07:00</lastmod>
     <priority>0</priority>
@@ -301,12 +284,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/java/</loc>
     <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/javascript/</loc>
-    <lastmod>2018-06-11T16:02:32-07:00</lastmod>
     <priority>0</priority>
   </url>
   
