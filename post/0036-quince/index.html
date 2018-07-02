@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Cloudflare and Hugo &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Quince &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -247,7 +247,7 @@
 
 
 <div class="header">
-  <h1>Cloudflare and Hugo</h1>
+  <h1>Quince</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -256,7 +256,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>17 Aug 2017, 14:34</time>
+    <time>02 Jul 2018, 10:31</time>
   </div>
 
   
@@ -269,9 +269,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/cloudflare">cloudflare</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hugo">hugo</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/michelin-3-star">Michelin 3 Star</a>
     
   </div>
   
@@ -281,82 +279,86 @@
 
   
 
-<p>Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.</p>
+<p>We went to Quince. It was awesome. This isn&rsquo;t a review, I&rsquo;m not qualified for that. If you can go, you should go. Take more pictures than I did.</p>
 
-<h1 id="motivation">Motivation</h1>
+<h2 id="menu-and-pairings">Menu and Pairings</h2>
 
-<p>I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.</p>
+<h3 id="english-peas">English Peas</h3>
 
-<p><a href="aws.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="aws.png" alt="AWS Bill">
-</div>
-</a></p>
+<p>Sicilian Pistacchio, Horseradish</p>
 
-<p>That&rsquo;s quite a bit of money for something that I really wanted as a note store. I had originally envisioned some more <a href="https://gitlab.com/droneprime/nygaard.site">in-depth features</a>, but my side project has taken priority. More on that later.</p>
+<p><em>F.X. Pichler, Grüner Veltliner, Federspiel, &ldquo;Loibenberg Frauenweigarten&rdquo;, Wachau, Austria 2015</em></p>
 
-<h1 id="solution">Solution</h1>
+<h3 id="tsar-nicoulai-caviar">Tsar Nicoulai Caviar</h3>
 
-<p><a href="https://pages.github.com/">GitHub Pages</a> offers a solution where you can host a static site from a repository. That&rsquo;s great! By default, you get one conventional hostname that points to <code>username.github.io</code> when you create a repo of the same name in your account.</p>
+<p>Avodaco, Ruby Beet, Sorrel</p>
 
-<p>So that&rsquo;s nice, but it is not really easy to manage a bunch of flat files and HTML. It would be super nice if I could just write notes in markdown like I&rsquo;ve been doing for years and have that be a magical website.</p>
+<p><em>Krug, &ldquo;Grand Cuvée 166 Ème Édition,&rdquo; Champagne, France, MV</em></p>
 
-<p>Enter <a href="https://gohugo.io/">Hugo</a>. Use Hugo to manage your content as Markdown and it does the gross things like CSS for you. Also it is written in Golang, so I&rsquo;m naturally a fanboy.</p>
+<h3 id="squid">Squid</h3>
 
-<p>That all worked great but there were issues with HTTPS. I need that man. I thought CloudFlare would fix that for me, but there were some nuances about the configuration there too.</p>
+<p>Zucchini, Pine Nut, Saffron</p>
 
-<h1 id="issues">Issues</h1>
+<p><em>Matthiasson, &ldquo;WhiteBlend,&rdquo; Napa Valley, California 2015</em></p>
 
-<p>I&rsquo;ll just share the result of my suffering with you.</p>
+<h3 id="white-asparagus-in-three-variations">White Asparagus In Three Variations</h3>
 
-<h2 id="cloudflare">Cloudflare</h2>
+<ul>
+<li>Brown Butter Bouillon</li>
+<li>Black Cod And Smoked Vinegar</li>
+<li>Sauce Vin Jaune and Black Trumpet Mushroom</li>
+</ul>
 
-<h3 id="dns-tab">DNS Tab</h3>
+<p><em>AD Beckham, Pinot Gris, &ldquo;Amphora,&rdquo; Chehalem Mountains, Oregon 2015
+Quercia Grossa, &ldquo;Faluschino,&rdquo; Tuscany, Italy 2015</em></p>
 
-<p><a href="dns.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="dns.png" alt="DNS">
-</div>
-</a></p>
+<h3 id="chef-s-table">Chef&rsquo;s Table</h3>
 
-<h3 id="page-rules-tab">Page Rules Tab</h3>
+<p>This wasn&rsquo;t on the menu they sent us for the day. The took us back to the kitchen and sat us at the Chef&rsquo;s Table for a pasta course. Tiny little tortellini in a hollowed out rolling pin, sitting on top of some crumbly Italian cheese. That was awesome. We got to see the guys making the pasta in tiny little exacting pots.</p>
 
-<p><a href="page-rules.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="page-rules.png" alt="Page Rules">
-</div>
-</a></p>
+<h3 id="squab">Squab</h3>
 
-<h2 id="github-pages">GitHub Pages</h2>
+<p>Fresh Run Farm Fava Bean, Spring Onion</p>
 
-<h3 id="cname-file">CNAME File</h3>
+<p><em>Fontanafredda, &ldquo; Lazzarito,&rdquo; Barolo, Piedmont, Italy 1990</em></p>
 
-<p><a href="cname.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="cname.png" alt="CNAME">
-</div>
-</a></p>
+<h3 id="don-watson-s-milk-fed-lamb">Don Watson&rsquo;s Milk Fed Lamb</h3>
 
-<h2 id="hugo">Hugo</h2>
+<p>Artichoke, Eggplant, Black Garlic</p>
 
-<h3 id="config-toml">config.toml</h3>
+<p><em>Pertimali di Livio Sassetti, Brunello di Montalcino, Tuscany, Italy 2006</em></p>
 
-<pre><code class="language-yaml">baseURL = &quot;https://www.nygaard.site/&quot;
-</code></pre>
+<h3 id="peche-vin-rouge">Peche Vin Rouge</h3>
 
-<p>And that was it!</p>
+<p>Lemon Verbena</p>
 
-<h1 id="resolution">Resolution</h1>
+<h3 id="mille-feuille">Mille-Feuille</h3>
 
-<p>I was able to get my beautiful site hosting all my CSS via HTTPS. I will update this if I think of more steps.</p>
+<p>Matcha, Mascarpone, Fraises Dees Bois</p>
+
+<p><em>Château Suduiraut, Sauternes, France 1989</em></p>
+
+<h3 id="mignardises">Mignardises</h3>
+
+<p>A magical cart full of little deserts. The host gave us a handful of caramels.</p>
+
+<h3 id="hot-chocolate">Hot Chocolate</h3>
+
+<p>They also gave us hot chocolate as they brought our coats.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
+    <a href="https://www.nygaard.site/post/0035-travel-kitchen-checklist/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
   <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0035-travel-kitchen-checklist/">Travel Kitchen Checklist</a>
+    </nav>
     
   </div>
   <div class="pure-u-2-24">
@@ -364,14 +366,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0005-ssh-review/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

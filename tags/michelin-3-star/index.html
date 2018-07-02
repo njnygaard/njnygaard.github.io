@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Cloudflare and Hugo &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Michelin 3 Star &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,6 +36,8 @@
   
 
   
+  
+  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/michelin-3-star/index.xml" />
   
 
   
@@ -122,6 +124,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://www.nygaard.site/tags/michelin-3-star/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -247,16 +253,20 @@
 
 
 <div class="header">
-  <h1>Cloudflare and Hugo</h1>
-  <h2></h2>
+  <h1>Michelin 3 Star</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0036-quince/">Quince</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>17 Aug 2017, 14:34</time>
+    <time>02 Jul 2018, 10:31</time>
   </div>
 
   
@@ -269,9 +279,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/cloudflare">cloudflare</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hugo">hugo</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/michelin-3-star">Michelin 3 Star</a>
     
   </div>
   
@@ -279,107 +287,26 @@
 
 </div>
 
-  
+  </header>
 
-<p>Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.</p>
-
-<h1 id="motivation">Motivation</h1>
-
-<p>I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.</p>
-
-<p><a href="aws.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="aws.png" alt="AWS Bill">
-</div>
-</a></p>
-
-<p>That&rsquo;s quite a bit of money for something that I really wanted as a note store. I had originally envisioned some more <a href="https://gitlab.com/droneprime/nygaard.site">in-depth features</a>, but my side project has taken priority. More on that later.</p>
-
-<h1 id="solution">Solution</h1>
-
-<p><a href="https://pages.github.com/">GitHub Pages</a> offers a solution where you can host a static site from a repository. That&rsquo;s great! By default, you get one conventional hostname that points to <code>username.github.io</code> when you create a repo of the same name in your account.</p>
-
-<p>So that&rsquo;s nice, but it is not really easy to manage a bunch of flat files and HTML. It would be super nice if I could just write notes in markdown like I&rsquo;ve been doing for years and have that be a magical website.</p>
-
-<p>Enter <a href="https://gohugo.io/">Hugo</a>. Use Hugo to manage your content as Markdown and it does the gross things like CSS for you. Also it is written in Golang, so I&rsquo;m naturally a fanboy.</p>
-
-<p>That all worked great but there were issues with HTTPS. I need that man. I thought CloudFlare would fix that for me, but there were some nuances about the configuration there too.</p>
-
-<h1 id="issues">Issues</h1>
-
-<p>I&rsquo;ll just share the result of my suffering with you.</p>
-
-<h2 id="cloudflare">Cloudflare</h2>
-
-<h3 id="dns-tab">DNS Tab</h3>
-
-<p><a href="dns.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="dns.png" alt="DNS">
-</div>
-</a></p>
-
-<h3 id="page-rules-tab">Page Rules Tab</h3>
-
-<p><a href="page-rules.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="page-rules.png" alt="Page Rules">
-</div>
-</a></p>
-
-<h2 id="github-pages">GitHub Pages</h2>
-
-<h3 id="cname-file">CNAME File</h3>
-
-<p><a href="cname.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="cname.png" alt="CNAME">
-</div>
-</a></p>
-
-<h2 id="hugo">Hugo</h2>
-
-<h3 id="config-toml">config.toml</h3>
-
-<pre><code class="language-yaml">baseURL = &quot;https://www.nygaard.site/&quot;
-</code></pre>
-
-<p>And that was it!</p>
-
-<h1 id="resolution">Resolution</h1>
-
-<p>I was able to get my beautiful site hosting all my CSS via HTTPS. I will update this if I think of more steps.</p>
-
+  <p>
+  We went to Quince. It was awesome. This isn&rsquo;t a review, I&rsquo;m not qualified for that. If you can go, you should go. Take more pictures than I did.
+Menu and Pairings English Peas Sicilian Pistacchio, Horseradish
+F.X. Pichler, Grüner Veltliner, Federspiel, &ldquo;Loibenberg Frauenweigarten&rdquo;, Wachau, Austria 2015
+Tsar Nicoulai Caviar Avodaco, Ruby Beet, Sorrel
+Krug, &ldquo;Grand Cuvée 166 Ème Édition,&rdquo; Champagne, France, MV
+Squid Zucchini, Pine Nut, Saffron
+Matthiasson, &ldquo;WhiteBlend,&rdquo; Napa Valley, California 2015
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0005-ssh-review/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="https://www.nygaard.site/post/0036-quince/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
 </div>
 
 </div>
@@ -404,4 +331,3 @@
 
 </body>
 </html>
-
