@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0037-arch-vpn/</loc>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0036-quince/</loc>
     <lastmod>2018-07-02T10:31:17-07:00</lastmod>
   </url>
@@ -173,7 +178,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/arch/</loc>
-    <lastmod>2018-05-15T23:01:04-07:00</lastmod>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -322,7 +327,7 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/networking/</loc>
-    <lastmod>2018-05-15T23:01:04-07:00</lastmod>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -352,7 +357,7 @@
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-07-02T10:31:17-07:00</lastmod>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -451,6 +456,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/vpn/</loc>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/wifi/</loc>
     <lastmod>2018-05-15T23:01:04-07:00</lastmod>
     <priority>0</priority>
@@ -476,7 +487,7 @@
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-07-02T10:31:17-07:00</lastmod>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
     <priority>0</priority>
   </url>
   

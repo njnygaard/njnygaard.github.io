@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.33-DEV" />
 
-  <title>Tags &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Arch VPN &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -36,8 +36,6 @@
   
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null" href="https://www.nygaard.site/tags/index.xml" />
   
 
   
@@ -124,10 +122,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://www.nygaard.site/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -253,258 +247,128 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Arch VPN</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>02 Jul 2018, 12:38</time>
+  </div>
+
+  
+
+  
+
   
   
-    <li>
-      <a href="recipe">recipe</a>
-      <span>&#40;9&#41;</span>
-    </li>
   
-    <li>
-      <a href="arch">arch</a>
-      <span>&#40;4&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/vpn">vpn</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/networking">networking</a>
+    
+  </div>
   
-    <li>
-      <a href="chicken">chicken</a>
-      <span>&#40;4&#41;</span>
-    </li>
   
-    <li>
-      <a href="linux">linux</a>
-      <span>&#40;4&#41;</span>
-    </li>
+
+</div>
+
   
-    <li>
-      <a href="bash">bash</a>
-      <span>&#40;3&#41;</span>
-    </li>
+
+<p>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.</p>
+
+<p>It is not lost on me that I am posting this article on the Internet. You&rsquo;ll find it after you get in to trouble.</p>
+
+<p>This is pretty much taken from <a href="https://about.me/patrick.connelly">Patrick Connelly&rsquo;s</a> <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">super helpful article</a> about the same thing. I just want the notes locally.</p>
+
+<h3 id="get-you-a-vpn">Get you a VPN</h3>
+
+<p>I like <a href="https://www.expressvpn.com/">ExpressVPN</a>. I&rsquo;ve heard good things about NordVPN too.</p>
+
+<h3 id="get-a-file">Get a file</h3>
+
+<p>You&rsquo;ll need an <code>.ovpn</code> file to do this part. <a href="https://www.expressvpn.com/custom_installer?cluster_id=74&amp;code=EWHYU8E5XD9034TYXCGZACO&amp;os=linux&amp;source=web">Express</a> provides them on their site under &ldquo;Manual Configuration&rdquo;. You&rsquo;ll also need the associated credentials.</p>
+
+<h3 id="import-the-settings">Import the settings</h3>
+
+<pre><code class="language-bash">nmcli connection import type openvpn file my_expressvpn_usa_-_los_angeles_-_3_udp.ovpn
+nmcli c modify my_expressvpn_usa_-_los_angeles_-_3_udp connection.id &quot;Los Angeles 3 ExpressVPN&quot;
+</code></pre>
+
+<p>You should now see the connection. And we renamed it to make it easier to work with.</p>
+
+<pre><code class="language-bash">nmcli connection show
+[or]
+nmcli c 
+</code></pre>
+
+<h3 id="adding-credentials">Adding Credentials</h3>
+
+<p>You should have gotten the username and password for your account, you&rsquo;ll need them to automatically connect to the VPN. You also need <code>sudo</code>.</p>
+
+<pre><code class="language-bash">sudo vi /etc/NetworkManager/system-connections/Los\ Angeles\ 3\ ExpressVPN
+</code></pre>
+
+<p>The following is copied directly from <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">Patrick&rsquo;s article</a>.</p>
+
+<pre><code class="language-bash">#Change this from 1 to 0 so that it doesn't try to load the keyring
+password-flags=0
+
+#Add this under the [vpn] section
+username=johnnyeveryteen@usenetserver
+
+[vpn-secrets]
+password=MarilynMonroe-bot
+</code></pre>
+
+<h3 id="reload">Reload</h3>
+
+<pre><code class="language-bash">nmcli connection reload &quot;Los Angeles 3 ExpressVPN&quot;
+</code></pre>
+
+<h3 id="go">GO!</h3>
+
+<pre><code class="language-bash">nmcli connection up &quot;Los Angeles 3 ExpressVPN&quot;
+</code></pre>
+
+
   
-    <li>
-      <a href="go">go</a>
-      <span>&#40;3&#41;</span>
-    </li>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0036-quince/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0036-quince/">Quince</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
   
-    <li>
-      <a href="hydra">hydra</a>
-      <span>&#40;3&#41;</span>
-    </li>
-  
-    <li>
-      <a href="oauth">oauth</a>
-      <span>&#40;3&#41;</span>
-    </li>
-  
-    <li>
-      <a href="oauth2">oauth2</a>
-      <span>&#40;3&#41;</span>
-    </li>
-  
-    <li>
-      <a href="express">express</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="networking">networking</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="soup">soup</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="wordpress">wordpress</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="writing">writing</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="android">android</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="app">app</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="aws">aws</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="bread">bread</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="breakfast">breakfast</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="carnitas">carnitas</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="chili">chili</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="cloudflare">cloudflare</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="condiment">condiment</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="cooking">cooking</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="ec2">ec2</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="eggs">eggs</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="gumbo">gumbo</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="hugo">hugo</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="i3">i3</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="interview">interview</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="java">java</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="mac">mac</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="michelin-3-star">michelin-3-star</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="pizza">pizza</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="pork">pork</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="salsa">salsa</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="security">security</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="spicy">spicy</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="ssh">ssh</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="stew">stew</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="stock">stock</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="systemd">systemd</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="tls">tls</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="travel">travel</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="ubuntu">ubuntu</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="vietnamese">vietnamese</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="vpn">vpn</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="wifi">wifi</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="zapier">zapier</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-  </ul>
+
 </div>
 
 </div>
@@ -529,3 +393,4 @@
 
 </body>
 </html>
+

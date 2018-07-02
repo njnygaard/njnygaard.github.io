@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 02 Jul 2018 10:31:17 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jul 2018 12:38:57 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arch VPN</title>
+      <link>https://www.nygaard.site/post/0037-arch-vpn/</link>
+      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0037-arch-vpn/</guid>
+      <description>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&amp;rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.
+It is not lost on me that I am posting this article on the Internet. You&amp;rsquo;ll find it after you get in to trouble.</description>
+    </item>
     
     <item>
       <title>Quince</title>
