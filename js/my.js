@@ -1,3 +1,5 @@
+console.log('yeah')
+
 (function (window, document) {
     // Shrink images to the width of the article.
     var elements = document.getElementsByTagName("img");
