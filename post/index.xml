@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 03 Jul 2018 13:57:33 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 08:16:14 -0800</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Airgapped GPG</title>
+      <link>https://www.nygaard.site/post/0039-airgapped-gpg/</link>
+      <pubDate>Wed, 19 Dec 2018 08:16:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0039-airgapped-gpg/</guid>
+      <description>Airgapping GPG Airgapped Media Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
+    </item>
     
     <item>
       <title>Chicken Brine</title>
