@@ -3,37 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/topics/gpg/</loc>
-    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0040-living-with-gpg/</loc>
-    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <loc>https://www.nygaard.site/post/0039-airgapped-gpg/</loc>
+    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
-    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0039-airgapped-gpg/</loc>
     <lastmod>2018-12-19T08:16:14-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -504,6 +487,11 @@
   
   <url>
     <loc>https://www.nygaard.site/start/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
     <priority>0</priority>
   </url>
   
