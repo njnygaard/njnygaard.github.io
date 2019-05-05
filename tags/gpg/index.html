@@ -8,7 +8,7 @@
     content="">
   <meta name="generator" content="Hugo 0.55.5" />
 
-  <title>Arch VPN &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>GPG &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -44,6 +44,9 @@
     </script>
 
   
+  
+  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null"
+    href='https://www.nygaard.site/tags/gpg/index.xml' />
   
 
   
@@ -128,6 +131,11 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://www.nygaard.site/tags/gpg/index.xml'><i
+          class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -253,16 +261,20 @@
 
 
 <div class="header">
-  <h1>Arch VPN</h1>
-  <h2></h2>
+  <h1>GPG</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0041-gpg-for-ssh/">GPG for SSH</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Jul 2018, 12:38</time>
+    <time>05 May 2019, 13:08</time>
   </div>
 
   
@@ -275,11 +287,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/vpn">vpn</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/gpg">GPG</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/networking">networking</a>
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ssh">SSH</a>
     
   </div>
   
@@ -287,103 +297,21 @@
 
 </div>
 
-  
+  </header>
 
-
-  
-
-<p>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.</p>
-
-<p>It is not lost on me that I am posting this article on the Internet. You&rsquo;ll find it after you get in to trouble.</p>
-
-<p>This is pretty much taken from <a href="https://about.me/patrick.connelly">Patrick Connelly&rsquo;s</a> <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">super helpful article</a> about the same thing. I just want the notes locally.</p>
-
-<h3 id="get-you-a-vpn">Get you a VPN</h3>
-
-<p>I like <a href="https://www.expressvpn.com/">ExpressVPN</a>. I&rsquo;ve heard good things about NordVPN too.</p>
-
-<h3 id="get-a-file">Get a file</h3>
-
-<p>You&rsquo;ll need an <code>.ovpn</code> file to do this part. <a href="https://www.expressvpn.com/custom_installer?cluster_id=74&amp;code=EWHYU8E5XD9034TYXCGZACO&amp;os=linux&amp;source=web">Express</a> provides them on their site under &ldquo;Manual Configuration&rdquo;. You&rsquo;ll also need the associated credentials.</p>
-
-<h3 id="import-the-settings">Import the settings</h3>
-
-<pre><code class="language-bash">nmcli connection import type openvpn file my_expressvpn_usa_-_los_angeles_-_3_udp.ovpn
-nmcli c modify my_expressvpn_usa_-_los_angeles_-_3_udp connection.id &quot;Los Angeles 3 ExpressVPN&quot;
-</code></pre>
-
-<p>You should now see the connection. And we renamed it to make it easier to work with.</p>
-
-<pre><code class="language-bash">nmcli connection show
-[or]
-nmcli c 
-</code></pre>
-
-<h3 id="adding-credentials">Adding Credentials</h3>
-
-<p>You should have gotten the username and password for your account, you&rsquo;ll need them to automatically connect to the VPN. You also need <code>sudo</code>.</p>
-
-<pre><code class="language-bash">sudo vi /etc/NetworkManager/system-connections/Los\ Angeles\ 3\ ExpressVPN
-</code></pre>
-
-<p>The following is copied directly from <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">Patrick&rsquo;s article</a>.</p>
-
-<pre><code class="language-bash">#Change this from 1 to 0 so that it doesn't try to load the keyring
-password-flags=0
-
-#Add this under the [vpn] section
-username=johnnyeveryteen@usenetserver
-
-[vpn-secrets]
-password=MarilynMonroe-bot
-</code></pre>
-
-<h3 id="reload">Reload</h3>
-
-<pre><code class="language-bash">nmcli connection reload &quot;Los Angeles 3 ExpressVPN&quot;
-</code></pre>
-
-<h3 id="go">GO!</h3>
-
-<pre><code class="language-bash">nmcli connection up &quot;Los Angeles 3 ExpressVPN&quot;
-</code></pre>
-
+  <p>
+  I&rsquo;m using the gpg-agent in place of the ssh-agent. I think this is a very interesting use because it eliminates the need for me to store my ssh key as a flat file:
+ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 2048 SHA256:U6ETCKbdPbvgPMSjePS0jrGR3yMdhF9NC6MUHItynJc /Users/admin/.ssh/splice-dcos.pem (RSA) ...  You can see here that the top key is one that is generated by GPG and not associated with any particular file. That being said, I still have to use SSH keys that are given to me for work.
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://www.nygaard.site/post/0036-quince/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://www.nygaard.site/post/0036-quince/">Quince</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0038-chicken-brine/">Chicken Brine</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0038-chicken-brine/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="https://www.nygaard.site/post/0041-gpg-for-ssh/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
 </div>
 
 </div>
@@ -412,4 +340,3 @@ password=MarilynMonroe-bot
 </body>
 
 </html>
-

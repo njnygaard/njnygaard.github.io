@@ -3,31 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/0039-airgapped-gpg/</loc>
-    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
+    <loc>https://www.nygaard.site/tags/gpg/</loc>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0041-gpg-for-ssh/</loc>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/ssh/</loc>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0039-airgapped-gpg/</loc>
+    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/post/0038-chicken-brine/</loc>
     <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -450,12 +467,6 @@
   <url>
     <loc>https://www.nygaard.site/post/0005-ssh-review/</loc>
     <lastmod>2017-10-05T12:25:31-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/ssh/</loc>
-    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

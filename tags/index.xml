@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 03 Jul 2018 13:57:33 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 13:08:06 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPG</title>
+      <link>https://www.nygaard.site/tags/gpg/</link>
+      <pubDate>Sun, 05 May 2019 13:08:06 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://www.nygaard.site/tags/ssh/</link>
+      <pubDate>Sun, 05 May 2019 13:08:06 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/ssh/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>brine</title>
@@ -432,15 +450,6 @@
       <pubDate>Thu, 05 Oct 2017 14:23:44 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/interview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssh</title>
-      <link>https://www.nygaard.site/tags/ssh/</link>
-      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/ssh/</guid>
       <description></description>
     </item>
     
