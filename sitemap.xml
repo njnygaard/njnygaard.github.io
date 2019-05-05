@@ -3,6 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/topics/gpg/</loc>
+    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0040-living-with-gpg/</loc>
+    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/</loc>
+    <lastmod>2019-05-03T16:08:46-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0039-airgapped-gpg/</loc>
     <lastmod>2018-12-19T08:16:14-08:00</lastmod>
   </url>
@@ -13,8 +42,56 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/brine/</loc>
+    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/chicken/</loc>
+    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/recipe/</loc>
+    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0037-arch-vpn/</loc>
     <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/arch/</loc>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/networking/</loc>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/vpn/</loc>
+    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/michelin-3-star/</loc>
+    <lastmod>2018-07-02T10:31:17-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -28,13 +105,43 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/cooking/</loc>
+    <lastmod>2018-06-13T17:48:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/travel/</loc>
+    <lastmod>2018-06-13T17:48:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/</loc>
     <lastmod>2018-05-15T23:01:04-07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/wifi/</loc>
+    <lastmod>2018-05-15T23:01:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0032-logging-with-systemd/</loc>
     <lastmod>2018-04-18T11:35:20-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/linux/</loc>
+    <lastmod>2018-04-18T11:35:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/systemd/</loc>
+    <lastmod>2018-04-18T11:35:20-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -53,8 +160,38 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/vietnamese/</loc>
+    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/soup/</loc>
+    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0027-hello-world-on-android/</loc>
     <lastmod>2018-04-10T13:02:13-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/android/</loc>
+    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/app/</loc>
+    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/java/</loc>
+    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -63,8 +200,38 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/chili/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/condiment/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/spicy/</loc>
+    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0024-overnight-pizza-dough/</loc>
     <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/bread/</loc>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/pizza/</loc>
+    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -78,8 +245,26 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/breakfast/</loc>
+    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/eggs/</loc>
+    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0021-roasted-tomatillo-salsa/</loc>
     <lastmod>2018-01-21T11:19:57-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/salsa/</loc>
+    <lastmod>2018-01-21T11:19:57-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -88,8 +273,32 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/carnitas/</loc>
+    <lastmod>2018-01-21T11:19:44-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/pork/</loc>
+    <lastmod>2018-01-21T11:19:44-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0019-chicken-gumbo/</loc>
     <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/gumbo/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/stew/</loc>
+    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -98,8 +307,44 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/stock/</loc>
+    <lastmod>2018-01-14T10:17:05-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</loc>
     <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/go/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/hydra/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/oauth/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/oauth2/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/zapier/</loc>
+    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -108,13 +353,37 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/bash/</loc>
+    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/express/</loc>
+    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</loc>
     <lastmod>2018-01-12T12:17:32-08:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/mac/</loc>
+    <lastmod>2018-01-12T12:17:32-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</loc>
     <lastmod>2018-01-08T07:40:43-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/writing/</loc>
+    <lastmod>2018-01-08T07:40:43-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -133,329 +402,8 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/0008-aws-instances/</loc>
-    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0007-wordpress-tls/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0006-linkedin-interview/</loc>
-    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0005-ssh-review/</loc>
-    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</loc>
-    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/start/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/android/</loc>
-    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/app/</loc>
-    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/arch/</loc>
-    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/aws/</loc>
-    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/bash/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/bread/</loc>
-    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/breakfast/</loc>
-    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/brine/</loc>
-    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/carnitas/</loc>
-    <lastmod>2018-01-21T11:19:44-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/chicken/</loc>
-    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/chili/</loc>
-    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/cloudflare/</loc>
-    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/condiment/</loc>
-    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/contact/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/cooking/</loc>
-    <lastmod>2018-06-13T17:48:57-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/ec2/</loc>
-    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/eggs/</loc>
-    <lastmod>2018-01-28T12:07:08-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/express/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/go/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/gumbo/</loc>
-    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/hugo/</loc>
-    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/hydra/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/i3/</loc>
     <lastmod>2017-12-01T12:25:59-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/interview/</loc>
-    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/java/</loc>
-    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/linux/</loc>
-    <lastmod>2018-04-18T11:35:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/mac/</loc>
-    <lastmod>2018-01-12T12:17:32-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/michelin-3-star/</loc>
-    <lastmod>2018-07-02T10:31:17-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/networking/</loc>
-    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/oauth/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/oauth2/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/pizza/</loc>
-    <lastmod>2018-02-10T16:52:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/pork/</loc>
-    <lastmod>2018-01-21T11:19:44-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/recipe/</loc>
-    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/salsa/</loc>
-    <lastmod>2018-01-21T11:19:57-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/security/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/soup/</loc>
-    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/spicy/</loc>
-    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/ssh/</loc>
-    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/start/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/stew/</loc>
-    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/stock/</loc>
-    <lastmod>2018-01-14T10:17:05-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/systemd/</loc>
-    <lastmod>2018-04-18T11:35:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/tls/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/travel/</loc>
-    <lastmod>2018-06-13T17:48:57-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -466,20 +414,19 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/vietnamese/</loc>
-    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <loc>https://www.nygaard.site/post/0008-aws-instances/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/aws/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/vpn/</loc>
-    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/wifi/</loc>
-    <lastmod>2018-05-15T23:01:04-07:00</lastmod>
+    <loc>https://www.nygaard.site/tags/ec2/</loc>
+    <lastmod>2017-11-04T15:24:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -490,20 +437,73 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/writing/</loc>
-    <lastmod>2018-01-08T07:40:43-08:00</lastmod>
+    <loc>https://www.nygaard.site/post/0007-wordpress-tls/</loc>
+    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/security/</loc>
+    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/zapier/</loc>
-    <lastmod>2018-01-13T14:46:14-08:00</lastmod>
+    <loc>https://www.nygaard.site/tags/tls/</loc>
+    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/</loc>
-    <lastmod>2018-12-19T08:16:14-08:00</lastmod>
+    <loc>https://www.nygaard.site/post/0006-linkedin-interview/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/interview/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0005-ssh-review/</loc>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/ssh/</loc>
+    <lastmod>2017-10-05T12:25:31-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/cloudflare/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/hugo/</loc>
+    <lastmod>2017-08-17T14:34:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/about/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/contact/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/start/</loc>
     <priority>0</priority>
   </url>
   

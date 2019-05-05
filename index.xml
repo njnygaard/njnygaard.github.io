@@ -6,11 +6,22 @@
     <description>Recent content on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 19 Dec 2018 08:16:14 -0800</lastBuildDate>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 03 May 2019 16:08:46 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Living with GPG</title>
+      <link>https://www.nygaard.site/post/0040-living-with-gpg/</link>
+      <pubDate>Fri, 03 May 2019 16:08:46 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0040-living-with-gpg/</guid>
+      <description>I&amp;rsquo;ve been working GPG in to my life and it has been rewarding. There have been challenges along the way, so I would like to share
+Outline:
+ GPG Commands  Sending keys proving that keys belong in your system examining keys before ingesting them determingin what keys your system is requesting why is the &amp;ndash;export different for my main key vs all keys  verification  showing what a given public key contains what does that mean?</description>
+    </item>
     
     <item>
       <title>Airgapped GPG</title>
@@ -353,7 +364,7 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.nygaard.site/start/</guid>
-      <description>    body, html { height: 99%; display: grid; font-family: &#39;Roboto Mono&#39;, monospace; font-size: 2em; color: white; } span, div { margin: auto; }        --     var dt = new Date(); document.getElementById(&#34;datetime&#34;).innerHTML = ((&#34;0&#34;+dt.getDate()).slice(-2)) +&#34;.&#34;+ ((&#34;0&#34;+(dt.getMonth()+1)).slice(-2)) +&#34;.&#34;+ (dt.getFullYear()) +&#34; &#34;+ ((&#34;0&#34;+dt.getHours()).slice(-2)) +&#34;:&#34;+ ((&#34;0&#34;+dt.getMinutes()).slice(-2)); var body = document.getElementsByTagName(&#34;body&#34;); body[0].style.backgroundColor = &#34;#191818&#34;; function setFocusToTextBox(){ document.getElementById(&#34;searchbox&#34;).focus(); } setTimeout(setFocusToTextBox, 200)   </description>
+      <description>     body, html { height: 99%; display: grid; font-family: &#39;Roboto Mono&#39;, monospace; font-size: 2em; color: white; } span, div { margin: auto; }        --     var dt = new Date(); document.getElementById(&#34;datetime&#34;).innerHTML = ((&#34;0&#34;+dt.getDate()).slice(-2)) +&#34;.&#34;+ ((&#34;0&#34;+(dt.getMonth()+1)).slice(-2)) +&#34;.&#34;+ (dt.getFullYear()) +&#34; &#34;+ ((&#34;0&#34;+dt.getHours()).slice(-2)) +&#34;:&#34;+ ((&#34;0&#34;+dt.getMinutes()).slice(-2)); var body = document.getElementsByTagName(&#34;body&#34;); body[0].style.backgroundColor = &#34;#191818&#34;; function setFocusToTextBox(){ document.getElementById(&#34;searchbox&#34;).focus(); } setTimeout(setFocusToTextBox, 200)   </description>
     </item>
     
   </channel>

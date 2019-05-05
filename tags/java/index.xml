@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <title>java on cat ~/differing-opinions.txt &gt; /dev/null</title>
     <link>https://www.nygaard.site/tags/java/</link>
-    <description>Recent content in Java on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <description>Recent content in java on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Tue, 10 Apr 2018 13:02:13 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/java/index.xml" rel="self" type="application/rss+xml" />

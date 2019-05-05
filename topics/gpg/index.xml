@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPG on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/topics/gpg/</link>
+    <description>Recent content in GPG on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 03 May 2019 16:08:46 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.nygaard.site/topics/gpg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Living with GPG</title>
+      <link>https://www.nygaard.site/post/0040-living-with-gpg/</link>
+      <pubDate>Fri, 03 May 2019 16:08:46 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0040-living-with-gpg/</guid>
+      <description>I&amp;rsquo;ve been working GPG in to my life and it has been rewarding. There have been challenges along the way, so I would like to share
+Outline:
+ GPG Commands  Sending keys proving that keys belong in your system examining keys before ingesting them determingin what keys your system is requesting why is the &amp;ndash;export different for my main key vs all keys  verification  showing what a given public key contains what does that mean?</description>
+    </item>
+    
+  </channel>
+</rss>

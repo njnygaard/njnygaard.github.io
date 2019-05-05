@@ -6,77 +6,14 @@
     <description>Recent content in Tags on cat ~/differing-opinions.txt &gt; /dev/null</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 10 Apr 2018 13:02:13 -0700</lastBuildDate>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 03 Jul 2018 13:57:33 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Android</title>
-      <link>https://www.nygaard.site/tags/android/</link>
-      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>App</title>
-      <link>https://www.nygaard.site/tags/app/</link>
-      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/app/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arch</title>
-      <link>https://www.nygaard.site/tags/arch/</link>
-      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://www.nygaard.site/tags/aws/</link>
-      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://www.nygaard.site/tags/bash/</link>
-      <pubDate>Sat, 13 Jan 2018 09:45:26 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bread</title>
-      <link>https://www.nygaard.site/tags/bread/</link>
-      <pubDate>Sat, 10 Feb 2018 16:52:35 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/bread/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Breakfast</title>
-      <link>https://www.nygaard.site/tags/breakfast/</link>
-      <pubDate>Sun, 28 Jan 2018 12:07:08 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/breakfast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Brine</title>
+      <title>brine</title>
       <link>https://www.nygaard.site/tags/brine/</link>
       <pubDate>Tue, 03 Jul 2018 13:57:33 -0700</pubDate>
       
@@ -85,16 +22,7 @@
     </item>
     
     <item>
-      <title>Carnitas</title>
-      <link>https://www.nygaard.site/tags/carnitas/</link>
-      <pubDate>Sun, 21 Jan 2018 11:19:44 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/carnitas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chicken</title>
+      <title>chicken</title>
       <link>https://www.nygaard.site/tags/chicken/</link>
       <pubDate>Tue, 03 Jul 2018 13:57:33 -0700</pubDate>
       
@@ -103,146 +31,38 @@
     </item>
     
     <item>
-      <title>Chili</title>
-      <link>https://www.nygaard.site/tags/chili/</link>
-      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
+      <title>recipe</title>
+      <link>https://www.nygaard.site/tags/recipe/</link>
+      <pubDate>Tue, 03 Jul 2018 13:57:33 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/chili/</guid>
+      <guid>https://www.nygaard.site/tags/recipe/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cloudflare</title>
-      <link>https://www.nygaard.site/tags/cloudflare/</link>
-      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      <title>arch</title>
+      <link>https://www.nygaard.site/tags/arch/</link>
+      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/cloudflare/</guid>
+      <guid>https://www.nygaard.site/tags/arch/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Condiment</title>
-      <link>https://www.nygaard.site/tags/condiment/</link>
-      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
+      <title>networking</title>
+      <link>https://www.nygaard.site/tags/networking/</link>
+      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/condiment/</guid>
+      <guid>https://www.nygaard.site/tags/networking/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cooking</title>
-      <link>https://www.nygaard.site/tags/cooking/</link>
-      <pubDate>Wed, 13 Jun 2018 17:48:57 -0700</pubDate>
+      <title>vpn</title>
+      <link>https://www.nygaard.site/tags/vpn/</link>
+      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/cooking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ec2</title>
-      <link>https://www.nygaard.site/tags/ec2/</link>
-      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/ec2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Eggs</title>
-      <link>https://www.nygaard.site/tags/eggs/</link>
-      <pubDate>Sun, 28 Jan 2018 12:07:08 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/eggs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Express</title>
-      <link>https://www.nygaard.site/tags/express/</link>
-      <pubDate>Sat, 13 Jan 2018 09:45:26 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/express/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://www.nygaard.site/tags/go/</link>
-      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gumbo</title>
-      <link>https://www.nygaard.site/tags/gumbo/</link>
-      <pubDate>Sun, 14 Jan 2018 10:17:53 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/gumbo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://www.nygaard.site/tags/hugo/</link>
-      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hydra</title>
-      <link>https://www.nygaard.site/tags/hydra/</link>
-      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/hydra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>I3</title>
-      <link>https://www.nygaard.site/tags/i3/</link>
-      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/i3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Interview</title>
-      <link>https://www.nygaard.site/tags/interview/</link>
-      <pubDate>Thu, 05 Oct 2017 14:23:44 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/interview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://www.nygaard.site/tags/java/</link>
-      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://www.nygaard.site/tags/linux/</link>
-      <pubDate>Wed, 18 Apr 2018 11:35:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>https://www.nygaard.site/tags/mac/</link>
-      <pubDate>Fri, 12 Jan 2018 12:17:32 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/mac/</guid>
+      <guid>https://www.nygaard.site/tags/vpn/</guid>
       <description></description>
     </item>
     
@@ -256,142 +76,16 @@
     </item>
     
     <item>
-      <title>Networking</title>
-      <link>https://www.nygaard.site/tags/networking/</link>
-      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
+      <title>cooking</title>
+      <link>https://www.nygaard.site/tags/cooking/</link>
+      <pubDate>Wed, 13 Jun 2018 17:48:57 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/networking/</guid>
+      <guid>https://www.nygaard.site/tags/cooking/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Oauth</title>
-      <link>https://www.nygaard.site/tags/oauth/</link>
-      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/oauth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oauth2</title>
-      <link>https://www.nygaard.site/tags/oauth2/</link>
-      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/oauth2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pizza</title>
-      <link>https://www.nygaard.site/tags/pizza/</link>
-      <pubDate>Sat, 10 Feb 2018 16:52:35 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/pizza/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pork</title>
-      <link>https://www.nygaard.site/tags/pork/</link>
-      <pubDate>Sun, 21 Jan 2018 11:19:44 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/pork/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recipe</title>
-      <link>https://www.nygaard.site/tags/recipe/</link>
-      <pubDate>Tue, 03 Jul 2018 13:57:33 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/recipe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Salsa</title>
-      <link>https://www.nygaard.site/tags/salsa/</link>
-      <pubDate>Sun, 21 Jan 2018 11:19:57 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/salsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://www.nygaard.site/tags/security/</link>
-      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Soup</title>
-      <link>https://www.nygaard.site/tags/soup/</link>
-      <pubDate>Wed, 11 Apr 2018 10:00:55 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/soup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spicy</title>
-      <link>https://www.nygaard.site/tags/spicy/</link>
-      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/spicy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://www.nygaard.site/tags/ssh/</link>
-      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stew</title>
-      <link>https://www.nygaard.site/tags/stew/</link>
-      <pubDate>Sun, 14 Jan 2018 10:17:53 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/stew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stock</title>
-      <link>https://www.nygaard.site/tags/stock/</link>
-      <pubDate>Sun, 14 Jan 2018 10:17:05 -0800</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/stock/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Systemd</title>
-      <link>https://www.nygaard.site/tags/systemd/</link>
-      <pubDate>Wed, 18 Apr 2018 11:35:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/systemd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tls</title>
-      <link>https://www.nygaard.site/tags/tls/</link>
-      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/tls/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Travel</title>
+      <title>travel</title>
       <link>https://www.nygaard.site/tags/travel/</link>
       <pubDate>Wed, 13 Jun 2018 17:48:57 -0700</pubDate>
       
@@ -400,11 +94,29 @@
     </item>
     
     <item>
-      <title>Ubuntu</title>
-      <link>https://www.nygaard.site/tags/ubuntu/</link>
-      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
+      <title>wifi</title>
+      <link>https://www.nygaard.site/tags/wifi/</link>
+      <pubDate>Tue, 15 May 2018 23:01:04 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/ubuntu/</guid>
+      <guid>https://www.nygaard.site/tags/wifi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.nygaard.site/tags/linux/</link>
+      <pubDate>Wed, 18 Apr 2018 11:35:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>systemd</title>
+      <link>https://www.nygaard.site/tags/systemd/</link>
+      <pubDate>Wed, 18 Apr 2018 11:35:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/systemd/</guid>
       <description></description>
     </item>
     
@@ -418,34 +130,232 @@
     </item>
     
     <item>
-      <title>Vpn</title>
-      <link>https://www.nygaard.site/tags/vpn/</link>
-      <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
+      <title>soup</title>
+      <link>https://www.nygaard.site/tags/soup/</link>
+      <pubDate>Wed, 11 Apr 2018 10:00:55 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/vpn/</guid>
+      <guid>https://www.nygaard.site/tags/soup/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wifi</title>
-      <link>https://www.nygaard.site/tags/wifi/</link>
-      <pubDate>Tue, 15 May 2018 23:01:04 -0700</pubDate>
+      <title>android</title>
+      <link>https://www.nygaard.site/tags/android/</link>
+      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/wifi/</guid>
+      <guid>https://www.nygaard.site/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wordpress</title>
-      <link>https://www.nygaard.site/tags/wordpress/</link>
-      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
+      <title>app</title>
+      <link>https://www.nygaard.site/tags/app/</link>
+      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
       
-      <guid>https://www.nygaard.site/tags/wordpress/</guid>
+      <guid>https://www.nygaard.site/tags/app/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Writing</title>
+      <title>java</title>
+      <link>https://www.nygaard.site/tags/java/</link>
+      <pubDate>Tue, 10 Apr 2018 13:02:13 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chili</title>
+      <link>https://www.nygaard.site/tags/chili/</link>
+      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/chili/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>condiment</title>
+      <link>https://www.nygaard.site/tags/condiment/</link>
+      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/condiment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spicy</title>
+      <link>https://www.nygaard.site/tags/spicy/</link>
+      <pubDate>Mon, 26 Mar 2018 08:09:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/spicy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bread</title>
+      <link>https://www.nygaard.site/tags/bread/</link>
+      <pubDate>Sat, 10 Feb 2018 16:52:35 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/bread/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pizza</title>
+      <link>https://www.nygaard.site/tags/pizza/</link>
+      <pubDate>Sat, 10 Feb 2018 16:52:35 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/pizza/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>breakfast</title>
+      <link>https://www.nygaard.site/tags/breakfast/</link>
+      <pubDate>Sun, 28 Jan 2018 12:07:08 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/breakfast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eggs</title>
+      <link>https://www.nygaard.site/tags/eggs/</link>
+      <pubDate>Sun, 28 Jan 2018 12:07:08 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/eggs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>salsa</title>
+      <link>https://www.nygaard.site/tags/salsa/</link>
+      <pubDate>Sun, 21 Jan 2018 11:19:57 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/salsa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>carnitas</title>
+      <link>https://www.nygaard.site/tags/carnitas/</link>
+      <pubDate>Sun, 21 Jan 2018 11:19:44 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/carnitas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pork</title>
+      <link>https://www.nygaard.site/tags/pork/</link>
+      <pubDate>Sun, 21 Jan 2018 11:19:44 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/pork/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gumbo</title>
+      <link>https://www.nygaard.site/tags/gumbo/</link>
+      <pubDate>Sun, 14 Jan 2018 10:17:53 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/gumbo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stew</title>
+      <link>https://www.nygaard.site/tags/stew/</link>
+      <pubDate>Sun, 14 Jan 2018 10:17:53 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/stew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stock</title>
+      <link>https://www.nygaard.site/tags/stock/</link>
+      <pubDate>Sun, 14 Jan 2018 10:17:05 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/stock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://www.nygaard.site/tags/go/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hydra</title>
+      <link>https://www.nygaard.site/tags/hydra/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/hydra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth</title>
+      <link>https://www.nygaard.site/tags/oauth/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/oauth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth2</title>
+      <link>https://www.nygaard.site/tags/oauth2/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zapier</title>
+      <link>https://www.nygaard.site/tags/zapier/</link>
+      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/zapier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://www.nygaard.site/tags/bash/</link>
+      <pubDate>Sat, 13 Jan 2018 09:45:26 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>https://www.nygaard.site/tags/express/</link>
+      <pubDate>Sat, 13 Jan 2018 09:45:26 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/express/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>https://www.nygaard.site/tags/mac/</link>
+      <pubDate>Fri, 12 Jan 2018 12:17:32 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>writing</title>
       <link>https://www.nygaard.site/tags/writing/</link>
       <pubDate>Mon, 08 Jan 2018 07:40:43 -0800</pubDate>
       
@@ -454,11 +364,101 @@
     </item>
     
     <item>
-      <title>Zapier</title>
-      <link>https://www.nygaard.site/tags/zapier/</link>
-      <pubDate>Sat, 13 Jan 2018 14:46:14 -0800</pubDate>
+      <title>i3</title>
+      <link>https://www.nygaard.site/tags/i3/</link>
+      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
       
-      <guid>https://www.nygaard.site/tags/zapier/</guid>
+      <guid>https://www.nygaard.site/tags/i3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://www.nygaard.site/tags/ubuntu/</link>
+      <pubDate>Fri, 01 Dec 2017 12:25:59 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://www.nygaard.site/tags/aws/</link>
+      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ec2</title>
+      <link>https://www.nygaard.site/tags/ec2/</link>
+      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>https://www.nygaard.site/tags/wordpress/</link>
+      <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://www.nygaard.site/tags/security/</link>
+      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tls</title>
+      <link>https://www.nygaard.site/tags/tls/</link>
+      <pubDate>Thu, 05 Oct 2017 21:59:01 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/tls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interview</title>
+      <link>https://www.nygaard.site/tags/interview/</link>
+      <pubDate>Thu, 05 Oct 2017 14:23:44 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://www.nygaard.site/tags/ssh/</link>
+      <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudflare</title>
+      <link>https://www.nygaard.site/tags/cloudflare/</link>
+      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://www.nygaard.site/tags/hugo/</link>
+      <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/hugo/</guid>
       <description></description>
     </item>
     
