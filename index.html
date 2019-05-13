@@ -269,43 +269,6 @@
   
     <article>
   <header>
-    <h2><a href="https://www.nygaard.site/post/0043-gpg-literacy/">GPG Literacy</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>06 May 2019, 06:59</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Signing Commits git commit -S -m&quot;signed&quot;  Make sure that you don&rsquo;t have a bunch of weird local configs in a repository&hellip;
-List Keys gpg --list-secret-keys --keyid-format LONG  gpg: checking the trustdb gpg: marginals needed: 3 completes needed: 1 trust model: pgp gpg: depth: 0 valid: 1 signed: 0 trust: 0-, 0q, 0n, 0m, 0f, 1u /Users/admin/.gnupg/pubring.kbx ------------------------------- sec rsa4096/E6CDB909E1587F81 2018-11-13 [SC] AB9F47B1AA5B84040649BD60E6CDB909E1587F81 uid [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt; ssb rsa4096/4A67C39812671DFA 2018-11-13 [E]  gpg --list-keys --keyid-format LONG  /Users/admin/.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0043-gpg-literacy/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
     <h2><a href="https://www.nygaard.site/post/0042-jetbrains-and-gpg/">JetBrains and GPG</a></h2>
 
     <div class="post-meta">
@@ -715,6 +678,52 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
   
   <footer>
     <a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>13 Apr 2018, 22:37</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
+Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0030-arch-toys/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

@@ -3,23 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/post/0043-gpg-literacy/</loc>
-    <lastmod>2019-05-06T06:59:06-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2019-05-06T06:59:06-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/</loc>
-    <lastmod>2019-05-06T06:59:06-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/bug/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
@@ -49,6 +32,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
@@ -56,6 +45,12 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/webstorm/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
   </url>

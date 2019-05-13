@@ -7,20 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 06 May 2019 06:59:06 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 13:17:20 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>GPG Literacy</title>
-      <link>https://www.nygaard.site/post/0043-gpg-literacy/</link>
-      <pubDate>Mon, 06 May 2019 06:59:06 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/post/0043-gpg-literacy/</guid>
-      <description>Signing Commits git commit -S -m&amp;quot;signed&amp;quot;  Make sure that you don&amp;rsquo;t have a bunch of weird local configs in a repository&amp;hellip;
-List Keys gpg --list-secret-keys --keyid-format LONG  gpg: checking the trustdb gpg: marginals needed: 3 completes needed: 1 trust model: pgp gpg: depth: 0 valid: 1 signed: 0 trust: 0-, 0q, 0n, 0m, 0f, 1u /Users/admin/.gnupg/pubring.kbx ------------------------------- sec rsa4096/E6CDB909E1587F81 2018-11-13 [SC] AB9F47B1AA5B84040649BD60E6CDB909E1587F81 uid [ultimate] Nikhil Nygaard &amp;lt;nikhil.nygaard@gmail.com&amp;gt; ssb rsa4096/4A67C39812671DFA 2018-11-13 [E]  gpg --list-keys --keyid-format LONG  /Users/admin/.</description>
-    </item>
     
     <item>
       <title>JetBrains and GPG</title>
