@@ -7,17 +7,53 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 May 2019 13:08:06 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 13:17:20 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Bug</title>
+      <link>https://www.nygaard.site/tags/bug/</link>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/bug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GPG</title>
       <link>https://www.nygaard.site/tags/gpg/</link>
-      <pubDate>Sun, 05 May 2019 13:08:06 -0700</pubDate>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GoLand</title>
+      <link>https://www.nygaard.site/tags/goland/</link>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/goland/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IntelliJ</title>
+      <link>https://www.nygaard.site/tags/intellij/</link>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/intellij/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebStorm</title>
+      <link>https://www.nygaard.site/tags/webstorm/</link>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/webstorm/</guid>
       <description></description>
     </item>
     

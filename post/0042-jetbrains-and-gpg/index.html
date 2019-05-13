@@ -8,7 +8,7 @@
     content="">
   <meta name="generator" content="Hugo 0.55.5" />
 
-  <title>Posts &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>JetBrains and GPG &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -44,9 +44,6 @@
     </script>
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="cat ~/differing-opinions.txt &gt; /dev/null"
-    href='https://www.nygaard.site/post/index.xml' />
   
 
   
@@ -131,11 +128,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href='https://www.nygaard.site/post/index.xml'><i
-          class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -261,127 +253,116 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>JetBrains and GPG</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  
-  <h2>2019</h2>
-  <ul>
-  
-    <li><time>06 May 2019, 06:59</time> - <a href="https://www.nygaard.site/post/0043-gpg-literacy/">GPG Literacy</a></li>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>05 May 2019, 13:17</time>
+  </div>
 
   
-    <li><time>05 May 2019, 13:17</time> - <a href="https://www.nygaard.site/post/0042-jetbrains-and-gpg/">JetBrains and GPG</a></li>
 
   
-    <li><time>05 May 2019, 13:08</time> - <a href="https://www.nygaard.site/post/0041-gpg-for-ssh/">GPG for SSH</a></li>
 
   
-  </ul>
   
-  <h2>2018</h2>
-  <ul>
   
-    <li><time>19 Dec 2018, 08:16</time> - <a href="https://www.nygaard.site/post/0039-airgapped-gpg/">Airgapped GPG</a></li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/gpg">GPG</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/intellij">IntelliJ</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/webstorm">WebStorm</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/goland">GoLand</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bug">Bug</a>
+    
+  </div>
+  
+  
+
+</div>
 
   
-    <li><time>03 Jul 2018, 13:57</time> - <a href="https://www.nygaard.site/post/0038-chicken-brine/">Chicken Brine</a></li>
+
+
+  <p>I encountered some issues running WebStorm and I think I finally solved them. This was an annoying bug that was a mix of WebStorm and OSX behavior that I didn&rsquo;t ask for.</p>
+
+<p>TODO: Pinentry Image</p>
+
+<p>This is the prompt that you get on OSX running Pinentry. I was getting this randomly all throughout the day just running JetBrains products. That&rsquo;s really annoying. You can see that WebStorm is trying to run <code>git-upload-pack</code> when I get the Pinentry prompt, and that is what triggered it.</p>
+
+<pre><code class="language-bash">-+= 11718 admin /Applications/WebStorm.app/Contents/MacOS/webstorm
+ |--- 12015 admin /Applications/WebStorm.app/Contents/bin/fsnotifier
+ |-+- 12039 admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath=false -c log.showSignature=false -c credential.helper
+ | \--- 12041 admin /usr/bin/ssh git@github.com git-upload-pack 'splicemachine/cloudmgr-ui.git'
+ \-+- 12593 admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath=false -c log.showSignature=false -c credential.helper
+   \--- 12594 admin /usr/bin/ssh git@github.com git-upload-pack 'splicemachine/cloudmgr-ui.git'
+</code></pre>
+
+<p>I didn&rsquo;t ask for this man.</p>
+
+<p><a href="https://stackoverflow.com/a/41195508/1236359">This answer</a> showed me where that value was coming from. I&rsquo;ve disabled it in the hope that the keychain expiry doesn&rsquo;t effect me.</p>
+
+<pre><code class="language-bash">git config --show-origin --get credential.helper
+file:/Library/Developer/CommandLineTools/usr/share/git-core/gitconfig	osxkeychain
+</code></pre>
+
+<pre><code class="language-bash">cat /Library/Developer/CommandLineTools/usr/share/git-core/gitconfig
+[credential]
+ helper = osxkeychain
+</code></pre>
+
+<pre><code class="language-bash">cd /Library/Developer/CommandLineTools/usr/share/git-core/
+sudo mv gitconfig no.gitconfig.goaway
+</code></pre>
+
+<p>I currently get the behavior once when I start WebStorm, but not as often throughout the day. I would really prefer JetBrains to allow me to configure its behavior with regards to interaction with SCM.</p>
+
 
   
-    <li><time>02 Jul 2018, 12:38</time> - <a href="https://www.nygaard.site/post/0037-arch-vpn/">Arch VPN</a></li>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0041-gpg-for-ssh/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0041-gpg-for-ssh/">GPG for SSH</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0043-gpg-literacy/">GPG Literacy</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0043-gpg-literacy/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
 
   
-    <li><time>02 Jul 2018, 10:31</time> - <a href="https://www.nygaard.site/post/0036-quince/">Quince</a></li>
 
-  
-    <li><time>13 Jun 2018, 17:48</time> - <a href="https://www.nygaard.site/post/0035-travel-kitchen-checklist/">Travel Kitchen Checklist</a></li>
-
-  
-    <li><time>15 May 2018, 23:01</time> - <a href="https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/">Connecting to Unsecured Networks</a></li>
-
-  
-    <li><time>18 Apr 2018, 11:35</time> - <a href="https://www.nygaard.site/post/0032-logging-with-systemd/">Logging with systemd</a></li>
-
-  
-    <li><time>13 Apr 2018, 22:37</time> - <a href="https://www.nygaard.site/post/0030-arch-toys/">Arch Toys</a></li>
-
-  
-    <li><time>13 Apr 2018, 14:43</time> - <a href="https://www.nygaard.site/post/0029-installing-arch/">Installing Arch</a></li>
-
-  
-    <li><time>11 Apr 2018, 10:00</time> - <a href="https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/">Andy&#39;s Poor College Student Vietnamese Soup</a></li>
-
-  
-    <li><time>10 Apr 2018, 13:02</time> - <a href="https://www.nygaard.site/post/0027-hello-world-on-android/">Hello World on Android</a></li>
-
-  
-    <li><time>26 Mar 2018, 08:09</time> - <a href="https://www.nygaard.site/post/0025-roasted-birds-eye-chili-powder/">Roasted Bird&#39;s Eye Chili Powder</a></li>
-
-  
-    <li><time>10 Feb 2018, 16:52</time> - <a href="https://www.nygaard.site/post/0024-overnight-pizza-dough/">Overnight Pizza Dough</a></li>
-
-  
-    <li><time>28 Jan 2018, 12:08</time> - <a href="https://www.nygaard.site/post/0023-chicken-legs-wing-style/">Chicken Legs (Wing Style)</a></li>
-
-  
-    <li><time>28 Jan 2018, 12:07</time> - <a href="https://www.nygaard.site/post/0022-mini-breakfast-casseroles/">Mini Breakfast Casseroles</a></li>
-
-  
-    <li><time>21 Jan 2018, 11:19</time> - <a href="https://www.nygaard.site/post/0021-roasted-tomatillo-salsa/">Roasted Tomatillo Salsa</a></li>
-
-  
-    <li><time>21 Jan 2018, 11:19</time> - <a href="https://www.nygaard.site/post/0020-oven-carnitas/">Oven Carnitas</a></li>
-
-  
-    <li><time>14 Jan 2018, 10:17</time> - <a href="https://www.nygaard.site/post/0019-chicken-gumbo/">Chicken Gumbo</a></li>
-
-  
-    <li><time>14 Jan 2018, 10:17</time> - <a href="https://www.nygaard.site/post/0018-chicken-stock/">Chicken Stock</a></li>
-
-  
-    <li><time>13 Jan 2018, 14:46</time> - <a href="https://www.nygaard.site/post/0017-expose-oauth-endpoints/">Expose OAuth Endpoints</a></li>
-
-  
-    <li><time>13 Jan 2018, 09:45</time> - <a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Run Hydra on a Mac for Testing</a></li>
-
-  
-    <li><time>12 Jan 2018, 12:17</time> - <a href="https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/">Take Screenshot Directly to Preview</a></li>
-
-  
-    <li><time>08 Jan 2018, 07:40</time> - <a href="https://www.nygaard.site/post/0014-explanation-of-timing-attacks/">Explanation of Timing Attacks</a></li>
-
-  
-    <li><time>07 Jan 2018, 11:00</time> - <a href="https://www.nygaard.site/post/0013-deploying-hydra/">Zapier and the OAuth2.0 Mountain</a></li>
-
-  
-    <li><time>03 Jan 2018, 15:08</time> - <a href="https://www.nygaard.site/post/0011-new-years/">New Years</a></li>
-
-  
-  </ul>
-  
-  <h2>2017</h2>
-  <ul>
-  
-    <li><time>01 Dec 2017, 12:25</time> - <a href="https://www.nygaard.site/post/0010-running-i3/">Running I3</a></li>
-
-  
-    <li><time>04 Nov 2017, 15:24</time> - <a href="https://www.nygaard.site/post/0008-aws-instances/">AWS Instance Resiliency</a></li>
-
-  
-    <li><time>05 Oct 2017, 21:59</time> - <a href="https://www.nygaard.site/post/0007-wordpress-tls/">Wordpress TLS</a></li>
-
-  
-    <li><time>05 Oct 2017, 14:23</time> - <a href="https://www.nygaard.site/post/0006-linkedin-interview/">LinkedIn Interview</a></li>
-
-  
-    <li><time>05 Oct 2017, 12:25</time> - <a href="https://www.nygaard.site/post/0005-ssh-review/">SSH Review</a></li>
-
-  
-    <li><time>17 Aug 2017, 14:34</time> - <a href="https://www.nygaard.site/post/0003-cloudflare-and-hugo/">Cloudflare and Hugo</a></li>
-
-  
-  </ul>
-  
 </div>
 
 </div>
