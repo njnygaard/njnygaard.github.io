@@ -3,6 +3,65 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/0046-bone-broth/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/instant-pot/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/recipes/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/beef/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/bone/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/broth/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/</loc>
+    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/bug/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
@@ -32,25 +91,7 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/webstorm/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -84,12 +125,6 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/chicken/</loc>
-    <lastmod>2018-07-03T13:57:33-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/recipe/</loc>
     <lastmod>2018-07-03T13:57:33-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -190,6 +225,12 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/vietnamese/</loc>
+    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/recipe/</loc>
     <lastmod>2018-04-11T10:00:55-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -527,11 +568,6 @@
   
   <url>
     <loc>https://www.nygaard.site/start/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <priority>0</priority>
   </url>
   

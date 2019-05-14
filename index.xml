@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 May 2019 13:17:20 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 22:10:17 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bone Broth</title>
+      <link>https://www.nygaard.site/post/0046-bone-broth/</link>
+      <pubDate>Mon, 13 May 2019 22:10:17 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0046-bone-broth/</guid>
+      <description>I don&amp;rsquo;t really like the distinction between &amp;lsquo;bone broth&amp;rsquo; and &amp;lsquo;stock&amp;rsquo; because they&amp;rsquo;re the same thing if done right. The distinction is useful because the product that is called stock in a grocery store is very different. Useful, but different.
+Bone broth is gelatinous at fridge temperature. This is because you cook down the bones and connective tissue over a long period of time. Collagen is converted to gelatin and you get meat/bone jello.</description>
+    </item>
     
     <item>
       <title>JetBrains and GPG</title>
