@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/topics/linux/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
     <priority>0</priority>
@@ -14,7 +20,31 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/arch/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/tutorials/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -32,18 +62,6 @@
   
   <url>
     <loc>https://www.nygaard.site/topics/recipes/</loc>
-    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2019-05-13T22:10:17-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -137,12 +155,6 @@
   <url>
     <loc>https://www.nygaard.site/post/0037-arch-vpn/</loc>
     <lastmod>2018-07-02T12:38:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/arch/</loc>
-    <lastmod>2018-07-02T12:38:57-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
