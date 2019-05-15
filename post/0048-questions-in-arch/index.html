@@ -8,7 +8,7 @@
     content="">
   <meta name="generator" content="Hugo 0.55.5" />
 
-  <title>Bone Broth &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+  <title>Questions in Arch &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
   
   
@@ -253,7 +253,7 @@
 
 
 <div class="header">
-  <h1>Bone Broth</h1>
+  <h1>Questions in Arch</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -262,7 +262,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>13 May 2019, 22:10</time>
+    <time>14 May 2019, 21:28</time>
   </div>
 
   
@@ -270,30 +270,10 @@
   
   
   
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/recipes">Recipes</a>
-    
-  </div>
-  
   
 
   
   
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/beef">beef</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/broth">broth</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bone">bone</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/instant-pot">Instant Pot</a>
-    
-  </div>
   
   
 
@@ -302,124 +282,37 @@
   
 
 
-  
+  <p>I notice myself asking questions about common tasks when I come back to Arch after a long time.
+I think that makes for a good article as it is possible others have these questions.</p>
 
-<p>I don&rsquo;t really like the distinction between &lsquo;bone broth&rsquo; and &lsquo;stock&rsquo; because they&rsquo;re the same thing if done right.
-The distinction is useful because the product that is called stock in a grocery store is very different.
-Useful, but different.</p>
+<blockquote>
+<p>I&rsquo;m running out of space and that&rsquo;s stupid.</p>
+</blockquote>
 
-<p>Bone broth is gelatinous at fridge temperature.
-This is because you cook down the bones and connective tissue over a long period of time.
-Collagen is converted to gelatin and you get meat/bone jello.
-We also use vinegar to promote the bones to dissolve, but not enough to prevent the gelatin from congealing.</p>
+<p>Not a question, but I&rsquo;ve felt that exact sentiment.</p>
 
+<p>In Arch, this is very likely the Pacman cache going crazy.
+Everytime you upgrade a package in Pacman, it keeps the previous version.
+All of them.
+Forever.</p>
 
+<p>You could theoretically roll back to the base installation of your system now if you&rsquo;ve never cleaned the cache.
+This is great, but you just need to be aware of the functionality because it will eat up all of <code>/</code>.</p>
 
+<p><a href="https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache">Wiki Context</a></p>
 
-<table class="pure-table pure-table-striped">
-  <thead><tr>
-    
-      <th>Ingredient</th>
-    
-      <th>Quantity</th>
-    
-  </thead></tr>
-  <tbody>
-  
-    <tr>
-      
-      
-        <td>
-        
-          <span class="red">
-            Beef Bones
-          </span>
-        </td>
-      
-        <td>
-        
-          <span class="">
-            4 Pounds
-          </span>
-        </td>
-      
-    </tr>
-  
-    <tr>
-      
-      
-        <td>
-        
-          <span class="blue">
-            Water
-          </span>
-        </td>
-      
-        <td>
-        
-          <span class="">
-            Much
-          </span>
-        </td>
-      
-    </tr>
-  
-    <tr>
-      
-      
-        <td>
-        
-          <span class="green">
-            Apple Cider Vinegar
-          </span>
-        </td>
-      
-        <td>
-        
-          <span class="">
-            1/4 Cup
-          </span>
-        </td>
-      
-    </tr>
-  
-    <tr>
-      
-      
-        <td>
-        
-          <span class="green">
-            Salt
-          </span>
-        </td>
-      
-        <td>
-        
-          <span class="">
-            Pinches
-          </span>
-        </td>
-      
-    </tr>
-  
-  </tbody>
-</table>
+<p>To do this you&rsquo;ll have to install <code>pacman-contrib</code>, which means you&rsquo;ll have to do an upgrade with <code>pacman -Syyu</code>, so make sure that you already haven&rsquo;t run out of space ;)</p>
 
-<h2 id="clean">Clean</h2>
+<pre><code class="language-bash">paccache -rk1
+==&gt; Privilege escalation required
 
-<p>You have to clean the bones to get rid of blood and other protein garbage on the surface of cut bones.
-Blanch them in boiling water for 5 minutes.
-If frozen, make sure the water returns to a boil then start your timer.
-Work in batches.</p>
+==&gt; finished: 2036 packages removed (disk space saved: 8.1 GiB)
+</code></pre>
 
-<h2 id="roast">Roast</h2>
-
-<p>You really have to roast the shit out of the bones.
-This is where all the flavor and color comes from.
-None of the gelatin is harmed, and you will render out a lot of fat from the marrow.
-This is great because it means you don&rsquo;t have to skim as much out of the broth later.</p>
-
-<p>You&rsquo;re going for bones that look like this. About 40 minutes at 450 broil.</p>
+<p>Holy Shit.
+That was a massive difference.
+From 20.8GB to 13.2GB.
+My <code>/</code> is back to the expected size.</p>
 
 
 
@@ -431,11 +324,11 @@ This is great because it means you don&rsquo;t have to skim as much out of the b
   
   <div class="pure-u-1-2 center">
     <div style="padding: 0 .2em">
-      <a href="bones0.jpg">
+      <a href="pacman-cache-before.png">
         <img
           class="pure-img-responsive"
-          src="bones0.jpg"
-          alt="Dem.">
+          src="pacman-cache-before.png"
+          alt="Before.">
       </a>
     </div>
   </div>
@@ -447,11 +340,11 @@ This is great because it means you don&rsquo;t have to skim as much out of the b
   
   <div class="pure-u-1-2 center">
     <div style="padding: 0 .2em">
-      <a href="bones1.jpg">
+      <a href="pacman-cache-after.png">
         <img
           class="pure-img-responsive"
-          src="bones1.jpg"
-          alt="Bones.">
+          src="pacman-cache-after.png"
+          alt="After.">
       </a>
     </div>
   </div>
@@ -460,34 +353,116 @@ This is great because it means you don&rsquo;t have to skim as much out of the b
 </div>
 
 
-<h2 id="cook">Cook</h2>
+<blockquote>
+<p>How do I get rid of this package I know I will never use again?</p>
+</blockquote>
 
-<p>I use the Instant Pot for this.
-It is awesome.
-I put the bones in, fill with good water to the <sup>2</sup>&frasl;<sub>3</sub> line, and add the vinegar.
-Then I seal it up and use the Broth setting for 4 hours.
-I turn off the Kep Warm function and go to bed.
-I like the slow natural release for this because it is effectively more cooking time.</p>
+<p><em>cough</em> emacs <em>cough</em></p>
 
-<h2 id="store">Store</h2>
+<p><a href="https://wiki.archlinux.org/index.php/Pacman#Removing_packages">Removing Packages</a></p>
 
-<p>In the morning, you&rsquo;ll have to strain with a sieve and skim off some tallow.
-I store it in those ziploc containers.
-I haven&rsquo;t noticed it going bad over the course of a week.
-I would freeze it if I had the room.</p>
+<p>Remove a package and all of its dependencies that aren&rsquo;t needed by another package.</p>
+
+<pre><code class="language-bash">pacman -Rs [package name]
+</code></pre>
+
+<p>Find a package by name and get some information on it.</p>
+
+<pre><code class="language-bash">pacman -Qi [package name]
+</code></pre>
+
+<blockquote>
+<p>How do I visualize the usage on my disk?</p>
+</blockquote>
+
+<p><a href="https://wiki.archlinux.org/index.php/List_of_applications/Utilities#Disk_usage_display">Wiki</a></p>
+
+<p>Filelight is what I settled on. It produced those lovely pie charts earlier in the article.
+I love that you can see everything in a hierarchical order and really see which folders are the worst offenders.</p>
+
+<p><a href="https://www.kde.org/applications/utilities/filelight">Filelight</a> — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.</p>
+
+<blockquote>
+<p>How do I take a screenshot?</p>
+</blockquote>
+
+<p>This one is more complicated.
+Because I run <a href="https://i3wm.org/">i3</a>, I have the option to bind keys to scripts in a very convenient way.</p>
+
+<p>My <code>~/.config/i3/config</code> has the following lines amongst others:</p>
+
+<pre><code class="language-bash">bindsym --release Shift+Print exec --no-startup-id &quot;maim -s -c 1,1,1,0 --format png /home/drone/Pictures/Screenshots/`date | sed 's/ /-/g'`.png&quot;
+bindsym --release Print exec --no-startup-id &quot;maim -s -c 1,1,1,0 --format png /dev/stdout | xclip -selection clipboard -t image/png&quot;
+# Screenshots
+</code></pre>
+
+<p>Implicitly here, I&rsquo;m using <a href="https://github.com/naelstrof/maim">maim</a>.
+You&rsquo;ll need that installed to do anything.
+With maim, you&rsquo;ll get cross hairs, you can draw a box to get a selection, or click to get the whole window.</p>
+
+<p>Notice that for <code>Shift+PrtSc</code> I&rsquo;m saving to a well known location and for the regular, I copy to the clipboard.
+Take that OSX.</p>
+
+<blockquote>
+<p>How do I look at this image?</p>
+</blockquote>
+
+<p>Oh yeah, you can&rsquo;t just <code>open</code>.
+I like <a href="https://github.com/muennich/sxiv">sxiv</a> for this.
+It is super clean and small.
+<a href="https://wiki.archlinux.org/index.php/List_of_applications#Image_organizers">The Wiki</a> told me so.</p>
+
+
+
+<div class="pure-g">
+
+  
+  
+  
+  
+  <div class="pure-u-1-2 center">
+    <div style="padding: 0 .2em">
+      <a href="lots-of-images.png">
+        <img
+          class="pure-img-responsive"
+          src="lots-of-images.png"
+          alt="Too many.">
+      </a>
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="pure-u-1-2 center">
+    <div style="padding: 0 .2em">
+      <a href="thumbnails.png">
+        <img
+          class="pure-img-responsive"
+          src="thumbnails.png"
+          alt="Thumbs.">
+      </a>
+    </div>
+  </div>
+  
+
+</div>
+
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://www.nygaard.site/post/0042-jetbrains-and-gpg/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://www.nygaard.site/post/0046-bone-broth/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://www.nygaard.site/post/0042-jetbrains-and-gpg/">JetBrains and GPG</a>
+      <a href="https://www.nygaard.site/post/0046-bone-broth/">Bone Broth</a>
     </nav>
     
   </div>
@@ -496,14 +471,8 @@ I would freeze it if I had the room.</p>
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://www.nygaard.site/post/0048-questions-in-arch/">Questions in Arch</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://www.nygaard.site/post/0048-questions-in-arch/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

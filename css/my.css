@@ -16,6 +16,9 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }*/
 
+
+
+
 .twitter-tweet {
     box-shadow: 10px 10px 5px grey;
     background-color: rgb(255, 255, 255);
@@ -24,14 +27,14 @@
 
 blockquote {
     background: lightgray;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
+    margin: 2em 0 2em 0;
     padding-left: 1em;
     padding-bottom: 0.1em;
     padding-top: 0.1em;
     padding-right: 1em;
+    -webkit-box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
+    box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
 }
 
 body {

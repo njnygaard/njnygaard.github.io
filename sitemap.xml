@@ -3,18 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0048-questions-in-arch/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0046-bone-broth/</loc>
     <lastmod>2019-05-13T22:10:17-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/instant-pot/</loc>
-    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/</loc>
     <lastmod>2019-05-13T22:10:17-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -51,12 +62,6 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/broth/</loc>
-    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/</loc>
     <lastmod>2019-05-13T22:10:17-07:00</lastmod>
     <priority>0</priority>
   </url>
