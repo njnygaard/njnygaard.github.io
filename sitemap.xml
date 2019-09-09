@@ -114,36 +114,24 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/post/0042-jetbrains-and-gpg/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/bug/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/goland/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/intellij/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/post/0042-jetbrains-and-gpg/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/webstorm/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/gpg/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/jetbrains/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
   </url>

@@ -103,38 +103,11 @@
     </item>
     
     <item>
-      <title>Bug</title>
+      <title>bug</title>
       <link>https://www.nygaard.site/tags/bug/</link>
       <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/bug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GoLand</title>
-      <link>https://www.nygaard.site/tags/goland/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/goland/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IntelliJ</title>
-      <link>https://www.nygaard.site/tags/intellij/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/intellij/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WebStorm</title>
-      <link>https://www.nygaard.site/tags/webstorm/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/webstorm/</guid>
       <description></description>
     </item>
     
@@ -144,6 +117,15 @@
       <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jetbrains</title>
+      <link>https://www.nygaard.site/tags/jetbrains/</link>
+      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/jetbrains/</guid>
       <description></description>
     </item>
     
