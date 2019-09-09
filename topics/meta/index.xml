@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/topics/meta/</link>
+    <description>Recent content in Meta on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 03 Jan 2018 15:08:52 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.nygaard.site/topics/meta/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Years</title>
+      <link>https://www.nygaard.site/post/0011-new-years/</link>
+      <pubDate>Wed, 03 Jan 2018 15:08:52 -0800</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0011-new-years/</guid>
+      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
+    </item>
+    
+  </channel>
+</rss>

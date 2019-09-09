@@ -268,6 +268,16 @@
   
 
   
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">Technology</a>
+    
+  </div>
+  
+  
 
   
   
@@ -371,31 +381,38 @@
 <h2 id="task-list">Task List</h2>
 
 <ul>
-<li>🔵 <a href="#make-a-bootable-drive">Make a Bootable Drive</a>
+<li><a href="#installation-guide">Installation Guide</a></li>
+<li><a href="#motivation-guide">Motivation Guide</a></li>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#task-list">Task List</a></li>
+<li><a href="#make-a-bootable-drive">Make a Bootable Drive</a>
 
 <ul>
-<li>🔵 <a href="#download-image">Download Image</a></li>
-<li>🔵 <a href="#write-drive-osx">Write Drive OSX</a></li>
-<li>🔵 <a href="#booting">Booting</a></li>
+<li><a href="#download-image">Download Image</a></li>
+<li><a href="#write-drive-osx">Write Drive OSX</a></li>
+<li><a href="#booting">Booting</a></li>
 </ul></li>
-<li>🔵 <a href="#internet-connection">Internet Connection</a></li>
-<li>🔵 <a href="#disk-encryption">Disk Encryption</a>
+<li><a href="#internet-connection">Internet Connection</a></li>
+<li><a href="#disk-encryption">Disk Encryption</a>
 
 <ul>
-<li>🔵 <a href="#drive-wipe">Drive Wipe</a></li>
-<li>🔵 <a href="#create-partition-table">Create Partition Table</a></li>
-<li>🔵 <a href="#preparing-the-logical-volumes">Preparing the logical volumes</a></li>
-<li>🔵 <a href="#preparing-the-boot-partition">Preparing the boot partition</a></li>
+<li><a href="#drive-wipe">Drive Wipe</a></li>
+<li><a href="#create-partition-table">Create Partition Table</a></li>
+<li><a href="#preparing-the-logical-volumes">Preparing the logical volumes</a></li>
+<li><a href="#preparing-the-boot-partition">Preparing the boot partition</a></li>
 </ul></li>
-<li>🔵 <a href="#installation">Installation</a>
+<li><a href="#installation">Installation</a>
 
 <ul>
-<li>🔵 <a href="#normal-procedure">Normal Procedure</a></li>
-<li>🔵 <a href="#bootloader">Bootloader</a></li>
-<li>🔵 <a href="#encrypted-drive-config-files">Encrypted Drive Config Files</a></li>
-<li>🔵 <a href="#encrypting-home-directory">Encrypting Home Directory</a></li>
+<li><a href="#normal-procedure">Normal Procedure</a></li>
+<li><a href="#bootloader">Bootloader</a></li>
+<li><a href="#encrypted-drive-config-files">Encrypted Drive Config Files</a></li>
+<li><a href="#etcfstab"><code>/etc/fstab</code></a></li>
+<li><a href="#etccrypttab"><code>/etc/crypttab</code></a></li>
+<li><a href="#encrypting-home-directory">Encrypting Home Directory</a></li>
 </ul></li>
-<li>🔵 <a href="#emergency">Emergency</a></li>
+<li><a href="#emergency">Emergency</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 
 <h2 id="make-a-bootable-drive">Make a Bootable Drive</h2>
@@ -473,10 +490,10 @@ cryptsetup close to_be_wiped
 <p>I&rsquo;m going to try to use parted to create <code>/dev/sda1</code> and <code>/dev/sda2</code>. This will be the boot drive (unencrypted) and the rest of the drive (LVM).</p>
 
 <!-- 
-|Device|Partition|Size|
-|------|---------|----|
-|`/dev/sda1`|`/boot`|200MiB|
-|`/dev/sda2`|LVM|100% of Free|
+| Device      | Partition | Size         |
+| ----------- | --------- | ------------ |
+| `/dev/sda1` | `/boot`   | 200MiB       |
+| `/dev/sda2` | LVM       | 100% of Free |
  -->
 
 

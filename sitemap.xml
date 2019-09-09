@@ -56,18 +56,24 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/topics/linux/</loc>
-    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/post/0048-questions-in-arch/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/topics/technology/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/arch/</loc>
+    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/linux/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -114,12 +120,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/gpg/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/goland/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
     <priority>0</priority>
@@ -143,8 +143,32 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/tags/gpg/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/privacy/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/security/</loc>
+    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0041-gpg-for-ssh/</loc>
     <lastmod>2019-05-05T13:08:06-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/encryption/</loc>
+    <lastmod>2019-05-05T13:08:06-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -193,7 +217,7 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/michelin-3-star/</loc>
+    <loc>https://www.nygaard.site/topics/life/</loc>
     <lastmod>2018-07-02T10:31:17-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -201,6 +225,12 @@
   <url>
     <loc>https://www.nygaard.site/post/0036-quince/</loc>
     <lastmod>2018-07-02T10:31:17-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/michelin-3-star/</loc>
+    <lastmod>2018-07-02T10:31:17-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -237,12 +267,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/linux/</loc>
-    <lastmod>2018-04-18T11:35:20-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/systemd/</loc>
     <lastmod>2018-04-18T11:35:20-07:00</lastmod>
     <priority>0</priority>
@@ -264,12 +288,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/vietnamese/</loc>
-    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/recipe/</loc>
     <lastmod>2018-04-11T10:00:55-07:00</lastmod>
     <priority>0</priority>
@@ -277,6 +295,12 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/soup/</loc>
+    <lastmod>2018-04-11T10:00:55-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/vietnamese/</loc>
     <lastmod>2018-04-11T10:00:55-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -502,6 +526,12 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/topics/meta/</loc>
+    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/post/0011-new-years/</loc>
     <lastmod>2018-01-03T15:08:52-08:00</lastmod>
   </url>
@@ -552,14 +582,14 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/security/</loc>
+    <loc>https://www.nygaard.site/tags/tls/</loc>
     <lastmod>2017-10-05T21:59:01-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/tls/</loc>
-    <lastmod>2017-10-05T21:59:01-07:00</lastmod>
+    <loc>https://www.nygaard.site/topics/jobs/</loc>
+    <lastmod>2017-10-05T14:23:44-07:00</lastmod>
     <priority>0</priority>
   </url>
   
