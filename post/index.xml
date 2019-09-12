@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 11 Sep 2019 21:36:49 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 09:45:14 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Convict Lake Loop</title>
+      <link>https://www.nygaard.site/post/0052-convict-lake-loop/</link>
+      <pubDate>Thu, 12 Sep 2019 09:45:14 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0052-convict-lake-loop/</guid>
+      <description>This is Convict Lake. I grew coming here to hike and camp. My two fondest birthday celebrations have been at this lake. The first with my parents for my 12th birthday. The second with my parents and now wife for my 35th birthday.</description>
+    </item>
     
     <item>
       <title>Extending GPG Expiry</title>
