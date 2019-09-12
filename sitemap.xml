@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/tags/appetizer/</loc>
-    <lastmod>2019-09-09T12:19:28-07:00</lastmod>
+    <loc>https://www.nygaard.site/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/</loc>
+    <loc>https://www.nygaard.site/post/0051-extending-gpg-expiry/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/gpg/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/privacy/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/security/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/technology/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2019-09-11T21:36:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/appetizer/</loc>
     <lastmod>2019-09-09T12:19:28-07:00</lastmod>
   </url>
   
@@ -23,27 +63,12 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2019-09-09T12:19:28-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/topics/recipes/</loc>
     <lastmod>2019-09-09T12:19:28-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/tags/smoker/</loc>
-    <lastmod>2019-09-09T12:19:28-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2019-09-09T12:19:28-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2019-09-09T12:19:28-07:00</lastmod>
   </url>
   
@@ -74,11 +99,6 @@
   
   <url>
     <loc>https://www.nygaard.site/post/0048-questions-in-arch/</loc>
-    <lastmod>2019-05-14T21:28:54-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/technology/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
   </url>
   
@@ -118,27 +138,12 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/tags/gpg/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/jetbrains/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/post/0042-jetbrains-and-gpg/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/privacy/</loc>
-    <lastmod>2019-05-05T13:17:20-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/security/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
   </url>
   

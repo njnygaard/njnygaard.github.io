@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 09 Sep 2019 12:19:28 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2019 21:36:49 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gpg</title>
+      <link>https://www.nygaard.site/tags/gpg/</link>
+      <pubDate>Wed, 11 Sep 2019 21:36:49 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>https://www.nygaard.site/tags/privacy/</link>
+      <pubDate>Wed, 11 Sep 2019 21:36:49 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://www.nygaard.site/tags/security/</link>
+      <pubDate>Wed, 11 Sep 2019 21:36:49 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/security/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>appetizer</title>
@@ -130,38 +157,11 @@
     </item>
     
     <item>
-      <title>gpg</title>
-      <link>https://www.nygaard.site/tags/gpg/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/gpg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jetbrains</title>
       <link>https://www.nygaard.site/tags/jetbrains/</link>
       <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/jetbrains/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>privacy</title>
-      <link>https://www.nygaard.site/tags/privacy/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://www.nygaard.site/tags/security/</link>
-      <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/security/</guid>
       <description></description>
     </item>
     

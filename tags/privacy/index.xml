@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 May 2019 13:17:20 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2019 21:36:49 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Extending GPG Expiry</title>
+      <link>https://www.nygaard.site/post/0051-extending-gpg-expiry/</link>
+      <pubDate>Wed, 11 Sep 2019 21:36:49 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0051-extending-gpg-expiry/</guid>
+      <description>If you followed my last article on this subject, you have a GPG setup without the master private key on your computer. You also put an expiration date on that key. When your key expires, it can no longer be used to encrypt data for you*. It can however still decrypt messages from prior to the expiry date. This does not help in the situation where your private key is compromised.</description>
+    </item>
     
     <item>
       <title>JetBrains and GPG</title>
