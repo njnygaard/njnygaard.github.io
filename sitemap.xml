@@ -133,6 +133,16 @@
   </url>
   
   <url>
+    <loc>https://www.nygaard.site/topics/meta/</loc>
+    <lastmod>2019-05-13T21:08:34-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0044-test-post-please-ignore/</loc>
+    <lastmod>2019-05-13T21:08:34-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.nygaard.site/tags/bug/</loc>
     <lastmod>2019-05-05T13:17:20-07:00</lastmod>
   </url>
@@ -465,11 +475,6 @@
   <url>
     <loc>https://www.nygaard.site/post/0013-deploying-hydra/</loc>
     <lastmod>2018-01-07T11:00:26-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/meta/</loc>
-    <lastmod>2018-01-03T15:08:52-08:00</lastmod>
   </url>
   
   <url>
