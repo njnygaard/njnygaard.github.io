@@ -3,51 +3,61 @@ const canary = `
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-2019-02-07
+As of 2019-10-25 no warrants have ever been served to me.
+No searches or seizures of any kind have ever been performed on my assets.
+I have no direct or indirect knowledge of any backdoors, or potential backdoors in my server or network and I have not received any requests to implement a backdoor.
+I have never disclosed any user communications to any third party.
 
-Trump furious after Schiff hires former NSC aides
-https://www.msn.com/en-us/news/politics/trump-furious-after-schiff-hires-former-nsc-aides-to-help-with-probe/ar-BBTiUSK?li=BBnb7Kz
-MSN|2 hours ago
+Noah Berger/AP
+National
+PG&E Warns Of Power Cuts To More Than 2.5 Million People As Wildfires Rage
+October 25, 2019 • The utility says widespread dry northeast winds reaching 45 to 60 mph with gusts of 60 to 70 mph at higher elevations raise the potential for a massive outages to prevent more wildfires.
 
-Virginia Mulls Misdeeds of Its Leaders and Braces for More Turmoil
-https://www.msn.com/en-us/news/politics/virginia-mulls-misdeeds-of-its-leaders-and-braces-for-more-turmoil/ar-BBTiQSl
-MSN|3 hours ago
+Pablo Martinez Monsivais/AP
+Politics
+Democrats Say White House Is Interfering As Russia Review Becomes A Criminal Case
+October 25, 2019 • Attorney General Bill Barr commissioned U.S. Attorney John Durham to look into the early phases of the Russia investigation. Democrats say he is turning the Justice Department into a political weapon.
 
-Frank Robinson, barrier-breaking Hall of Fame baseball player and manager, dies at 83
-https://www.washingtonpost.com/local/obituaries/frank-robinson-barrier-breaking-hall-of-fame-baseball-player-and-manager-dies-at-83/2019/02/07/06a258ee-20d2-11e9-8e21-59a09ff1e2a1_story.html
-The Washington Post|3 hours ago
+Will Newton/Getty Images
+Goats and Soda
+Juan Soto Of The Nationals Brings Dominican Zest To The World Series
+October 25, 2019 • He's one of many Dominican players in the major leagues. In fact, every team has a training academy in the Dominican Republic.
 
-Republicans argue against 'weaponizing' tax code as Democrats press for Trump's returns
-https://www.marketwatch.com/story/republicans-argue-against-weaponizing-tax-code-as-democrats-press-for-trumps-returns-2019-02-07
-MarketWatch|1 hour ago
+Alex Brandon/AP
+Business
+Trump Says He May Put His Washington Hotel On The Market
+October 25, 2019 • The hotel was developed at the opulent Old Post Office building and has been at the center of complaints that Trump and his family are profiting off the presidency.
+
+Muhammad Hamed/Reuters
+Goats and Soda
+UNICEF's Top Syria Official: 'We Have Witnessed Huge Amounts Of Distress' Among Kids
+October 25, 2019 • Turkey's invasion of Syria this month has displaced 80,000 children who are "really in deep distress," UNICEF's Fran Equiza tells NPR. "The price children pay is absolutely disproportionate."
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEy2z044LDARAae+lJbXt5doitEMcFAlxcv6AACgkQbXt5doit
-EMfzzA//fE6GNr3fyql7MpIqjRyEwo/HJBB3/dHz34loghCaSQLi95cWAVn8Utos
-1Pq3vKyTxigvY5yf/zbZNFR5vAdiLDGu+ev1R3Izs6Rpx+6vYdw+HuS4BypOHcVp
-xM2YhumZbnl087XqNKxGtx9csq1ElO3pJ+JDMtO53vHbN2MLprb4oZyx+h6NkHAl
-C65GHbPRqRjm0cNdT9hftjrt+emqXusWmi8XHWbdSAGPqd2TuRM++3oTsdSQkNo9
-SZvY5N7A8MeGRzqwyY2o0sroYYuJ7qDWj78CDTX7+jIMSaMNUJbh7mi0D101j2Xw
-q6J17qnA3vxtaf0xHkqIB17d4zyhJ3LvctwAUl30y0UwQ4yLZCkAy9p/uv9POdqi
-hqKWSf1X6LBK3HYV/MekUF7o4SO73z0QktacTOQox7FeikuQ6WWe9qiEKhewYX2z
-qT1Y7ffQPtUXDVwbBQnKmMfH88iTH12hZ4pTcqxTSGI3Hd/uL+RQ9cTq7oq09eWq
-izl8QT1M3Rr/5e+cfSJMZiDRoE0vQMjVFySlh4XL1xSg+KBYtt1vD1f0oohA1yH0
-XXu1lqP+UNmqpRcuYD5IO4G4twPafAuo97shgNf+G16JEFQqfrczYQJshn/ebb2+
-vtAbkVk1XeT1pJ4AMoCD0lK5baCZnq2aHF20+Pm6PrxDPYLCb5A=
-=hKIV
+iQIzBAEBCgAdFiEEy2z044LDARAae+lJbXt5doitEMcFAl2zkhYACgkQbXt5doit
+EMdExRAAn3757hPTSU/6RAg5hECSbO5+WEDna6jsW/fMXz4sw5CgmB+L7hxzsKYi
+AJfSfrl/PDaB3Gndwn1Gcjp+shWiNkoFrXXNgR5JHv2l+XXatdH9wrYNIh/i7qgA
+cHPyNVUiiJbS2VZpdhPBmUbbE13X80b6yqqAXMDjtSAJEXGXLKjpMWIXshXcG/7q
+I8rYKm0CYDxGkh/nbtzXi32SeS/BZpzvJhDqqV2Wntm+fHxBRfmExXzXlaWvgUQb
+KpUMbpM73DFEUGLBq3MbH46BSQCCGom//uVcGtIRuxmU6PC3hQqQ/gH+7cxG381D
+NzGXXsOW7sGrbGRHnHQNFU+7C0QeCbHsazy+htOnv3nZAdTbnDe1pvHnvBz8JOZZ
+yPEeHEUkgV3OXSPf+Tpi0/XDDrjODRSYgPSSr6x08YYpk9+VLZ3ZmAj1yUVaVFp3
+9tBL2uIGcP6QIBHdF6WvGoNsSlrw1gvW+Izi1ksHukWk4KGDuj77gCW2dgTsnqXb
+Zk4rMOwCNWS0mG2sMe2PG8nAkPNA+VwtZp4o6y2lSRgT6ivDGyXkBe857Y3Qtptl
+zsvzcwB4sxQuEbE+Ah7AQWqVkzq5aNc1a9P3L2Sal8p6fMiW0naFYpZYQhlz3gU1
+DBUusxOqcOQ5DjR/mlMFw2mVjcCFHj630zTrAM8sQGOq0/hXjKE=
+=02gO
 -----END PGP SIGNATURE-----
-
 `;
 
 (function (window, document) {
-    // Shrink images to the width of the article.
-    var elements = document.getElementsByTagName("img");
-    for (var i=0; i<elements.length; i++)
-    {
-      var el = elements[i];      
-      el.setAttribute( "class", el.getAttribute("class") + " content" );
-    }
+  // Shrink images to the width of the article.
+  var elements = document.getElementsByTagName("img");
+  for (var i = 0; i < elements.length; i++) {
+    var el = elements[i];
+    el.setAttribute("class", el.getAttribute("class") + " content");
+  }
 
-	console.log(canary);
+  console.log(canary);
 
 }(this, this.document));
