@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <title>oauth &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -317,7 +317,7 @@
 
   <p>
   Zapier Zapier gives me a list of things that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.
- Authentication Type  OAuth V2 w/refresh  Client ID  AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo; zapier  Client Secret  AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo; asdjhalsgdhgaposdigu (some string)  Authorization URL  For now I will list what I see the consent app presenting.
+ Authentication Type  OAuth V2 w/refresh   Client ID  AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo; zapier   Client Secret  AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo; asdjhalsgdhgaposdigu (some string)   Authorization URL  For now I will list what I see the consent app presenting.
   </p>
 
   
@@ -381,7 +381,7 @@
 
   <p>
   These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &quot;create database hydra&quot; | mysql -uroot -proot  Down echo &quot;drop database hydra&quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.
+Infrastructure Create Database Up echo &#34;create database hydra&#34; | mysql -uroot -proot Down echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.
   </p>
 
   

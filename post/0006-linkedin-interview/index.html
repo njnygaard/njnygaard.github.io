@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <title>LinkedIn Interview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -296,30 +296,27 @@
   
 
 
-  <p>I interviewed today with LinkedIn and <!--[Karrick McDermott][1]--> <code>[REDACTED]</code>. He was intimidatingly knowledgeable and described a work environment that I really hope to join. I hope that I have the skill set necessary.</p>
-
+  <p>I interviewed today with LinkedIn and <!-- raw HTML omitted --> <code>[REDACTED]</code>. He was intimidatingly knowledgeable and described a work environment that I really hope to join. I hope that I have the skill set necessary.</p>
 <p>What follows are notes of the responses for my edification, not necessarily how I answered.</p>
-
 <blockquote>
 <p>Describe what happens when we type <code>ssh shell.linkedin.com</code> and hit enter.</p>
 </blockquote>
-
 <ul>
 <li>When you hit enter, your shell gets the string you entered on the command line. In this case, we send the string to bash.</li>
 <li>Bash will parse the string for whitespace and take <code>arg[0]</code> as the name of the executable you intend to execute.</li>
 <li>It will lookup said executable in several locations:
-
 <ul>
 <li>builtins</li>
 <li>functions</li>
 <li>aliases</li>
 <li><code>$PATH</code></li>
-</ul></li>
+</ul>
+</li>
 <li>As an aside: Why must <code>cd</code> be a &ldquo;builtin&rdquo;?
-
 <ul>
-<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process&rsquo;s environment unchanged.</li>
-</ul></li>
+<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process's environment unchanged.</li>
+</ul>
+</li>
 <li>Once it finds what you mean by that <code>arg[0]</code>, it will <code>fork</code> and call the executable you intend to run.</li>
 <li>Now <code>ssh</code> gets that list of arguments can use something like <code>getopts</code> to parse meaning out of that.</li>
 <li>Assuming that the argument parsing went well, we can now try to resolve the hostname that <code>ssh</code> has been passed.</li>
@@ -328,28 +325,24 @@
 <li>Once you have the IP, you can then establish a TCP connection to the server on port 22 (magic number).</li>
 <li>After the TCP connection is established, you can look here for the <a href="../0005-ssh-review/">SSH Review</a></li>
 </ul>
-
 <blockquote>
 <p>You have a system where 10000 clients need to access 10GB of information from a server. The data changes a few sectors a day.</p>
 </blockquote>
-
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Rsync"><code>rsync</code></a> is the key to this question. With <code>rsync</code>, you can establish a connection to a remote server and synchronize files over the connection, sending only what needs to be sent.</li>
 <li>Karrick shared with me a utility he discovered in the interview process, <a href="https://github.com/addthis/ssync"><code>ssync</code></a>, which solves the distributed portion of this challenge too.</li>
 <li>Without <code>ssync</code>, you will run in to the issue that when a change happens on the server, all the clients are notified. This will cause a bottleneck at the server.</li>
 <li>To mitigate this, you can setup a self-similar hierarchy whereby the server has 10 nodes it broadcasts to and those nodes synchronize files with it. Each of those nodes in-turn has 10 nodes. Once the files are synchronized to any level, the next level will get a notification.</li>
 </ul>
-
 <blockquote>
 <p>You just inherited a software system that has no metrics. Describe what you do in the first quarter to allow you to sleep at night.</p>
 </blockquote>
-
 <ul>
 <li>Firstly, I would get a trial of SignalFX, because it is the only platform of this kind that I know.</li>
 <li>SignalFX has a fork of <code>collectd</code> that it uses to gather information from nodes.</li>
 <li>Giving SignalFX your AWS credentials will allow it to identify all the hosts that you run. EC2, RDS, other things.</li>
 <li>Once that data is in SignalFX, you can begin to create dashboards and setup alerts.</li>
-<li>Those alerts can be piped to PagerDudy or Karrick&rsquo;s recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
+<li>Those alerts can be piped to PagerDudy or Karrick's recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
 </ul>
 
 

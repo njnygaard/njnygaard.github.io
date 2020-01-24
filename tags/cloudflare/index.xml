@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloudflare on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -18,10 +18,10 @@
       <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</guid>
-      <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
+      <description>Hey hey! I got it to work! I&#39;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
- 
-That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
+[
+That&#39;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     
   </channel>

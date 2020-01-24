@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <title>Expose OAuth Endpoints &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -304,91 +304,81 @@
   
 
 
-  
-
-<h1 id="zapier">Zapier</h1>
-
+  <h1 id="zapier">Zapier</h1>
 <p>Zapier gives me a <a href="https://zapier.com/developer/documentation/v2/oauth-v2/">list of things</a> that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.</p>
-
 <ul>
 <li>Authentication Type
-
 <ul>
 <li><code>OAuth V2 w/refresh</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Client ID
-
 <ul>
 <li>AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo;</li>
 <li><code>zapier</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Client Secret
-
 <ul>
 <li>AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo;</li>
 <li><code>asdjhalsgdhgaposdigu</code> (some string)</li>
-</ul></li>
+</ul>
+</li>
 <li>Authorization URL
-
 <ul>
 <li>For now I will list what I see the consent app presenting.</li>
 <li><code>http://localhost:4444/oauth2/auth?client_id=demo&amp;redirect_uri=http%3A%2F%2Flocalhost%3A4445%2Fcallback&amp;response_type=code&amp;scope=offline+openid&amp;state=demostatedemostatedemo&amp;nonce=demostatedemostatedemo</code></li>
-<li>They say that they will construct and append the querystring for me. So I don&rsquo;t think I need any of the garbage.</li>
+<li>They say that they will construct and append the querystring for me. So I don't think I need any of the garbage.</li>
 <li>I clearly need to expose Hydra (<code>4444</code>) as this route.</li>
-<li>I&rsquo;ll tell Zapier my string is:
-
+<li>I'll tell Zapier my string is:
 <ul>
 <li><code>http://localhost:4444/oauth2/auth</code></li>
 <li>OR</li>
 <li><code>http://app.flowmojo.com/api/v1/oauth2/auth</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Access Token URL
-
 <ul>
 <li>I think this one should just be:
-
 <ul>
 <li><code>http://app.flowmojo.com/api/v1/oauth2/token</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Refresh Token URL
-
 <ul>
 <li>I get a 404 for this URL
-
 <ul>
 <li><code>http://app.flowmojo.com/api/v1/oauth2/refresh</code></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="http://openid.net/specs/openid-connect-core-1_0.html#RefreshTokens">Spec</a> says this URL should be fine:
-
 <ul>
 <li><code>http://app.flowmojo.com/api/v1/oauth2/token</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Scope
-
 <ul>
 <li>&ldquo;read write offline openid&rdquo;</li>
-</ul></li>
+</ul>
+</li>
 <li>Access Token Placement
-
 <ul>
 <li><code>[blank]</code></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h1 id="status">Status</h1>
-
 <p>I added some stuff to the zapier app and then tried the integration
 It tried to go here!</p>
-
 <pre><code>https://app.flowmojo.com/api/v1/oauth2/auth?client_id=3da2cace-d2cc-4eb5-837d-552933dcb832&amp;redirect_uri=https%3A%2F%2Fzapier.com%2Fdashboard%2Fauth%2Foauth%2Freturn%2FApp1944CLIAPI%2F&amp;response_type=code&amp;state=1515887277.0113436&amp;scope=User.Read%20Files.ReadWrite.All%20offline_access
-</code></pre>
-
-<p>That&rsquo;s progress!</p>
-
-<p>Next up, I need to configure Zapier&rsquo;s desired route to be the right one for our application.</p>
+</code></pre><p>That's progress!</p>
+<p>Next up, I need to configure Zapier's desired route to be the right one for our application.</p>
 
 
   

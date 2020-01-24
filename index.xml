@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 20 Sep 2019 13:14:36 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 08:49:04 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installing Arch on Older Hardware</title>
+      <link>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</link>
+      <pubDate>Thu, 23 Jan 2020 08:49:04 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</guid>
+      <description>First post of the New Year. Still got it in January. I moved States, bought a house, got a dog. So blogging has not been at the top of the list.
+Now that I emptied my storage unit, I found my old buddy Tinman. He&#39;s a Core i7 &amp;lsquo;server&amp;rsquo; with two GTX 480&#39;s and 2TB of space. He&#39;s old, but sturdy. He deserves a place of glory. And and Arch installation.</description>
+    </item>
     
     <item>
       <title>Engagement Hike</title>
@@ -18,7 +28,7 @@
       <pubDate>Fri, 20 Sep 2019 13:14:36 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0053-engagement-hike/</guid>
-      <description>I proposed to my wife in Kauai at the Waimea Canyon Lookout. I couldn&amp;rsquo;t have picked a better spot. Actually, I did. When we did the hike I picked the first spot you see here. You can see in the Google Earth picture the more teal trace as it curve along the rim. These two pictures are of that first spot. The &amp;lsquo;real&amp;rsquo; spot.
+      <description>I proposed to my wife in Kauai at the Waimea Canyon Lookout. I couldn&#39;t have picked a better spot. Actually, I did. When we did the hike I picked the first spot you see here. You can see in the Google Earth picture the more teal trace as it curve along the rim. These two pictures are of that first spot. The &amp;lsquo;real&amp;rsquo; spot.
        However, in the following two, you can see the &amp;lsquo;real real&amp;rsquo; spot.</description>
     </item>
     
@@ -46,7 +56,7 @@
       <pubDate>Mon, 09 Sep 2019 12:19:28 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0050-jalapeno-poppers/</guid>
-      <description>Ash has been wanting these for 2 months. I couldn&amp;rsquo;t say no when we were going to be using the Traeger anyways.
+      <description>Ash has been wanting these for 2 months. I couldn&#39;t say no when we were going to be using the Traeger anyways.
  Ingredient Quantity     Jalapeños    18 Medium      Thin-Cut Bacon    1 Pack      Cream Cheese    8-10 Oz (room temperature)      Colby Jack    4 Oz      Chili Powder    1 tsp      Granulated Garlic    1 tsp      Salt    1 tsp      Scallions    2 minced      Procedure Split the jalapeños lengthwise.</description>
     </item>
     
@@ -56,9 +66,9 @@
       <pubDate>Mon, 02 Sep 2019 12:00:30 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0049-ribs/</guid>
-      <description>What&amp;rsquo;s better than a BBQ on a National Holiday?
+      <description>What&#39;s better than a BBQ on a National Holiday?
 I used the Traeger for some St. Louis cut ribs. This recipe was crazy simple. Like shamefully simple. Mostly I just want to get in the habit of updating my blog, so this is what you get.
- Ingredient Quantity     St. Louis Ribs    2 Racks      Favorite Rub    Lots      Texas Blend Traeger Pellets    At least 2 hoppers worth      Oh yeah, you&amp;rsquo;ll need a Traeger too.</description>
+ Ingredient Quantity     St. Louis Ribs    2 Racks      Favorite Rub    Lots      Texas Blend Traeger Pellets    At least 2 hoppers worth      Oh yeah, you&#39;ll need a Traeger too.</description>
     </item>
     
     <item>
@@ -68,8 +78,8 @@ I used the Traeger for some St. Louis cut ribs. This recipe was crazy simple. Li
       
       <guid>https://www.nygaard.site/post/0048-questions-in-arch/</guid>
       <description>I notice myself asking questions about common tasks when I come back to Arch after a long time. I think that makes for a good article as it is possible others have these questions.
- I&amp;rsquo;m running out of space and that&amp;rsquo;s stupid.
- Not a question, but I&amp;rsquo;ve felt that exact sentiment.
+ I&#39;m running out of space and that&#39;s stupid.
+ Not a question, but I&#39;ve felt that exact sentiment.
 In Arch, this is very likely the Pacman cache going crazy. Everytime you upgrade a package in Pacman, it keeps the previous version.</description>
     </item>
     
@@ -79,7 +89,7 @@ In Arch, this is very likely the Pacman cache going crazy. Everytime you upgrade
       <pubDate>Mon, 13 May 2019 22:10:17 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0046-bone-broth/</guid>
-      <description>I don&amp;rsquo;t really like the distinction between &amp;lsquo;bone broth&amp;rsquo; and &amp;lsquo;stock&amp;rsquo; because they&amp;rsquo;re the same thing if done right. The distinction is useful because the product that is called stock in a grocery store is very different. Useful, but different.
+      <description>I don&#39;t really like the distinction between &amp;lsquo;bone broth&amp;rsquo; and &amp;lsquo;stock&amp;rsquo; because they&#39;re the same thing if done right. The distinction is useful because the product that is called stock in a grocery store is very different. Useful, but different.
 Bone broth is gelatinous at fridge temperature. This is because you cook down the bones and connective tissue over a long period of time. Collagen is converted to gelatin and you get meat/bone jello.</description>
     </item>
     
@@ -90,7 +100,7 @@ Bone broth is gelatinous at fridge temperature. This is because you cook down th
       
       <guid>https://www.nygaard.site/post/0044-test-post-please-ignore/</guid>
       <description>Shortcodes Hugo has a bunch of shortcodes. This is just a post of me testing them. Nothing to see here.
-gist  Figure   Cloud Development   #!/bin/bash echo gooby  &amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;quot;summary&amp;quot;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt;  Instagram    View this post on Instagram         A post shared by Bjørn Erik Pedersen (@bepsays) on Jul 6, 2017 at 9:27am PDT</description>
+gist  Figure   Cloud Development   #!/bin/bash  echo gooby &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt; Instagram    View this post on Instagram         A post shared by Bjørn Erik Pedersen (@bepsays) on Jul 6, 2017 at 9:27am PDT</description>
     </item>
     
     <item>
@@ -99,9 +109,9 @@ gist  Figure   Cloud Development   #!/bin/bash echo gooby  &amp;lt;section id=&a
       <pubDate>Sun, 05 May 2019 13:17:20 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0042-jetbrains-and-gpg/</guid>
-      <description>I encountered some issues running WebStorm and I think I finally solved them. This was an annoying bug that was a mix of WebStorm and OSX behavior that I didn&amp;rsquo;t ask for.
+      <description>I encountered some issues running WebStorm and I think I finally solved them. This was an annoying bug that was a mix of WebStorm and OSX behavior that I didn&#39;t ask for.
 TODO: Pinentry Image
-This is the prompt that you get on OSX running Pinentry. I was getting this randomly all throughout the day just running JetBrains products. That&amp;rsquo;s really annoying. You can see that WebStorm is trying to run git-upload-pack when I get the Pinentry prompt, and that is what triggered it.</description>
+This is the prompt that you get on OSX running Pinentry. I was getting this randomly all throughout the day just running JetBrains products. That&#39;s really annoying. You can see that WebStorm is trying to run git-upload-pack when I get the Pinentry prompt, and that is what triggered it.</description>
     </item>
     
     <item>
@@ -110,8 +120,8 @@ This is the prompt that you get on OSX running Pinentry. I was getting this rand
       <pubDate>Sun, 05 May 2019 13:08:06 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0041-gpg-for-ssh/</guid>
-      <description>I&amp;rsquo;m using the gpg-agent in place of the ssh-agent. I think this is a very interesting use because it eliminates the need for me to store my ssh key as a flat file:
-ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 2048 SHA256:U6ETCKbdPbvgPMSjePS0jrGR3yMdhF9NC6MUHItynJc /Users/admin/.ssh/splice-dcos.pem (RSA) ...  You can see here that the top key is one that is generated by GPG and not associated with any particular file. That being said, I still have to use SSH keys that are given to me for work.</description>
+      <description>I&#39;m using the gpg-agent in place of the ssh-agent. I think this is a very interesting use because it eliminates the need for me to store my ssh key as a flat file:
+ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 2048 SHA256:U6ETCKbdPbvgPMSjePS0jrGR3yMdhF9NC6MUHItynJc /Users/admin/.ssh/splice-dcos.pem (RSA) ... You can see here that the top key is one that is generated by GPG and not associated with any particular file. That being said, I still have to use SSH keys that are given to me for work.</description>
     </item>
     
     <item>
@@ -120,7 +130,7 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Wed, 19 Dec 2018 08:16:14 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0039-airgapped-gpg/</guid>
-      <description>Airgapping GPG Airgapped Media Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
+      <description>Airgapping GPG Airgapped Media Format I&#39;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
     </item>
     
     <item>
@@ -129,7 +139,7 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Tue, 03 Jul 2018 13:57:33 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0038-chicken-brine/</guid>
-      <description>Serious Eats is becoming my go-to for food articles. I&amp;rsquo;ll immediately check for results from them when I need a standard technique. Kenji does a great job of testing. Even things as simple as boiled eggs.
+      <description>Serious Eats is becoming my go-to for food articles. I&#39;ll immediately check for results from them when I need a standard technique. Kenji does a great job of testing. Even things as simple as boiled eggs.
  Ingredient Quantity     Boneless Skinless Chicken Breast    ~ 6 Breasts      Kosher Salt    80g      White Granulated Sugar    25g      Water    2L      Big Bowl    2      These measurements differ from the ones in the article because I found the resultant breasts to be too sweet.</description>
     </item>
     
@@ -139,8 +149,8 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0037-arch-vpn/</guid>
-      <description>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&amp;rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.
-It is not lost on me that I am posting this article on the Internet. You&amp;rsquo;ll find it after you get in to trouble.</description>
+      <description>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&#39;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.
+It is not lost on me that I am posting this article on the Internet. You&#39;ll find it after you get in to trouble.</description>
     </item>
     
     <item>
@@ -149,7 +159,7 @@ It is not lost on me that I am posting this article on the Internet. You&amp;rsq
       <pubDate>Mon, 02 Jul 2018 10:31:17 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0036-quince/</guid>
-      <description>We went to Quince. It was awesome. This isn&amp;rsquo;t a review, I&amp;rsquo;m not qualified for that. If you can go, you should go. Take more pictures than I did.
+      <description>We went to Quince. It was awesome. This isn&#39;t a review, I&#39;m not qualified for that. If you can go, you should go. Take more pictures than I did.
 Menu and Pairings English Peas Sicilian Pistacchio, Horseradish
 F.X. Pichler, Grüner Veltliner, Federspiel, &amp;ldquo;Loibenberg Frauenweigarten&amp;rdquo;, Wachau, Austria 2015
 Tsar Nicoulai Caviar Avodaco, Ruby Beet, Sorrel
@@ -164,7 +174,7 @@ Matthiasson, &amp;ldquo;WhiteBlend,&amp;rdquo; Napa Valley, California 2015</des
       <pubDate>Wed, 13 Jun 2018 17:48:57 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0035-travel-kitchen-checklist/</guid>
-      <description>I got a subscription to Bon Appétit recently because I spent some money at Sur la Table. I really like the magazine, especially the fact that they concentrate all the featured recipes at the back of the issue. That&amp;rsquo;s nice because you can just cut stuff out there.
+      <description>I got a subscription to Bon Appétit recently because I spent some money at Sur la Table. I really like the magazine, especially the fact that they concentrate all the featured recipes at the back of the issue. That&#39;s nice because you can just cut stuff out there.
 They had a feature about what to pack if you have to go cook somewhere. I liked the list and I want to keep it for myself on the public internet.</description>
     </item>
     
@@ -174,7 +184,7 @@ They had a feature about what to pack if you have to go cook somewhere. I liked 
       <pubDate>Tue, 15 May 2018 23:01:04 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/</guid>
-      <description>This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&amp;rsquo;t have a choice of what to connect to. I really don&amp;rsquo;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.</description>
+      <description>This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&#39;t have a choice of what to connect to. I really don&#39;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.</description>
     </item>
     
     <item>
@@ -184,7 +194,7 @@ They had a feature about what to pack if you have to go cook somewhere. I liked 
       
       <guid>https://www.nygaard.site/post/0032-logging-with-systemd/</guid>
       <description>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no  You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
     </item>
     
     <item>
@@ -193,7 +203,7 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
       <pubDate>Fri, 13 Apr 2018 22:37:38 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0030-arch-toys/</guid>
-      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
+      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&#39;m going to use this article to collect my list of requirements.
 Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
     </item>
     
@@ -203,7 +213,7 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       <pubDate>Fri, 13 Apr 2018 14:43:37 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0029-installing-arch/</guid>
-      <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&amp;rsquo;t want to spend time configuring stuff that didn&amp;rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
+      <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&#39;t want to spend time configuring stuff that didn&#39;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
     </item>
     
     <item>
@@ -212,7 +222,7 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       <pubDate>Wed, 11 Apr 2018 10:00:55 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/</guid>
-      <description>Andy&amp;rsquo;s one of my best friends. He&amp;rsquo;s also a Vietnamese guy. He makes delicious dishes and during our time as roommates, he expanded my knowledge of ingredients. He introduced me to fish sauce and it&amp;rsquo;s role in savory dishes. Also, how it should never be left to roll around in the back of your car.
+      <description>Andy&#39;s one of my best friends. He&#39;s also a Vietnamese guy. He makes delicious dishes and during our time as roommates, he expanded my knowledge of ingredients. He introduced me to fish sauce and it&#39;s role in savory dishes. Also, how it should never be left to roll around in the back of your car.
  Ingredient Quantity     Chicken Breast, Roasted    10 oz      Butter, Salted    1 Tablespoon      Onion, Chopped    1 Medium      Sugar (optional)    1 Teaspoon      Fish Sauce    2 Tablespoons      Better than Bullion, Chicken    1 Tablespoon      Okra, Sliced, Wheels    40 Pods      Cilantro    Handfull      Green Onion, Chopped    Handfull      Water / Chicken Broth    Lots      Start by frying your pan ingredients together in the bottom of a heavy pot.</description>
     </item>
     
@@ -223,8 +233,8 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       
       <guid>https://www.nygaard.site/post/0027-hello-world-on-android/</guid>
       <description>Motivation I wanted to get my environment ready for Android development. It was pretty straightforward on the Mac, I can see it being more of a headache on other platforms.
-Procedure Firstly, download Android Studio. It is pretty amazing that they&amp;rsquo;ve wrapped everything you need in a free IDE. There&amp;rsquo;s a ton of shit for Java projects that I&amp;rsquo;d rather not think about.
-I&amp;rsquo;m using this training course. Open it in another tab.</description>
+Procedure Firstly, download Android Studio. It is pretty amazing that they&#39;ve wrapped everything you need in a free IDE. There&#39;s a ton of shit for Java projects that I&#39;d rather not think about.
+I&#39;m using this training course. Open it in another tab.</description>
     </item>
     
     <item>
@@ -244,8 +254,8 @@ Use gloves if you like to touch yourself.</description>
       <pubDate>Sat, 10 Feb 2018 16:52:35 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0024-overnight-pizza-dough/</guid>
-      <description>Basics with Babish did pizza dough this week. I&amp;rsquo;ve been waiting for Sunday all week because of that.
-He mentions that the recipe is Jim Lahey&amp;rsquo;s overnight pizza dough. The recipe looks super simple and I love the fact that everything is listed in grams. Baking is science and that&amp;rsquo;s usually why I don&amp;rsquo;t do it. I don&amp;rsquo;t really like following directions in the kitchen, but I can make an exception for pizza.</description>
+      <description>Basics with Babish did pizza dough this week. I&#39;ve been waiting for Sunday all week because of that.
+He mentions that the recipe is Jim Lahey&#39;s overnight pizza dough. The recipe looks super simple and I love the fact that everything is listed in grams. Baking is science and that&#39;s usually why I don&#39;t do it. I don&#39;t really like following directions in the kitchen, but I can make an exception for pizza.</description>
     </item>
     
     <item>
@@ -254,8 +264,8 @@ He mentions that the recipe is Jim Lahey&amp;rsquo;s overnight pizza dough. The 
       <pubDate>Sun, 28 Jan 2018 12:08:48 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0023-chicken-legs-wing-style/</guid>
-      <description>I spend a lot of time thinking about protein. I get about 120g per day which is almost the minimum for my weight. I&amp;rsquo;ve seen articles recommending 1-1.5g of protein per pound of bodyweight when you&amp;rsquo;re active. Because I weigh 244lbs (today), and my goal is 200lbs, I think I should just target the goal weight quantity.
-So, let&amp;rsquo;s do some chicken this week. That&amp;rsquo;ll help right? Of course, Kenji&amp;rsquo;s got me covered.</description>
+      <description>I spend a lot of time thinking about protein. I get about 120g per day which is almost the minimum for my weight. I&#39;ve seen articles recommending 1-1.5g of protein per pound of bodyweight when you&#39;re active. Because I weigh 244lbs (today), and my goal is 200lbs, I think I should just target the goal weight quantity.
+So, let&#39;s do some chicken this week. That&#39;ll help right? Of course, Kenji&#39;s got me covered.</description>
     </item>
     
     <item>
@@ -264,7 +274,7 @@ So, let&amp;rsquo;s do some chicken this week. That&amp;rsquo;ll help right? Of 
       <pubDate>Sun, 28 Jan 2018 12:07:08 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0022-mini-breakfast-casseroles/</guid>
-      <description>That mini-muffin pan is one of the best weight-loss buys I&amp;rsquo;ve made. 24 little slots to fill with goodness. I haven&amp;rsquo;t ever used it for muffins though. Because muffins suck. Meatballs win every time.
+      <description>That mini-muffin pan is one of the best weight-loss buys I&#39;ve made. 24 little slots to fill with goodness. I haven&#39;t ever used it for muffins though. Because muffins suck. Meatballs win every time.
 These things are fun too. Some eggs and some low cal sausage and you have little breakfast party bites that run about 29 calories a pop.
 Go get these things:
  Ingredient Quantity     Eggs    4      Egg Whites    4      Red Bell Pepper    1      Mushrooms    11      Green Onions    6ish?</description>
@@ -285,7 +295,7 @@ Go get these things:
       <pubDate>Sun, 21 Jan 2018 11:19:44 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0020-oven-carnitas/</guid>
-      <description>Kenji seems to have superpowers. I like everything I&amp;rsquo;ve made with his guidance, and I&amp;rsquo;m hoping that this is no exception. I love me some carnitas and I think that trimming off the fat will fit well in my diet.
+      <description>Kenji seems to have superpowers. I like everything I&#39;ve made with his guidance, and I&#39;m hoping that this is no exception. I love me some carnitas and I think that trimming off the fat will fit well in my diet.
 I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I realize that it might have been a bit of overkill. I put half in the freezer for some other adventure.</description>
     </item>
     
@@ -295,7 +305,7 @@ I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I rea
       <pubDate>Sun, 14 Jan 2018 10:17:53 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0019-chicken-gumbo/</guid>
-      <description>This is my standard Gumbo. Alton Brown posted a recipe for inspiration, but I really just do whatever I feel like. I feel like I can deviate a bit because I don&amp;rsquo;t have a Bayou Grandma to yell at me. I&amp;rsquo;m not about to go hunting for filè powder when I&amp;rsquo;m cooking for the week.
+      <description>This is my standard Gumbo. Alton Brown posted a recipe for inspiration, but I really just do whatever I feel like. I feel like I can deviate a bit because I don&#39;t have a Bayou Grandma to yell at me. I&#39;m not about to go hunting for filè powder when I&#39;m cooking for the week.
  Ingredient Quantity     Flour, Wheat, All Purpose    4 Tablespoons      Butter, Salted    4 Tablespoons      Onion, Yellow, Chopped    1 Cup      Garlic, Clove, Halved    6      Peppers, Bell, Medium, Diced    2      Celery, Diced    1 Cup      Red Chili Flakes    some      Granulated Garlic    some      Cumin    some      Celery Salt    some      Black Pepper    lots      Smoked Paprika    some      Stock, Chicken    2 Cups      Tomatos, Diced, No Salt    4 Cups      Okra, Wheels    4 Cups      Basil Leaves    12      Make your roux first with the red ingredients.</description>
     </item>
     
@@ -316,7 +326,7 @@ I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I rea
       
       <guid>https://www.nygaard.site/post/0017-expose-oauth-endpoints/</guid>
       <description>Zapier Zapier gives me a list of things that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.
- Authentication Type  OAuth V2 w/refresh  Client ID  AKA &amp;ldquo;Consumer Key&amp;rdquo; or &amp;ldquo;API Key&amp;rdquo; zapier  Client Secret  AKA &amp;ldquo;Consumer Secret&amp;rdquo; or &amp;ldquo;API Secret&amp;rdquo; asdjhalsgdhgaposdigu (some string)  Authorization URL  For now I will list what I see the consent app presenting.</description>
+ Authentication Type  OAuth V2 w/refresh   Client ID  AKA &amp;ldquo;Consumer Key&amp;rdquo; or &amp;ldquo;API Key&amp;rdquo; zapier   Client Secret  AKA &amp;ldquo;Consumer Secret&amp;rdquo; or &amp;ldquo;API Secret&amp;rdquo; asdjhalsgdhgaposdigu (some string)   Authorization URL  For now I will list what I see the consent app presenting.</description>
     </item>
     
     <item>
@@ -326,7 +336,7 @@ I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I rea
       
       <guid>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</guid>
       <description>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &amp;quot;create database hydra&amp;quot; | mysql -uroot -proot  Down echo &amp;quot;drop database hydra&amp;quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.</description>
+Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.</description>
     </item>
     
     <item>
@@ -335,7 +345,7 @@ Infrastructure Create Database Up echo &amp;quot;create database hydra&amp;quot;
       <pubDate>Fri, 12 Jan 2018 12:17:32 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</guid>
-      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&amp;rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
+      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&#39;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
 &amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
     </item>
@@ -346,9 +356,9 @@ Turns out that the screenshot utility is available on the command line:
       <pubDate>Mon, 08 Jan 2018 07:40:43 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
-      <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
-They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
-Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
+      <description>Let&#39;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;quot;.
+  They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
+  Only once done, do they take the time to remember the boss didn&#39;t want you to know wether they are in or out.</description>
     </item>
     
     <item>
@@ -385,7 +395,7 @@ You can create a Zapier Application for your WebApp and give that to Zapier. The
       <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0008-aws-instances/</guid>
-      <description>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&amp;rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</description>
+      <description>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&#39;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</description>
     </item>
     
     <item>
@@ -425,10 +435,10 @@ What follows are notes of the responses for my edification, not necessarily how 
       <pubDate>Thu, 17 Aug 2017 14:34:23 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</guid>
-      <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
+      <description>Hey hey! I got it to work! I&#39;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
- 
-That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
+[
+That&#39;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     
     <item>
@@ -437,7 +447,7 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.nygaard.site/about/</guid>
-      <description> Public Key -----BEGIN PGP PUBLIC KEY BLOCK----- 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 voDyUdsOJx6Ayn6LZoki =I0p8 -----END PGP PUBLIC KEY BLOCK-----  </description>
+      <description>Public Key -----BEGIN PGP PUBLIC KEY BLOCK----- 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 voDyUdsOJx6Ayn6LZoki =I0p8 -----END PGP PUBLIC KEY BLOCK----- </description>
     </item>
     
     <item>
@@ -446,7 +456,7 @@ That&amp;rsquo;s quite a bit of money for something that I really wanted as a no
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.nygaard.site/contact/</guid>
-      <description>There&amp;rsquo;s a bunch of ways listed in the sidebar over there. There&amp;rsquo;s also my preferred email attached to that public key.</description>
+      <description>There&#39;s a bunch of ways listed in the sidebar over there. There&#39;s also my preferred email attached to that public key.</description>
     </item>
     
   </channel>

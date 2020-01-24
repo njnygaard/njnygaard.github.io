@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 20 Sep 2019 13:14:36 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 08:49:04 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nygaard.site/topics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Technology</title>
+      <link>https://www.nygaard.site/topics/technology/</link>
+      <pubDate>Thu, 23 Jan 2020 08:49:04 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/topics/technology/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Outdoors</title>
@@ -18,15 +27,6 @@
       <pubDate>Fri, 20 Sep 2019 13:14:36 -0700</pubDate>
       
       <guid>https://www.nygaard.site/topics/outdoors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Technology</title>
-      <link>https://www.nygaard.site/topics/technology/</link>
-      <pubDate>Wed, 11 Sep 2019 21:36:49 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/topics/technology/</guid>
       <description></description>
     </item>
     

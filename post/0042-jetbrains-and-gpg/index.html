@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <title>JetBrains and GPG &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -304,38 +304,25 @@
   
 
 
-  <p>I encountered some issues running WebStorm and I think I finally solved them. This was an annoying bug that was a mix of WebStorm and OSX behavior that I didn&rsquo;t ask for.</p>
-
+  <p>I encountered some issues running WebStorm and I think I finally solved them. This was an annoying bug that was a mix of WebStorm and OSX behavior that I didn't ask for.</p>
 <p>TODO: Pinentry Image</p>
-
-<p>This is the prompt that you get on OSX running Pinentry. I was getting this randomly all throughout the day just running JetBrains products. That&rsquo;s really annoying. You can see that WebStorm is trying to run <code>git-upload-pack</code> when I get the Pinentry prompt, and that is what triggered it.</p>
-
-<pre><code class="language-bash">-+= 11718 admin /Applications/WebStorm.app/Contents/MacOS/webstorm
- |--- 12015 admin /Applications/WebStorm.app/Contents/bin/fsnotifier
- |-+- 12039 admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath=false -c log.showSignature=false -c credential.helper
- | \--- 12041 admin /usr/bin/ssh git@github.com git-upload-pack 'splicemachine/cloudmgr-ui.git'
- \-+- 12593 admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath=false -c log.showSignature=false -c credential.helper
-   \--- 12594 admin /usr/bin/ssh git@github.com git-upload-pack 'splicemachine/cloudmgr-ui.git'
-</code></pre>
-
-<p>I didn&rsquo;t ask for this man.</p>
-
-<p><a href="https://stackoverflow.com/a/41195508/1236359">This answer</a> showed me where that value was coming from. I&rsquo;ve disabled it in the hope that the keychain expiry doesn&rsquo;t effect me.</p>
-
-<pre><code class="language-bash">git config --show-origin --get credential.helper
+<p>This is the prompt that you get on OSX running Pinentry. I was getting this randomly all throughout the day just running JetBrains products. That's really annoying. You can see that WebStorm is trying to run <code>git-upload-pack</code> when I get the Pinentry prompt, and that is what triggered it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-+<span style="color:#f92672">=</span> <span style="color:#ae81ff">11718</span> admin /Applications/WebStorm.app/Contents/MacOS/webstorm
+ |--- <span style="color:#ae81ff">12015</span> admin /Applications/WebStorm.app/Contents/bin/fsnotifier
+ |-+- <span style="color:#ae81ff">12039</span> admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath<span style="color:#f92672">=</span>false -c log.showSignature<span style="color:#f92672">=</span>false -c credential.helper
+ | <span style="color:#ae81ff">\-</span>-- <span style="color:#ae81ff">12041</span> admin /usr/bin/ssh git@github.com git-upload-pack <span style="color:#e6db74">&#39;splicemachine/cloudmgr-ui.git&#39;</span>
+ <span style="color:#ae81ff">\-</span>+- <span style="color:#ae81ff">12593</span> admin /Library/Developer/CommandLineTools/usr/bin/git -c core.quotepath<span style="color:#f92672">=</span>false -c log.showSignature<span style="color:#f92672">=</span>false -c credential.helper
+   <span style="color:#ae81ff">\-</span>-- <span style="color:#ae81ff">12594</span> admin /usr/bin/ssh git@github.com git-upload-pack <span style="color:#e6db74">&#39;splicemachine/cloudmgr-ui.git&#39;</span>
+</code></pre></div><p>I didn't ask for this man.</p>
+<p><a href="https://stackoverflow.com/a/41195508/1236359">This answer</a> showed me where that value was coming from. I've disabled it in the hope that the keychain expiry doesn't effect me.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --show-origin --get credential.helper
 file:/Library/Developer/CommandLineTools/usr/share/git-core/gitconfig	osxkeychain
-</code></pre>
-
-<pre><code class="language-bash">cat /Library/Developer/CommandLineTools/usr/share/git-core/gitconfig
-[credential]
- helper = osxkeychain
-</code></pre>
-
-<pre><code class="language-bash">cd /Library/Developer/CommandLineTools/usr/share/git-core/
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /Library/Developer/CommandLineTools/usr/share/git-core/gitconfig
+<span style="color:#f92672">[</span>credential<span style="color:#f92672">]</span>
+ helper <span style="color:#f92672">=</span> osxkeychain
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /Library/Developer/CommandLineTools/usr/share/git-core/
 sudo mv gitconfig no.gitconfig.goaway
-</code></pre>
-
-<p>I currently get the behavior once when I start WebStorm, but not as often throughout the day. I would really prefer JetBrains to allow me to configure its behavior with regards to interaction with SCM.</p>
+</code></pre></div><p>I currently get the behavior once when I start WebStorm, but not as often throughout the day. I would really prefer JetBrains to allow me to configure its behavior with regards to interaction with SCM.</p>
 
 
   

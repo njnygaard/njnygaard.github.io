@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ec2 on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -18,7 +18,7 @@
       <pubDate>Sat, 04 Nov 2017 15:24:27 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0008-aws-instances/</guid>
-      <description>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&amp;rsquo;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</description>
+      <description>I recently discovered that changing the size of and EC2 instance does not destroy the EBS volume associated with it. Let that sink in. You have a computer sitting on your desk serving your website. You realize that you&#39;re spending too much money on electricity for this computer, so while it is running, you rip the hard drive out and put it in another computer. In 5 seconds, your website is still running.</description>
     </item>
     
   </channel>

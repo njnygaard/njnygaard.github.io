@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mac on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 12 Jan 2018 12:17:32 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</guid>
-      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&amp;rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
+      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&#39;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
 &amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
     </item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -19,8 +19,8 @@
       
       <guid>https://www.nygaard.site/post/0027-hello-world-on-android/</guid>
       <description>Motivation I wanted to get my environment ready for Android development. It was pretty straightforward on the Mac, I can see it being more of a headache on other platforms.
-Procedure Firstly, download Android Studio. It is pretty amazing that they&amp;rsquo;ve wrapped everything you need in a free IDE. There&amp;rsquo;s a ton of shit for Java projects that I&amp;rsquo;d rather not think about.
-I&amp;rsquo;m using this training course. Open it in another tab.</description>
+Procedure Firstly, download Android Studio. It is pretty amazing that they&#39;ve wrapped everything you need in a free IDE. There&#39;s a ton of shit for Java projects that I&#39;d rather not think about.
+I&#39;m using this training course. Open it in another tab.</description>
     </item>
     
   </channel>

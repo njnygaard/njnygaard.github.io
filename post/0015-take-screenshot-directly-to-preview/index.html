@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <title>Take Screenshot Directly to Preview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -298,48 +298,29 @@
   
 
 
-  <p>Okay this is my first foray in to AppleScript, and I have to say that I don&rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.</p>
-
+  <p>Okay this is my first foray in to AppleScript, and I have to say that I don't hate it. I wanted a way to take screenshots directly in to Preview on my Mac.</p>
 <p>Turns out that the screenshot utility is available on the command line:</p>
-
-<pre><code class="language-bash">&gt; screencapture -h
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; screencapture -h
 screencapture: illegal option -- h
-usage: screencapture [-icMPmwsWxSCUtoa] [files]
+usage: screencapture <span style="color:#f92672">[</span>-icMPmwsWxSCUtoa<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>files<span style="color:#f92672">]</span>
   -c         force screen capture to go to the clipboard
   -b         capture Touch Bar - non-interactive modes only
 ...
-</code></pre>
-
-<p>Thats&rsquo;s nice and clean. So you want to run this as a script, and Macs give you a way to do that.</p>
-
-<p>Rob Griffiths <a href="https://www.macworld.com/article/1049151/software-development/openshot.html">posted this script</a> just so I didn&rsquo;t have to think about it. Some editing changed the format to what I wanted.</p>
-
-<pre><code class="language-bash">do shell script &quot;DATE=$(echo `/usr/local/bin/gdate +%a-%b-%d-%H-%M-%S`);
-    FILE=~/Pictures/screenshot-${DATE}.png;
-    screencapture -i -x $FILE;
-    if [ -e $FILE ]; then
-    open /Applications/Preview.app $FILE;
-    fi&quot;
-</code></pre>
-
-<p>This is more than I could have hoped for because it neatly organizes my screenshots too. Now you just have to make an automator script like so:</p>
-
-<p><a href="as.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="as.png" alt="AWS Bill">
-</div>
-</a></p>
-
+</code></pre></div><p>Thats's nice and clean. So you want to run this as a script, and Macs give you a way to do that.</p>
+<p>Rob Griffiths <a href="https://www.macworld.com/article/1049151/software-development/openshot.html">posted this script</a> just so I didn't have to think about it. Some editing changed the format to what I wanted.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">do</span> shell script <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DATE=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">`</span>/usr/local/bin/gdate +%a-%b-%d-%H-%M-%S<span style="color:#e6db74">`</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">    FILE=~/Pictures/screenshot-</span><span style="color:#e6db74">${</span>DATE<span style="color:#e6db74">}</span><span style="color:#e6db74">.png;
+</span><span style="color:#e6db74">    screencapture -i -x </span>$FILE<span style="color:#e6db74">;
+</span><span style="color:#e6db74">    if [ -e </span>$FILE<span style="color:#e6db74"> ]; then
+</span><span style="color:#e6db74">    open /Applications/Preview.app </span>$FILE<span style="color:#e6db74">;
+</span><span style="color:#e6db74">    fi</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>This is more than I could have hoped for because it neatly organizes my screenshots too. Now you just have to make an automator script like so:</p>
+<p>[</p>
+<!-- raw HTML omitted -->
 <p>&hellip; and then configure a keyboard shortcut to run that service you just created.</p>
-
-<p><a href="kb.png">
-<div class="pure-u-1-1">
-  <img class="pure-img" src="kb.png" alt="AWS Bill">
-</div>
-</a></p>
-
+<p>[</p>
+<!-- raw HTML omitted -->
 <p>And now you can take sexy mac screenshots for use in your blog as well.</p>
-
 <p><strong>Edit:</strong> I think I forgot to mention how to take the <a href="https://support.apple.com/en-us/HT201361">pretty screenshots</a> for the Mac windows. Shift+Command+4 then Space will turn your cursor in to a camera so you can select windows.</p>
 
 

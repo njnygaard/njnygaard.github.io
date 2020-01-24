@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bash on cat ~/differing-opinions.txt &gt; /dev/null</title>
@@ -19,7 +19,7 @@
       
       <guid>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</guid>
       <description>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &amp;quot;create database hydra&amp;quot; | mysql -uroot -proot  Down echo &amp;quot;drop database hydra&amp;quot; | mysql -uroot -proot  Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C  Down Nothing.  Migrations Up docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL  Down Nothing.</description>
+Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Infrastructure Create Database Up echo &amp;quot;create database hydra&amp;quot;
       <pubDate>Fri, 12 Jan 2018 12:17:32 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</guid>
-      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&amp;rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
+      <description>Okay this is my first foray in to AppleScript, and I have to say that I don&#39;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
 &amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
     </item>
