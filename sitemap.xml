@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nygaard.site/tags/arch/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
+    <loc>https://www.nygaard.site/tags/beef/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/0056-beef-stew/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.nygaard.site/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/recipes/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/stew/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2020-03-28T08:29:52-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nygaard.site/tags/arch/</loc>
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url>
   
@@ -23,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/topics/technology/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url>
   
@@ -133,11 +153,6 @@
   </url>
   
   <url>
-    <loc>https://www.nygaard.site/topics/recipes/</loc>
-    <lastmod>2019-09-09T12:19:28-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nygaard.site/tags/smoker/</loc>
     <lastmod>2019-09-09T12:19:28-07:00</lastmod>
   </url>
@@ -165,11 +180,6 @@
   <url>
     <loc>https://www.nygaard.site/tags/tutorials/</loc>
     <lastmod>2019-05-14T21:28:54-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/beef/</loc>
-    <lastmod>2019-05-13T22:10:17-07:00</lastmod>
   </url>
   
   <url>
@@ -449,11 +459,6 @@
   
   <url>
     <loc>https://www.nygaard.site/tags/gumbo/</loc>
-    <lastmod>2018-01-14T10:17:53-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nygaard.site/tags/stew/</loc>
     <lastmod>2018-01-14T10:17:53-08:00</lastmod>
   </url>
   
