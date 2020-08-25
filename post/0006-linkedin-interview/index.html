@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>LinkedIn Interview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -314,7 +314,7 @@
 </li>
 <li>As an aside: Why must <code>cd</code> be a &ldquo;builtin&rdquo;?
 <ul>
-<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process's environment unchanged.</li>
+<li>This is because if you were to spawn <code>cd</code> from the current shell like you would another program, <code>cd</code> would execute, make the syscall to change its own directory, and exit. This would leave the parent process&rsquo;s environment unchanged.</li>
 </ul>
 </li>
 <li>Once it finds what you mean by that <code>arg[0]</code>, it will <code>fork</code> and call the executable you intend to run.</li>
@@ -342,7 +342,7 @@
 <li>SignalFX has a fork of <code>collectd</code> that it uses to gather information from nodes.</li>
 <li>Giving SignalFX your AWS credentials will allow it to identify all the hosts that you run. EC2, RDS, other things.</li>
 <li>Once that data is in SignalFX, you can begin to create dashboards and setup alerts.</li>
-<li>Those alerts can be piped to PagerDudy or Karrick's recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
+<li>Those alerts can be piped to PagerDudy or Karrick&rsquo;s recommendation, <a href="https://github.com/linkedin/iris">Iris</a>. He wrote Iris, and it seems like an awesome open-source solution to the problem that PagerDuty solves.</li>
 </ul>
 
 

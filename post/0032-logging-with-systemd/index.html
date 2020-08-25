@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Logging with systemd &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -309,13 +309,13 @@ timedatectl status
  Network time on: yes
 NTP synchronized: yes
  RTC in local TZ: no
-</code></pre><p>You can see all the &lsquo;units&rsquo; that you have using the following command. If you don't have your process running with a <code>systemd</code> unit file, you won't see it in this list. Don't fret, you can still see logs from those processes that are not managed by <code>systemd</code> but that are still journaling.</p>
+</code></pre><p>You can see all the &lsquo;units&rsquo; that you have using the following command. If you don&rsquo;t have your process running with a <code>systemd</code> unit file, you won&rsquo;t see it in this list. Don&rsquo;t fret, you can still see logs from those processes that are not managed by <code>systemd</code> but that are still journaling.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">systemctl list-unit-files --all | grep flow
 </code></pre></div><pre><code class="language-output" data-lang="output">flowmojo.com.service                       disabled
 </code></pre><p>You can see here that my process is not <code>enabled</code> to boot, but it will still log to the journal if it is started.</p>
 <p>If you find the service listed in the unit files that systemd knows about, you can just look at the logs:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">journalctl -u flowmojo.com.service [-f]
-</code></pre></div><p>On systems that don't have <code>systemd</code> running the unit file you can lookup the executable:</p>
+</code></pre></div><p>On systems that don&rsquo;t have <code>systemd</code> running the unit file you can lookup the executable:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">journalctl _COMM=flowmojo.server [-f]
 </code></pre></div><pre><code class="language-output" data-lang="output">-- Logs begin at Fri 2018-04-13 22:45:05 PDT, end at Sat 2018-04-21 &gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: Running with environme&gt;

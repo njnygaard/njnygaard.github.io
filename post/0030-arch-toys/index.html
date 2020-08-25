@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Arch Toys &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -337,10 +337,10 @@
 
 </div>
 </p>
-<p><a href="https://wiki.archlinux.org/index.php/General_recommendations">General recommendations</a> after an Arch install can be found here. I'm going to use this article to collect my list of requirements.</p>
+<p><a href="https://wiki.archlinux.org/index.php/General_recommendations">General recommendations</a> after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.</p>
 <p>Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group. Then everything works. Now you can install packages.</p>
 <h1 id="todo">ToDo</h1>
-<p>This list isn't really in order except for the first one. They are just things that come to mind. Some things I won't cover, like the fact that you will need something to run X11 before you can have visual programs.</p>
+<p>This list isn&rsquo;t really in order except for the first one. They are just things that come to mind. Some things I won&rsquo;t cover, like the fact that you will need something to run X11 before you can have visual programs.</p>
 <ul>
 <li><a href="#todo">ToDo</a>
 <ul>
@@ -353,11 +353,11 @@
 </li>
 </ul>
 <h2 id="sudo">sudo</h2>
-<p>You'll need users other than <code>root</code> if you want to drive Arch (or any Linux) in a responsible manner. It follows that you will need <code>sudo</code> to do anything useful with your system.</p>
+<p>You&rsquo;ll need users other than <code>root</code> if you want to drive Arch (or any Linux) in a responsible manner. It follows that you will need <code>sudo</code> to do anything useful with your system.</p>
 <p>Start off by creating a user:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -m -s /bin/bash drone
 passwd drone
-</code></pre></div><p>You don't have to worry about the shell now because we'll change that when we install <code>oh-my-zsh</code>.</p>
+</code></pre></div><p>You don&rsquo;t have to worry about the shell now because we&rsquo;ll change that when we install <code>oh-my-zsh</code>.</p>
 <p>Then you have to install <code>sudo</code>. As root in a TTY:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -S sudo
 </code></pre></div><p>This will install <code>visudo</code>, which you can use to edit who has access to use <code>sudo</code>. Using <code>visudo</code>, uncomment the appropriate file:</p>
@@ -378,25 +378,25 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Pulse Audio Controls
 </code></pre><h2 id="network-manager">Network Manager</h2>
-<p>This is a real joy. Single line connecting to WiFi. back in the day, this was a horror story of loading kernel modules and hoping that it worked. I am really happy that Linux had come for enough that I can search the Internet for solutions while I'm bootstrapping a new system.</p>
+<p>This is a real joy. Single line connecting to WiFi. back in the day, this was a horror story of loading kernel modules and hoping that it worked. I am really happy that Linux had come for enough that I can search the Internet for solutions while I&rsquo;m bootstrapping a new system.</p>
 <p>Install <code>networkmanager</code> and optionally the VPN plugin.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S networkmanager networkmanager-openvpn
 sudo su
 systemctl enable NetworkManager.service
 systemctl start NetworkManager
 nmcli device wifi connect <span style="color:#e6db74">&#34;FBI PARTY VAN&#34;</span> password <span style="color:#e6db74">&#34;hunter2&#34;</span>
-</code></pre></div><p>That's it! Just keep adding connections!</p>
+</code></pre></div><p>That&rsquo;s it! Just keep adding connections!</p>
 <h2 id="fonts">Fonts</h2>
-<p>OH GOD. Don't fuck with this. I don't think you know pain until everything you touch, including TTY, <!-- raw HTML omitted -->IS DISPLAYED IN FUCKING OSWALD<!-- raw HTML omitted -->. I wish I had my screenshot capability at the time that I was fighting with this because it hilarious now that I have recovered.</p>
-<p>Honestly, there were so many things I tried, and I don't have a coherent order for how I got it working. I'll try to tell you what not to fuck up.</p>
+<p>OH GOD. Don&rsquo;t fuck with this. I don&rsquo;t think you know pain until everything you touch, including TTY, <!-- raw HTML omitted -->IS DISPLAYED IN FUCKING OSWALD<!-- raw HTML omitted -->. I wish I had my screenshot capability at the time that I was fighting with this because it hilarious now that I have recovered.</p>
+<p>Honestly, there were so many things I tried, and I don&rsquo;t have a coherent order for how I got it working. I&rsquo;ll try to tell you what not to fuck up.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fc-list : file | grep <span style="color:#e6db74">&#34;[some font you care about]&#34;</span> <span style="color:#75715e"># Look for fonts.</span>
 fc-match mono <span style="color:#75715e"># What font is going to get resolved when you look for &#34;mono&#34;</span>
 fc-cache -f <span style="color:#75715e"># Cache all fonts</span>
 
 /usr/share/fonts <span style="color:#75715e"># Font collections</span>
 /etc/fonts/conf.<span style="color:#f92672">[</span>d|avail<span style="color:#f92672">]</span> <span style="color:#75715e"># Active and available fonts.</span>
-</code></pre></div><p>Those two folders at the end work like other daemon configuration. You have active fonts in <code>/etc/fonts/conf.d</code> an you have available ones in <code>/etc/fonts/conf.avail</code>. I was only able to get things to work by symlinking all thins in <code>conf.avail</code> in <code>conf.d</code>. I don't know how these files really work and I don't think I have the time right now to figure it out.</p>
-<p>After looking at it more, I have no idea how my fonts are working, and I really don't want to touch it. Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
+</code></pre></div><p>Those two folders at the end work like other daemon configuration. You have active fonts in <code>/etc/fonts/conf.d</code> an you have available ones in <code>/etc/fonts/conf.avail</code>. I was only able to get things to work by symlinking all thins in <code>conf.avail</code> in <code>conf.d</code>. I don&rsquo;t know how these files really work and I don&rsquo;t think I have the time right now to figure it out.</p>
+<p>After looking at it more, I have no idea how my fonts are working, and I really don&rsquo;t want to touch it. Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
 <h2 id="rotating-luks-keys">Rotating LUKS Keys</h2>
 <p>Be careful playing with crypto keys. Be brave though.</p>
 <p>You have 8 key slots to work with. You can add a key using the following block. It will prompt you for any existing password and then add the new one.</p>

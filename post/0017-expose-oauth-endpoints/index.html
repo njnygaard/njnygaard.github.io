@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Expose OAuth Endpoints &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -328,9 +328,9 @@
 <ul>
 <li>For now I will list what I see the consent app presenting.</li>
 <li><code>http://localhost:4444/oauth2/auth?client_id=demo&amp;redirect_uri=http%3A%2F%2Flocalhost%3A4445%2Fcallback&amp;response_type=code&amp;scope=offline+openid&amp;state=demostatedemostatedemo&amp;nonce=demostatedemostatedemo</code></li>
-<li>They say that they will construct and append the querystring for me. So I don't think I need any of the garbage.</li>
+<li>They say that they will construct and append the querystring for me. So I don&rsquo;t think I need any of the garbage.</li>
 <li>I clearly need to expose Hydra (<code>4444</code>) as this route.</li>
-<li>I'll tell Zapier my string is:
+<li>I&rsquo;ll tell Zapier my string is:
 <ul>
 <li><code>http://localhost:4444/oauth2/auth</code></li>
 <li>OR</li>
@@ -377,8 +377,8 @@
 <p>I added some stuff to the zapier app and then tried the integration
 It tried to go here!</p>
 <pre><code>https://app.flowmojo.com/api/v1/oauth2/auth?client_id=3da2cace-d2cc-4eb5-837d-552933dcb832&amp;redirect_uri=https%3A%2F%2Fzapier.com%2Fdashboard%2Fauth%2Foauth%2Freturn%2FApp1944CLIAPI%2F&amp;response_type=code&amp;state=1515887277.0113436&amp;scope=User.Read%20Files.ReadWrite.All%20offline_access
-</code></pre><p>That's progress!</p>
-<p>Next up, I need to configure Zapier's desired route to be the right one for our application.</p>
+</code></pre><p>That&rsquo;s progress!</p>
+<p>Next up, I need to configure Zapier&rsquo;s desired route to be the right one for our application.</p>
 
 
   

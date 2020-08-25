@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Airgapped GPG &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -314,7 +314,7 @@
     </li>
     <li><a href="#making-keys">Making Keys</a>
       <ul>
-        <li><a href="#references1">References</a></li>
+        <li><a href="#references-1">References</a></li>
         <li><a href="#configuration">Configuration</a></li>
         <li><a href="#construction">Construction</a></li>
         <li><a href="#revocation">Revocation</a></li>
@@ -338,10 +338,10 @@
   <h1 id="airgapping-gpg">Airgapping GPG</h1>
 <h2 id="airgapped-media">Airgapped Media</h2>
 <h3 id="format">Format</h3>
-<p>I'll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</p>
+<p>I&rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</p>
 <h3 id="disable-journaling">Disable Journaling</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo diskUtil disableJournal /dev/disk0s1
-</code></pre></div><p>Or whatever your disk is. Arch doesn't like the journaling yet.</p>
+</code></pre></div><p>Or whatever your disk is. Arch doesn&rsquo;t like the journaling yet.</p>
 <h4 id="note">Note</h4>
 <p>I tried all the variants of FAT, exFAT, NTFS, and a couple others. This is the only filesystem that preserves permissions and case-sensitivity, so I think it is the safest bet.</p>
 <h3 id="fstab">fstab</h3>
@@ -356,10 +356,10 @@
 <p><a href="https://bbs.archlinux.org/viewtopic.php?id=89830">Arch BBS</a>
 <a href="https://superuser.com/questions/558150/how-to-write-to-hfs-through-afp-netatalk-without-permission-denied-and-cnid-met">SuperUser</a></p>
 <h2 id="making-keys">Making Keys</h2>
-<h3 id="references1">References</h3>
+<h3 id="references-1">References</h3>
 <p><a href="https://blog.eleven-labs.com/en/openpgp-almost-perfect-key-pair-part-1/">This article</a> was so good, that I copied the article in plaintext to my storage media for the keys too.</p>
 <h3 id="configuration">Configuration</h3>
-<p>Here's a copy of my <a href="./gpg.conf"><code>~/.gnupg/gpg.conf</code></a>.</p>
+<p>Here&rsquo;s a copy of my <a href="./gpg.conf"><code>~/.gnupg/gpg.conf</code></a>.</p>
 <h3 id="construction">Construction</h3>
 <h4 id="master">Master</h4>
 <p>You will be making the GPG keys with your local utility, backing them up to the media, then deleting the master key from your current OS installation. When you take the media to a new computer, you will import the secret subkeys only. That will leave you with full capablilites of GPG but also protection against private key discovery.</p>
@@ -406,7 +406,7 @@ ssb  rsa4096/707FB77767CBEDDD
 <!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output ED152F106BE94245.rev --gen-revoke ED152F106BE94245
 </code></pre></div><p>ED152F106BE94245.rev
-Contains the revocation certificate for the master key. I've kept it on the media, because that's where the master private key will only ever be.</p>
+Contains the revocation certificate for the master key. I&rsquo;ve kept it on the media, because that&rsquo;s where the master private key will only ever be.</p>
 <h3 id="backups">Backups</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --export --armor ED152F106BE94245 &gt; ED152F106BE94245.pub.asc
 </code></pre></div><p>ED152F106BE94245.pub.asc

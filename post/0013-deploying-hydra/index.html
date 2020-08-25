@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Zapier and the OAuth2.0 Mountain &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -311,7 +311,7 @@
 <p>You can create a Zapier Application for your WebApp and give that to Zapier. Then, your users that also have Zapier accounts can go to Zapier and choose to make a &lsquo;Zap&rsquo; with the Zapier Application you created. When your user decides to make a Zap that involves your application, Zapier will initiate an OAuth2.0 Authorization flow. Basically, you need to dance like a Google or Dropbox to play nice with Zapier.</p>
 <p>After the Zap is created, Zapier will call it every 15 minutes on behalf of the user. The Zap is an &lsquo;instance&rsquo; of the Zapier Application you created for your users and this instance is provided with the necessary credentials to act on behalf of one of your users.</p>
 <h2 id="choices">Choices</h2>
-<p>There are a ton of ways to approach an OAuth2.0 flow, but given that the original author of OAuth <a href="https://github.com/ory/hydra-consent-app-express">wants nothing to do with</a> it and has said that <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">it is a bad protocol</a>, I don't want to put my brain power in to learning the internals. I don't think OAuth2 is going away, but the points he made lead me to belive that I am not really capable of making a secure implementation. I need to favor functionality over exploration on this one.</p>
+<p>There are a ton of ways to approach an OAuth2.0 flow, but given that the original author of OAuth <a href="https://github.com/ory/hydra-consent-app-express">wants nothing to do with</a> it and has said that <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">it is a bad protocol</a>, I don&rsquo;t want to put my brain power in to learning the internals. I don&rsquo;t think OAuth2 is going away, but the points he made lead me to belive that I am not really capable of making a secure implementation. I need to favor functionality over exploration on this one.</p>
 <p>I am going to go with <a href="https://hub.docker.com/r/oryd/hydra/tags/">Hydra</a>. This is a standalone service that I can run as a docker container or binary on my EC2 instance. After suffering for a while, I went with the binary solution, though I still have all my container configuration should I want to go that route before I put this feature to bed.</p>
 <h2 id="hydra">Hydra</h2>
 <p><a href="https://www.ory.am/run-oauth2-server-open-source-api-security">Hydra is an authorization server that might solve this for us.</a></p>
@@ -328,13 +328,13 @@
 <li>The Authorization Server (Hydra) is responsible for managing the access request for Zapier. Hydra handles the communication between the resource owner, the consent endpoint, and the client. Hydra is the authorization server. In this case, FlowMojo would be the one who uses Hydra.</li>
 <li>Zapier is the client and was issued an id and a password by Hydra. Zapier uses these credentials to talk with Hydra.</li>
 <li>FlowMojo has a database and a frontend that allow their users to login, using their username and password. This is what an Identity Provider does.</li>
-<li>The User Agent is Peter's FireFox.</li>
+<li>The User Agent is Peter&rsquo;s FireFox.</li>
 <li>The Consent App is a frontend app that asks the user if he is willing to give Zapier access to his pictures stored on FlowMojo. It is responsible to tell Hydra if the user accepted or rejected the request by Zapier. The Consent App uses the Identity Provider to authenticate peter, for example by using cookies or presenting a user/password login view.</li>
 </ol>
 <h2 id="sample-app-implants">Sample App Implants</h2>
 <p>A consent app in the world of Hydra is the thing you login to. Think this:</p>
 <!-- raw HTML omitted -->
-<p>There are two sample consent apps. Only the express one is on ory's DockerHub :(</p>
+<p>There are two sample consent apps. Only the express one is on ory&rsquo;s DockerHub :(</p>
 <ul>
 <li><a href="https://github.com/ory/hydra-consent-app-express">ory/hydra-consent-app-express</a></li>
 <li><a href="https://github.com/ory/hydra-consent-app-go">ory/hydra-consent-app-go</a></li>
@@ -342,23 +342,23 @@
 <p>So I basically just took the consent app from the go example and worked it in to my project. That was pretty straight forward. They use gorilla too for routing so I was able to spin up another server and host the app like they did on <code>4445</code>. Their documentation did not mention that you needed to run the sample application on port <code>4445</code>, so that was <a href="https://github.com/ory/hydra-consent-app-go/pull/8">a little frustrating</a>.</p>
 <p>After I proved that I could get my app to play like their app (communicate with a local instance of Hydra on <code>4444</code>), I decided that I needed my production environment to work to proceed with the development of routes in the go app.</p>
 <h2 id="push-many-things-directly-to-production">Push Many Things Directly to Production</h2>
-<p>I'm just going to make an unordered list of the things I had to do:</p>
+<p>I&rsquo;m just going to make an unordered list of the things I had to do:</p>
 <ul>
 <li>Create a migration for Hydra to ensure the table existed in my DB.</li>
 <li>Make sure <a href="https://github.com/pressly/goose">pressly/goose</a> ran migrations from the Ansible context.</li>
 <li>Upgrade to Go 1.9.2</li>
-<li>Install Go Dep (because it's finally ready).</li>
+<li>Install Go Dep (because it&rsquo;s finally ready).</li>
 <li><code>dep init</code> the project.</li>
 <li>Run <code>dep ensure</code> in the Ansible context.</li>
-<li>Create a systemd file for Hydra because I'm not running it as a docker container.</li>
+<li>Create a systemd file for Hydra because I&rsquo;m not running it as a docker container.</li>
 </ul>
 <h2 id="go-to-bed">Go to Bed</h2>
-<p>This is where I'm leaving off today. What is left is to work the routes of the consent app in to my app and present clean endpoints to a service that wants to use them. My consent app will be mushed in to my main app but I'm not afraid of monoliths right now.</p>
+<p>This is where I&rsquo;m leaving off today. What is left is to work the routes of the consent app in to my app and present clean endpoints to a service that wants to use them. My consent app will be mushed in to my main app but I&rsquo;m not afraid of monoliths right now.</p>
 <h2 id="gotchas">Gotchas</h2>
 <h3 id="environment">Environment</h3>
 <p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
 <h3 id="https-termination">HTTPS Termination</h3>
-<p>I'm going to need to consider this&hellip; :(</p>
+<p>I&rsquo;m going to need to consider this&hellip; :(</p>
 <pre><code>- HTTPS_ALLOW_TERMINATION_FROM: Whitelist one or multiple CIDR address ranges and allow them to terminate TLS connections.
   Be aware that the X-Forwarded-Proto header must be set and must never be modifiable by anyone but
   your proxy / gateway / load balancer. Supports ipv4 and ipv6.

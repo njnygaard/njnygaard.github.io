@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Installing Arch on Older Hardware &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -303,16 +303,16 @@ Still got it in January.
 I moved States, bought a house, got a dog.
 So blogging has not been at the top of the list.</p>
 <p>Now that I emptied my storage unit, I found my old buddy Tinman.
-He's a Core i7 &lsquo;server&rsquo; with two GTX 480's and 2TB of space.
-He's old, but sturdy.
+He&rsquo;s a Core i7 &lsquo;server&rsquo; with two GTX 480&rsquo;s and 2TB of space.
+He&rsquo;s old, but sturdy.
 He deserves a place of glory. And and Arch installation.</p>
 <p>In <a href="https://www.nygaard.site/post/0029-installing-arch/">my previous article</a>, I installed Arch on my ThinkPad.
-That installation is still going strong and I'm very happy with the rolling release.
+That installation is still going strong and I&rsquo;m very happy with the rolling release.
 I solved some maintenance issues like running out of space in <a href="https://www.nygaard.site/post/0048-questions-in-arch/">this article</a>.
-Running out of space is really the only problem I've had.
+Running out of space is really the only problem I&rsquo;ve had.
 Arch for life.</p>
-<p>This is based off <a href="https://www.peterbeard.co/blog/post/installing-arch-on-an-encrypted-hard-drive/">Peter Beard's awesome article</a> on the subject.
-There are some things that are different and I suspect because they're just out of date.</p>
+<p>This is based off <a href="https://www.peterbeard.co/blog/post/installing-arch-on-an-encrypted-hard-drive/">Peter Beard&rsquo;s awesome article</a> on the subject.
+There are some things that are different and I suspect because they&rsquo;re just out of date.</p>
 <p><strong>Note</strong>: This is for a BIOS installation.
 My previous article was for UEFI hardware.
 You will know if you have UEFI at boot of the live media if you have the folder: <code>/sys/firmware/efi</code>.
@@ -320,20 +320,20 @@ If the live media does not have that folder, then you are on a BIOS system and y
 This was a pain point for my current installation, so I want to make sure to call that out ahead of time.</p>
 <p>Also <strong>Note</strong> that you should use the latest installation media because the <code>archlinux-keyring</code> package is updated frequently.
 Over time, signing keys are revoked and the keyring needs to be updated.
-If you're working with a 4GB installation USB stick, it may not be possible to <code>pacman -Syu</code> update your installation media because you will run out of space.
+If you&rsquo;re working with a 4GB installation USB stick, it may not be possible to <code>pacman -Syu</code> update your installation media because you will run out of space.
 Downloading the new ISO is the best bet.</p>
 <p>On a Mac:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/Users/admin/Downloads/archlinux-2020.01.01-x86_64.iso of<span style="color:#f92672">=</span>/dev/rdisk2 bs<span style="color:#f92672">=</span>1m
 </code></pre></div><p>Where <code>/dev/disk2</code> is the unreadable USB stick. <strong>Note</strong> the <code>r</code> in <code>of=/dev/rdisk2</code>.</p>
 <h2 id="partitioning">Partitioning</h2>
-<p>I took Peter's lead and followed this partition scheme goal:</p>
+<p>I took Peter&rsquo;s lead and followed this partition scheme goal:</p>
 <ul>
 <li><code>/dev/sda1</code> - 1 MiB for BIOS compatibility</li>
 <li><code>/dev/sda2</code> - 200 MiB for /boot</li>
 <li><code>/dev/sda3</code> - The rest of the disk</li>
 </ul>
-<p>He mentioned <code>cgdisk</code> and that isn't mentioned in the <a href="https://wiki.archlinux.org/index.php/Installation_guide">Arch Installation Guide</a> the way <code>parted</code> is mentioned.
-It is way easier to use than <code>parted</code> and I don't think I'll go back.</p>
+<p>He mentioned <code>cgdisk</code> and that isn&rsquo;t mentioned in the <a href="https://wiki.archlinux.org/index.php/Installation_guide">Arch Installation Guide</a> the way <code>parted</code> is mentioned.
+It is way easier to use than <code>parted</code> and I don&rsquo;t think I&rsquo;ll go back.</p>
 <p>When you start up <code>cgdisk</code> it is pretty intuitive to navigate, just remember to select the free space for each new partition you want to make.</p>
 <ul>
 <li><code>/dev/sda1</code> - 1 MiB, type <code>ef02</code></li>
@@ -361,11 +361,11 @@ mount /dev/sda2 /mnt/boot
 <code>pacstrap</code> everything&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacstrap /mnt linux linux-firmware vim base-devel base lvm2 dhcpcd
 </code></pre></div><p><strong>Note</strong>: If you screw up something like I did, you can mount the drives in the way specified above from the live media and <code>pacstrap</code> additional things that are available through pacman.
-I missed <code>dhcpcd</code>, so that is exactly what I did so I didn't have to restart the installation process.</p>
+I missed <code>dhcpcd</code>, so that is exactly what I did so I didn&rsquo;t have to restart the installation process.</p>
 <p>After the installation process is complete:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genfstab -p /mnt &gt;&gt; /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
-</code></pre></div><p>You're now &lsquo;in&rsquo; your new installation.
+</code></pre></div><p>You&rsquo;re now &lsquo;in&rsquo; your new installation.
 You should set up the niceties.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/hostname
 ln -s /usr/share/zoneinfo/US/Arizona /etc/localtime
@@ -373,7 +373,7 @@ vim /etc/locale.gen
 <span style="color:#f92672">[</span>Uncomment the one you want<span style="color:#f92672">]</span>
 locale-gen
 echo <span style="color:#e6db74">&#34;LANG=en_us.UTF-8&#34;</span> &gt; /etc/locale.conf
-</code></pre></div><p>This part is what is different between Peter's experience and mine. In the file <code>/etc/mkinitcpio.conf</code>:</p>
+</code></pre></div><p>This part is what is different between Peter&rsquo;s experience and mine. In the file <code>/etc/mkinitcpio.conf</code>:</p>
 <pre><code class="language-conf" data-lang="conf">HOOKS= (base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
 </code></pre><p>Then run this to build the <code>initramfs</code> image that will strap your system prior to decrypting your SDD.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
@@ -393,9 +393,9 @@ umount -R /mnt
 reboot
 </code></pre></div><p>You should have a working installation now!</p>
 <h2 id="postinstall">Postinstall</h2>
-<p>You'll need to enable DHCP to have a happy life.</p>
+<p>You&rsquo;ll need to enable DHCP to have a happy life.</p>
 <p>Find your ethernet device with <code>ip link</code> and commit the device name to memory.
-You'll be using it a lot in the future.
+You&rsquo;ll be using it a lot in the future.
 To get DHCP to work, link the following for systemd.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl start dhcpcd@enp4s0.service
 systemctl enable dhcpcd@enp4s0.service

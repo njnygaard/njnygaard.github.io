@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>GPG for SSH &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -304,7 +304,7 @@
   
 
 
-  <p>I'm using the <code>gpg-agent</code> in place of the <code>ssh-agent</code>. I think this is a very interesting use because it eliminates the need for me to store my ssh key as a flat file:</p>
+  <p>I&rsquo;m using the <code>gpg-agent</code> in place of the <code>ssh-agent</code>. I think this is a very interesting use because it eliminates the need for me to store my ssh key as a flat file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add -l
 <span style="color:#ae81ff">4096</span> SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao <span style="color:#f92672">(</span>none<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
 <span style="color:#ae81ff">2048</span> SHA256:U6ETCKbdPbvgPMSjePS0jrGR3yMdhF9NC6MUHItynJc /Users/admin/.ssh/splice-dcos.pem <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
@@ -322,9 +322,9 @@ unset SSH_AGENT_PID
 <span style="color:#75715e"># Connect the agent if it is not running.</span>
 gpg-connect-agent /bye
 <span style="color:#75715e"># GPG Agent</span>
-</code></pre></div><p>Make sure that you remove any lines that pertain to the SSH Agent in your config file as well. You can do a clean restart too if you don't want to kill the SSH Agent process. I would recommend that actually because you will know for sure that the GPG Agent starts when you login in the future.</p>
-<p>Messing with authentication methods was a scary prospect initially for me, but the transition has been transparent. If you're considering this switch at all, I would encourage you to be brave (I say that because it would have been nice to hear when I did it).</p>
-<p>Once that is configured, keys added with <code>ssh-add</code> will be added with the GPG Agent. You will be prompted to enter a password twice now. TODO: I'm not sure how gpg stores that password, but that password now protects that key.</p>
+</code></pre></div><p>Make sure that you remove any lines that pertain to the SSH Agent in your config file as well. You can do a clean restart too if you don&rsquo;t want to kill the SSH Agent process. I would recommend that actually because you will know for sure that the GPG Agent starts when you login in the future.</p>
+<p>Messing with authentication methods was a scary prospect initially for me, but the transition has been transparent. If you&rsquo;re considering this switch at all, I would encourage you to be brave (I say that because it would have been nice to hear when I did it).</p>
+<p>Once that is configured, keys added with <code>ssh-add</code> will be added with the GPG Agent. You will be prompted to enter a password twice now. TODO: I&rsquo;m not sure how gpg stores that password, but that password now protects that key.</p>
 <p>When the GPG Agent adds an SSH key that is a file, it makes a record of it in <code>~/.gnupg/sshcontrol</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat ~/.gnupg/sshcontrol 
 <span style="color:#75715e"># My manually added [A] key</span>

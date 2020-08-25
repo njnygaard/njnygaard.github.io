@@ -19,7 +19,7 @@
       
       <guid>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</guid>
       <description>First post of the New Year. Still got it in January. I moved States, bought a house, got a dog. So blogging has not been at the top of the list.
-Now that I emptied my storage unit, I found my old buddy Tinman. He&#39;s a Core i7 &amp;lsquo;server&amp;rsquo; with two GTX 480&#39;s and 2TB of space. He&#39;s old, but sturdy. He deserves a place of glory. And and Arch installation.</description>
+Now that I emptied my storage unit, I found my old buddy Tinman. He&amp;rsquo;s a Core i7 &amp;lsquo;server&amp;rsquo; with two GTX 480&amp;rsquo;s and 2TB of space. He&amp;rsquo;s old, but sturdy. He deserves a place of glory. And and Arch installation.</description>
     </item>
     
     <item>
@@ -29,8 +29,8 @@ Now that I emptied my storage unit, I found my old buddy Tinman. He&#39;s a Core
       
       <guid>https://www.nygaard.site/post/0048-questions-in-arch/</guid>
       <description>I notice myself asking questions about common tasks when I come back to Arch after a long time. I think that makes for a good article as it is possible others have these questions.
- I&#39;m running out of space and that&#39;s stupid.
- Not a question, but I&#39;ve felt that exact sentiment.
+ I&amp;rsquo;m running out of space and that&amp;rsquo;s stupid.
+ Not a question, but I&amp;rsquo;ve felt that exact sentiment.
 In Arch, this is very likely the Pacman cache going crazy. Everytime you upgrade a package in Pacman, it keeps the previous version.</description>
     </item>
     
@@ -40,8 +40,8 @@ In Arch, this is very likely the Pacman cache going crazy. Everytime you upgrade
       <pubDate>Mon, 02 Jul 2018 12:38:57 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0037-arch-vpn/</guid>
-      <description>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&#39;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.
-It is not lost on me that I am posting this article on the Internet. You&#39;ll find it after you get in to trouble.</description>
+      <description>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&amp;rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.
+It is not lost on me that I am posting this article on the Internet. You&amp;rsquo;ll find it after you get in to trouble.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ It is not lost on me that I am posting this article on the Internet. You&#39;ll 
       <pubDate>Tue, 15 May 2018 23:01:04 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0033-connecting-to-unsecured-networks/</guid>
-      <description>This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&#39;t have a choice of what to connect to. I really don&#39;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.</description>
+      <description>This seems to be a bit of a nightmare with Arch. I think the issue is that it is difficult to test. I typically connect to pretty good networks that have passwords and reasonable security. On vacation though, I don&amp;rsquo;t have a choice of what to connect to. I really don&amp;rsquo;t know what the advantage of WPA Enterprise is with the stupid login page. There is no way that is more secure.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ It is not lost on me that I am posting this article on the Internet. You&#39;ll 
       <pubDate>Fri, 13 Apr 2018 22:37:38 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0030-arch-toys/</guid>
-      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&#39;m going to use this article to collect my list of requirements.
+      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
 Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
     </item>
     
@@ -69,7 +69,7 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       <pubDate>Fri, 13 Apr 2018 14:43:37 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0029-installing-arch/</guid>
-      <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&#39;t want to spend time configuring stuff that didn&#39;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
+      <description>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&amp;rsquo;t want to spend time configuring stuff that didn&amp;rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</description>
     </item>
     
   </channel>

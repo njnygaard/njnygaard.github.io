@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>SSH Review &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -333,7 +333,7 @@
 <li>When challenging the user. Is this user in my <code>~/.ssh/authorized_keys</code> file?</li>
 </ul>
 <h2 id="hashing">Hashing</h2>
-<h3 id="hashbased-message-authentication-codes-hmac">Hash-Based Message Authentication Codes (HMAC)</h3>
+<h3 id="hash-based-message-authentication-codes-hmac">Hash-Based Message Authentication Codes (HMAC)</h3>
 <ul>
 <li>The MAC is calculated from the symmetric shared secret, the packet sequence number of the message, and the actual message itself.</li>
 <li>The MAC is sent outside of the symmetrically encrypted area of the message.</li>
@@ -347,14 +347,14 @@
 <ul>
 <li>Negotiating the symmetrically secure connection.</li>
 <li>Authenticating the connecting party.</li>
-<li>Creating that user's environment.</li>
+<li>Creating that user&rsquo;s environment.</li>
 </ul>
 </li>
 <li>The client is responsible for:
 <ul>
 <li>The initial TCP Handshake</li>
 <li>Negotiating for the secure connection.</li>
-<li>Verifying that the server's identity matches one in <code>known_hosts</code></li>
+<li>Verifying that the server&rsquo;s identity matches one in <code>known_hosts</code></li>
 <li>Providing credentials.</li>
 </ul>
 </li>
@@ -372,7 +372,7 @@
 <li>Both parties agree on an encryption generator (likely AES)</li>
 <li>Each party then finds another prime number. This is a &lsquo;private key&rsquo; for the duration of this interaction.</li>
 <li>The private, the public seed, and the algorithm are used to generate a key which can be shared with the other party.</li>
-<li>The recipient uses their private number, the other party's public key (just exchanged), and the original shared prime to compute a shared secret.</li>
+<li>The recipient uses their private number, the other party&rsquo;s public key (just exchanged), and the original shared prime to compute a shared secret.</li>
 <li>This results in the same key.</li>
 </ul>
 </li>
@@ -381,7 +381,7 @@
 <ul>
 <li>Password Authentication (simple)
 <ul>
-<li>The server asks for this user's password.</li>
+<li>The server asks for this user&rsquo;s password.</li>
 <li>This can be sent plaintext because the channel is encrypted.</li>
 <li>This is vulnerable to brute force attacks.</li>
 </ul>

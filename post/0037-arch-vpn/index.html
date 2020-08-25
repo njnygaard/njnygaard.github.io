@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Arch VPN &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -300,13 +300,13 @@
   
 
 
-  <p>I have trouble sometimes navigating network connectivity using Arch. The OS doesn't really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.</p>
-<p>It is not lost on me that I am posting this article on the Internet. You'll find it after you get in to trouble.</p>
-<p>This is pretty much taken from <a href="https://about.me/patrick.connelly">Patrick Connelly's</a> <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">super helpful article</a> about the same thing. I just want the notes locally.</p>
+  <p>I have trouble sometimes navigating network connectivity using Arch. The OS doesn&rsquo;t really have an issue getting out to networks, I just seem to not remember what to do in a time of need. Unfortunately, it is usually the first thing you need to do to begin the problem solving process.</p>
+<p>It is not lost on me that I am posting this article on the Internet. You&rsquo;ll find it after you get in to trouble.</p>
+<p>This is pretty much taken from <a href="https://about.me/patrick.connelly">Patrick Connelly&rsquo;s</a> <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">super helpful article</a> about the same thing. I just want the notes locally.</p>
 <h3 id="get-you-a-vpn">Get you a VPN</h3>
-<p>I like <a href="https://www.expressvpn.com/">ExpressVPN</a>. I've heard good things about NordVPN too.</p>
+<p>I like <a href="https://www.expressvpn.com/">ExpressVPN</a>. I&rsquo;ve heard good things about NordVPN too.</p>
 <h3 id="get-a-file">Get a file</h3>
-<p>You'll need an <code>.ovpn</code> file to do this part. <a href="https://www.expressvpn.com/custom_installer?cluster_id=74&amp;code=EWHYU8E5XD9034TYXCGZACO&amp;os=linux&amp;source=web">Express</a> provides them on their site under &ldquo;Manual Configuration&rdquo;. You'll also need the associated credentials.</p>
+<p>You&rsquo;ll need an <code>.ovpn</code> file to do this part. <a href="https://www.expressvpn.com/custom_installer?cluster_id=74&amp;code=EWHYU8E5XD9034TYXCGZACO&amp;os=linux&amp;source=web">Express</a> provides them on their site under &ldquo;Manual Configuration&rdquo;. You&rsquo;ll also need the associated credentials.</p>
 <h3 id="import-the-settings">Import the settings</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection import type openvpn file my_expressvpn_usa_-_los_angeles_-_3_udp.ovpn
 nmcli c modify my_expressvpn_usa_-_los_angeles_-_3_udp connection.id <span style="color:#e6db74">&#34;Los Angeles 3 ExpressVPN&#34;</span>
@@ -315,9 +315,9 @@ nmcli c modify my_expressvpn_usa_-_los_angeles_-_3_udp connection.id <span style
 <span style="color:#f92672">[</span>or<span style="color:#f92672">]</span>
 nmcli c 
 </code></pre></div><h3 id="adding-credentials">Adding Credentials</h3>
-<p>You should have gotten the username and password for your account, you'll need them to automatically connect to the VPN. You also need <code>sudo</code>.</p>
+<p>You should have gotten the username and password for your account, you&rsquo;ll need them to automatically connect to the VPN. You also need <code>sudo</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vi /etc/NetworkManager/system-connections/Los<span style="color:#ae81ff">\ </span>Angeles<span style="color:#ae81ff">\ </span>3<span style="color:#ae81ff">\ </span>ExpressVPN
-</code></pre></div><p>The following is copied directly from <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">Patrick's article</a>.</p>
+</code></pre></div><p>The following is copied directly from <a href="http://blog.deadlypenguin.com/blog/2017/04/24/vpn-auto-connect-command-line/">Patrick&rsquo;s article</a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Change this from 1 to 0 so that it doesn&#39;t try to load the keyring</span>
 password-flags<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 

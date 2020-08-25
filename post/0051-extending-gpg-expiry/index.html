@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.60.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Extending GPG Expiry &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -359,9 +359,9 @@ Key expires at Thu Sep  9 08:38:10 2021 PDT
 Is this correct? (y/N) y
 gpg: signing failed: No secret key
 gpg: make_keysig_packet failed: No secret key
-</code></pre></div><p>You can see that gpg tells us pretty clearly that we can't do that because we don't have the private key.</p>
+</code></pre></div><p>You can see that gpg tells us pretty clearly that we can&rsquo;t do that because we don&rsquo;t have the private key.</p>
 <p>Before we continue, you should export your public key.
-This isn't necessary, but it is fun to see that it will be the only thing that changes in this process.</p>
+This isn&rsquo;t necessary, but it is fun to see that it will be the only thing that changes in this process.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gpg --armor --export 5BB58AFFDF8ED9D6 &gt; old.pub &amp;&amp; cat old.pub
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -447,7 +447,7 @@ ssb  rsa4096/641EAE1AB4833D26
      created: 2018-12-19  expires: 2020-12-18  usage: A
 [ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
 [ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-</code></pre></div><p>Now you'll want to update the subkeys.
+</code></pre></div><p>Now you&rsquo;ll want to update the subkeys.
 On the <code>gpg</code> command line, the command <code>key 1</code> will select the first subkey.
 Repeat for the other subkeys e.g. <code>key 2</code> and <code>key 3</code>.
 This will select them all and prompt you with a warning that you are about to take action on several keys.</p>
@@ -492,7 +492,7 @@ ssb* rsa4096/641EAE1AB4833D26
 [ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
 
 gpg&gt; save
-</code></pre></div><p>That's it.
+</code></pre></div><p>That&rsquo;s it.
 Your keys have been updated to have some more time on them.
 They will still expire, but that time has been pushed in to the future for the smarter version of yourself to deal with.</p>
 <p>You can see that your public key has changed though&hellip;</p>
@@ -500,7 +500,7 @@ They will still expire, but that time has been pushed in to the future for the s
 </code></pre></div><p>However, its fingerprint has not. So it can still be validated as the same public key.
 Private keys never change, they just let you make modifications to your public key.</p>
 <p>Now follow the instructions to export your keys again.
-We're going to make another revocation certificate just in case.</p>
+We&rsquo;re going to make another revocation certificate just in case.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output 5BB58AFFDF8ED9D6.rev --gen-revoke 5BB58AFFDF8ED9D6
 gpg --export-secret-subkeys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sub.sec.asc
 gpg --export-secret-keys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sec.asc
@@ -512,7 +512,7 @@ gpg --delete-key 5BB58AFFDF8ED9D6
 </code></pre></div><p>I delete the public key too just because it will be added when I import my subkeys anyways.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --import 5BB58AFFDF8ED9D6.sub.sec.asc
 </code></pre></div><p>Now that you have them all imported again, you should &ldquo;ultimately&rdquo; trust them.
-I still don't fully understand the web of trust, that is a topic for another article.
+I still don&rsquo;t fully understand the web of trust, that is a topic for another article.
 You can see <a href="https://security.stackexchange.com/questions/69062/what-is-the-difference-between-full-and-ultimate-trust">this article</a> for a brief explanation.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gpg --edit-key 5BB58AFFDF8ED9D6
 gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
@@ -557,7 +557,7 @@ Please decide how far you trust this user to correctly verify other users&#39; k
   m = back to the main menu
 
 Your decision? 5
-</code></pre></div><p>Perfect, now we're back to the way we were but with updated expiry dates.</p>
+</code></pre></div><p>Perfect, now we&rsquo;re back to the way we were but with updated expiry dates.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2021-09-09]
       Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
 uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
