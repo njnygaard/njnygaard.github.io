@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Run Hydra on a Mac for Testing &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -310,34 +305,34 @@
 <h1 id="infrastructure">Infrastructure</h1>
 <h2 id="create-database">Create Database</h2>
 <h5 id="up">Up</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo <span style="color:#e6db74">&#34;create database hydra&#34;</span> | mysql -uroot -proot
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;create database hydra&#34;</span> | mysql -uroot -proot
 </code></pre></div><h5 id="down">Down</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo <span style="color:#e6db74">&#34;drop database hydra&#34;</span> | mysql -uroot -proot
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh"><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;drop database hydra&#34;</span> | mysql -uroot -proot
 </code></pre></div><h2 id="export-stuff">Export Stuff</h2>
 <h5 id="up-1">Up</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export DATABASE_URL<span style="color:#f92672">=</span>mysql://root:root@tcp<span style="color:#f92672">(</span>docker.for.mac.localhost:3306<span style="color:#f92672">)</span>/hydra?parseTime<span style="color:#f92672">=</span>true
-export SYSTEM_SECRET<span style="color:#f92672">=</span>yJFLU44byGmmKLwJHvramNknAmSQR27C
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#007020">export</span> <span style="color:#bb60d5">DATABASE_URL</span><span style="color:#666">=</span>mysql://root:root@tcp<span style="color:#666">(</span>docker.for.mac.localhost:3306<span style="color:#666">)</span>/hydra?parseTime<span style="color:#666">=</span><span style="color:#007020">true</span>
+<span style="color:#007020">export</span> <span style="color:#bb60d5">SYSTEM_SECRET</span><span style="color:#666">=</span>yJFLU44byGmmKLwJHvramNknAmSQR27C
 </code></pre></div><h5 id="down-1">Down</h5>
 <pre><code>Nothing.
 </code></pre><h2 id="migrations">Migrations</h2>
 <h5 id="up-2">Up</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --rm <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  oryd/hydra:v0.10.10 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  migrate sql $DATABASE_URL
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">docker run -it --rm <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  migrate sql <span style="color:#bb60d5">$DATABASE_URL</span>
 </code></pre></div><h5 id="down-2">Down</h5>
 <pre><code>Nothing.
 </code></pre><h2 id="run-hydra-container">Run Hydra Container</h2>
 <h5 id="up-3">Up</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name ory-hydra-example--hydra <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --network hydraguide <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -p 9000:4444 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e SYSTEM_SECRET<span style="color:#f92672">=</span>$SYSTEM_SECRET <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e DATABASE_URL<span style="color:#f92672">=</span>$DATABASE_URL <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e ISSUER<span style="color:#f92672">=</span>https://localhost:9000/ <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e CONSENT_URL<span style="color:#f92672">=</span>http://localhost:9020/consent <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e FORCE_ROOT_CLIENT_CREDENTIALS<span style="color:#f92672">=</span>admin:demo-password <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  oryd/hydra:v0.10.10
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">docker run -d <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  --name ory-hydra-example--hydra <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -p 9000:4444 <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">SYSTEM_SECRET</span><span style="color:#666">=</span><span style="color:#bb60d5">$SYSTEM_SECRET</span> <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">DATABASE_URL</span><span style="color:#666">=</span><span style="color:#bb60d5">$DATABASE_URL</span> <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">ISSUER</span><span style="color:#666">=</span>https://localhost:9000/ <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CONSENT_URL</span><span style="color:#666">=</span>http://localhost:9020/consent <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">FORCE_ROOT_CLIENT_CREDENTIALS</span><span style="color:#666">=</span>admin:demo-password <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10
 </code></pre></div><h5 id="down-3">Down</h5>
 <pre><code>docker rm -f ory-hydra-example--hydra
 </code></pre><h2 id="create-client-for-consent-app">Create Client for Consent App</h2>
@@ -404,19 +399,19 @@ export SYSTEM_SECRET<span style="color:#f92672">=</span>yJFLU44byGmmKLwJHvramNkn
 </code></pre><h1 id="flow">Flow</h1>
 <h2 id="create-the-consumer-client">Create the Consumer Client</h2>
 <h5 id="up-7">Up</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e CLUSTER_URL<span style="color:#f92672">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e CLIENT_ID<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -e CLIENT_SECRET<span style="color:#f92672">=</span>demo-password <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --network hydraguide <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  oryd/hydra:v0.10.10 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  clients create --skip-tls-verify <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --id some-consumer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --secret consumer-secret <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --grant-types authorization_code,refresh_token,client_credentials,implicit <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --response-types token,code,id_token <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --allowed-scopes openid,offline,hydra.clients <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --callbacks http://localhost:9010/callback
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>  clients create --skip-tls-verify <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --id some-consumer <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --secret consumer-secret <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --grant-types authorization_code,refresh_token,client_credentials,implicit <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --response-types token,code,id_token <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --allowed-scopes openid,offline,hydra.clients <span style="color:#4070a0;font-weight:bold">\
+</span><span style="color:#4070a0;font-weight:bold"></span>    --callbacks http://localhost:9010/callback
 </code></pre></div><h5 id="down-7">Down</h5>
 <pre><code>docker run --rm -it \
   -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \

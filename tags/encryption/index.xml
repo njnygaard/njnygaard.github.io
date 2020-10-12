@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 May 2019 13:08:06 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nygaard.site/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 May 2019 13:08:06 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPG for SSH</title>
       <link>https://www.nygaard.site/post/0041-gpg-for-ssh/</link>

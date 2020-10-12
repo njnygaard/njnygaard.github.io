@@ -7,10 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 28 Mar 2020 08:29:52 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 12 Oct 2020 14:03:26 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pilot Butte</title>
+      <link>https://www.nygaard.site/post/0058-pilot-butte/</link>
+      <pubDate>Mon, 12 Oct 2020 14:03:26 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0058-pilot-butte/</guid>
+      <description>I was looking on the map for something to do and I found a fucking Golden Spiral in the middle of the city. Done deal. Let&amp;rsquo;s walk there.
+Pilot Butte                 I like the look of the track generated for walking up Pilot Butte. It&amp;rsquo;s an old Cinder Cone and it is like a perfect pimple.</description>
+    </item>
     
     <item>
       <title>Beef Stew</title>
@@ -367,7 +373,7 @@ Turns out that the screenshot utility is available on the command line:
       
       <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
       <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
-  They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
+  They load up the boss&#39; calendar to check and based on his presence next week then load up your info.
   Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
     </item>
     

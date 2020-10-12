@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Wordpress TLS &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -311,7 +306,7 @@
 <h2 id="solution">Solution</h2>
 <h3 id="replace-everything-in-wp-content-with-https">Replace everything in <code>wp-content</code> with <code>https</code></h3>
 <p>By this I mean recursively find every reference in the <code>wp-content</code> directory and replace it with https. This is not a great solution, but it is a chance to work on your one-handed bash skill. <em>bash increased to 12</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type f -iname <span style="color:#e6db74">&#34;*&#34;</span> -exec sed -i <span style="color:#e6db74">&#39;s/http\:\/\//https:\/\//g&#39;</span> <span style="color:#e6db74">&#34;{}&#34;</span> +;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">find . -type f -iname <span style="color:#4070a0">&#34;*&#34;</span> -exec sed -i <span style="color:#4070a0">&#39;s/http\:\/\//https:\/\//g&#39;</span> <span style="color:#4070a0">&#34;{}&#34;</span> +;
 </code></pre></div><h3 id="use-this-wordpress-plugin">Use this Wordpress plugin</h3>
 <p><a href="https://wordpress.org/plugins/really-simple-ssl/">Really Simple SSL</a></p>
 <p>The impetus for the brute force replacement was the friendly warnings from this plugin. The plugin worked like a charm and I am very thankful to <a href="https://www.rogierlankhorst.com/">Rogier Lankhorst</a></p>

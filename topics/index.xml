@@ -7,10 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 28 Mar 2020 08:29:52 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nygaard.site/topics/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 12 Oct 2020 14:03:26 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/topics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Outdoors</title>
+      <link>https://www.nygaard.site/topics/outdoors/</link>
+      <pubDate>Mon, 12 Oct 2020 14:03:26 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/topics/outdoors/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Recipes</title>
@@ -27,15 +32,6 @@
       <pubDate>Thu, 23 Jan 2020 08:49:04 -0700</pubDate>
       
       <guid>https://www.nygaard.site/topics/technology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outdoors</title>
-      <link>https://www.nygaard.site/topics/outdoors/</link>
-      <pubDate>Fri, 20 Sep 2019 13:14:36 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/topics/outdoors/</guid>
       <description></description>
     </item>
     

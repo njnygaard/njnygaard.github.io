@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Installing Arch on Older Hardware &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -323,7 +318,7 @@ Over time, signing keys are revoked and the keyring needs to be updated.
 If you&rsquo;re working with a 4GB installation USB stick, it may not be possible to <code>pacman -Syu</code> update your installation media because you will run out of space.
 Downloading the new ISO is the best bet.</p>
 <p>On a Mac:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/Users/admin/Downloads/archlinux-2020.01.01-x86_64.iso of<span style="color:#f92672">=</span>/dev/rdisk2 bs<span style="color:#f92672">=</span>1m
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/Users/admin/Downloads/archlinux-2020.01.01-x86_64.iso <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/rdisk2 <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1m
 </code></pre></div><p>Where <code>/dev/disk2</code> is the unreadable USB stick. <strong>Note</strong> the <code>r</code> in <code>of=/dev/rdisk2</code>.</p>
 <h2 id="partitioning">Partitioning</h2>
 <p>I took Peter&rsquo;s lead and followed this partition scheme goal:</p>
@@ -343,52 +338,52 @@ It is way easier to use than <code>parted</code> and I don&rsquo;t think I&rsquo
 <p><code>write</code> that to the disk, then <code>mkfs.ext2 /dev/sda2</code>.</p>
 <h2 id="formatting">Formatting</h2>
 <p>Write cryptographically secure &lsquo;zeroes&rsquo; to the disk.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cryptsetup luksFormat -s <span style="color:#ae81ff">512</span> /dev/sda3
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup luksFormat -s <span style="color:#40a070">512</span> /dev/sda3
 </code></pre></div><p>Open the drive with the passphrase.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cryptsetup luksOpen /dev/sda3 luks
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup luksOpen /dev/sda3 luks
 </code></pre></div><p>Create your filesystem.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pvcreate /dev/mapper/luks
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pvcreate /dev/mapper/luks
 vgcreate vg0 /dev/mapper/luks
-vgdisplay <span style="color:#f92672">(</span>record size <span style="color:#e6db74">&#34;Free PE&#34;</span><span style="color:#f92672">)</span>
-lvcreate -l <span style="color:#ae81ff">32729</span> /dev/mapper/vg0 -n root
+vgdisplay <span style="color:#666">(</span>record size <span style="color:#4070a0">&#34;Free PE&#34;</span><span style="color:#666">)</span>
+lvcreate -l <span style="color:#40a070">32729</span> /dev/mapper/vg0 -n root
 mkfs.ext4 /dev/mapper/vg0-root
 </code></pre></div><h2 id="installation">Installation</h2>
 <p>Mount your drives.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/mapper/vg0-root /mnt
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mount /dev/mapper/vg0-root /mnt
 mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
 </code></pre></div><p>After all these, you should have a system that is ready to strap.
 <code>pacstrap</code> everything&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacstrap /mnt linux linux-firmware vim base-devel base lvm2 dhcpcd
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pacstrap /mnt linux linux-firmware vim base-devel base lvm2 dhcpcd
 </code></pre></div><p><strong>Note</strong>: If you screw up something like I did, you can mount the drives in the way specified above from the live media and <code>pacstrap</code> additional things that are available through pacman.
 I missed <code>dhcpcd</code>, so that is exactly what I did so I didn&rsquo;t have to restart the installation process.</p>
 <p>After the installation process is complete:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genfstab -p /mnt &gt;&gt; /mnt/etc/fstab
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">genfstab -p /mnt &gt;&gt; /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
 </code></pre></div><p>You&rsquo;re now &lsquo;in&rsquo; your new installation.
 You should set up the niceties.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/hostname
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">vim /etc/hostname
 ln -s /usr/share/zoneinfo/US/Arizona /etc/localtime
 vim /etc/locale.gen
-<span style="color:#f92672">[</span>Uncomment the one you want<span style="color:#f92672">]</span>
+<span style="color:#666">[</span>Uncomment the one you want<span style="color:#666">]</span>
 locale-gen
-echo <span style="color:#e6db74">&#34;LANG=en_us.UTF-8&#34;</span> &gt; /etc/locale.conf
+<span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;LANG=en_us.UTF-8&#34;</span> &gt; /etc/locale.conf
 </code></pre></div><p>This part is what is different between Peter&rsquo;s experience and mine. In the file <code>/etc/mkinitcpio.conf</code>:</p>
 <pre><code class="language-conf" data-lang="conf">HOOKS= (base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
 </code></pre><p>Then run this to build the <code>initramfs</code> image that will strap your system prior to decrypting your SDD.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
 </code></pre></div><h2 id="bootloader">Bootloader</h2>
 <p>Install Grub.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -S grub
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pacman -S grub
 </code></pre></div><p>Edit <code>/etc/default/grub</code>:</p>
 <pre><code class="language-conf" data-lang="conf">GRUB_CMDLINE_LINUX=&quot;cryptdevice=/dev/sda3:luks&quot;
 GRUB_DISABLE_LINUX_UUID=true
 </code></pre><p>Now put Grub on the disk.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-install /dev/sda
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre></div><p><strong>Note</strong>: <code>cfg</code> not <code>conf</code></p>
 <h2 id="finalization">Finalization</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#007020">exit</span>
 umount -R /mnt
 reboot
 </code></pre></div><p>You should have a working installation now!</p>
@@ -397,8 +392,8 @@ reboot
 <p>Find your ethernet device with <code>ip link</code> and commit the device name to memory.
 You&rsquo;ll be using it a lot in the future.
 To get DHCP to work, link the following for systemd.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl start dhcpcd@enp4s0.service
-systemctl enable dhcpcd@enp4s0.service
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">systemctl start dhcpcd@enp4s0.service
+systemctl <span style="color:#007020">enable</span> dhcpcd@enp4s0.service
 </code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>I reserve the right to edit this.
 It is my site.</p>

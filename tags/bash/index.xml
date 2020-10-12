@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Jan 2018 09:45:26 -0800</lastBuildDate>
-    
-	<atom:link href="https://www.nygaard.site/tags/bash/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Jan 2018 09:45:26 -0800</lastBuildDate><atom:link href="https://www.nygaard.site/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Run Hydra on a Mac for Testing</title>
       <link>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</link>

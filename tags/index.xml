@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 28 Mar 2020 08:29:52 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:03:26 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bend</title>
+      <link>https://www.nygaard.site/tags/bend/</link>
+      <pubDate>Mon, 12 Oct 2020 14:03:26 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/bend/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hiking</title>
+      <link>https://www.nygaard.site/tags/hiking/</link>
+      <pubDate>Mon, 12 Oct 2020 14:03:26 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/hiking/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>Oregon</title>
+      <link>https://www.nygaard.site/tags/oregon/</link>
+      <pubDate>Mon, 12 Oct 2020 14:03:26 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/oregon/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>beef</title>
@@ -63,15 +86,6 @@
       <pubDate>Fri, 20 Sep 2019 13:14:36 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/hawaii/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hiking</title>
-      <link>https://www.nygaard.site/tags/hiking/</link>
-      <pubDate>Fri, 20 Sep 2019 13:14:36 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/hiking/</guid>
       <description></description>
     </item>
     

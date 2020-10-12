@@ -41,14 +41,14 @@ body {
     font-family: sans-serif;
 }
 
-code, kbd, pre, samp {
+/* code, kbd, pre, samp {
     font-family: monospace, monospace;
     font-size: 1em;
     color: #777;
     background: rgb(230, 230, 230);
     padding-left: 0.2em;
     padding-right: 0.2em;
-}
+} */
 
 a>code {
     color: rgba(173, 0, 0, 1);

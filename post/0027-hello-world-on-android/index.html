@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Hello World on Android &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -312,11 +307,11 @@
 <h3 id="completely-remove-android-studio-mac">Completely remove Android Studio (Mac)</h3>
 <p>I messed up the first time by denying <code>HAXM</code> from doing stuff on my computer. That&rsquo;s a pretty strange name for something from Intel for device emulation. Suffice it to say that you need it installed during the Android Studio installation and that Intel is not <code>HAX</code>ing you.</p>
 <p><a href="https://stackoverflow.com/questions/28418450/i-cant-install-intel-haxm">HAXM</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -Rf /Applications/Android<span style="color:#ae81ff">\ </span>Studio.app
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">rm -Rf /Applications/Android<span style="color:#4070a0;font-weight:bold">\ </span>Studio.app
 rm -Rf ~/Library/Preferences/AndroidStudio*
 rm -Rf ~/Library/Preferences/com.google.android.*
 rm -Rf ~/Library/Preferences/com.android.*
-rm -Rf ~/Library/Application<span style="color:#ae81ff">\ </span>Support/AndroidStudio*
+rm -Rf ~/Library/Application<span style="color:#4070a0;font-weight:bold">\ </span>Support/AndroidStudio*
 rm -Rf ~/Library/Logs/AndroidStudio*
 rm -Rf ~/Library/Caches/AndroidStudio*
 rm -Rf ~/.AndroidStudio*

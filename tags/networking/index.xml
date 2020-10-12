@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 02 Jul 2018 12:38:57 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nygaard.site/tags/networking/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 02 Jul 2018 12:38:57 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch VPN</title>
       <link>https://www.nygaard.site/post/0037-arch-vpn/</link>

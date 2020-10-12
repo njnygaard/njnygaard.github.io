@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Take Screenshot Directly to Preview &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -300,20 +295,20 @@
 
   <p>Okay this is my first foray in to AppleScript, and I have to say that I don&rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.</p>
 <p>Turns out that the screenshot utility is available on the command line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; screencapture -h
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">&gt; screencapture -h
 screencapture: illegal option -- h
-usage: screencapture <span style="color:#f92672">[</span>-icMPmwsWxSCUtoa<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>files<span style="color:#f92672">]</span>
+usage: screencapture <span style="color:#666">[</span>-icMPmwsWxSCUtoa<span style="color:#666">]</span> <span style="color:#666">[</span>files<span style="color:#666">]</span>
   -c         force screen capture to go to the clipboard
   -b         capture Touch Bar - non-interactive modes only
 ...
 </code></pre></div><p>Thats&rsquo;s nice and clean. So you want to run this as a script, and Macs give you a way to do that.</p>
 <p>Rob Griffiths <a href="https://www.macworld.com/article/1049151/software-development/openshot.html">posted this script</a> just so I didn&rsquo;t have to think about it. Some editing changed the format to what I wanted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">do</span> shell script <span style="color:#e6db74">&#34;DATE=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">`</span>/usr/local/bin/gdate +%a-%b-%d-%H-%M-%S<span style="color:#e6db74">`</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">;
-</span><span style="color:#e6db74">    FILE=~/Pictures/screenshot-</span><span style="color:#e6db74">${</span>DATE<span style="color:#e6db74">}</span><span style="color:#e6db74">.png;
-</span><span style="color:#e6db74">    screencapture -i -x </span>$FILE<span style="color:#e6db74">;
-</span><span style="color:#e6db74">    if [ -e </span>$FILE<span style="color:#e6db74"> ]; then
-</span><span style="color:#e6db74">    open /Applications/Preview.app </span>$FILE<span style="color:#e6db74">;
-</span><span style="color:#e6db74">    fi&#34;</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#007020;font-weight:bold">do</span> shell script <span style="color:#4070a0">&#34;DATE=</span><span style="color:#007020;font-weight:bold">$(</span><span style="color:#007020">echo</span> <span style="color:#4070a0">`</span>/usr/local/bin/gdate +%a-%b-%d-%H-%M-%S<span style="color:#4070a0">`</span><span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">;
+</span><span style="color:#4070a0">    FILE=~/Pictures/screenshot-</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">DATE</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">.png;
+</span><span style="color:#4070a0">    screencapture -i -x </span><span style="color:#bb60d5">$FILE</span><span style="color:#4070a0">;
+</span><span style="color:#4070a0">    if [ -e </span><span style="color:#bb60d5">$FILE</span><span style="color:#4070a0"> ]; then
+</span><span style="color:#4070a0">    open /Applications/Preview.app </span><span style="color:#bb60d5">$FILE</span><span style="color:#4070a0">;
+</span><span style="color:#4070a0">    fi&#34;</span>
 </code></pre></div><p>This is more than I could have hoped for because it neatly organizes my screenshots too. Now you just have to make an automator script like so:</p>
 <p>[</p>
 <!-- raw HTML omitted -->

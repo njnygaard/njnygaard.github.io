@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.76.4" />
 
   <title>Connecting to Unsecured Networks &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -46,11 +46,6 @@
   
   
 
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
@@ -308,7 +303,7 @@
 </ul>
 <h3 id="wifi">WiFi</h3>
 <p>You&rsquo;ll want to use <code>wpa_supplicant</code> instead of Network Manager. <code>#TODO</code> I really need to understand what Network Manager is doing under the covers that <code>wpa_supplicant</code> seems to accomplish as well. I was able to direct <code>wpa_supplicant</code> to do what I wanted, and <code>nmcli</code> seemed to fall on its face. I don&rsquo;t know if I can judge all that harshly because it is very difficult to get answers without internet in the first place.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo wpa_supplicant -Dwext -iwlp3s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo wpa_supplicant -Dwext -iwlp3s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
 </code></pre></div><p>The driver mode <code>wext</code> is somewhat legacy, but any port in a storm. Here&rsquo;s the contents of <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>:</p>
 <pre><code class="language-output" data-lang="output">
 ctrl_interface=/run/wpa_supplicant
@@ -327,14 +322,14 @@ wlp3s0: Trying to associate with 00:0e:8e:3c:07:d7 (SSID='OTWC_POIPU-PT_9-103' f
 wlp3s0: Associated with 00:0e:8e:3c:07:d7
 wlp3s0: CTRL-EVENT-CONNECTED - Connection to 00:0e:8e:3c:07:d7 completed [id=0 id_str=]
 </code></pre><p>I don&rsquo;t know if you really need to run this&hellip; <code>#TODO</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">dhcpcd
 </code></pre></div><p>You might need to remove the run lock file and kill instances of <code>wpa_supplicant</code> if you do this a bunch of times trying.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm /run/wpa_supplicant/wlp3s0
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo rm /run/wpa_supplicant/wlp3s0
 killall wpa_supplicant
 </code></pre></div><h3 id="sd-card">SD Card</h3>
 <p>You have to install exfat tools to work with the filesystem that is used on SD Cards by default. After installing these tools, everything worked beautifully.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yaourt exfat-utils
-<span style="color:#f92672">[</span>Number <span style="color:#ae81ff">1</span> from Community<span style="color:#f92672">]</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">yaourt exfat-utils
+<span style="color:#666">[</span>Number <span style="color:#40a070">1</span> from Community<span style="color:#666">]</span>
 mkdir -p /home/drone/media
 sudo mount.exfat-fuse /dev/mmcblk0p1 /home/drone/media
 </code></pre></div><p>I use <code>sxiv</code> to look at the thumbnails and move images around. It works pretty well. I&rsquo;ll update when I find something better.</p>
