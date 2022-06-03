@@ -15,7 +15,7 @@
       
       <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
       <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
-  They load up the boss&#39; calendar to check and based on his presence next week then load up your info.
+  They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
   Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
     </item>
     
@@ -25,7 +25,7 @@
       <pubDate>Wed, 03 Jan 2018 15:08:52 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0011-new-years/</guid>
-      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
+      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the output of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
     </item>
     
   </channel>

@@ -116,8 +116,7 @@ Bone broth is gelatinous at fridge temperature. This is because you cook down th
       
       <guid>https://www.nygaard.site/post/0044-test-post-please-ignore/</guid>
       <description>Shortcodes Hugo has a bunch of shortcodes. This is just a post of me testing them. Nothing to see here.
-gist  Figure   Cloud Development   #!/bin/bash  echo gooby &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt; Tweet Hugo 0.24 Released: Big archetype update + @Netlify _redirects etc. file supporthttps://t.co/X94FmYDEZJ #gohugo #golang @spf13 @bepsays
-&amp;mdash; GoHugo.</description>
+gist  Figure  Cloud Development   #!/bin/bash  echo gooby &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;  {{ range .Pages }}  {{ .Render &amp;#34;summary&amp;#34;}}  {{ end }}  &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt; Tweet Hugo 0.24 Released: Big archetype update + @Netlify _redirects etc. file supporthttps://t.co/X94FmYDEZJ #gohugo #golang @spf13 @bepsays</description>
     </item>
     
     <item>
@@ -364,7 +363,7 @@ Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; |
       <guid>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</guid>
       <description>Okay this is my first foray in to AppleScript, and I have to say that I don&amp;rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
-&amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
+&amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files]  -c force screen capture to go to the clipboard  -b capture Touch Bar - non-interactive modes only .</description>
     </item>
     
     <item>
@@ -374,7 +373,7 @@ Turns out that the screenshot utility is available on the command line:
       
       <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
       <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
-  They load up the boss&#39; calendar to check and based on his presence next week then load up your info.
+  They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
   Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
     </item>
     
@@ -394,7 +393,7 @@ You can create a Zapier Application for your WebApp and give that to Zapier. The
       <pubDate>Wed, 03 Jan 2018 15:08:52 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0011-new-years/</guid>
-      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the ouput of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
+      <description>I made a resolution that I would make public contributions on GitLab and GitHub this year. The easiest way to do that is to make blog posts because both of these repos are public (because the site is public 😜). My site is a GitLab repo with a GitHub submodule repo. The GitLab repo contains the Hugo project and the theme Blackburn. The GitHub repo is the output of the hugo project and exists at the conventional place you would deploy a personal GitHub page.</description>
     </item>
     
     <item>
@@ -455,6 +454,7 @@ What follows are notes of the responses for my edification, not necessarily how 
       <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
 [
+]aws
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     

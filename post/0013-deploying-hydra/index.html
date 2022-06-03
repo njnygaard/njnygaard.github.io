@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Zapier and the OAuth2.0 Mountain &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -312,9 +306,11 @@
 <p><a href="https://www.ory.am/run-oauth2-server-open-source-api-security">Hydra is an authorization server that might solve this for us.</a></p>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="hydra-consent-flow.png">7</a></p>
 <p>This is a state machine representing the same flow.</p>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="consent-flow.svg">9</a></p>
 <p>A verbal explanation stolen and searched/replaced from <a href="https://ory.gitbooks.io/hydra/content/oauth2.html#overview">Hydra Gitbook</a> for our specific usecase:</p>
 <blockquote>
 </blockquote>
@@ -328,6 +324,7 @@
 </ol>
 <h2 id="sample-app-implants">Sample App Implants</h2>
 <p>A consent app in the world of Hydra is the thing you login to. Think this:</p>
+<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>There are two sample consent apps. Only the express one is on ory&rsquo;s DockerHub :(</p>
 <ul>
@@ -354,7 +351,7 @@
 <p>As of writing, the latest Hydra image is <a href="https://hub.docker.com/r/oryd/hydra/tags/">v0.10.10</a>. I will be using that for the <a href="https://ory.gitbooks.io/hydra/content/install.html#install-and-run-ory-hydra">tutorial</a>.</p>
 <h3 id="https-termination">HTTPS Termination</h3>
 <p>I&rsquo;m going to need to consider this&hellip; :(</p>
-<pre><code>- HTTPS_ALLOW_TERMINATION_FROM: Whitelist one or multiple CIDR address ranges and allow them to terminate TLS connections.
+<pre tabindex="0"><code>- HTTPS_ALLOW_TERMINATION_FROM: Whitelist one or multiple CIDR address ranges and allow them to terminate TLS connections.
   Be aware that the X-Forwarded-Proto header must be set and must never be modifiable by anyone but
   your proxy / gateway / load balancer. Supports ipv4 and ipv6.
   Hydra serves http instead of https when this option is set.

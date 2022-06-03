@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Airgapped GPG &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -335,15 +329,15 @@
 <h3 id="format">Format</h3>
 <p>I&rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</p>
 <h3 id="disable-journaling">Disable Journaling</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo diskUtil disableJournal /dev/disk0s1
-</code></pre></div><p>Or whatever your disk is. Arch doesn&rsquo;t like the journaling yet.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo diskUtil disableJournal /dev/disk0s1
+</span></span></code></pre></div><p>Or whatever your disk is. Arch doesn&rsquo;t like the journaling yet.</p>
 <h4 id="note">Note</h4>
 <p>I tried all the variants of FAT, exFAT, NTFS, and a couple others. This is the only filesystem that preserves permissions and case-sensitivity, so I think it is the safest bet.</p>
 <h3 id="fstab">fstab</h3>
 <p>You want to have an <code>/etc/fstab</code> entry that will let you mount this disk easily.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">/dev/sdb1 /mnt/stick hfsplus user,rw,nosuid,nodev,noexec,relatime,sync,umask=22,uid=0,gid=0,nls=utf8
-</code></pre></div><p>Now you can:</p>
-<pre><code class="language-baah" data-lang="baah">mount /mnt/stick
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>/dev/sdb1 /mnt/stick hfsplus user,rw,nosuid,nodev,noexec,relatime,sync,umask=22,uid=0,gid=0,nls=utf8
+</span></span></code></pre></div><p>Now you can:</p>
+<pre tabindex="0"><code class="language-baah" data-lang="baah">mount /mnt/stick
 </code></pre><p>When your drive is inserted.</p>
 <h3 id="location">Location</h3>
 <p>Make a directory with <code>sudo</code> on this drive and own it to your user. The UID for the rest of the drive will likely be <code>99</code> because of the way MacOS deals with users, but you can make this folder be yours to write freely to it.</p>
@@ -360,9 +354,9 @@
 <p>You will be making the GPG keys with your local utility, backing them up to the media, then deleting the master key from your current OS installation. When you take the media to a new computer, you will import the secret subkeys only. That will leave you with full capablilites of GPG but also protection against private key discovery.</p>
 <!-- raw HTML omitted -->
 <p>First make a key that can only <code>C</code>ertify:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --expert --full-gen-key
-</code></pre></div><p>Select <code>8</code> and toggle till you see this:</p>
-<pre><code>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --expert --full-gen-key
+</span></span></code></pre></div><p>Select <code>8</code> and toggle till you see this:</p>
+<pre tabindex="0"><code>
 Possible actions for a RSA key: Sign Certify Encrypt Authenticate
 Current allowed actions: Certify
 
@@ -374,104 +368,102 @@ Current allowed actions: Certify
 Your selection? q
 </code></pre><p>Make the keysize <code>4096</code> because we live in the future, and give it an expiration of <code>1y</code>. Fill in the rest of the fields how you would like. For the identity fields, question what the use of this key will be? Deniable encryption or identity verification?</p>
 <p>You should have something like this now:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg -k
-/home/drone/.gnupg/pubring.kbx
-------------------------------
-pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
-uid                 [ultimate] Real Name &lt;Real.Person@example.com&gt;
-</code></pre></div><h4 id="subkeys">Subkeys</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg -k
+</span></span><span style="display:flex;"><span>/home/drone/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Real Name &lt;Real.Person@example.com&gt;
+</span></span></code></pre></div><h4 id="subkeys">Subkeys</h4>
 <p>Now that you have your master key, make the sub keys. Get the ID of the key you just made and enter expert mode.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --expert --edit-key ED152F106BE94245
-</code></pre></div><p>The idea now is to <code>addkey</code> to make a subkey for each of the tasks: Authenticate (A), Sign (S), and Encrypt (E). So you will select <code>8</code> again and toggle until you only have one of those permissions on a key, complete the generation process, then repeat for the other permissions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --expert --edit-key ED152F106BE94245
+</span></span></code></pre></div><p>The idea now is to <code>addkey</code> to make a subkey for each of the tasks: Authenticate (A), Sign (S), and Encrypt (E). So you will select <code>8</code> again and toggle until you only have one of those permissions on a key, complete the generation process, then repeat for the other permissions.</p>
 <p>You should have this at the end:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">sec  rsa4096/ED152F106BE94245
-     created: 2018-12-19  expires: 2020-12-18  usage: C   
-     trust: ultimate      validity: ultimate
-ssb  rsa4096/6D7B797688AD10C7
-     created: 2018-12-19  expires: 2020-12-18  usage: S   
-ssb  rsa4096/815437E38E23B6EE
-     created: 2018-12-19  expires: 2020-12-18  usage: E   
-ssb  rsa4096/707FB77767CBEDDD
-     created: 2018-12-19  expires: 2020-12-18  usage: A   
-[ultimate] (1). Real Name &lt;Real.Person@example.com&gt;
-</code></pre></div><p><code>save</code> to exit GPG.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>sec  rsa4096/ED152F106BE94245
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: C   
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6D7B797688AD10C7
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: S   
+</span></span><span style="display:flex;"><span>ssb  rsa4096/815437E38E23B6EE
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: E   
+</span></span><span style="display:flex;"><span>ssb  rsa4096/707FB77767CBEDDD
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: A   
+</span></span><span style="display:flex;"><span>[ultimate] (1). Real Name &lt;Real.Person@example.com&gt;
+</span></span></code></pre></div><p><code>save</code> to exit GPG.</p>
 <h3 id="revocation">Revocation</h3>
 <p>After you have made your keys, generate a revocation key for the master. We will use this in case we need to invalidate the whole shebang.</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --output ED152F106BE94245.rev --gen-revoke ED152F106BE94245
-</code></pre></div><p>ED152F106BE94245.rev
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --output ED152F106BE94245.rev --gen-revoke ED152F106BE94245
+</span></span></code></pre></div><p>ED152F106BE94245.rev
 Contains the revocation certificate for the master key. I&rsquo;ve kept it on the media, because that&rsquo;s where the master private key will only ever be.</p>
 <h3 id="backups">Backups</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --export --armor ED152F106BE94245 &gt; ED152F106BE94245.pub.asc
-</code></pre></div><p>ED152F106BE94245.pub.asc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export --armor ED152F106BE94245 &gt; ED152F106BE94245.pub.asc
+</span></span></code></pre></div><p>ED152F106BE94245.pub.asc
 Contains all the public keys.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --export-secret-keys --armor ED152F106BE94245 &gt; ED152F106BE94245.sec.asc
-</code></pre></div><p>ED152F106BE94245.sec.asc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export-secret-keys --armor ED152F106BE94245 &gt; ED152F106BE94245.sec.asc
+</span></span></code></pre></div><p>ED152F106BE94245.sec.asc
 Contains the master private key.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --export-secret-subkeys --armor ED152F106BE94245 &gt; ED152F106BE94245.sub.sec.asc
-</code></pre></div><p>ED152F106BE94245.sub.sec.asc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export-secret-subkeys --armor ED152F106BE94245 &gt; ED152F106BE94245.sub.sec.asc
+</span></span></code></pre></div><p>ED152F106BE94245.sub.sec.asc
 Contains only the private keys of the subkeys.</p>
 <h3 id="deleting-the-master">Deleting the Master</h3>
 <p>Now, you can delete the master key from your local keyring to complete the setup. First, delete the whole thing, then import only the private subkeys that we just exported.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --delete-secret-key ED152F106BE94245
-gpg --delete-key ED152F106BE94245
-</code></pre></div><p>Now, import the the private subkeys:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --import ED152F106BE94245.sub.sec.asc
-</code></pre></div><p>You should have this now:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg -k
-/home/drone/.gnupg/pubring.kbx
-------------------------------
-pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
-uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
-sub   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
-sub   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
-sub   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
-
-&gt; gpg -K
-/home/drone/.gnupg/pubring.kbx
-------------------------------
-sec#  rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
-uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
-ssb   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
-ssb   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
-ssb   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
-
-</code></pre></div><p>Note the <code>#</code> near <code>sec</code> for the list private keys operation. That means that the master key no longer is present, only a stub. This is perfect.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --delete-secret-key ED152F106BE94245
+</span></span><span style="display:flex;"><span>gpg --delete-key ED152F106BE94245
+</span></span></code></pre></div><p>Now, import the the private subkeys:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --import ED152F106BE94245.sub.sec.asc
+</span></span></code></pre></div><p>You should have this now:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg -k
+</span></span><span style="display:flex;"><span>/home/drone/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
+</span></span><span style="display:flex;"><span>uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>sub   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>sub   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt; gpg -K
+</span></span><span style="display:flex;"><span>/home/drone/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>sec#  rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
+</span></span><span style="display:flex;"><span>uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
+</span></span></code></pre></div><p>Note the <code>#</code> near <code>sec</code> for the list private keys operation. That means that the master key no longer is present, only a stub. This is perfect.</p>
 <h2 id="applications">Applications</h2>
 <p>Now that you have a full set of airgapped keys, you can move them back over to the other computer and import the private subkeys again. Then you can give your public key to who you want.</p>
 <p>We did create and Authentication key too&hellip;</p>
 <h3 id="exporting-an-ssh-key">Exporting an SSH Key</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --with-keygrip -k
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg --with-keygrip -k
-
-/home/drone/.gnupg/pubring.kbx
-------------------------------
-pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
-      Keygrip = 9E3B3A733EE6843BFF34A8519B8E2718FAC37CE9
-uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
-sub   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
-      Keygrip = FF269048B780DDCC03C848E1EDC026DDA58112A5
-sub   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
-      Keygrip = 7848285CC2CF03B10FE43EC4679B86775224FCF9
-sub   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
-      Keygrip = 3033CB663B155310BF8B95A92226E3D7A50B8B6E
-
-</code></pre></div><p>You can see here the keygrips you need to complete the ssh authentication portion. Add the keygrip of the <code>[A]</code> key to the end of <code>~/.gnupg/sshcontrol</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --with-keygrip -k
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg --with-keygrip -k
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/home/drone/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>pub   rsa4096/ED152F106BE94245 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 332B DF93 D4CA 7C43 4E87  F0F2 ED15 2F10 6BE9 4245
+</span></span><span style="display:flex;"><span>      Keygrip = 9E3B3A733EE6843BFF34A8519B8E2718FAC37CE9
+</span></span><span style="display:flex;"><span>uid                 [ unknown] Real Name &lt;Real.Person@example.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa4096/6D7B797688AD10C7 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Keygrip = FF269048B780DDCC03C848E1EDC026DDA58112A5
+</span></span><span style="display:flex;"><span>sub   rsa4096/815437E38E23B6EE 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Keygrip = 7848285CC2CF03B10FE43EC4679B86775224FCF9
+</span></span><span style="display:flex;"><span>sub   rsa4096/707FB77767CBEDDD 2018-12-19 [A] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Keygrip = 3033CB663B155310BF8B95A92226E3D7A50B8B6E
+</span></span></code></pre></div><p>You can see here the keygrips you need to complete the ssh authentication portion. Add the keygrip of the <code>[A]</code> key to the end of <code>~/.gnupg/sshcontrol</code>.</p>
 <p>Then you can export a key:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --export-ssh-key ED152F106BE94245
-</code></pre></div><p>And copy that to your remote server authorized keys or give it to Gitlab.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export-ssh-key ED152F106BE94245
+</span></span></code></pre></div><p>And copy that to your remote server authorized keys or give it to Gitlab.</p>
 <h3 id="gpg-agent">GPG Agent</h3>
 <p>You can use <code>gpg-agent</code> instead of <code>ssh-agent</code>. The setup is different on Mac and Linux. TODO: Include the setup once it is working.</p>
 <p>As always, <a href="https://wiki.archlinux.org/index.php/GnuPG#SSH_agent">The Arch Wiki</a> is a good place to start for configuration.</p>
 <h3 id="signing-commits">Signing Commits</h3>
 <p>Now that you have the keys, you can sign your commits. Github and Gitlab get a copy of you public key first, then you configure your local git installation to sign with your key:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git config --global user.signingkey ED152F106BE94245
-git config --global commit.gpgsign <span style="color:#007020">true</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.signingkey ED152F106BE94245
+</span></span><span style="display:flex;"><span>git config --global commit.gpgsign <span style="color:#007020">true</span>
+</span></span></code></pre></div>
 
   
 <div class="prev-next-post pure-g">

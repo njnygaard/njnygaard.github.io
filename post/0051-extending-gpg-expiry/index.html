@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Extending GPG Expiry &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -307,260 +301,260 @@ That would probably be the most secure.</p>
 <p>Failing that, I will document the easy way of loading up your private key and modifying the expiration dates so you can just continue using your whole setup.
 This is probably the most helpful way to get all this done, however a complete key-rotation every few years is never a bad idea.</p>
 <h2 id="background">Background</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg -K
-/Users/admin/.gnupg/pubring.kbx
--------------------------------
-sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
-uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
-ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
-ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
-ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
-</code></pre></div><p>Notice the <code>sec#</code> up there for the <code>[C]</code> key.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg -K
+</span></span><span style="display:flex;"><span>/Users/admin/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>-------------------------------
+</span></span><span style="display:flex;"><span>sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
+</span></span></code></pre></div><p>Notice the <code>sec#</code> up there for the <code>[C]</code> key.
 This means that your private key for the <code>[C]</code>ertify function is not available (because you explicitly removed it).
 If we try to edit the expiry times on that key or subkeys now, we will get errors:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg --edit-key 5BB58AFFDF8ED9D6
-gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret subkeys are available.
-
-pub  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2020-12-18  usage: C
-     trust: ultimate      validity: ultimate
-ssb  rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2020-12-18  usage: E
-ssb  rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2020-12-18  usage: S
-ssb  rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2020-12-18  usage: A
-[ultimate] (1). Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-[ultimate] (2)  Nikhil Nygaard &lt;nik@nygaard.site&gt;
-
-gpg&gt; expire
-Changing expiration time for the primary key.
-gpg: WARNING: no user ID has been marked as primary.  This command may
-              cause a different user ID to become the assumed primary.
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &lt;n&gt;  = key expires in n days
-      &lt;n&gt;w = key expires in n weeks
-      &lt;n&gt;m = key expires in n months
-      &lt;n&gt;y = key expires in n years
-Key is valid for? (0) 2y
-Key expires at Thu Sep  9 08:38:10 2021 PDT
-Is this correct? (y/N) y
-gpg: signing failed: No secret key
-gpg: make_keysig_packet failed: No secret key
-</code></pre></div><p>You can see that gpg tells us pretty clearly that we can&rsquo;t do that because we don&rsquo;t have the private key.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg --edit-key 5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Secret subkeys are available.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pub  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: C
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb  rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: E
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: S
+</span></span><span style="display:flex;"><span>ssb  rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: A
+</span></span><span style="display:flex;"><span>[ultimate] (1). Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>[ultimate] (2)  Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gpg&gt; expire
+</span></span><span style="display:flex;"><span>Changing expiration time for the primary key.
+</span></span><span style="display:flex;"><span>gpg: WARNING: no user ID has been marked as primary.  This command may
+</span></span><span style="display:flex;"><span>              cause a different user ID to become the assumed primary.
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>         0 = key does not expire
+</span></span><span style="display:flex;"><span>      &lt;n&gt;  = key expires in n days
+</span></span><span style="display:flex;"><span>      &lt;n&gt;w = key expires in n weeks
+</span></span><span style="display:flex;"><span>      &lt;n&gt;m = key expires in n months
+</span></span><span style="display:flex;"><span>      &lt;n&gt;y = key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid for? (0) 2y
+</span></span><span style="display:flex;"><span>Key expires at Thu Sep  9 08:38:10 2021 PDT
+</span></span><span style="display:flex;"><span>Is this correct? (y/N) y
+</span></span><span style="display:flex;"><span>gpg: signing failed: No secret key
+</span></span><span style="display:flex;"><span>gpg: make_keysig_packet failed: No secret key
+</span></span></code></pre></div><p>You can see that gpg tells us pretty clearly that we can&rsquo;t do that because we don&rsquo;t have the private key.</p>
 <p>Before we continue, you should export your public key.
 This isn&rsquo;t necessary, but it is fun to see that it will be the only thing that changes in this process.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">gpg --armor --export 5BB58AFFDF8ED9D6 &gt; old.pub &amp;&amp; cat old.pub
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-[magic garbage]
------END PGP PUBLIC KEY BLOCK-----
-</code></pre></div><h2 id="procedure">Procedure</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gpg --armor --export 5BB58AFFDF8ED9D6 &gt; old.pub &amp;&amp; cat old.pub
+</span></span><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[magic garbage]
+</span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
+</span></span></code></pre></div><h2 id="procedure">Procedure</h2>
 <p>You have to go find your private key and import it.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg --import ~/Desktop/Security/Master/gpg/5BB58AFFDF8ED9D6.sec.asc
-gpg: key 5BB58AFFDF8ED9D6: &#34;Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;&#34; not changed
-gpg: key 5BB58AFFDF8ED9D6: secret key imported
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-gpg:       secret keys read: 1
-gpg:   secret keys imported: 1
-gpg:  secret keys unchanged: 1
-</code></pre></div><p>Here is a before and after so you can see what should have changed.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg --import ~/Desktop/Security/Master/gpg/5BB58AFFDF8ED9D6.sec.asc
+</span></span><span style="display:flex;"><span>gpg: key 5BB58AFFDF8ED9D6: &#34;Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;&#34; not changed
+</span></span><span style="display:flex;"><span>gpg: key 5BB58AFFDF8ED9D6: secret key imported
+</span></span><span style="display:flex;"><span>gpg: Total number processed: 1
+</span></span><span style="display:flex;"><span>gpg:              unchanged: 1
+</span></span><span style="display:flex;"><span>gpg:       secret keys read: 1
+</span></span><span style="display:flex;"><span>gpg:   secret keys imported: 1
+</span></span><span style="display:flex;"><span>gpg:  secret keys unchanged: 1
+</span></span></code></pre></div><p>Here is a before and after so you can see what should have changed.
 Namely <code>#</code>.</p>
 <p>Before:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg -K
-/Users/admin/.gnupg/pubring.kbx
--------------------------------
-sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
-uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
-ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
-ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
-ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
-</code></pre></div><p>After:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">&gt; gpg -K
-/Users/admin/.gnupg/pubring.kbx
--------------------------------
-sec   rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
-      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
-uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
-ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
-ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
-ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
-</code></pre></div><p>You will be prompted to enter the passcode for that private key, so make sure that you are you.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg -K
+</span></span><span style="display:flex;"><span>/Users/admin/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>-------------------------------
+</span></span><span style="display:flex;"><span>sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
+</span></span></code></pre></div><p>After:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt; gpg -K
+</span></span><span style="display:flex;"><span>/Users/admin/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>-------------------------------
+</span></span><span style="display:flex;"><span>sec   rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2020-12-18]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2020-12-18]
+</span></span></code></pre></div><p>You will be prompted to enter the passcode for that private key, so make sure that you are you.</p>
 <p>No we have the ability to edit the expiry value on the primary key.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">gpg --edit-key 5BB58AFFDF8ED9D6
-gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret key is available.
-
-sec  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2020-12-18  usage: C
-     trust: ultimate      validity: ultimate
-ssb  rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2020-12-18  usage: E
-ssb  rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2020-12-18  usage: S
-ssb  rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2020-12-18  usage: A
-[ultimate] (1). Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-[ultimate] (2)  Nikhil Nygaard &lt;nik@nygaard.site&gt;
-
-gpg&gt; expire
-Changing expiration time for the primary key.
-gpg: WARNING: no user ID has been marked as primary.  This command may
-              cause a different user ID to become the assumed primary.
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &lt;n&gt;  = key expires in n days
-      &lt;n&gt;w = key expires in n weeks
-      &lt;n&gt;m = key expires in n months
-      &lt;n&gt;y = key expires in n years
-Key is valid for? (0) 2y
-Key expires at Thu Sep  9 08:45:00 2021 PDT
-Is this correct? (y/N) y
-
-sec  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2021-09-09  usage: C
-     trust: ultimate      validity: ultimate
-ssb  rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2020-12-18  usage: E
-ssb  rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2020-12-18  usage: S
-ssb  rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2020-12-18  usage: A
-[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-</code></pre></div><p>Now you&rsquo;ll want to update the subkeys.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gpg --edit-key 5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Secret key is available.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: C
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb  rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: E
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: S
+</span></span><span style="display:flex;"><span>ssb  rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: A
+</span></span><span style="display:flex;"><span>[ultimate] (1). Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>[ultimate] (2)  Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gpg&gt; expire
+</span></span><span style="display:flex;"><span>Changing expiration time for the primary key.
+</span></span><span style="display:flex;"><span>gpg: WARNING: no user ID has been marked as primary.  This command may
+</span></span><span style="display:flex;"><span>              cause a different user ID to become the assumed primary.
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>         0 = key does not expire
+</span></span><span style="display:flex;"><span>      &lt;n&gt;  = key expires in n days
+</span></span><span style="display:flex;"><span>      &lt;n&gt;w = key expires in n weeks
+</span></span><span style="display:flex;"><span>      &lt;n&gt;m = key expires in n months
+</span></span><span style="display:flex;"><span>      &lt;n&gt;y = key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid for? (0) 2y
+</span></span><span style="display:flex;"><span>Key expires at Thu Sep  9 08:45:00 2021 PDT
+</span></span><span style="display:flex;"><span>Is this correct? (y/N) y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: C
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb  rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: E
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: S
+</span></span><span style="display:flex;"><span>ssb  rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: A
+</span></span><span style="display:flex;"><span>[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span></code></pre></div><p>Now you&rsquo;ll want to update the subkeys.
 On the <code>gpg</code> command line, the command <code>key 1</code> will select the first subkey.
 Repeat for the other subkeys e.g. <code>key 2</code> and <code>key 3</code>.
 This will select them all and prompt you with a warning that you are about to take action on several keys.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">gpg&gt; key 1
-gpg&gt; key 2
-gpg&gt; key 3
-
-sec  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2021-09-09  usage: C
-     trust: ultimate      validity: ultimate
-ssb* rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2021-09-09  usage: E
-ssb* rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2020-12-18  usage: S
-ssb* rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2020-12-18  usage: A
-[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-
-gpg&gt; expire
-Are you sure you want to change the expiration time for multiple subkeys? (y/N) y
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &lt;n&gt;  = key expires in n days
-      &lt;n&gt;w = key expires in n weeks
-      &lt;n&gt;m = key expires in n months
-      &lt;n&gt;y = key expires in n years
-Key is valid for? (0) 2y
-Key expires at Thu Sep  9 08:49:07 2021 PDT
-Is this correct? (y/N) y
-
-sec  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2021-09-09  usage: C
-     trust: ultimate      validity: ultimate
-ssb* rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2021-09-09  usage: E
-ssb* rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2021-09-09  usage: S
-ssb* rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2021-09-09  usage: A
-[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-
-gpg&gt; save
-</code></pre></div><p>That&rsquo;s it.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gpg&gt; key 1
+</span></span><span style="display:flex;"><span>gpg&gt; key 2
+</span></span><span style="display:flex;"><span>gpg&gt; key 3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: C
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb* rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: E
+</span></span><span style="display:flex;"><span>ssb* rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: S
+</span></span><span style="display:flex;"><span>ssb* rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2020-12-18  usage: A
+</span></span><span style="display:flex;"><span>[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gpg&gt; expire
+</span></span><span style="display:flex;"><span>Are you sure you want to change the expiration time for multiple subkeys? (y/N) y
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>         0 = key does not expire
+</span></span><span style="display:flex;"><span>      &lt;n&gt;  = key expires in n days
+</span></span><span style="display:flex;"><span>      &lt;n&gt;w = key expires in n weeks
+</span></span><span style="display:flex;"><span>      &lt;n&gt;m = key expires in n months
+</span></span><span style="display:flex;"><span>      &lt;n&gt;y = key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid for? (0) 2y
+</span></span><span style="display:flex;"><span>Key expires at Thu Sep  9 08:49:07 2021 PDT
+</span></span><span style="display:flex;"><span>Is this correct? (y/N) y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: C
+</span></span><span style="display:flex;"><span>     trust: ultimate      validity: ultimate
+</span></span><span style="display:flex;"><span>ssb* rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: E
+</span></span><span style="display:flex;"><span>ssb* rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: S
+</span></span><span style="display:flex;"><span>ssb* rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: A
+</span></span><span style="display:flex;"><span>[ultimate] (1)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>[ultimate] (2). Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gpg&gt; save
+</span></span></code></pre></div><p>That&rsquo;s it.
 Your keys have been updated to have some more time on them.
 They will still expire, but that time has been pushed in to the future for the smarter version of yourself to deal with.</p>
 <p>You can see that your public key has changed though&hellip;</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">diff old.pub &lt;<span style="color:#666">(</span>gpg --armor --export 5BB58AFFDF8ED9D6<span style="color:#666">)</span>
-</code></pre></div><p>However, its fingerprint has not. So it can still be validated as the same public key.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff old.pub &lt;<span style="color:#666">(</span>gpg --armor --export 5BB58AFFDF8ED9D6<span style="color:#666">)</span>
+</span></span></code></pre></div><p>However, its fingerprint has not. So it can still be validated as the same public key.
 Private keys never change, they just let you make modifications to your public key.</p>
 <p>Now follow the instructions to export your keys again.
 We&rsquo;re going to make another revocation certificate just in case.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --output 5BB58AFFDF8ED9D6.rev --gen-revoke 5BB58AFFDF8ED9D6
-gpg --export-secret-subkeys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sub.sec.asc
-gpg --export-secret-keys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sec.asc
-gpg --export --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.pub.asc
-</code></pre></div><p>Now you have all your keys.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --output 5BB58AFFDF8ED9D6.rev --gen-revoke 5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>gpg --export-secret-subkeys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sub.sec.asc
+</span></span><span style="display:flex;"><span>gpg --export-secret-keys --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.sec.asc
+</span></span><span style="display:flex;"><span>gpg --export --armor 5BB58AFFDF8ED9D6 &gt; 5BB58AFFDF8ED9D6.pub.asc
+</span></span></code></pre></div><p>Now you have all your keys.
 Move them to your offline storage and delete your private <code>[C]</code> key from your computer.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --delete-secret-key 5BB58AFFDF8ED9D6
-gpg --delete-key 5BB58AFFDF8ED9D6
-</code></pre></div><p>I delete the public key too just because it will be added when I import my subkeys anyways.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">gpg --import 5BB58AFFDF8ED9D6.sub.sec.asc
-</code></pre></div><p>Now that you have them all imported again, you should &ldquo;ultimately&rdquo; trust them.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --delete-secret-key 5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>gpg --delete-key 5BB58AFFDF8ED9D6
+</span></span></code></pre></div><p>I delete the public key too just because it will be added when I import my subkeys anyways.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --import 5BB58AFFDF8ED9D6.sub.sec.asc
+</span></span></code></pre></div><p>Now that you have them all imported again, you should &ldquo;ultimately&rdquo; trust them.
 I still don&rsquo;t fully understand the web of trust, that is a topic for another article.
 You can see <a href="https://security.stackexchange.com/questions/69062/what-is-the-difference-between-full-and-ultimate-trust">this article</a> for a brief explanation.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">gpg --edit-key 5BB58AFFDF8ED9D6
-gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret subkeys are available.
-
-pub  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2021-09-09  usage: C
-     trust: unknown       validity: unknown
-ssb  rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2021-09-09  usage: E
-ssb  rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2021-09-09  usage: S
-ssb  rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2021-09-09  usage: A
-[ unknown] (1). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-[ unknown] (2)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-
-gpg&gt; trust
-pub  rsa4096/5BB58AFFDF8ED9D6
-     created: 2018-12-19  expires: 2021-09-09  usage: C
-     trust: unknown       validity: unknown
-ssb  rsa4096/1C434F4FBB0FE8B5
-     created: 2018-12-19  expires: 2021-09-09  usage: E
-ssb  rsa4096/6012253B4117B6DF
-     created: 2018-12-19  expires: 2021-09-09  usage: S
-ssb  rsa4096/641EAE1AB4833D26
-     created: 2018-12-19  expires: 2021-09-09  usage: A
-[ unknown] (1). Nikhil Nygaard &lt;nik@nygaard.site&gt;
-[ unknown] (2)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-
-Please decide how far you trust this user to correctly verify other users&#39; keys
-(by looking at passports, checking fingerprints from different sources, etc.)
-
-  1 = I don&#39;t know or won&#39;t say
-  2 = I do NOT trust
-  3 = I trust marginally
-  4 = I trust fully
-  5 = I trust ultimately
-  m = back to the main menu
-
-Your decision? 5
-</code></pre></div><p>Perfect, now we&rsquo;re back to the way we were but with updated expiry dates.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-plaintext" data-lang="plaintext">sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2021-09-09]
-      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
-uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
-uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
-ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2021-09-09]
-ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2021-09-09]
-ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2021-09-09]
-</code></pre></div><p>Your ssh control keygrip will stay the same so all your SSH Agent configurations via the GPG Agent will still work.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gpg --edit-key 5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>gpg (GnuPG) 2.2.17; Copyright (C) 2019 Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Secret subkeys are available.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pub  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: C
+</span></span><span style="display:flex;"><span>     trust: unknown       validity: unknown
+</span></span><span style="display:flex;"><span>ssb  rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: E
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: S
+</span></span><span style="display:flex;"><span>ssb  rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: A
+</span></span><span style="display:flex;"><span>[ unknown] (1). Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>[ unknown] (2)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gpg&gt; trust
+</span></span><span style="display:flex;"><span>pub  rsa4096/5BB58AFFDF8ED9D6
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: C
+</span></span><span style="display:flex;"><span>     trust: unknown       validity: unknown
+</span></span><span style="display:flex;"><span>ssb  rsa4096/1C434F4FBB0FE8B5
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: E
+</span></span><span style="display:flex;"><span>ssb  rsa4096/6012253B4117B6DF
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: S
+</span></span><span style="display:flex;"><span>ssb  rsa4096/641EAE1AB4833D26
+</span></span><span style="display:flex;"><span>     created: 2018-12-19  expires: 2021-09-09  usage: A
+</span></span><span style="display:flex;"><span>[ unknown] (1). Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>[ unknown] (2)  Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please decide how far you trust this user to correctly verify other users&#39; keys
+</span></span><span style="display:flex;"><span>(by looking at passports, checking fingerprints from different sources, etc.)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  1 = I don&#39;t know or won&#39;t say
+</span></span><span style="display:flex;"><span>  2 = I do NOT trust
+</span></span><span style="display:flex;"><span>  3 = I trust marginally
+</span></span><span style="display:flex;"><span>  4 = I trust fully
+</span></span><span style="display:flex;"><span>  5 = I trust ultimately
+</span></span><span style="display:flex;"><span>  m = back to the main menu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Your decision? 5
+</span></span></code></pre></div><p>Perfect, now we&rsquo;re back to the way we were but with updated expiry dates.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>sec#  rsa4096/5BB58AFFDF8ED9D6 2018-12-19 [C] [expires: 2021-09-09]
+</span></span><span style="display:flex;"><span>      Key fingerprint = 1FD5 D4A1 F326 8A90 9A5C  BFC7 5BB5 8AFF DF8E D9D6
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nik@nygaard.site&gt;
+</span></span><span style="display:flex;"><span>uid                 [ultimate] Nikhil Nygaard &lt;nikhil.nygaard@gmail.com&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa4096/1C434F4FBB0FE8B5 2018-12-19 [E] [expires: 2021-09-09]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/6012253B4117B6DF 2018-12-19 [S] [expires: 2021-09-09]
+</span></span><span style="display:flex;"><span>ssb   rsa4096/641EAE1AB4833D26 2018-12-19 [A] [expires: 2021-09-09]
+</span></span></code></pre></div><p>Your ssh control keygrip will stay the same so all your SSH Agent configurations via the GPG Agent will still work.
 Your git signing key will stay the same so your commits are still signed by you.
 I would recommend deleting your public key from GitLab and GitHub and just uploading your newly modified one though.
 Just for consistency.</p>

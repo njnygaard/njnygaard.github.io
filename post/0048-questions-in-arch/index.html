@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Questions in Arch &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -309,11 +303,11 @@ Forever.</p>
 This is great, but you just need to be aware of the functionality because it will eat up all of <code>/</code>.</p>
 <p><a href="https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache">Wiki Context</a></p>
 <p>To do this you&rsquo;ll have to install <code>pacman-contrib</code>, which means you&rsquo;ll have to do an upgrade with <code>pacman -Syyu</code>, so make sure that you already haven&rsquo;t run out of space ;)</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">paccache -rk1
-<span style="color:#666">==</span>&gt; Privilege escalation <span style="color:#bb60d5">required</span>
-
-<span style="color:#666">==</span>&gt; finished: <span style="color:#40a070">2036</span> packages removed <span style="color:#666">(</span>disk space saved: 8.1 GiB<span style="color:#666">)</span>
-</code></pre></div><p>Holy Shit.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paccache -rk1
+</span></span><span style="display:flex;"><span><span style="color:#666">==</span>&gt; Privilege escalation <span style="color:#bb60d5">required</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">==</span>&gt; finished: <span style="color:#40a070">2036</span> packages removed <span style="color:#666">(</span>disk space saved: 8.1 GiB<span style="color:#666">)</span>
+</span></span></code></pre></div><p>Holy Shit.
 That was a massive difference.
 From 20.8GB to 13.2GB.
 My <code>/</code> is back to the expected size.</p>
@@ -361,10 +355,10 @@ My <code>/</code> is back to the expected size.</p>
 <p><em>cough</em> emacs <em>cough</em></p>
 <p><a href="https://wiki.archlinux.org/index.php/Pacman#Removing_packages">Removing Packages</a></p>
 <p>Remove a package and all of its dependencies that aren&rsquo;t needed by another package.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pacman -Rs <span style="color:#666">[</span>package name<span style="color:#666">]</span>
-</code></pre></div><p>Find a package by name and get some information on it.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pacman -Qi <span style="color:#666">[</span>package name<span style="color:#666">]</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Rs <span style="color:#666">[</span>package name<span style="color:#666">]</span>
+</span></span></code></pre></div><p>Find a package by name and get some information on it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Qi <span style="color:#666">[</span>package name<span style="color:#666">]</span>
+</span></span></code></pre></div><blockquote>
 <p>How do I visualize the usage on my disk?</p>
 </blockquote>
 <p><a href="https://wiki.archlinux.org/index.php/List_of_applications/Utilities#Disk_usage_display">Wiki</a></p>
@@ -377,10 +371,10 @@ I love that you can see everything in a hierarchical order and really see which 
 <p>This one is more complicated.
 Because I run <a href="https://i3wm.org/">i3</a>, I have the option to bind keys to scripts in a very convenient way.</p>
 <p>My <code>~/.config/i3/config</code> has the following lines amongst others:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">bindsym --release Shift+Print <span style="color:#007020">exec</span> --no-startup-id <span style="color:#4070a0">&#34;maim -s -c 1,1,1,0 --format png /home/drone/Pictures/Screenshots/`date | sed &#39;s/ /-/g&#39;`.png&#34;</span>
-bindsym --release Print <span style="color:#007020">exec</span> --no-startup-id <span style="color:#4070a0">&#34;maim -s -c 1,1,1,0 --format png /dev/stdout | xclip -selection clipboard -t image/png&#34;</span>
-<span style="color:#60a0b0;font-style:italic"># Screenshots</span>
-</code></pre></div><p>Implicitly here, I&rsquo;m using <a href="https://github.com/naelstrof/maim">maim</a>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bindsym --release Shift+Print <span style="color:#007020">exec</span> --no-startup-id <span style="color:#4070a0">&#34;maim -s -c 1,1,1,0 --format png /home/drone/Pictures/Screenshots/`date | sed &#39;s/ /-/g&#39;`.png&#34;</span>
+</span></span><span style="display:flex;"><span>bindsym --release Print <span style="color:#007020">exec</span> --no-startup-id <span style="color:#4070a0">&#34;maim -s -c 1,1,1,0 --format png /dev/stdout | xclip -selection clipboard -t image/png&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Screenshots</span>
+</span></span></code></pre></div><p>Implicitly here, I&rsquo;m using <a href="https://github.com/naelstrof/maim">maim</a>.
 You&rsquo;ll need that installed to do anything.
 With maim, you&rsquo;ll get cross hairs, you can draw a box to get a selection, or click to get the whole window.</p>
 <p>Notice that for <code>Shift+PrtSc</code> I&rsquo;m saving to a well known location and for the regular, I copy to the clipboard.

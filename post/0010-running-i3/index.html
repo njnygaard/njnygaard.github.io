@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Running I3 &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -301,6 +295,7 @@
 <p>This one was relatively easy. <a href="https://christian.amsuess.com/tools/arandr/">arandr</a> provides a graphical interface that lets me mirror or expand desktops when the HDMI is plugged in. This was foolproof. I&rsquo;ll continue to use it.</p>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="1512161560.png">8</a></p>
 <h3 id="hdmi-audio">HDMI Audio</h3>
 <p>This part sucks. Unity provides a nice &lsquo;windows-like&rsquo; interface to select what you want to output. Pulseaudio presents a list of &lsquo;sources&rsquo; and &lsquo;sinks&rsquo; that are esoteric to understand at best. I am still not confident that I understand how mapping these work.</p>
 <p>I settled on not modifying the default system output when the HDMI Audio output is available. Instead, within the program I am concerned with, I will select which audio output device I want to use.</p>
@@ -311,11 +306,11 @@
 <h3 id="switch-control-and-caps-lock">Switch Control and Caps Lock</h3>
 <p>This one is special because it is an interrupt key I think. Xmodmap is the only way I can get this to work reliably.</p>
 <p>You should first capture your current keyboard setup:</p>
-<pre><code>xmodmap -pke &gt; ~/.Xmodmap
+<pre tabindex="0"><code>xmodmap -pke &gt; ~/.Xmodmap
 </code></pre><p>Then configure <code>.xinitrc</code> to use this map when you login:</p>
-<pre><code>echo &quot;xmodmap ~/.Xmodmap&quot; &gt; .xinitrc
+<pre tabindex="0"><code>echo &#34;xmodmap ~/.Xmodmap&#34; &gt; .xinitrc
 </code></pre><p>Then, at the end of <code>.Xmodmap</code>, include this block:</p>
-<pre><code>!
+<pre tabindex="0"><code>!
 ! Swap Caps_Lock and Control_L
 !
 remove Lock = Caps_Lock
@@ -330,29 +325,30 @@ add Control = Control_L
 <p>This is a window manager independent solution. It works really well with i3wm but I&rsquo;ve yet to try it in Unity. I want to say that Unity can kind of fuck it up because I&rsquo;ve had trouble with this topic in the past. Either Unity was horrible or I was inexperienced. Both are completely plausible.</p>
 <p>As always <a href="https://wiki.archlinux.org/index.php/Xbindkeys">arch documentation</a> is stellar for this.</p>
 <p>Make a blank config file:</p>
-<pre><code>xbindkeys -d &gt; ~/.xbindkeysrc
+<pre tabindex="0"><code>xbindkeys -d &gt; ~/.xbindkeysrc
 </code></pre><p>Find a code block that relates to a key press:</p>
-<pre><code>xbindkeys -k
+<pre tabindex="0"><code>xbindkeys -k
 </code></pre><p>Reload the configuration after changing the file:</p>
-<pre><code>xbindkeys -p
+<pre tabindex="0"><code>xbindkeys -p
 </code></pre><h4 id="i3wm-configuration">i3wm Configuration</h4>
 <p>While <code>xbindkeys</code> works well for a generalized solution, I like the integration aspect of the i3 configuration. If I can determine that <code>xbindkeys</code> works well with Unity, that will be my solution for the future though.</p>
 <p>Side Note: The multimedia keys on my keyboard give off codes that are <a href="https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h">defined</a> by XFree86 keysym codes. A full list of all those symbols is <a href="http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols">here</a>. When you run <code>xev</code>, you&rsquo;ll see one of these names in the key press. As as sub-side-note, I like the <code>xbindkeys -k</code> utility more than I like <code>xev</code>. It seems to give me a more concise answer. It opens a new window and ignores the endless mouse events.</p>
 <p>I think that the i3 configuration takes precedence over <code>xbindkeys</code>. I tested this by defining mute in my i3 configuration. <code>xbindkeys -k</code> did not pick up on the key press. Eliminating it from the configuration allowed it to work.</p>
 <p>Because I might switch back to Unity occasionally (drunk movie watching), I&rsquo;ll leave the high-priority media keys within the window manager configuration. Other interesting things like script triggers, I&rsquo;ll put in <code>xbindkeys</code>.</p>
 <p>Sample configuration:</p>
-<pre><code>#Pulse Audio controls
+<pre tabindex="0"><code>#Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 </code></pre><h2 id="miscellaneous-i3-configuration">Miscellaneous i3 Configuration</h2>
 <h3 id="keybind-screenshot">Keybind Screenshot</h3>
 <p>I use this feature <code>ALL_THE_TIME</code>. It is something I need at my fingertips to communicate effectively while developing. I&rsquo;ll keep trying to find better solutions, but I think this is the best that I&rsquo;ve found yet. <code>maim</code> allows me to immediately jump to region selection mode, and then it dumps the image directly in my home directory or to <code>xclip</code>. Mastahpiece 😘👌.</p>
-<pre><code>bindsym --release Shift+Print exec --no-startup-id &quot;maim -s -c 1,1,1,0&quot;
-bindsym --release Print exec --no-startup-id &quot;maim -s -c 1,1,1,0 --format png /dev/stdout | xclip -selection clipboard -t image/png&quot;
+<pre tabindex="0"><code>bindsym --release Shift+Print exec --no-startup-id &#34;maim -s -c 1,1,1,0&#34;
+bindsym --release Print exec --no-startup-id &#34;maim -s -c 1,1,1,0 --format png /dev/stdout | xclip -selection clipboard -t image/png&#34;
 </code></pre><h2 id="moneyshot">Moneyshot</h2>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="1512161560.png">8</a></p>
 
 
   

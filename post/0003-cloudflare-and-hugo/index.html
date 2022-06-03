@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Cloudflare and Hugo &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -298,6 +292,7 @@
 <p>I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.</p>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="aws.png">aws</a></p>
 <p>That&rsquo;s quite a bit of money for something that I really wanted as a note store. I had originally envisioned some more <a href="https://gitlab.com/droneprime/nygaard.site">in-depth features</a>, but my side project has taken priority. More on that later.</p>
 <h1 id="solution">Solution</h1>
 <p><a href="https://pages.github.com/">GitHub Pages</a> offers a solution where you can host a static site from a repository. That&rsquo;s great! By default, you get one conventional hostname that points to <code>username.github.io</code> when you create a repo of the same name in your account.</p>
@@ -310,17 +305,20 @@
 <h3 id="dns-tab">DNS Tab</h3>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="dns.png">dns</a></p>
 <h3 id="page-rules-tab">Page Rules Tab</h3>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="page-rules.png">page-rules</a></p>
 <h2 id="github-pages">GitHub Pages</h2>
 <h3 id="cname-file">CNAME File</h3>
 <p>[</p>
 <!-- raw HTML omitted -->
+<p>]<a href="cname.png">cname</a></p>
 <h2 id="hugo">Hugo</h2>
 <h3 id="configtoml">config.toml</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">baseURL = &#34;https://www.nygaard.site/&#34;<span style="color:#bbb">
-</span></code></pre></div><p>And that was it!</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>baseURL = &#34;https://www.nygaard.site/&#34;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>And that was it!</p>
 <h1 id="resolution">Resolution</h1>
 <p>I was able to get my beautiful site hosting all my CSS via HTTPS. I will update this if I think of more steps.</p>
 

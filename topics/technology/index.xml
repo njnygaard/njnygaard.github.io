@@ -156,7 +156,7 @@ Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; |
       <guid>https://www.nygaard.site/post/0015-take-screenshot-directly-to-preview/</guid>
       <description>Okay this is my first foray in to AppleScript, and I have to say that I don&amp;rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
-&amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .</description>
+&amp;gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files]  -c force screen capture to go to the clipboard  -b capture Touch Bar - non-interactive modes only .</description>
     </item>
     
     <item>
@@ -166,7 +166,7 @@ Turns out that the screenshot utility is available on the command line:
       
       <guid>https://www.nygaard.site/post/0014-explanation-of-timing-attacks/</guid>
       <description>Let&amp;rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &amp;ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&amp;rdquo;.
-  They load up the boss&#39; calendar to check and based on his presence next week then load up your info.
+  They load up the boss&amp;rsquo; calendar to check and based on his presence next week then load up your info.
   Only once done, do they take the time to remember the boss didn&amp;rsquo;t want you to know wether they are in or out.</description>
     </item>
     
@@ -226,6 +226,7 @@ Attempted Solutions I had a redirect block in my nginx configuration, but that d
       <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
 [
+]aws
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     

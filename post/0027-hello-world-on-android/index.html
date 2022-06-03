@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Hello World on Android &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -307,19 +301,19 @@
 <h3 id="completely-remove-android-studio-mac">Completely remove Android Studio (Mac)</h3>
 <p>I messed up the first time by denying <code>HAXM</code> from doing stuff on my computer. That&rsquo;s a pretty strange name for something from Intel for device emulation. Suffice it to say that you need it installed during the Android Studio installation and that Intel is not <code>HAX</code>ing you.</p>
 <p><a href="https://stackoverflow.com/questions/28418450/i-cant-install-intel-haxm">HAXM</a></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">rm -Rf /Applications/Android<span style="color:#4070a0;font-weight:bold">\ </span>Studio.app
-rm -Rf ~/Library/Preferences/AndroidStudio*
-rm -Rf ~/Library/Preferences/com.google.android.*
-rm -Rf ~/Library/Preferences/com.android.*
-rm -Rf ~/Library/Application<span style="color:#4070a0;font-weight:bold">\ </span>Support/AndroidStudio*
-rm -Rf ~/Library/Logs/AndroidStudio*
-rm -Rf ~/Library/Caches/AndroidStudio*
-rm -Rf ~/.AndroidStudio*
-rm -Rf ~/AndroidStudioProjects
-rm -Rf ~/.gradle
-rm -Rf ~/.android
-rm -Rf ~/Library/Android*
-</code></pre></div><p><a href="https://stackoverflow.com/questions/17625622/how-to-completely-uninstall-android-studio">Reference.</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -Rf /Applications/Android<span style="color:#4070a0;font-weight:bold">\ </span>Studio.app
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Preferences/AndroidStudio*
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Preferences/com.google.android.*
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Preferences/com.android.*
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Application<span style="color:#4070a0;font-weight:bold">\ </span>Support/AndroidStudio*
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Logs/AndroidStudio*
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Caches/AndroidStudio*
+</span></span><span style="display:flex;"><span>rm -Rf ~/.AndroidStudio*
+</span></span><span style="display:flex;"><span>rm -Rf ~/AndroidStudioProjects
+</span></span><span style="display:flex;"><span>rm -Rf ~/.gradle
+</span></span><span style="display:flex;"><span>rm -Rf ~/.android
+</span></span><span style="display:flex;"><span>rm -Rf ~/Library/Android*
+</span></span></code></pre></div><p><a href="https://stackoverflow.com/questions/17625622/how-to-completely-uninstall-android-studio">Reference.</a></p>
 <h3 id="failed-to-find-target-with-hash-string-android-25">&ldquo;Failed to find target with hash string &lsquo;android-25&rsquo;&rdquo;</h3>
 <p>In the android studio: <code>⌘,</code> and select the offending API Levels to install.</p>
 

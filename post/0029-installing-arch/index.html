@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Installing Arch &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -397,36 +391,36 @@
 <h3 id="write-drive-osx">Write Drive OSX</h3>
 <p><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_macOS">Source Article.</a></p>
 <p>First, you need to identify the USB device. Open a terminal and list all storage devices with the command:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">diskutil list
-</code></pre></div><p>Your USB device will appear as something like /dev/disk2 (external, physical). Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diskutil list
+</span></span></code></pre></div><p>Your USB device will appear as something like /dev/disk2 (external, physical). Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.</p>
 <p>A USB device is normally auto-mounted in macOS, and you have to unmount (not eject) it before block-writing to it with dd. In Terminal, do:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">diskutil unmountDisk /dev/disk2
-</code></pre></div><p>Now copy the ISO image file to the device. The dd command is similar to its Linux counterpart, but notice the &lsquo;r&rsquo; before &lsquo;disk&rsquo; for raw mode which makes the transfer much faster:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/Users/admin/Downloads/archlinux-2018.04.01-x86_64.iso <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/rdisk2 <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1m
-</code></pre></div><p>Note diskX here should not include the s1 suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that &ldquo;The disk you inserted was not readable by this computer&rdquo;. Select &lsquo;Ignore&rsquo;. The USB device will be bootable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diskutil unmountDisk /dev/disk2
+</span></span></code></pre></div><p>Now copy the ISO image file to the device. The dd command is similar to its Linux counterpart, but notice the &lsquo;r&rsquo; before &lsquo;disk&rsquo; for raw mode which makes the transfer much faster:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/Users/admin/Downloads/archlinux-2018.04.01-x86_64.iso <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/rdisk2 <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1m
+</span></span></code></pre></div><p>Note diskX here should not include the s1 suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that &ldquo;The disk you inserted was not readable by this computer&rdquo;. Select &lsquo;Ignore&rsquo;. The USB device will be bootable.</p>
 <h3 id="booting">Booting</h3>
 <p>To boot to this drive I had to turn off Secure Boot in my ThinkPad BIOS. [unconfirmed]</p>
 <h2 id="internet-connection">Internet Connection</h2>
 <p><a href="https://wiki.archlinux.org/index.php/Installation_guide#Connect_to_the_Internet">In the pre-installation section</a>, they recommend being able to connect to the Internet from the installation media.</p>
 <p>You&rsquo;re going to need to be able to get an Internet connection from the command line.</p>
 <p>Working set of commands:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">systemctl stop dhcpcd@<span style="color:#666">[</span>TAB<span style="color:#666">]</span>
-ip link <span style="color:#007020">set</span> wlp3s0 up
-wpa_supplicant -B -i wlp3s0 -c &lt;<span style="color:#666">(</span>wpa_passphrase drone50 <span style="color:#666">[</span>passphrase<span style="color:#666">])</span>
-iw dev wlp3s0 link
-dhcpcd wlp3s0
-</code></pre></div><h2 id="disk-encryption">Disk Encryption</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop dhcpcd@<span style="color:#666">[</span>TAB<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>ip link <span style="color:#007020">set</span> wlp3s0 up
+</span></span><span style="display:flex;"><span>wpa_supplicant -B -i wlp3s0 -c &lt;<span style="color:#666">(</span>wpa_passphrase drone50 <span style="color:#666">[</span>passphrase<span style="color:#666">])</span>
+</span></span><span style="display:flex;"><span>iw dev wlp3s0 link
+</span></span><span style="display:flex;"><span>dhcpcd wlp3s0
+</span></span></code></pre></div><h2 id="disk-encryption">Disk Encryption</h2>
 <p><a href="https://wiki.archlinux.org/index.php/Disk_encryption">Source Article.</a></p>
 <p>We are basically swapping out the &ldquo;Partition the disks&rdquo; section of the Installation Guide in favor of the encrypted instructions.</p>
 <p>I think I want to use <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM">LUKS on LVM</a>. This would allow me to have only my <code>/home</code> partition encrypted. The drawback here is that each of the partitions could require a different password.</p>
 <h3 id="drive-wipe">Drive Wipe</h3>
 <p>This is <strong>IRREVERSIBLE</strong></p>
 <p>The source article for wiping the drive securely is here: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">dm-crypt wipe on an empty disk or partition</a>. You want to do this because it will write the drive with random data that looks like the encrypted data.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup open --type plain -d /dev/urandom /dev/sda to_be_wiped
-lsblk <span style="color:#666">[</span>verify size<span style="color:#666">]</span>
-dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/zero <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/mapper/to_be_wiped <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1M
-cryptsetup close to_be_wiped
-</code></pre></div><h3 id="create-partition-table">Create Partition Table</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup open --type plain -d /dev/urandom /dev/sda to_be_wiped
+</span></span><span style="display:flex;"><span>lsblk <span style="color:#666">[</span>verify size<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/zero <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/mapper/to_be_wiped <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1M
+</span></span><span style="display:flex;"><span>cryptsetup close to_be_wiped
+</span></span></code></pre></div><h3 id="create-partition-table">Create Partition Table</h3>
 <p><code>lsblk</code> gives a nice tree-style output of the currently available disks. <code>fdisk -l</code> can be used as well.</p>
 <p>I&rsquo;m going to try to use parted to create <code>/dev/sda1</code> and <code>/dev/sda2</code>. This will be the boot drive (unencrypted) and the rest of the drive (LVM).</p>
 <!-- raw HTML omitted -->
@@ -500,34 +494,34 @@ cryptsetup close to_be_wiped
   
   </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#60a0b0;font-style:italic"># parted</span>
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart ESP fat32 1MiB 551MiB
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> <span style="color:#007020">set</span> <span style="color:#40a070">1</span> esp on
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> <span style="color:#007020">set</span> <span style="color:#40a070">1</span> boot on
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart primary ext4 551MiB 100%
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> quit
-<span style="color:#60a0b0;font-style:italic"># lsblk</span>
-</code></pre></div><h3 id="preparing-the-logical-volumes">Preparing the logical volumes</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># parted</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart ESP fat32 1MiB 551MiB
+</span></span><span style="display:flex;"><span><span style="color:#666">(</span>parted<span style="color:#666">)</span> <span style="color:#007020">set</span> <span style="color:#40a070">1</span> esp on
+</span></span><span style="display:flex;"><span><span style="color:#666">(</span>parted<span style="color:#666">)</span> <span style="color:#007020">set</span> <span style="color:#40a070">1</span> boot on
+</span></span><span style="display:flex;"><span><span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart primary ext4 551MiB 100%
+</span></span><span style="display:flex;"><span><span style="color:#666">(</span>parted<span style="color:#666">)</span> quit
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># lsblk</span>
+</span></span></code></pre></div><h3 id="preparing-the-logical-volumes">Preparing the logical volumes</h3>
 <p><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes_2">Article</a></p>
 <p>On top of the physical partition <code>/dev/sda2</code>, we will create four logical partitions for <code>/</code>, <code>swap</code>, <code>/tmp</code>, and <code>/home</code>. The motivation here is that LVM is good at managing these logical partitions and they could be theoretically resized in the future.</p>
 <p>This created the logical volumes.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pvcreate /dev/sda2
-vgcreate MyVol /dev/sda2
-lvcreate -L 32G -n cryptroot MyVol
-lvcreate -L 500M -n cryptswap MyVol
-lvcreate -L 500M -n crypttmp MyVol
-lvcreate -l 100%FREE -n crypthome MyVol
-</code></pre></div><p>This created my root partition and set it&rsquo;s password.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-cryptroot
-cryptsetup open /dev/mapper/MyVol-cryptroot root
-mkfs.ext4 /dev/mapper/root
-mount /dev/mapper/root /mnt
-</code></pre></div><h3 id="preparing-the-boot-partition">Preparing the boot partition</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pvcreate /dev/sda2
+</span></span><span style="display:flex;"><span>vgcreate MyVol /dev/sda2
+</span></span><span style="display:flex;"><span>lvcreate -L 32G -n cryptroot MyVol
+</span></span><span style="display:flex;"><span>lvcreate -L 500M -n cryptswap MyVol
+</span></span><span style="display:flex;"><span>lvcreate -L 500M -n crypttmp MyVol
+</span></span><span style="display:flex;"><span>lvcreate -l 100%FREE -n crypthome MyVol
+</span></span></code></pre></div><p>This created my root partition and set it&rsquo;s password.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup luksFormat --type luks2 /dev/mapper/MyVol-cryptroot
+</span></span><span style="display:flex;"><span>cryptsetup open /dev/mapper/MyVol-cryptroot root
+</span></span><span style="display:flex;"><span>mkfs.ext4 /dev/mapper/root
+</span></span><span style="display:flex;"><span>mount /dev/mapper/root /mnt
+</span></span></code></pre></div><h3 id="preparing-the-boot-partition">Preparing the boot partition</h3>
 <p>Note that the instructions in the linked article mention using <code>mkfs.ext4</code>, this won&rsquo;t work with UEFI. I had to use <code>fat</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkfs.fat /dev/sda1
-mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
-</code></pre></div><h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.fat /dev/sda1
+</span></span><span style="display:flex;"><span>mkdir /mnt/boot
+</span></span><span style="display:flex;"><span>mount /dev/sda1 /mnt/boot
+</span></span></code></pre></div><h2 id="installation">Installation</h2>
 <p>Now that you have the drives configured properly, you&rsquo;ll want to do the installation as normal. You have the drive mounted, and now you basically have to copy stuff from the Internet on to them.</p>
 <h3 id="normal-procedure">Normal Procedure</h3>
 <p>Edit <code>/etc/pacman.d/mirrorlist</code> and put the US mirrors at the top of the list.</p>
@@ -536,41 +530,41 @@ mount /dev/sda1 /mnt/boot
 <h3 id="bootloader">Bootloader</h3>
 <p>I picked grub.</p>
 <p>You have to install it after you <code>arch-chroot</code> to the new system.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pacman -S grub efibootmgr
-grub-install --target<span style="color:#666">=</span>x86_64-efi --efi-directory<span style="color:#666">=</span>/boot --bootloader-id<span style="color:#666">=</span>arch_grub
-<span style="color:#666">[</span>edit /etc/default/grub<span style="color:#666">]</span>
-grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></div><p>In <code>/etc/default/grub</code>:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#bb60d5">GRUB_CMDLINE_LINUX_DEFAULT</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root&#34;</span>
-</code></pre></div><p>To make sure that grub knows that this is your root partition. Then regenerate your <code>grub.cfg</code>:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></div><h3 id="encrypted-drive-config-files">Encrypted Drive Config Files</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S grub efibootmgr
+</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#666">=</span>x86_64-efi --efi-directory<span style="color:#666">=</span>/boot --bootloader-id<span style="color:#666">=</span>arch_grub
+</span></span><span style="display:flex;"><span><span style="color:#666">[</span>edit /etc/default/grub<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><p>In <code>/etc/default/grub</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">GRUB_CMDLINE_LINUX_DEFAULT</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root&#34;</span>
+</span></span></code></pre></div><p>To make sure that grub knows that this is your root partition. Then regenerate your <code>grub.cfg</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><h3 id="encrypted-drive-config-files">Encrypted Drive Config Files</h3>
 <h4 id="etcfstab"><code>/etc/fstab</code></h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">/dev/mapper/root        /       ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">1</span>
-/dev/sda1               /boot   ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">2</span>
-/dev/mapper/tmp         /tmp    tmpfs           defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">0</span>
-/dev/mapper/swap        none    swap            sw              <span style="color:#40a070">0</span>       <span style="color:#40a070">0</span>
-/dev/mapper/home        /home   ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">2</span>
-</code></pre></div><h4 id="etccrypttab"><code>/etc/crypttab</code></h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">swap   /dev/mapper/MyVol-cryptswap   /dev/urandom    swap,cipher<span style="color:#666">=</span>aes-xts-plain64,size<span style="color:#666">=</span><span style="color:#40a070">256</span>
-tmp    /dev/mapper/MyVol-crypttmp    /dev/urandom    tmp,cipher<span style="color:#666">=</span>aes-xts-plain64,size<span style="color:#666">=</span><span style="color:#40a070">256</span>
-home   /dev/mapper/MyVol-crypthome   /etc/luks-keys/home
-</code></pre></div><h3 id="encrypting-home-directory">Encrypting Home Directory</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/dev/mapper/root        /       ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>/dev/sda1               /boot   ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>/dev/mapper/tmp         /tmp    tmpfs           defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>/dev/mapper/swap        none    swap            sw              <span style="color:#40a070">0</span>       <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>/dev/mapper/home        /home   ext4            defaults        <span style="color:#40a070">0</span>       <span style="color:#40a070">2</span>
+</span></span></code></pre></div><h4 id="etccrypttab"><code>/etc/crypttab</code></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>swap   /dev/mapper/MyVol-cryptswap   /dev/urandom    swap,cipher<span style="color:#666">=</span>aes-xts-plain64,size<span style="color:#666">=</span><span style="color:#40a070">256</span>
+</span></span><span style="display:flex;"><span>tmp    /dev/mapper/MyVol-crypttmp    /dev/urandom    tmp,cipher<span style="color:#666">=</span>aes-xts-plain64,size<span style="color:#666">=</span><span style="color:#40a070">256</span>
+</span></span><span style="display:flex;"><span>home   /dev/mapper/MyVol-crypthome   /etc/luks-keys/home
+</span></span></code></pre></div><h3 id="encrypting-home-directory">Encrypting Home Directory</h3>
 <p>Make a luks keyfile.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkdir -m <span style="color:#40a070">700</span> /etc/luks-keys
-dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/random <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/etc/luks-keys/home <span style="color:#bb60d5">bs</span><span style="color:#666">=</span><span style="color:#40a070">1</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">256</span> <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress
-</code></pre></div><p>Encrypt the drive:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-crypthome /etc/luks-keys/home
-cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-crypthome home
-mkfs.ext4 /dev/mapper/home
-mount /dev/mapper/home /home
-</code></pre></div><h2 id="emergency">Emergency</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -m <span style="color:#40a070">700</span> /etc/luks-keys
+</span></span><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/random <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/etc/luks-keys/home <span style="color:#bb60d5">bs</span><span style="color:#666">=</span><span style="color:#40a070">1</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">256</span> <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress
+</span></span></code></pre></div><p>Encrypt the drive:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup luksFormat --type luks2 -v /dev/mapper/MyVol-crypthome /etc/luks-keys/home
+</span></span><span style="display:flex;"><span>cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-crypthome home
+</span></span><span style="display:flex;"><span>mkfs.ext4 /dev/mapper/home
+</span></span><span style="display:flex;"><span>mount /dev/mapper/home /home
+</span></span></code></pre></div><h2 id="emergency">Emergency</h2>
 <p>During installation, your new system might not boot. You usually have to change some stuff in the config files to get it to work. You can boot from the Arch USB drive, and then <code>chroot</code> over to your stuff.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">cryptsetup open /dev/mapper/MyVol-cryptroot root
-mount /dev/mapper/root /mnt
-mount /dev/sda1 /mnt/boot
-arch-chroot /mnt
-</code></pre></div><h2 id="conclusion">Conclusion</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup open /dev/mapper/MyVol-cryptroot root
+</span></span><span style="display:flex;"><span>mount /dev/mapper/root /mnt
+</span></span><span style="display:flex;"><span>mount /dev/sda1 /mnt/boot
+</span></span><span style="display:flex;"><span>arch-chroot /mnt
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>I think that was about it. It is hard to recall all the steps on a different computer. I think that between this and Peter&rsquo;s article, I should be able to replicate the process. For now, it is working and I&rsquo;m going to get to installing all the fun stuff.</p>
 
 

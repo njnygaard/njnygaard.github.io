@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   <title>Logging with systemd &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -96,12 +96,6 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://www.nygaard.site/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
       
         </li>
       
@@ -294,10 +288,10 @@
 
 
   <p>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-markdown" data-lang="markdown">timedatectl list-timezones
-sudo timedatectl set-timezone America/Los_Angeles
-timedatectl status
-</code></pre></div><pre><code class="language-output" data-lang="output">      Local time: Wed 2018-04-18 11:34:46 PDT
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>timedatectl list-timezones
+</span></span><span style="display:flex;"><span>sudo timedatectl set-timezone America/Los_Angeles
+</span></span><span style="display:flex;"><span>timedatectl status
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">      Local time: Wed 2018-04-18 11:34:46 PDT
   Universal time: Wed 2018-04-18 18:34:46 UTC
         RTC time: Wed 2018-04-18 18:34:45
        Time zone: America/Los_Angeles (PDT, -0700)
@@ -305,14 +299,14 @@ timedatectl status
 NTP synchronized: yes
  RTC in local TZ: no
 </code></pre><p>You can see all the &lsquo;units&rsquo; that you have using the following command. If you don&rsquo;t have your process running with a <code>systemd</code> unit file, you won&rsquo;t see it in this list. Don&rsquo;t fret, you can still see logs from those processes that are not managed by <code>systemd</code> but that are still journaling.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-markdown" data-lang="markdown">systemctl list-unit-files --all | grep flow
-</code></pre></div><pre><code class="language-output" data-lang="output">flowmojo.com.service                       disabled
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>systemctl list-unit-files --all | grep flow
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">flowmojo.com.service                       disabled
 </code></pre><p>You can see here that my process is not <code>enabled</code> to boot, but it will still log to the journal if it is started.</p>
 <p>If you find the service listed in the unit files that systemd knows about, you can just look at the logs:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-markdown" data-lang="markdown">journalctl -u flowmojo.com.service [-f]
-</code></pre></div><p>On systems that don&rsquo;t have <code>systemd</code> running the unit file you can lookup the executable:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-markdown" data-lang="markdown">journalctl _COMM=flowmojo.server [-f]
-</code></pre></div><pre><code class="language-output" data-lang="output">-- Logs begin at Fri 2018-04-13 22:45:05 PDT, end at Sat 2018-04-21 &gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>journalctl -u flowmojo.com.service [-f]
+</span></span></code></pre></div><p>On systems that don&rsquo;t have <code>systemd</code> running the unit file you can lookup the executable:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>journalctl _COMM=flowmojo.server [-f]
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">-- Logs begin at Fri 2018-04-13 22:45:05 PDT, end at Sat 2018-04-21 &gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: Running with environme&gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
@@ -320,18 +314,18 @@ Apr 21 11:21:57 drone flowmojo.server[13878]: Local config applied: &gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: External services regi&gt;
 Apr 21 11:21:57 drone flowmojo.server[13878]: INSIDE ConsentApp
 </code></pre><p>You can also pipe to <code>jq</code> for maximum JS geekiness. Reshaping your logs in to whatever you want.</p>
-<pre><code class="language-markdonw" data-lang="markdonw">journalctl -u flowmojo.com.service -f -o json-pretty | jq '{message: .MESSAGE, exe: ._COMM, service:.SERVICE, err: .ERR}'
-</code></pre><pre><code class="language-output" data-lang="output">{
-  &quot;message&quot;: &quot;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&quot;GET /api/v1/processes HTTP/1.0\&quot; 200 321&quot;,
-  &quot;exe&quot;: &quot;flowmojo.server&quot;,
-  &quot;service&quot;: &quot;gorilla&quot;,
-  &quot;err&quot;: null
+<pre tabindex="0"><code class="language-markdonw" data-lang="markdonw">journalctl -u flowmojo.com.service -f -o json-pretty | jq &#39;{message: .MESSAGE, exe: ._COMM, service:.SERVICE, err: .ERR}&#39;
+</code></pre><pre tabindex="0"><code class="language-output" data-lang="output">{
+  &#34;message&#34;: &#34;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&#34;GET /api/v1/processes HTTP/1.0\&#34; 200 321&#34;,
+  &#34;exe&#34;: &#34;flowmojo.server&#34;,
+  &#34;service&#34;: &#34;gorilla&#34;,
+  &#34;err&#34;: null
 }
 {
-  &quot;message&quot;: &quot;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&quot;GET /api/v1/instances HTTP/1.0\&quot; 200 1644&quot;,
-  &quot;exe&quot;: &quot;flowmojo.server&quot;,
-  &quot;service&quot;: &quot;gorilla&quot;,
-  &quot;err&quot;: null
+  &#34;message&#34;: &#34;127.0.0.1 - - [22/Apr/2018:13:59:11 -0700] \&#34;GET /api/v1/instances HTTP/1.0\&#34; 200 1644&#34;,
+  &#34;exe&#34;: &#34;flowmojo.server&#34;,
+  &#34;service&#34;: &#34;gorilla&#34;,
+  &#34;err&#34;: null
 }
 </code></pre>
 
