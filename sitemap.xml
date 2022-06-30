@@ -44,6 +44,27 @@
     <loc>https://www.nygaard.site/post/0058-pilot-butte/</loc>
     <lastmod>2020-10-12T14:03:26-07:00</lastmod>
   </url><url>
+    <loc>https://www.nygaard.site/tags/express/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/fetch/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/hdfs/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/http/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/node/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/stream/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</loc>
+    <lastmod>2020-07-29T13:56:07-07:00</lastmod>
+  </url><url>
     <loc>https://www.nygaard.site/tags/beef/</loc>
     <lastmod>2020-03-28T08:29:52-07:00</lastmod>
   </url><url>
@@ -324,9 +345,6 @@
     <lastmod>2018-01-13T14:46:14-08:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/bash/</loc>
-    <lastmod>2018-01-13T09:45:26-08:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/express/</loc>
     <lastmod>2018-01-13T09:45:26-08:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</loc>

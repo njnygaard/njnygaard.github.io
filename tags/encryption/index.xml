@@ -24,7 +24,8 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Wed, 19 Dec 2018 08:16:14 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0039-airgapped-gpg/</guid>
-      <description>Airgapping GPG Airgapped Media Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
+      <description>Airgapped Media Arch BBS SuperUser
+Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can compromise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
     </item>
     
   </channel>

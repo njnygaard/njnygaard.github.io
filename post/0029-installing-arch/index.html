@@ -287,14 +287,26 @@
   
 
 
-  <p>I wanted to install Arch because all the cool kids do it. Really, what I wanted was more control over the system and the decisions I had to make to get it to work. In the past, I have favored speed of installation and stability of the installation because I didn&rsquo;t want to spend time configuring stuff that didn&rsquo;t relate to what I wanted to accomplish. That basically means LTS Ubuntu.</p>
-<p>So what changed? I think I am more comfortable with the idea of fighting through configuration changes to get my PC the way I want it. After running Ubuntu as a daily driver for 3 years, I&rsquo;m frustrated with some of the decisions and finding myself wanting to make my own choice. With Ubuntu, there would be a lot of stuff to remove if I wanted to make these kind of decisions.</p>
-<p>Also, I have almost nothing important stored locally, so removing the operating system isn&rsquo;t really a burden anymore. All my configs are in a git repo, and all my pictures are with Big Brother. I got my work laptop up and running in an hour with all my creds. I think that is the main reason I feel brave about doing the installation.</p>
+  <p>I wanted to install Arch because all the cool kids do it.
+Really, what I wanted was more control over the system and the decisions I had to make to get it to work.
+In the past, I have favored speed of installation and stability of the installation because I didn&rsquo;t want to spend time configuring stuff that didn&rsquo;t relate to what I wanted to accomplish.
+That basically means LTS Ubuntu.</p>
+<p>So what changed?
+I think I am more comfortable with the idea of fighting through configuration changes to get my PC the way I want it.
+After running Ubuntu as a daily driver for 3 years, I&rsquo;m frustrated with some of the decisions and finding myself wanting to make my own choice.
+With Ubuntu, there would be a lot of stuff to remove if I wanted to make these kind of decisions.</p>
+<p>Also, I have almost nothing important stored locally, so removing the operating system isn&rsquo;t really a burden anymore.
+All my configs are in a git repo, and all my pictures are with Big Brother.
+I got my work laptop up and running in an hour with all my creds.
+I think that is the main reason I feel brave about doing the installation.</p>
 <h2 id="installation-guide">Installation Guide</h2>
 <p><a href="https://wiki.archlinux.org/index.php/installation_guide">This</a> is the main article that I will be working from.</p>
-<p><a href="https://www.peterbeard.co/blog/post/installing-arch-on-an-encrypted-hard-drive/">AFTER</a> finishing the whole thing by myself, I found this amazing article that basically summarizes the process. Peter does a great job of highlighting the steps to get where I did. One difference is that he appears to be using <code>LVM on LUKS</code> where I opted for <code>LUKS on LVM</code>.</p>
+<p><a href="https://www.peterbeard.co/blog/post/installing-arch-on-an-encrypted-hard-drive/">AFTER</a> finishing the whole thing by myself, I found this amazing article that basically summarizes the process.
+Peter does a great job of highlighting the steps to get where I did.
+One difference is that he appears to be using <code>LVM on LUKS</code> where I opted for <code>LUKS on LVM</code>.</p>
 <h2 id="motivation-guide">Motivation Guide</h2>
-<p>When you install Arch, you&rsquo;re installing just GNU/Linux. Your goal is this:</p>
+<p>When you install Arch, you&rsquo;re installing just GNU/Linux.
+Your goal is this:</p>
 
 
 <div class="pure-g">
@@ -317,7 +329,10 @@
 
 </div>
 
-<p>That&rsquo;s it. A login prompt. From here, you make the decisions. This guide is going to cover what I did to get to this point.</p>
+<p>That&rsquo;s it.
+A login prompt.
+From here, you make the decisions.
+This guide is going to cover what I did to get to this point.</p>
 <h2 id="hardware">Hardware</h2>
 <p>Lenovo ThinkPad T450s ~2015</p>
 <table>
@@ -346,7 +361,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> I&rsquo;m leaving this key. I mostly used it to track my progress during the installation.</p>
+<p><strong>Note:</strong> I&rsquo;m leaving this key.
+I mostly used it to track my progress during the installation.</p>
 <h2 id="task-list">Task List</h2>
 <ul>
 <li><a href="#installation-guide">Installation Guide</a></li>
@@ -387,17 +403,24 @@
 </ul>
 <h2 id="make-a-bootable-drive">Make a Bootable Drive</h2>
 <h3 id="download-image">Download Image</h3>
-<p>You need to get the image you want to put on the USB Drive. I used the torrent link on <a href="https://www.archlinux.org/download/">this page</a>.</p>
+<p>You need to get the image you want to put on the USB Drive.
+I used the torrent link on <a href="https://www.archlinux.org/download/">this page</a>.</p>
 <h3 id="write-drive-osx">Write Drive OSX</h3>
 <p><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_macOS">Source Article.</a></p>
-<p>First, you need to identify the USB device. Open a terminal and list all storage devices with the command:</p>
+<p>First, you need to identify the USB device.
+Open a terminal and list all storage devices with the command:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diskutil list
-</span></span></code></pre></div><p>Your USB device will appear as something like /dev/disk2 (external, physical). Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.</p>
-<p>A USB device is normally auto-mounted in macOS, and you have to unmount (not eject) it before block-writing to it with dd. In Terminal, do:</p>
+</span></span></code></pre></div><p>Your USB device will appear as something like /dev/disk2 (external, physical).
+Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.</p>
+<p>A USB device is normally auto-mounted in macOS, and you have to unmount (not eject) it before block-writing to it with dd.
+In Terminal, do:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diskutil unmountDisk /dev/disk2
-</span></span></code></pre></div><p>Now copy the ISO image file to the device. The dd command is similar to its Linux counterpart, but notice the &lsquo;r&rsquo; before &lsquo;disk&rsquo; for raw mode which makes the transfer much faster:</p>
+</span></span></code></pre></div><p>Now copy the ISO image file to the device.
+The dd command is similar to its Linux counterpart, but notice the &lsquo;r&rsquo; before &lsquo;disk&rsquo; for raw mode which makes the transfer much faster:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/Users/admin/Downloads/archlinux-2018.04.01-x86_64.iso <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/rdisk2 <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1m
-</span></span></code></pre></div><p>Note diskX here should not include the s1 suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that &ldquo;The disk you inserted was not readable by this computer&rdquo;. Select &lsquo;Ignore&rsquo;. The USB device will be bootable.</p>
+</span></span></code></pre></div><p>Note diskX here should not include the s1 suffix, or else the USB device will only be bootable in UEFI mode and not legacy.
+After completion, macOS may complain that &ldquo;The disk you inserted was not readable by this computer&rdquo;.
+Select &lsquo;Ignore&rsquo;. The USB device will be bootable.</p>
 <h3 id="booting">Booting</h3>
 <p>To boot to this drive I had to turn off Secure Boot in my ThinkPad BIOS. [unconfirmed]</p>
 <h2 id="internet-connection">Internet Connection</h2>
@@ -412,17 +435,21 @@
 </span></span></code></pre></div><h2 id="disk-encryption">Disk Encryption</h2>
 <p><a href="https://wiki.archlinux.org/index.php/Disk_encryption">Source Article.</a></p>
 <p>We are basically swapping out the &ldquo;Partition the disks&rdquo; section of the Installation Guide in favor of the encrypted instructions.</p>
-<p>I think I want to use <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM">LUKS on LVM</a>. This would allow me to have only my <code>/home</code> partition encrypted. The drawback here is that each of the partitions could require a different password.</p>
+<p>I think I want to use <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM">LUKS on LVM</a>.
+This would allow me to have only my <code>/home</code> partition encrypted. The drawback here is that each of the partitions could require a different password.</p>
 <h3 id="drive-wipe">Drive Wipe</h3>
 <p>This is <strong>IRREVERSIBLE</strong></p>
-<p>The source article for wiping the drive securely is here: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">dm-crypt wipe on an empty disk or partition</a>. You want to do this because it will write the drive with random data that looks like the encrypted data.</p>
+<p>The source article for wiping the drive securely is here: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation">dm-crypt wipe on an empty disk or partition</a>.
+You want to do this because it will write the drive with random data that looks like the encrypted data.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup open --type plain -d /dev/urandom /dev/sda to_be_wiped
 </span></span><span style="display:flex;"><span>lsblk <span style="color:#666">[</span>verify size<span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/zero <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/dev/mapper/to_be_wiped <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1M
 </span></span><span style="display:flex;"><span>cryptsetup close to_be_wiped
 </span></span></code></pre></div><h3 id="create-partition-table">Create Partition Table</h3>
-<p><code>lsblk</code> gives a nice tree-style output of the currently available disks. <code>fdisk -l</code> can be used as well.</p>
-<p>I&rsquo;m going to try to use parted to create <code>/dev/sda1</code> and <code>/dev/sda2</code>. This will be the boot drive (unencrypted) and the rest of the drive (LVM).</p>
+<p><code>lsblk</code> gives a nice tree-style output of the currently available disks.
+<code>fdisk -l</code> can be used as well.</p>
+<p>I&rsquo;m going to try to use parted to create <code>/dev/sda1</code> and <code>/dev/sda2</code>.
+This will be the boot drive (unencrypted) and the rest of the drive (LVM).</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 
@@ -503,7 +530,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># lsblk</span>
 </span></span></code></pre></div><h3 id="preparing-the-logical-volumes">Preparing the logical volumes</h3>
 <p><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes_2">Article</a></p>
-<p>On top of the physical partition <code>/dev/sda2</code>, we will create four logical partitions for <code>/</code>, <code>swap</code>, <code>/tmp</code>, and <code>/home</code>. The motivation here is that LVM is good at managing these logical partitions and they could be theoretically resized in the future.</p>
+<p>On top of the physical partition <code>/dev/sda2</code>, we will create four logical partitions for <code>/</code>, <code>swap</code>, <code>/tmp</code>, and <code>/home</code>.
+The motivation here is that LVM is good at managing these logical partitions and they could be theoretically resized in the future.</p>
 <p>This created the logical volumes.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pvcreate /dev/sda2
 </span></span><span style="display:flex;"><span>vgcreate MyVol /dev/sda2
@@ -517,16 +545,19 @@
 </span></span><span style="display:flex;"><span>mkfs.ext4 /dev/mapper/root
 </span></span><span style="display:flex;"><span>mount /dev/mapper/root /mnt
 </span></span></code></pre></div><h3 id="preparing-the-boot-partition">Preparing the boot partition</h3>
-<p>Note that the instructions in the linked article mention using <code>mkfs.ext4</code>, this won&rsquo;t work with UEFI. I had to use <code>fat</code>.</p>
+<p>Note that the instructions in the linked article mention using <code>mkfs.ext4</code>, this won&rsquo;t work with UEFI.
+I had to use <code>fat</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.fat /dev/sda1
 </span></span><span style="display:flex;"><span>mkdir /mnt/boot
 </span></span><span style="display:flex;"><span>mount /dev/sda1 /mnt/boot
 </span></span></code></pre></div><h2 id="installation">Installation</h2>
-<p>Now that you have the drives configured properly, you&rsquo;ll want to do the installation as normal. You have the drive mounted, and now you basically have to copy stuff from the Internet on to them.</p>
+<p>Now that you have the drives configured properly, you&rsquo;ll want to do the installation as normal.
+You have the drive mounted, and now you basically have to copy stuff from the Internet on to them.</p>
 <h3 id="normal-procedure">Normal Procedure</h3>
 <p>Edit <code>/etc/pacman.d/mirrorlist</code> and put the US mirrors at the top of the list.</p>
 <p><code>pacstrap /mnt base</code> to install a bunch of stuff.</p>
-<p>Follow the rest of the instructions, they worked just fine. At the end, you come to the Bootloader installation, and that&rsquo;s where things are different.</p>
+<p>Follow the rest of the instructions, they worked just fine.
+At the end, you come to the Bootloader installation, and that&rsquo;s where things are different.</p>
 <h3 id="bootloader">Bootloader</h3>
 <p>I picked grub.</p>
 <p>You have to install it after you <code>arch-chroot</code> to the new system.</p>
@@ -536,7 +567,8 @@
 </span></span><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><p>In <code>/etc/default/grub</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">GRUB_CMDLINE_LINUX_DEFAULT</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;cryptdevice=/dev/mapper/MyVol-cryptroot:root root=/dev/mapper/root&#34;</span>
-</span></span></code></pre></div><p>To make sure that grub knows that this is your root partition. Then regenerate your <code>grub.cfg</code>:</p>
+</span></span></code></pre></div><p>To make sure that grub knows that this is your root partition.
+Then regenerate your <code>grub.cfg</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><h3 id="encrypted-drive-config-files">Encrypted Drive Config Files</h3>
 <h4 id="etcfstab"><code>/etc/fstab</code></h4>
@@ -559,13 +591,18 @@
 </span></span><span style="display:flex;"><span>mkfs.ext4 /dev/mapper/home
 </span></span><span style="display:flex;"><span>mount /dev/mapper/home /home
 </span></span></code></pre></div><h2 id="emergency">Emergency</h2>
-<p>During installation, your new system might not boot. You usually have to change some stuff in the config files to get it to work. You can boot from the Arch USB drive, and then <code>chroot</code> over to your stuff.</p>
+<p>During installation, your new system might not boot.
+You usually have to change some stuff in the config files to get it to work.
+You can boot from the Arch USB drive, and then <code>chroot</code> over to your stuff.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryptsetup open /dev/mapper/MyVol-cryptroot root
 </span></span><span style="display:flex;"><span>mount /dev/mapper/root /mnt
 </span></span><span style="display:flex;"><span>mount /dev/sda1 /mnt/boot
 </span></span><span style="display:flex;"><span>arch-chroot /mnt
 </span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
-<p>I think that was about it. It is hard to recall all the steps on a different computer. I think that between this and Peter&rsquo;s article, I should be able to replicate the process. For now, it is working and I&rsquo;m going to get to installing all the fun stuff.</p>
+<p>I think that was about it.
+It is hard to recall all the steps on a different computer.
+I think that between this and Peter&rsquo;s article, I should be able to replicate the process.
+For now, it is working and I&rsquo;m going to get to installing all the fun stuff.</p>
 
 
   

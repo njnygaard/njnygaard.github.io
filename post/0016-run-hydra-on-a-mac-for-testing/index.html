@@ -298,25 +298,25 @@
   <p>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.</p>
 <h1 id="infrastructure">Infrastructure</h1>
 <h2 id="create-database">Create Database</h2>
-<h5 id="up">Up</h5>
+<p>Up</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;create database hydra&#34;</span> | mysql -uroot -proot
-</span></span></code></pre></div><h5 id="down">Down</h5>
+</span></span></code></pre></div><p>Down</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;drop database hydra&#34;</span> | mysql -uroot -proot
 </span></span></code></pre></div><h2 id="export-stuff">Export Stuff</h2>
-<h5 id="up-1">Up</h5>
+<p>Up</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">export</span> <span style="color:#bb60d5">DATABASE_URL</span><span style="color:#666">=</span>mysql://root:root@tcp<span style="color:#666">(</span>docker.for.mac.localhost:3306<span style="color:#666">)</span>/hydra?parseTime<span style="color:#666">=</span><span style="color:#007020">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">export</span> <span style="color:#bb60d5">SYSTEM_SECRET</span><span style="color:#666">=</span>yJFLU44byGmmKLwJHvramNknAmSQR27C
-</span></span></code></pre></div><h5 id="down-1">Down</h5>
-<pre tabindex="0"><code>Nothing.
-</code></pre><h2 id="migrations">Migrations</h2>
-<h5 id="up-2">Up</h5>
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Nothing.
+</span></span></code></pre></div><h2 id="migrations">Migrations</h2>
+<p>Up</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --rm <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  migrate sql <span style="color:#bb60d5">$DATABASE_URL</span>
-</span></span></code></pre></div><h5 id="down-2">Down</h5>
-<pre tabindex="0"><code>Nothing.
-</code></pre><h2 id="run-hydra-container">Run Hydra Container</h2>
-<h5 id="up-3">Up</h5>
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Nothing.
+</span></span></code></pre></div><h2 id="run-hydra-container">Run Hydra Container</h2>
+<p>Up</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --name ory-hydra-example--hydra <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
@@ -327,72 +327,72 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CONSENT_URL</span><span style="color:#666">=</span>http://localhost:9020/consent <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">FORCE_ROOT_CLIENT_CREDENTIALS</span><span style="color:#666">=</span>admin:demo-password <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10
-</span></span></code></pre></div><h5 id="down-3">Down</h5>
-<pre tabindex="0"><code>docker rm -f ory-hydra-example--hydra
-</code></pre><h2 id="create-client-for-consent-app">Create Client for Consent App</h2>
-<h5 id="up-4">Up</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  -p 9010:4445 \
-  oryd/hydra:v0.10.10 \
-  clients create --skip-tls-verify \
-    --id consent-app \
-    --secret consent-secret \
-    --name &#34;Consent App Client&#34; \
-    --grant-types client_credentials \
-    --response-types token \
-    --allowed-scopes hydra.consent
-</code></pre><h5 id="down-4">Down</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  clients delete consent-app --skip-tls-verify
-</code></pre><h2 id="create-policy-for-consent-app">Create Policy for Consent App</h2>
-<h5 id="up-5">Up</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  -p 9010:4445 \
-  oryd/hydra:v0.10.10 \
-  policies create --skip-tls-verify \
-    --actions get,accept,reject \
-    --description &#34;Allow consent-app to manage OAuth2 consent requests.&#34; \
-    --allow \
-    --id consent-app-policy \
-    --resources &#34;rn:hydra:oauth2:consent:requests:&lt;.*&gt;&#34; \
-    --subjects consent-app
-</code></pre><h5 id="down-5">Down</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  policies delete consent-app-policy --skip-tls-verify
-</code></pre><h2 id="run-the-express-consent-app">Run the Express Consent App</h2>
-<h5 id="up-6">Up</h5>
-<pre tabindex="0"><code>docker run -d \
-  --name ory-hydra-example--consent \
-  -p 9020:3000 \
-  --network hydraguide \
-  -e HYDRA_CLIENT_ID=consent-app \
-  -e HYDRA_CLIENT_SECRET=consent-secret \
-  -e HYDRA_URL=https://ory-hydra-example--hydra:4444 \
-  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
-  oryd/hydra-consent-app-express
-</code></pre><h5 id="down-6">Down</h5>
-<pre tabindex="0"><code>docker rm -f ory-hydra-example--consent
-</code></pre><h1 id="flow">Flow</h1>
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rm -f ory-hydra-example--hydra
+</span></span></code></pre></div><h2 id="create-client-for-consent-app">Create Client for Consent App</h2>
+<p>Up</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -p 9010:4445 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  clients create --skip-tls-verify <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --id consent-app <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --secret consent-secret <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --name <span style="color:#4070a0">&#34;Consent App Client&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --grant-types client_credentials <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --response-types token <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --allowed-scopes hydra.consent
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  clients delete consent-app --skip-tls-verify
+</span></span></code></pre></div><h2 id="create-policy-for-consent-app">Create Policy for Consent App</h2>
+<p>Up</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -p 9010:4445 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  policies create --skip-tls-verify <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --actions get,accept,reject <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --description <span style="color:#4070a0">&#34;Allow consent-app to manage OAuth2 consent requests.&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --allow <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --id consent-app-policy <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --resources <span style="color:#4070a0">&#34;rn:hydra:oauth2:consent:requests:&lt;.*&gt;&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --subjects consent-app
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  policies delete consent-app-policy --skip-tls-verify
+</span></span></code></pre></div><h2 id="run-the-express-consent-app">Run the Express Consent App</h2>
+<p>Up</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --name ory-hydra-example--consent <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -p 9020:3000 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">HYDRA_CLIENT_ID</span><span style="color:#666">=</span>consent-app <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">HYDRA_CLIENT_SECRET</span><span style="color:#666">=</span>consent-secret <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">HYDRA_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">NODE_TLS_REJECT_UNAUTHORIZED</span><span style="color:#666">=</span><span style="color:#40a070">0</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra-consent-app-express
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rm -f ory-hydra-example--consent
+</span></span></code></pre></div><h1 id="flow">Flow</h1>
 <h2 id="create-the-consumer-client">Create the Consumer Client</h2>
-<h5 id="up-7">Up</h5>
+<p>Up</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
@@ -406,55 +406,55 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --response-types token,code,id_token <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --allowed-scopes openid,offline,hydra.clients <span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --callbacks http://localhost:9010/callback
-</span></span></code></pre></div><h5 id="down-7">Down</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  clients delete some-consumer --skip-tls-verify
-</code></pre><h2 id="openid-connect-policy">OpenID Connect Policy</h2>
-<h5 id="up-8">Up</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  policies create --skip-tls-verify \
-    --actions get \
-    --description &#34;Allow everyone to read the OpenID Connect ID Token public key&#34; \
-    --allow \
-    --id openid-id_token-policy \
-    --resources rn:hydra:keys:hydra.openid.id-token:public \
-    --subjects &#34;&lt;.*&gt;&#34;
-</code></pre><h5 id="down-8">Down</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  -e CLUSTER_URL=https://ory-hydra-example--hydra:4444 \
-  -e CLIENT_ID=admin \
-  -e CLIENT_SECRET=demo-password \
-  --network hydraguide \
-  oryd/hydra:v0.10.10 \
-  policies delete openid-id_token-policy --skip-tls-verify
-</code></pre><h2 id="sample-code-flow">Sample Code Flow</h2>
-<h5 id="up-9">Up</h5>
-<pre tabindex="0"><code>docker run --rm -it \
-  --network hydraguide \
-  -p 9010:4445 \
-  oryd/hydra:v0.10.10 \
-  token user --skip-tls-verify \
-    --auth-url https://localhost:9000/oauth2/auth \
-    --token-url https://ory-hydra-example--hydra:4444/oauth2/token \
-    --id some-consumer \
-    --secret consumer-secret \
-    --scopes openid,offline,hydra.clients \
-    --redirect http://localhost:9010/callback
-</code></pre><h5 id="down-9">Down</h5>
-<pre tabindex="0"><code>Nothing.
-</code></pre><p>In the example, first you go to a url on <code>9000</code>. The Hydra command with <code>token user</code> gives you that.</p>
-<pre tabindex="0"><code>https://localhost:9000/oauth2/auth?client_id=some-consumer&amp;redirect_uri=http%3A%2F%2Flocalhost%3A9010%2Fcallback&amp;response_type=code&amp;scope=openid+offline+hydra.clients&amp;state=oirtadrarbtihcedllziauqo&amp;nonce=qrahvnrmouzkgjtptyimjqvp
-</code></pre><p>Upon going to that, you are immediately redirected to <code>9020</code> and you get the login page.</p>
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  clients delete some-consumer --skip-tls-verify
+</span></span></code></pre></div><h2 id="openid-connect-policy">OpenID Connect Policy</h2>
+<p>Up</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  policies create --skip-tls-verify <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --actions get <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --description <span style="color:#4070a0">&#34;Allow everyone to read the OpenID Connect ID Token public key&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --allow <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --id openid-id_token-policy <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --resources rn:hydra:keys:hydra.openid.id-token:public <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --subjects <span style="color:#4070a0">&#34;&lt;.*&gt;&#34;</span>
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLUSTER_URL</span><span style="color:#666">=</span>https://ory-hydra-example--hydra:4444 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_ID</span><span style="color:#666">=</span>admin <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -e <span style="color:#bb60d5">CLIENT_SECRET</span><span style="color:#666">=</span>demo-password <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  policies delete openid-id_token-policy --skip-tls-verify
+</span></span></code></pre></div><h2 id="sample-code-flow">Sample Code Flow</h2>
+<p>Up</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  --network hydraguide <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -p 9010:4445 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  oryd/hydra:v0.10.10 <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  token user --skip-tls-verify <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --auth-url https://localhost:9000/oauth2/auth <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --token-url https://ory-hydra-example--hydra:4444/oauth2/token <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --id some-consumer <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --secret consumer-secret <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --scopes openid,offline,hydra.clients <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    --redirect http://localhost:9010/callback
+</span></span></code></pre></div><p>Down</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Nothing.
+</span></span></code></pre></div><p>In the example, first you go to a url on <code>9000</code>. The Hydra command with <code>token user</code> gives you that.</p>
+<p><a href="https://localhost:9000/oauth2/auth?client_id=some-consumer&amp;redirect_uri=http%3A%2F%2Flocalhost%3A9010%2Fcallback&amp;response_type=code&amp;scope=openid+offline+hydra.clients&amp;state=oirtadrarbtihcedllziauqo&amp;nonce=qrahvnrmouzkgjtptyimjqvp">https://localhost:9000/oauth2/auth?client_id=some-consumer&amp;redirect_uri=http%3A%2F%2Flocalhost%3A9010%2Fcallback&amp;response_type=code&amp;scope=openid+offline+hydra.clients&amp;state=oirtadrarbtihcedllziauqo&amp;nonce=qrahvnrmouzkgjtptyimjqvp</a></p>
+<p>Upon going to that, you are immediately redirected to <code>9020</code> and you get the login page.</p>
 <p>After you login and submit, you are redirected to <code>9010</code>. I need to know how <code>9010</code> fits in to this.</p>
 
 

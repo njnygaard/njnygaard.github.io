@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fetch on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/fetch/</link>
+    <description>Recent content in fetch on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 29 Jul 2020 13:56:07 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/fetch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streaming File Uploads to HDFS</title>
+      <link>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</link>
+      <pubDate>Wed, 29 Jul 2020 13:56:07 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</guid>
+      <description>I couldn&amp;rsquo;t find a good source for this information in one place, that&amp;rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&amp;rsquo;ve been away a while and that&amp;rsquo;s because I&amp;rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &amp;lsquo;before times&amp;rsquo;) but I&amp;rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.</description>
+    </item>
+    
+  </channel>
+</rss>

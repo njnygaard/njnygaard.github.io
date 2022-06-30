@@ -367,7 +367,13 @@
 
   <p>
   These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &#34;create database hydra&#34; | mysql -uroot -proot Down echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.
+Infrastructure Create Database Up
+echo &#34;create database hydra&#34; | mysql -uroot -proot Down
+echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+Nothing. Migrations Up
+docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+Nothing. Run Hydra Container Up
   </p>
 
   

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="">
+  <meta name="generator" content="Hugo 0.99.1" />
+
+  <title>Streaming File Uploads to HDFS &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://www.nygaard.site/css/blackburn.css">
+
+  
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  
+  
+
+  
+
+  <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+  <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
+  
+  
+  
+  
+  <script src="https://www.nygaard.site/js/my.js"></script>
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://www.nygaard.site/">Nygaard.site</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/topics/"><i class='fa fa-lightbulb fa-fw'></i>Topics</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/nopedotcom" target="_blank"><i
+          class="fab fa-twitter fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/nikhil-nygaard" target="_blank"><i
+          class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/njnygaard" target="_blank"><i
+          class="fab fa-github fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://gitlab.com/droneprime" target="_blank"><i
+          class="fab fa-gitlab fa-fw"></i>GitLab</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/1236359/droneprime" target="_blank"><i
+          class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/njnygaard" target="_blank"><i
+          class="fab fa-keybase fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2019. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/njnygaard/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Streaming File Uploads to HDFS</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 Jul 2020, 13:56</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hdfs">hdfs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/node">node</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/fetch">fetch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/http">http</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stream">stream</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+
+  <p>I couldn&rsquo;t find a good source for this information in one place, that&rsquo;s a dead giveaway that I should be writing an article.</p>
+<p>Some meta discussion, it looks like I&rsquo;ve been away a while and that&rsquo;s because I&rsquo;ve been working on a organizing my cookbook.
+I used to just post recipes here (in the &lsquo;before times&rsquo;) but I&rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.
+This leads me to the desire for print media and I have been working a long time on my Markdown processing pipeline, so that&rsquo;s a natural fit.
+I&rsquo;ll post the results here and probably put the book and contribution scripts in a dedicated repo in the future.</p>
+<h2 id="caveats">Caveats</h2>
+<p>Unfortunately, this article might be incomplete.
+I saved it as a draft in Hugo for a long time.
+I was waiting to publish it because I was still working for the company that paid me to write this solution.
+Fortunately, that company does not exist anymore.
+I think the information contained here is useful enough to publish even in its disjointed state.</p>
+<p>Here&rsquo;s the portions of the outline that I wrote down but did not complete.
+I&rsquo;m not sure I would have had lots to say about them, but I felt that they were important at the time, so I should include them in caveats.</p>
+<ul>
+<li>Frontend
+<ul>
+<li>Redux actions?</li>
+</ul>
+</li>
+<li>Backend
+<ul>
+<li>Streams</li>
+<li>HDFS client library</li>
+<li>Bare PUT requests and why that didn&rsquo;t work</li>
+</ul>
+</li>
+<li>Transport
+<ul>
+<li>nginx Body Size</li>
+<li>Kubernetes Annotations</li>
+</ul>
+</li>
+<li>Applications
+<ul>
+<li>Maybe talk about the spark inference process?</li>
+</ul>
+</li>
+</ul>
+<h2 id="background">Background</h2>
+<p>So you have a web app.
+It&rsquo;s made with React (though that doesn&rsquo;t matter) and Express (this matters very much).
+You also have access to HDFS and that resource has 
+<a target="_blank" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/WebHDFS.html">WebHDFS</a>
+ turned on.
+That&rsquo;s great!
+So you try to upload a file.
+Being a developer, you use the smallest possible thing that can technically be called a file.
+Eventually you get that working, maybe using <code>body-parser</code> to serialize that data?
+Maybe appending it to <code>FormData</code>?
+Cool, that works.
+Now let&rsquo;s try the file your boss is actually interested in.
+1.5M rows, 192MiB.
+That sounds fine right? You download crap all day.
+This is where our story begins.</p>
+<h2 id="larger-files">Larger Files</h2>
+<p>So you&rsquo;ll invariably hit a limitation here.
+If you use a library like <code>body-parser</code> that attempts to serialize the body of a large file, you&rsquo;ll fail.
+Either your connection will timeout, some server in the chain will say &lsquo;girl I think my butt gettin&rsquo; big&rsquo;, or you&rsquo;ll run your heap out of memory like I did:</p>
+<details>
+  <summary>⮑ Stack Trace</summary>
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+</span></span><span style="display:flex;"><span> 1: node::Abort() [node]
+</span></span><span style="display:flex;"><span> 2: 0x1356bec [node]
+</span></span><span style="display:flex;"><span> 3: v8::Utils::ReportOOMFailure(char const*, bool) [node]
+</span></span><span style="display:flex;"><span> 4: v8::internal::V8::FatalProcessOutOfMemory(char const*, bool) [node]
+</span></span><span style="display:flex;"><span> 5: v8::internal::Factory::NewUninitializedFixedArray(int) [node]
+</span></span><span style="display:flex;"><span> 6: 0xf2480c [node]
+</span></span><span style="display:flex;"><span> 7: 0xf3a865 [node]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;--- Last few GCs ---&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[16:0x2f5f7c0]   148699 ms: Mark-sweep 824.5 (838.3) -&gt; 824.5 (838.3) MB, 378.4 / 0.0 ms  allocation failure GC in old space requested
+</span></span><span style="display:flex;"><span>[16:0x2f5f7c0]   149081 ms: Mark-sweep 824.5 (838.3) -&gt; 824.4 (835.3) MB, 382.5 / 0.0 ms  last resort
+</span></span><span style="display:flex;"><span>[16:0x2f5f7c0]   149430 ms: Mark-sweep 824.4 (835.3) -&gt; 824.4 (835.3) MB, 348.5 / 0.0 ms  last resort
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;--- JS stacktrace ---&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>==== JS stack trace =========================================
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Security context: 0x3e9dbba8799 &lt;JSObject&gt;
+</span></span><span style="display:flex;"><span>    2: SimpleSlice(aka SimpleSlice) [native array.js:1] [bytecode=0x29bde9660b01 offset=41](this=0x1c3717402311 &lt;undefined&gt;,p=0x210e388b9a99 &lt;Uint8Array map = 0x239f21141a79&gt;,O=0,P=124793265,Q=124793265,R=0x210e388b9b59 &lt;JSArray[124793265]&gt;)
+</span></span><span style="display:flex;"><span>    4: ArraySlice [native array.js:1] [bytecode=0x29bde9660529 offset=282](this=0x210e388b9a99 &lt;Uint8Array map = 0x239f21141a79&gt;,as=0,at=0x1c3717402311 &lt;unde...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 8: v8::internal::JSObject::AddDataElement(v8::internal::Handle&lt;v8::internal::JSObject&gt;, unsigned int, v8::internal::Handle&lt;v8::internal::Object&gt;, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow) [node]
+</span></span><span style="display:flex;"><span> 9: v8::internal::Object::AddDataProperty(v8::internal::LookupIterator*, v8::internal::Handle&lt;v8::internal::Object&gt;, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow, v8::internal::Object::StoreFromKeyed) [node]
+</span></span><span style="display:flex;"><span>10: v8::internal::JSObject::DefineOwnPropertyIgnoreAttributes(v8::internal::LookupIterator*, v8::internal::Handle&lt;v8::internal::Object&gt;, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow, v8::internal::JSObject::AccessorInfoHandling) [node]
+</span></span><span style="display:flex;"><span>11: v8::internal::JSObject::CreateDataProperty(v8::internal::LookupIterator*, v8::internal::Handle&lt;v8::internal::Object&gt;, v8::internal::Object::ShouldThrow) [node]
+</span></span><span style="display:flex;"><span>12: v8::internal::JSReceiver::CreateDataProperty(v8::internal::LookupIterator*, v8::internal::Handle&lt;v8::internal::Object&gt;, v8::internal::Object::ShouldThrow) [node]
+</span></span><span style="display:flex;"><span>13: v8::internal::Runtime_CreateDataProperty(int, v8::internal::Object**, v8::internal::Isolate*) [node]
+</span></span><span style="display:flex;"><span>14: 0x184262e988f8
+</span></span><span style="display:flex;"><span>Aborted (core dumped)
+</span></span></code></pre></div>
+</details>
+
+<p>So what is the solution?</p>
+<p>Well, by default that <code>Body</code> would have been a stream in Node.js land.
+The reason you are in this situation is because using middleware to decorate your <code>req</code>uest objects makes your life easier generally.
+With <code>body-parser</code> in-place, you get a friendly json object at <code>req.body</code> and usually, that&rsquo;s all you wanted.</p>
+<p>For large files though, we need to stream the request body through our handler.
+We don&rsquo;t want to suck the whole thing up, and then put it somewhere else.</p>
+<h2 id="prerequisite">Prerequisite</h2>
+<p>We need to make sure 
+<a target="_blank" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File">this process</a>
+ for raw curling items to HDFS works.</p>
+<p><strong>Note</strong> I&rsquo;m in a Kubernetes environment here, so there are some things that I have to do to even get access to the Name and Data Nodes.
+I think they&rsquo;re useful to note, so I&rsquo;m leaving them in.</p>
+<p>First you have to create the port forward to Name Node.
+This is analogous to configuring the connection string in your JS code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -n testing port-forward <span style="color:#007020;font-weight:bold">$(</span>kubectl -n testing get pods | grep splicedb-hdfs-nn-0 | awk <span style="color:#4070a0">&#39;{print $1}&#39;</span><span style="color:#007020;font-weight:bold">)</span> 50070:50070 &amp;
+</span></span></code></pre></div><p>Then we need to do the first <code>PUT</code> request they describe.
+This is analogous to the first <code>PUT</code> request in the JS flow.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -i -X PUT <span style="color:#4070a0">&#34;http://localhost:50070/webhdfs/v1/tmp/curl/nik.csv?op=CREATE&amp;overwrite=true&amp;noredirect=true&#34;</span>
+</span></span></code></pre></div><details>
+  <summary>⮑ curl result</summary>
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Handling connection for 50070
+</span></span><span style="display:flex;"><span>HTTP/1.1 200 OK
+</span></span><span style="display:flex;"><span>Date: Wed, 29 Jul 2020 16:00:39 GMT
+</span></span><span style="display:flex;"><span>Cache-Control: no-cache
+</span></span><span style="display:flex;"><span>Expires: Wed, 29 Jul 2020 16:00:39 GMT
+</span></span><span style="display:flex;"><span>Date: Wed, 29 Jul 2020 16:00:39 GMT
+</span></span><span style="display:flex;"><span>Pragma: no-cache
+</span></span><span style="display:flex;"><span>X-Content-Type-Options: nosniff
+</span></span><span style="display:flex;"><span>X-FRAME-OPTIONS: SAMEORIGIN
+</span></span><span style="display:flex;"><span>X-XSS-Protection: 1; mode=block
+</span></span><span style="display:flex;"><span>Content-Type: application/json
+</span></span><span style="display:flex;"><span>Transfer-Encoding: chunked
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{&#34;Location&#34;:&#34;http://splicedb-hdfs-dn-0.splicedb-hdfs-dn.testing.svc.cluster.local:9004/webhdfs/v1/tmp/curl/nik.csv?op=CREATE&amp;namenoderpcaddress=hdfs&amp;createflag=&amp;createparent=true&amp;overwrite=true&#34;}
+</span></span></code></pre></div>
+</details>
+
+<p>That first <code>PUT</code> was us just talking to the Name Node.
+It tells us now where to actually put the file in the <code>Location</code> field of the response.
+In the JS flow, we&rsquo;ll just make a new request with this <code>Location</code>.
+So we&rsquo;ll set up another forward to the specified Data Node and fire the request.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl -n testing port-forward <span style="color:#007020;font-weight:bold">$(</span>kubectl -n testing get pods | grep splicedb-hdfs-dn-0 | awk <span style="color:#4070a0">&#39;{print $1}&#39;</span><span style="color:#007020;font-weight:bold">)</span> 9004:9004 &amp;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -i -X PUT -T ~/1500000_Sales_Records.csv <span style="color:#4070a0">&#34;http://localhost:9004/webhdfs/v1/tmp/curl/nik.csv?op=CREATE&amp;namenoderpcaddress=hdfs&amp;createflag=&amp;createparent=true&amp;overwrite=true&#34;</span>
+</span></span></code></pre></div><details>
+  <summary>⮑ curl result</summary>
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Handling connection for 9004
+</span></span><span style="display:flex;"><span>HTTP/1.1 100 Continue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 201 Created
+</span></span><span style="display:flex;"><span>Location: hdfs://hdfs/tmp/curl/nik.csv
+</span></span><span style="display:flex;"><span>Content-Length: 0
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin: *
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span></code></pre></div>
+</details>
+
+<h2 id="frontend">Frontend</h2>
+<p>Lets begin with the very front.
+When the user comes to your site, you&rsquo;ll want to be one of the cool kids and have both the &lsquo;click to browse&rsquo; and &lsquo;drag and drop&rsquo; interfaces available.</p>
+<h3 id="drop-zone">Drop Zone</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">div</span> <span style="color:#4070a0">onDropCapture</span><span style="color:#666">=</span><span style="color:#4070a0">{this._dropHandler}</span> <span style="color:#4070a0">onDragOverCapture</span><span style="color:#666">=</span><span style="color:#4070a0">{this._dragOverHandler}</span>&gt;
+</span></span><span style="display:flex;"><span>    Drop files or &lt;<span style="color:#062873;font-weight:bold">label</span> <span style="color:#4070a0">htmlFor</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;fileUploadID&#34;</span>&gt;click to browse&lt;/<span style="color:#062873;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#062873;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">input</span> <span style="color:#4070a0">id</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;fileUploadID&#34;</span> <span style="color:#4070a0">type</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;file&#34;</span> <span style="color:#4070a0">name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;fileUpload&#34;</span> <span style="color:#4070a0">accept</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;*/*&#34;</span> <span style="color:#4070a0">onChange</span><span style="color:#666">=</span><span style="color:#4070a0">{this._fileInputChangedHandler}/</span>&gt;
+</span></span></code></pre></div><p>The <code>&lt;div&gt;</code> here is the zone that is sensitive to the drop event.
+You can see that action is bound in React to <code>onDropCapture</code>.
+The meat of <code>_dropHandler</code> is below, all it does is collect the file from the drop and pass them to the file handler.</p>
+<p>There is also an input element that will bring up the file selection dialog in your given OS.
+This too just collects the file and passes it to the file handler.</p>
+<p>Note that this input accepts all kinds of files.
+I didn&rsquo;t do the inspection to see what kind of files were accepted by the drop zone because I accept all kinds of files.
+I&rsquo;m sure you could do that discrimination in the drop handler.</p>
+<h3 id="drop-handler">Drop Handler</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> files <span style="color:#666">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (e.dataTransfer.items) {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Use DataTransferItemList interface to access the file(s)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">let</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> e.dataTransfer.items.length; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// If dropped items aren&#39;t files, reject them
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">if</span> (e.dataTransfer.items[i].kind <span style="color:#666">===</span> <span style="color:#4070a0">&#39;file&#39;</span>) {
+</span></span><span style="display:flex;"><span>            files.push(e.dataTransfer.items[i].getAsFile());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Use DataTransfer interface to access the file(s)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">let</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> e.dataTransfer.files.length; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>        files.push(e.dataTransfer.files[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>There are two APIs to consider for the drag operation.
+You might have a <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList">DataTransferItemList</a> or simply a <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer">DataTransfer</a>.
+This code just lets you get the files out of either of those cases.
+After you get the file(s), you can pass them along to the file handler.</p>
+<h3 id="file-handler">File Handler</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">!</span>(files <span style="color:#007020;font-weight:bold">instanceof</span> FileList) <span style="color:#666">&amp;&amp;</span> <span style="color:#666">!</span><span style="color:#007020">Array</span>.isArray(files)) {
+</span></span><span style="display:flex;"><span>    console.error(<span style="color:#4070a0">&#34;Unimplemented Browser API&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (files.length <span style="color:#666">&gt;</span> <span style="color:#40a070">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// TODO: Just one file for now
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> file <span style="color:#666">=</span> files[<span style="color:#40a070">0</span>];
+</span></span></code></pre></div><p>Here I&rsquo;m just making sure that I get one file.
+Once you have that, you can pass it along to build up a simple <code>fetch</code>.</p>
+<h3 id="fetch-object">Fetch Object</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> fetchObj <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>    redirect<span style="color:#666">:</span> <span style="color:#4070a0">&#39;follow&#39;</span>,
+</span></span><span style="display:flex;"><span>    method<span style="color:#666">:</span> <span style="color:#4070a0">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// body: new Blob( [ file.data ], { type: &#39;text/plain&#39; } ),
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    body<span style="color:#666">:</span> file,
+</span></span><span style="display:flex;"><span>    headers<span style="color:#666">:</span> {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here&rsquo;s the part that I found really nice.
+When sending this request to Express, if you don&rsquo;t have a bunch of middleware in the way, you can just send a file.
+Everything about fetch, Node.js, and Express is built to handle this, just don&rsquo;t get in the way.
+<code>file instanceof File === file instanceof Blob</code>&hellip; yay!</p>
+<h2 id="backend---conditional-middleware">Backend - Conditional Middleware</h2>
+<p>This is a feature that I had completely forgotten about.
+In my day-to-day working with this application, I forget that middleware exists.
+When you&rsquo;re working in a handler, it can feel like the <code>req</code> object is this immutable burden that you have to shape to accomplish your task.
+It&rsquo;s easy to forget that when you&rsquo;re working in Express, your perception is shaped by a string of middleware.</p>
+<p>Notably, <code>body-parser</code>.</p>
+<p>This is a really handy library, until it ruins your day by trying to exhaust a 500Mb Buffer in to memory.
+You can&rsquo;t parse a file, you have to deal with it as a stream.
+But all your sibling routes <em>need</em> <code>body-parser</code>.
+You&rsquo;re not going to go around and check for usages of <code>req.body</code>, potentially refactoring your application.</p>
+<p>The solution is to create a little bit of logic and place that high up in your middleware chain.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// The only route that uses raw is the upload route.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>router.use(<span style="color:#007020;font-weight:bold">function</span>(req, res, next){
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (req.url.includes(<span style="color:#4070a0">&#34;/import/upload&#34;</span>)){
+</span></span><span style="display:flex;"><span>    bodyParser.raw({
+</span></span><span style="display:flex;"><span>      type<span style="color:#666">:</span> <span style="color:#4070a0">&#39;*/*&#39;</span>,
+</span></span><span style="display:flex;"><span>      limit<span style="color:#666">:</span> process.env.FILE_IMPORT_LIMIT_BYTES,
+</span></span><span style="display:flex;"><span>    })(req, res, next);
+</span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>  bodyParser.json()(req, res, next);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// authorized routes....
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>router.use(accounts)
+</span></span><span style="display:flex;"><span>router.use(applications)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>router.use(importData);
+</span></span></code></pre></div><p>That&rsquo;s it!
+Now you&rsquo;ve just preserved the middleware for all the other routes and turned it off for a specific route.</p>
+<p>The better pattern is to make new router entirely and push the <code>body-parser</code> middleware down the chain to only the routes that need it.
+But I found this to be my preferred solution because the rest of the <code>/import/*</code> routes really benefited from <code>body-parser</code>.
+It&rsquo;s just the <code>/upload</code> where it got in the way.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://www.nygaard.site/post/0056-beef-stew/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://www.nygaard.site/post/0056-beef-stew/">Beef Stew</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://www.nygaard.site/post/0058-pilot-butte/">Pilot Butte</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://www.nygaard.site/post/0058-pilot-butte/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://www.nygaard.site/js/ui.js"></script>
+<script src="https://www.nygaard.site/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-107573553-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+
+</html>
+

@@ -287,7 +287,7 @@
   
 
 
-  <p>Before going on, make sure you meet the requirements:
+  <p>Before going on, make sure you meet the requirements:</p>
 
 
 <div class="pure-g">
@@ -325,11 +325,21 @@
   
 
 </div>
-</p>
-<p><a href="https://wiki.archlinux.org/index.php/General_recommendations">General recommendations</a> after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.</p>
-<p>Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group. Then everything works. Now you can install packages.</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/General_recommendations">General recommendations</a> after an Arch install can be found here.
+I&rsquo;m going to use this article to collect my list of requirements.</p>
+<p>Okay, you have to install sudo.
+You also need a user.
+And a sudo group.
+Use visudo to edit the sudoers file.
+<code>groupadd sudo</code> will add the sudo group.
+Then you can <code>gpasswd -a drone sudo</code> to add <code>drone</code> to the <code>sudo</code> group.
+Then everything works.
+Now you can install packages.</p>
 <h1 id="todo">ToDo</h1>
-<p>This list isn&rsquo;t really in order except for the first one. They are just things that come to mind. Some things I won&rsquo;t cover, like the fact that you will need something to run X11 before you can have visual programs.</p>
+<p>This list isn&rsquo;t really in order except for the first one.
+They are just things that come to mind.
+Some things I won&rsquo;t cover, like the fact that you will need something to run X11 before you can have visual programs.</p>
 <ul>
 <li><a href="#todo">ToDo</a>
 <ul>
@@ -342,7 +352,8 @@
 </li>
 </ul>
 <h2 id="sudo">sudo</h2>
-<p>You&rsquo;ll need users other than <code>root</code> if you want to drive Arch (or any Linux) in a responsible manner. It follows that you will need <code>sudo</code> to do anything useful with your system.</p>
+<p>You&rsquo;ll need users other than <code>root</code> if you want to drive Arch (or any Linux) in a responsible manner.
+It follows that you will need <code>sudo</code> to do anything useful with your system.</p>
 <p>Start off by creating a user:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd -m -s /bin/bash drone
 </span></span><span style="display:flex;"><span>passwd drone
@@ -355,7 +366,7 @@
 </code></pre><p>Then add your group and add your user to said group:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>groupadd sudo
 </span></span><span style="display:flex;"><span>gpasswd -a drone sudo
-</span></span></code></pre></div><p>Then exit root, login as your user and try to excalate something fun.</p>
+</span></span></code></pre></div><p>Then exit root, login as your user and try to escalate something fun.</p>
 <h2 id="audio">Audio</h2>
 <p>It only really makes sense to do this after you have i3 installed.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S pulseaudio
@@ -367,7 +378,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Pulse Audio Controls
 </code></pre><h2 id="network-manager">Network Manager</h2>
-<p>This is a real joy. Single line connecting to WiFi. back in the day, this was a horror story of loading kernel modules and hoping that it worked. I am really happy that Linux had come for enough that I can search the Internet for solutions while I&rsquo;m bootstrapping a new system.</p>
+<p>This is a real joy.
+Single line connecting to WiFi.
+Back in the day, this was a horror story of loading kernel modules and hoping that it worked.
+I am really happy that Linux had come for enough that I can search the Internet for solutions while I&rsquo;m bootstrapping a new system.</p>
 <p>Install <code>networkmanager</code> and optionally the VPN plugin.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S networkmanager networkmanager-openvpn
 </span></span><span style="display:flex;"><span>sudo su
@@ -376,22 +390,30 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 </span></span><span style="display:flex;"><span>nmcli device wifi connect <span style="color:#4070a0">&#34;FBI PARTY VAN&#34;</span> password <span style="color:#4070a0">&#34;hunter2&#34;</span>
 </span></span></code></pre></div><p>That&rsquo;s it! Just keep adding connections!</p>
 <h2 id="fonts">Fonts</h2>
-<p>OH GOD. Don&rsquo;t fuck with this. I don&rsquo;t think you know pain until everything you touch, including TTY, <!-- raw HTML omitted -->IS DISPLAYED IN FUCKING OSWALD<!-- raw HTML omitted -->. I wish I had my screenshot capability at the time that I was fighting with this because it hilarious now that I have recovered.</p>
-<p>Honestly, there were so many things I tried, and I don&rsquo;t have a coherent order for how I got it working. I&rsquo;ll try to tell you what not to fuck up.</p>
+<p>OH GOD. Don&rsquo;t fuck with this.
+I don&rsquo;t think you know pain until everything you touch, including TTY, <!-- raw HTML omitted -->IS DISPLAYED IN FUCKING OSWALD<!-- raw HTML omitted -->.
+I wish I had my screenshot capability at the time that I was fighting with this because it hilarious now that I have recovered.</p>
+<p>Honestly, there were so many things I tried, and I don&rsquo;t have a coherent order for how I got it working.
+I&rsquo;ll try to tell you what not to fuck up.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fc-list : file | grep <span style="color:#4070a0">&#34;[some font you care about]&#34;</span> <span style="color:#60a0b0;font-style:italic"># Look for fonts.</span>
 </span></span><span style="display:flex;"><span>fc-match mono <span style="color:#60a0b0;font-style:italic"># What font is going to get resolved when you look for &#34;mono&#34;</span>
 </span></span><span style="display:flex;"><span>fc-cache -f <span style="color:#60a0b0;font-style:italic"># Cache all fonts</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>/usr/share/fonts <span style="color:#60a0b0;font-style:italic"># Font collections</span>
 </span></span><span style="display:flex;"><span>/etc/fonts/conf.<span style="color:#666">[</span>d|avail<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic"># Active and available fonts.</span>
-</span></span></code></pre></div><p>Those two folders at the end work like other daemon configuration. You have active fonts in <code>/etc/fonts/conf.d</code> an you have available ones in <code>/etc/fonts/conf.avail</code>. I was only able to get things to work by symlinking all thins in <code>conf.avail</code> in <code>conf.d</code>. I don&rsquo;t know how these files really work and I don&rsquo;t think I have the time right now to figure it out.</p>
-<p>After looking at it more, I have no idea how my fonts are working, and I really don&rsquo;t want to touch it. Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
+</span></span></code></pre></div><p>Those two folders at the end work like other daemon configuration.
+You have active fonts in <code>/etc/fonts/conf.d</code> an you have available ones in <code>/etc/fonts/conf.avail</code>.
+I was only able to get things to work by symlinking all thins in <code>conf.avail</code> in <code>conf.d</code>.
+I don&rsquo;t know how these files really work and I don&rsquo;t think I have the time right now to figure it out.</p>
+<p>After looking at it more, I have no idea how my fonts are working, and I really don&rsquo;t want to touch it.
+Theoretically, <code>/etc/fonts/local.conf</code> should point to my default fonts, but I have uncommented everything in that file.</p>
 <h2 id="rotating-luks-keys">Rotating LUKS Keys</h2>
 <p>Be careful playing with crypto keys. Be brave though.</p>
-<p>You have 8 key slots to work with. You can add a key using the following block. It will prompt you for any existing password and then add the new one.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>sudo cryptsetup luksAddKey /dev/mapper/MyVol-cryptroot
+<p>You have 8 key slots to work with. You can add a key using the following block.
+It will prompt you for any existing password and then add the new one.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cryptsetup luksAddKey /dev/mapper/MyVol-cryptroot
 </span></span></code></pre></div><p>You can use this to see information about which key slots are populated.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>sudo cryptsetup luksDump /dev/mapper/MyVol-cryptroot
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cryptsetup luksDump /dev/mapper/MyVol-cryptroot
 </span></span></code></pre></div>
 
   

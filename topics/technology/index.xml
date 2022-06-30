@@ -19,6 +19,16 @@ Caveats I used Neovim and it is aliased to vi on my system. I&amp;rsquo;m not co
     </item>
     
     <item>
+      <title>Streaming File Uploads to HDFS</title>
+      <link>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</link>
+      <pubDate>Wed, 29 Jul 2020 13:56:07 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</guid>
+      <description>I couldn&amp;rsquo;t find a good source for this information in one place, that&amp;rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&amp;rsquo;ve been away a while and that&amp;rsquo;s because I&amp;rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &amp;lsquo;before times&amp;rsquo;) but I&amp;rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.</description>
+    </item>
+    
+    <item>
       <title>Installing Arch on Older Hardware</title>
       <link>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</link>
       <pubDate>Thu, 23 Jan 2020 08:49:04 -0700</pubDate>
@@ -76,7 +86,8 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Wed, 19 Dec 2018 08:16:14 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0039-airgapped-gpg/</guid>
-      <description>Airgapping GPG Airgapped Media Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
+      <description>Airgapped Media Arch BBS SuperUser
+Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can compromise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
     </item>
     
     <item>
@@ -105,7 +116,7 @@ It is not lost on me that I am posting this article on the Internet. You&amp;rsq
       
       <guid>https://www.nygaard.site/post/0032-logging-with-systemd/</guid>
       <description>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT  Universal time: Wed 2018-04-18 18:34:46 UTC  RTC time: Wed 2018-04-18 18:34:45  Time zone: America/Los_Angeles (PDT, -0700)  Network time on: yes NTP synchronized: yes  RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
     </item>
     
     <item>
@@ -114,8 +125,9 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
       <pubDate>Fri, 13 Apr 2018 22:37:38 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0030-arch-toys/</guid>
-      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
-Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
+      <description>Before going on, make sure you meet the requirements:
+       General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
+Okay, you have to install sudo. You also need a user. And a sudo group. Use visudo to edit the sudoers file. groupadd sudo will add the sudo group. Then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
     </item>
     
     <item>
@@ -155,7 +167,13 @@ I&amp;rsquo;m using this training course. Open it in another tab.</description>
       
       <guid>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</guid>
       <description>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.</description>
+Infrastructure Create Database Up
+echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down
+echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+Nothing. Migrations Up
+docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+Nothing. Run Hydra Container Up</description>
     </item>
     
     <item>
@@ -235,8 +253,7 @@ Attempted Solutions I had a redirect block in my nginx configuration, but that d
       <guid>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</guid>
       <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
-[
-]aws
+ 
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     

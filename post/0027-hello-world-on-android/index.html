@@ -290,16 +290,24 @@
 
 
   <h2 id="motivation">Motivation</h2>
-<p>I wanted to get my environment ready for Android development. It was pretty straightforward on the Mac, I can see it being more of a headache on other platforms.</p>
+<p>I wanted to get my environment ready for Android development.
+It was pretty straightforward on the Mac, I can see it being more of a headache on other platforms.</p>
 <h2 id="procedure">Procedure</h2>
-<p>Firstly, download <a href="https://developer.android.com/studio/index.html">Android Studio</a>. It is pretty amazing that they&rsquo;ve wrapped everything you need in a free IDE. There&rsquo;s a ton of shit for Java projects that I&rsquo;d rather not think about.</p>
+<p>Firstly, download <a href="https://developer.android.com/studio/index.html">Android Studio</a>.
+It is pretty amazing that they&rsquo;ve wrapped everything you need in a free IDE.
+There&rsquo;s a ton of shit for Java projects that I&rsquo;d rather not think about.</p>
 <p>I&rsquo;m using this <a href="https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-practicals/content/en/">training course</a>. Open it in another tab.</p>
-<p>The article does a great job of making the &lsquo;Hello World!&rsquo; app easy to do. I basically just followed that. There have been some UI changes to Android Studio that I noticed, but nothing that was a real blocker.</p>
+<p>The article does a great job of making the &lsquo;Hello World!&rsquo; app easy to do.
+I basically just followed that.
+There have been some UI changes to Android Studio that I noticed, but nothing that was a real blocker.</p>
 <h2 id="devices">Devices</h2>
-<p>If you want to run on your phone, you&rsquo;ll need to connect it as a <a href="https://developer.android.com/studio/run/device.html">hardware device</a>. This was a pretty easy process and I did it along side of the virtual emulated device they mention in the tutorial.</p>
+<p>If you want to run on your phone, you&rsquo;ll need to connect it as a <a href="https://developer.android.com/studio/run/device.html">hardware device</a>.
+This was a pretty easy process and I did it along side of the virtual emulated device they mention in the tutorial.</p>
 <h2 id="gotchas">Gotchas</h2>
 <h3 id="completely-remove-android-studio-mac">Completely remove Android Studio (Mac)</h3>
-<p>I messed up the first time by denying <code>HAXM</code> from doing stuff on my computer. That&rsquo;s a pretty strange name for something from Intel for device emulation. Suffice it to say that you need it installed during the Android Studio installation and that Intel is not <code>HAX</code>ing you.</p>
+<p>I messed up the first time by denying <code>HAXM</code> from doing stuff on my computer.
+That&rsquo;s a pretty strange name for something from Intel for device emulation.
+Suffice it to say that you need it installed during the Android Studio installation and that Intel is not <code>HAX</code>ing you.</p>
 <p><a href="https://stackoverflow.com/questions/28418450/i-cant-install-intel-haxm">HAXM</a></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -Rf /Applications/Android<span style="color:#4070a0;font-weight:bold">\ </span>Studio.app
 </span></span><span style="display:flex;"><span>rm -Rf ~/Library/Preferences/AndroidStudio*

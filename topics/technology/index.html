@@ -312,6 +312,68 @@ Caveats I used Neovim and it is aliased to vi on my system. I&rsquo;m not confus
 </article>
   <article>
   <header>
+    <h2><a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Streaming File Uploads to HDFS</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 Jul 2020, 13:56</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hdfs">hdfs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/node">node</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/fetch">fetch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/http">http</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stream">stream</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I couldn&rsquo;t find a good source for this information in one place, that&rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&rsquo;ve been away a while and that&rsquo;s because I&rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &lsquo;before times&rsquo;) but I&rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  <article>
+  <header>
     <h2><a href="https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/">Installing Arch on Older Hardware</a></h2>
 
     <div class="post-meta">
@@ -646,7 +708,8 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
   </header>
 
   <p>
-  Airgapping GPG Airgapped Media Format I&rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.
+  Airgapped Media Arch BBS SuperUser
+Format I&rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can compromise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.
   </p>
 
   
@@ -811,7 +874,7 @@ It is not lost on me that I am posting this article on the Internet. You&rsquo;l
 
   <p>
   You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &lsquo;units&rsquo; that you have using the following command.
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT  Universal time: Wed 2018-04-18 18:34:46 UTC  RTC time: Wed 2018-04-18 18:34:45  Time zone: America/Los_Angeles (PDT, -0700)  Network time on: yes NTP synchronized: yes  RTC in local TZ: no You can see all the &lsquo;units&rsquo; that you have using the following command.
   </p>
 
   
@@ -864,8 +927,9 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
   </header>
 
   <p>
-  Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
-Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.
+  Before going on, make sure you meet the requirements:
+       General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
+Okay, you have to install sudo. You also need a user. And a sudo group. Use visudo to edit the sudoers file. groupadd sudo will add the sudo group. Then you can gpasswd -a drone sudo to add drone to the sudo group.
   </p>
 
   
@@ -1097,7 +1161,13 @@ I&rsquo;m using this training course. Open it in another tab.
 
   <p>
   These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &#34;create database hydra&#34; | mysql -uroot -proot Down echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.
+Infrastructure Create Database Up
+echo &#34;create database hydra&#34; | mysql -uroot -proot Down
+echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+Nothing. Migrations Up
+docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+Nothing. Run Hydra Container Up
   </p>
 
   
@@ -1539,8 +1609,7 @@ Attempted Solutions I had a redirect block in my nginx configuration, but that d
   <p>
   Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
-[
-]aws
+ 
 That&rsquo;s quite a bit of money for something that I really wanted as a note store.
   </p>
 

@@ -29,6 +29,16 @@ Pilot Butte                 I like the look of the track generated for walking u
     </item>
     
     <item>
+      <title>Streaming File Uploads to HDFS</title>
+      <link>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</link>
+      <pubDate>Wed, 29 Jul 2020 13:56:07 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/</guid>
+      <description>I couldn&amp;rsquo;t find a good source for this information in one place, that&amp;rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&amp;rsquo;ve been away a while and that&amp;rsquo;s because I&amp;rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &amp;lsquo;before times&amp;rsquo;) but I&amp;rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.</description>
+    </item>
+    
+    <item>
       <title>Beef Stew</title>
       <link>https://www.nygaard.site/post/0056-beef-stew/</link>
       <pubDate>Sat, 28 Mar 2020 08:29:52 -0700</pubDate>
@@ -156,7 +166,8 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Wed, 19 Dec 2018 08:16:14 -0800</pubDate>
       
       <guid>https://www.nygaard.site/post/0039-airgapped-gpg/</guid>
-      <description>Airgapping GPG Airgapped Media Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can comprimise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
+      <description>Airgapped Media Arch BBS SuperUser
+Format I&amp;rsquo;ll save you the explanation of what GPG is. First thing I needed was a USB stick that would be compatible with Arch and MacOS. This fight is always interesting and I would rank the better operating system as the one that can compromise on the filesystem. Naturally, insert the USB stick in the MacOS and format it as a Journaled HFS+ partition because we can install the driver on Arch.</description>
     </item>
     
     <item>
@@ -186,12 +197,11 @@ It is not lost on me that I am posting this article on the Internet. You&amp;rsq
       
       <guid>https://www.nygaard.site/post/0036-quince/</guid>
       <description>We went to Quince. It was awesome. This isn&amp;rsquo;t a review, I&amp;rsquo;m not qualified for that. If you can go, you should go. Take more pictures than I did.
-Menu and Pairings English Peas Sicilian Pistacchio, Horseradish
-F.X. Pichler, Grüner Veltliner, Federspiel, &amp;ldquo;Loibenberg Frauenweigarten&amp;rdquo;, Wachau, Austria 2015
-Tsar Nicoulai Caviar Avodaco, Ruby Beet, Sorrel
-Krug, &amp;ldquo;Grand Cuvée 166 Ème Édition,&amp;rdquo; Champagne, France, MV
-Squid Zucchini, Pine Nut, Saffron
-Matthiasson, &amp;ldquo;WhiteBlend,&amp;rdquo; Napa Valley, California 2015</description>
+Menu and Pairings English Peas Sicilian Pistachio, Horseradish
+Wine: F.X. Pichler, Grüner Veltliner, Federspiel, &amp;ldquo;Loibenberg Frauenweigarten&amp;rdquo;, Wachau, Austria 2015
+Tsar Nicoulai Caviar Avocado, Ruby Beet, Sorrel
+Wine: Krug, &amp;ldquo;Grand Cuvée 166 Ème Édition,&amp;rdquo; Champagne, France, MV
+Squid Zucchini, Pine Nut, Saffron</description>
     </item>
     
     <item>
@@ -220,7 +230,7 @@ They had a feature about what to pack if you have to go cook somewhere. I liked 
       
       <guid>https://www.nygaard.site/post/0032-logging-with-systemd/</guid>
       <description>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT  Universal time: Wed 2018-04-18 18:34:46 UTC  RTC time: Wed 2018-04-18 18:34:45  Time zone: America/Los_Angeles (PDT, -0700)  Network time on: yes NTP synchronized: yes  RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
     </item>
     
     <item>
@@ -229,8 +239,9 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
       <pubDate>Fri, 13 Apr 2018 22:37:38 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0030-arch-toys/</guid>
-      <description>Before going on, make sure you meet the requirements:        General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
-Okay, you have to install sudo. You also need a user. And a sudo group. use visudo to edit the sudoers file. groupadd sudo will add the sudo group. then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
+      <description>Before going on, make sure you meet the requirements:
+       General recommendations after an Arch install can be found here. I&amp;rsquo;m going to use this article to collect my list of requirements.
+Okay, you have to install sudo. You also need a user. And a sudo group. Use visudo to edit the sudoers file. groupadd sudo will add the sudo group. Then you can gpasswd -a drone sudo to add drone to the sudo group.</description>
     </item>
     
     <item>
@@ -249,7 +260,7 @@ Okay, you have to install sudo. You also need a user. And a sudo group. use visu
       
       <guid>https://www.nygaard.site/post/0028-andys-poor-college-student-vietnamese-soup/</guid>
       <description>Andy&amp;rsquo;s one of my best friends. He&amp;rsquo;s also a Vietnamese guy. He makes delicious dishes and during our time as roommates, he expanded my knowledge of ingredients. He introduced me to fish sauce and it&amp;rsquo;s role in savory dishes. Also, how it should never be left to roll around in the back of your car.
- Ingredient Quantity     Chicken Breast, Roasted    10 oz      Butter, Salted    1 Tablespoon      Onion, Chopped    1 Medium      Sugar (optional)    1 Teaspoon      Fish Sauce    2 Tablespoons      Better than Bullion, Chicken    1 Tablespoon      Okra, Sliced, Wheels    40 Pods      Cilantro    Handfull      Green Onion, Chopped    Handfull      Water / Chicken Broth    Lots      Start by frying your pan ingredients together in the bottom of a heavy pot.</description>
+ Ingredient Quantity     Chicken Breast, Roasted    10 oz      Butter, Salted    1 Tablespoon      Onion, Chopped    1 Medium      Sugar (optional)    1 Teaspoon      Fish Sauce    2 Tablespoons      Better than Bullion, Chicken    1 Tablespoon      Okra, Sliced, Wheels    40 Pods      Cilantro    Handful      Green Onion, Chopped    Handful      Water / Chicken Broth    Lots      Start by frying your pan ingredients together in the bottom of a heavy pot.</description>
     </item>
     
     <item>
@@ -332,7 +343,7 @@ I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I rea
       
       <guid>https://www.nygaard.site/post/0019-chicken-gumbo/</guid>
       <description>This is my standard Gumbo. Alton Brown posted a recipe for inspiration, but I really just do whatever I feel like. I feel like I can deviate a bit because I don&amp;rsquo;t have a Bayou Grandma to yell at me. I&amp;rsquo;m not about to go hunting for filè powder when I&amp;rsquo;m cooking for the week.
- Ingredient Quantity     Flour, Wheat, All Purpose    4 Tablespoons      Butter, Salted    4 Tablespoons      Onion, Yellow, Chopped    1 Cup      Garlic, Clove, Halved    6      Peppers, Bell, Medium, Diced    2      Celery, Diced    1 Cup      Red Chili Flakes    some      Granulated Garlic    some      Cumin    some      Celery Salt    some      Black Pepper    lots      Smoked Paprika    some      Stock, Chicken    2 Cups      Tomatos, Diced, No Salt    4 Cups      Okra, Wheels    4 Cups      Basil Leaves    12      Make your roux first with the red ingredients.</description>
+ Ingredient Quantity     Flour, Wheat, All Purpose    4 Tablespoons      Butter, Salted    4 Tablespoons      Onion, Yellow, Chopped    1 Cup      Garlic, Clove, Halved    6      Peppers, Bell, Medium, Diced    2      Celery, Diced    1 Cup      Red Chili Flakes    some      Granulated Garlic    some      Cumin    some      Celery Salt    some      Black Pepper    lots      Smoked Paprika    some      Stock, Chicken    2 Cups      Tomatoes, Diced, No Salt    4 Cups      Okra, Wheels    4 Cups      Basil Leaves    12      Make your roux first with the red ingredients.</description>
     </item>
     
     <item>
@@ -362,7 +373,13 @@ I found 16 lbs of Pork Butt (Shoulder) at Costco. Only when I got home did I rea
       
       <guid>https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/</guid>
       <description>These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.</description>
+Infrastructure Create Database Up
+echo &amp;#34;create database hydra&amp;#34; | mysql -uroot -proot Down
+echo &amp;#34;drop database hydra&amp;#34; | mysql -uroot -proot Export Stuff Up
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+Nothing. Migrations Up
+docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+Nothing. Run Hydra Container Up</description>
     </item>
     
     <item>
@@ -463,8 +480,7 @@ What follows are notes of the responses for my edification, not necessarily how 
       <guid>https://www.nygaard.site/post/0003-cloudflare-and-hugo/</guid>
       <description>Hey hey! I got it to work! I&amp;rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
-[
-]aws
+ 
 That&amp;rsquo;s quite a bit of money for something that I really wanted as a note store.</description>
     </item>
     

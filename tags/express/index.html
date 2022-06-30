@@ -256,6 +256,68 @@
 <div class="content">
    <article>
   <header>
+    <h2><a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Streaming File Uploads to HDFS</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 Jul 2020, 13:56</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hdfs">hdfs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/node">node</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/fetch">fetch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/http">http</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stream">stream</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I couldn&rsquo;t find a good source for this information in one place, that&rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&rsquo;ve been away a while and that&rsquo;s because I&rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &lsquo;before times&rsquo;) but I&rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  <article>
+  <header>
     <h2><a href="https://www.nygaard.site/post/0016-run-hydra-on-a-mac-for-testing/">Run Hydra on a Mac for Testing</a></h2>
 
     <div class="post-meta">
@@ -307,7 +369,13 @@
 
   <p>
   These are the steps (both up and down) to get get the Hydra Consent Flow example working locally on a Mac.
-Infrastructure Create Database Up echo &#34;create database hydra&#34; | mysql -uroot -proot Down echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down Nothing. Migrations Up docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down Nothing. Run Hydra Container Up docker run -d \  --name ory-hydra-example--hydra \  --network hydraguide \  -p 9000:4444 \  -e SYSTEM_SECRET=$SYSTEM_SECRET \  -e DATABASE_URL=$DATABASE_URL \  -e ISSUER=https://localhost:9000/ \  -e CONSENT_URL=http://localhost:9020/consent \  -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \  oryd/hydra:v0.
+Infrastructure Create Database Up
+echo &#34;create database hydra&#34; | mysql -uroot -proot Down
+echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+Nothing. Migrations Up
+docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+Nothing. Run Hydra Container Up
   </p>
 
   
