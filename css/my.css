@@ -20,25 +20,25 @@
 
 
 .twitter-tweet {
-    box-shadow: 10px 10px 5px grey;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 5px grey;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 1);
 }
 
 blockquote {
-    background: lightgray;
-    margin: 2em 0 2em 0;
-    padding-left: 1em;
-    padding-bottom: 0.1em;
-    padding-top: 0.1em;
-    padding-right: 1em;
-    -webkit-box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 23px -8px rgba(0,0,0,0.75);
+  background: lightgray;
+  margin: 2em 0 2em 0;
+  padding-left: 1em;
+  padding-bottom: 0.1em;
+  padding-top: 0.1em;
+  padding-right: 1em;
+  -webkit-box-shadow: 13px 13px 23px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 13px 13px 23px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 13px 13px 23px -8px rgba(0, 0, 0, 0.75);
 }
 
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 /* code, kbd, pre, samp {
@@ -51,88 +51,89 @@ body {
 } */
 
 a>code {
-    color: rgba(173, 0, 0, 1);
+  color: rgba(173, 0, 0, 1);
 }
 
 a {
-    color: #00aaff;
+  color: #00aaff;
 }
 
 .Aligner {
-    min-height: 24em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  min-height: 24em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Aligner-item {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .Aligner-item--top {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .Aligner-item--bottom {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .pure-img {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .red {
-    color: red;
+  color: red;
 }
 
 .orange {
-    color: darkorange;
+  color: darkorange;
 }
 
 .yellow {
-    color: goldenrod;
+  color: goldenrod;
 }
 
 .green {
-    color: green;
+  color: green;
 }
 
 .lime {
-    color: #00c700;
+  color: #00c700;
 }
 
 .blue {
-    color: blue;
+  color: blue;
 }
 
 .purple {
-    color: indigo;
+  color: indigo;
 }
 
 .center {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .pure-table {
-        width: 100%;
-        margin: auto;
-    }
+  .pure-table {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 @media only screen and (min-device-width: 480px) {
-    .pure-table {
-        width: 75%;
-        margin: auto;
-    }
+  .pure-table {
+    width: 75%;
+    margin: auto;
+  }
 }
 
 code {
-    word-wrap: break-word;
+  word-wrap: break-word;
+  background-color: #f0f0f0;
 }
 
 .pure-img-responsive {
-    max-height: 20em;
+  max-height: 20em;
 }
