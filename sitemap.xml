@@ -2,10 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.nygaard.site/tags/bend/</loc>
-    <lastmod>2020-10-12T14:03:26-07:00</lastmod>
-  </url><url>
     <loc>https://www.nygaard.site/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/neovim/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/technology/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/vi/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0059-vi-daily-driver/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/vim/</loc>
+    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/bend/</loc>
     <lastmod>2020-10-12T14:03:26-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/hiking/</loc>
@@ -18,15 +42,6 @@
     <lastmod>2020-10-12T14:03:26-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/0058-pilot-butte/</loc>
-    <lastmod>2020-10-12T14:03:26-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2020-10-12T14:03:26-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2020-10-12T14:03:26-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2020-10-12T14:03:26-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/beef/</loc>
@@ -48,9 +63,6 @@
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/linux/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/technology/</loc>
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/engagement/</loc>

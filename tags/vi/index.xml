@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vi on cat ~/differing-opinions.txt &gt; /dev/null</title>
+    <link>https://www.nygaard.site/tags/vi/</link>
+    <description>Recent content in vi on cat ~/differing-opinions.txt &gt; /dev/null</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 29 Jun 2022 21:35:45 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vi Daily Driver</title>
+      <link>https://www.nygaard.site/post/0059-vi-daily-driver/</link>
+      <pubDate>Wed, 29 Jun 2022 21:35:45 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0059-vi-daily-driver/</guid>
+      <description>Motivation It would be really cool to have Neovim work like Foam and get away from VSCode. I was partially inspired by Cool desktops don’t change 😎 The article worried me about the collapse of Atom and what that might mean for VSCode.
+Caveats I used Neovim and it is aliased to vi on my system. I&amp;rsquo;m not confusing the various projects (Neovim, Vim, vi, ed). vi is just very satisfying to type.</description>
+    </item>
+    
+  </channel>
+</rss>
