@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>Technology &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -528,8 +528,8 @@ Now that I emptied my storage unit, I found my old buddy Tinman. He&rsquo;s a Co
 
   <p>
   I notice myself asking questions about common tasks when I come back to Arch after a long time. I think that makes for a good article as it is possible others have these questions.
- I&rsquo;m running out of space and that&rsquo;s stupid.
- Not a question, but I&rsquo;ve felt that exact sentiment.
+I&rsquo;m running out of space and that&rsquo;s stupid.
+Not a question, but I&rsquo;ve felt that exact sentiment.
 In Arch, this is very likely the Pacman cache going crazy. Every time you upgrade a package in Pacman, it keeps the previous version.
   </p>
 
@@ -874,7 +874,7 @@ It is not lost on me that I am posting this article on the Internet. You&rsquo;l
 
   <p>
   You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT  Universal time: Wed 2018-04-18 18:34:46 UTC  RTC time: Wed 2018-04-18 18:34:45  Time zone: America/Los_Angeles (PDT, -0700)  Network time on: yes NTP synchronized: yes  RTC in local TZ: no You can see all the &lsquo;units&rsquo; that you have using the following command.
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &lsquo;units&rsquo; that you have using the following command.
   </p>
 
   
@@ -928,7 +928,7 @@ timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles tim
 
   <p>
   Before going on, make sure you meet the requirements:
-       General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
+General recommendations after an Arch install can be found here. I&rsquo;m going to use this article to collect my list of requirements.
 Okay, you have to install sudo. You also need a user. And a sudo group. Use visudo to edit the sudoers file. groupadd sudo will add the sudo group. Then you can gpasswd -a drone sudo to add drone to the sudo group.
   </p>
 
@@ -1099,7 +1099,7 @@ I&rsquo;m using this training course. Open it in another tab.
 
   <p>
   Zapier Zapier gives me a list of things that I will need to configure for the zapier app to be able to communicate with my app vi OAuth. I think this is a good way to call out the routes I need to build.
- Authentication Type  OAuth V2 w/refresh   Client ID  AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo; zapier   Client Secret  AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo; asdjhalsgdhgaposdigu (some string)   Authorization URL  For now I will list what I see the consent app presenting.
+Authentication Type OAuth V2 w/refresh Client ID AKA &ldquo;Consumer Key&rdquo; or &ldquo;API Key&rdquo; zapier Client Secret AKA &ldquo;Consumer Secret&rdquo; or &ldquo;API Secret&rdquo; asdjhalsgdhgaposdigu (some string) Authorization URL For now I will list what I see the consent app presenting.
   </p>
 
   
@@ -1166,8 +1166,9 @@ echo &#34;create database hydra&#34; | mysql -uroot -proot Down
 echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up
 export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLIU44byGmmKLwJHvrIamNknAmSQR27C Down
 Nothing. Migrations Up
-docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
+docker run -it --rm \ oryd/hydra:v0.10.10 \ migrate sql $DATABASE_URL Down
 Nothing. Run Hydra Container Up
+docker run -d \ --name ory-hydra-example--hydra \ --network hydraguide \ -p 9000:4444 \ -e SYSTEM_SECRET=$SYSTEM_SECRET \ -e DATABASE_URL=$DATABASE_URL \ -e ISSUER=https://localhost:9000/ \ -e CONSENT_URL=http://localhost:9020/consent \ -e FORCE_ROOT_CLIENT_CREDENTIALS=admin:demo-password \ oryd/hydra:v0.
   </p>
 
   
@@ -1222,7 +1223,7 @@ Nothing. Run Hydra Container Up
   <p>
   Okay this is my first foray in to AppleScript, and I have to say that I don&rsquo;t hate it. I wanted a way to take screenshots directly in to Preview on my Mac.
 Turns out that the screenshot utility is available on the command line:
-&gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files]  -c force screen capture to go to the clipboard  -b capture Touch Bar - non-interactive modes only .
+&gt; screencapture -h screencapture: illegal option -- h usage: screencapture [-icMPmwsWxSCUtoa] [files] -c force screen capture to go to the clipboard -b capture Touch Bar - non-interactive modes only .
   </p>
 
   
@@ -1274,8 +1275,8 @@ Turns out that the screenshot utility is available on the command line:
 
   <p>
   Let&rsquo;s say you want to know if your boss is away on vacation next week. So you call their admin and say &ldquo;Can you double-check that my phone number is correct if the Boss is out next week?&rdquo;.
-  They load up the boss&rsquo; calendar to check and based on his presence next week then load up your info.
-  Only once done, do they take the time to remember the boss didn&rsquo;t want you to know wether they are in or out.
+They load up the boss&rsquo; calendar to check and based on his presence next week then load up your info.
+Only once done, do they take the time to remember the boss didn&rsquo;t want you to know wether they are in or out.
   </p>
 
   
@@ -1554,7 +1555,7 @@ Attempted Solutions I had a redirect block in my nginx configuration, but that d
   </header>
 
   <p>
-  Detail and SSH connection Symmetrical Encryption  One key can be used to encrypt messages Alice-&gt;Bob but can also be used to decrypt messages Bob-&gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &ldquo;Shared Secret&rdquo; || &ldquo;Secret Key&rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm  Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.
+  Detail and SSH connection Symmetrical Encryption One key can be used to encrypt messages Alice-&gt;Bob but can also be used to decrypt messages Bob-&gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &ldquo;Shared Secret&rdquo; || &ldquo;Secret Key&rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.
   </p>
 
   
@@ -1609,7 +1610,6 @@ Attempted Solutions I had a redirect block in my nginx configuration, but that d
   <p>
   Hey hey! I got it to work! I&rsquo;ll use this post to log what I had to do to get it to work.
 Motivation I wanted a site for my personal use. I started off with a full stack deployed on AWS, but when your trial runs out, you can get hit with a pretty hefty usage.
- 
 That&rsquo;s quite a bit of money for something that I really wanted as a note store.
   </p>
 

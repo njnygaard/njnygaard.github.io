@@ -24,7 +24,7 @@ ssh-add -l 4096 SHA256:rsOIZD3XP+Tvj+l5xrbRnxgvdg2qKL5agAxzPLT5rao (none) (RSA) 
       <pubDate>Thu, 05 Oct 2017 12:25:31 -0700</pubDate>
       
       <guid>https://www.nygaard.site/post/0005-ssh-review/</guid>
-      <description>Detail and SSH connection Symmetrical Encryption  One key can be used to encrypt messages Alice-&amp;gt;Bob but can also be used to decrypt messages Bob-&amp;gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &amp;ldquo;Shared Secret&amp;rdquo; || &amp;ldquo;Secret Key&amp;rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm  Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.</description>
+      <description>Detail and SSH connection Symmetrical Encryption One key can be used to encrypt messages Alice-&amp;gt;Bob but can also be used to decrypt messages Bob-&amp;gt;Alice. Anyone that holds the key, can encrypt and decrypt messages. AKA &amp;ldquo;Shared Secret&amp;rdquo; || &amp;ldquo;Secret Key&amp;rdquo; SSH uses Symmetrical encryption for the connection contrary to what most people believe (asymmetric). Asymmetric encryption is only used for authentication. Key Exchange Algorithm Using an algorithm, the client and server can exchange data over the Asymmetrically encrypted connection to arrive at a shared secret that can be used for the Symmetrically Encrypted connection.</description>
     </item>
     
   </channel>

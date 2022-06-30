@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="">
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>GPG for SSH &middot; cat ~/differing-opinions.txt &gt; /dev/null</title>
 
@@ -307,7 +307,7 @@ If I could only interact with my security bubble, this solution would have falle
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># https://www.gnupg.org/documentation/manuals/gnupg/Agent-Examples.html</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">export</span> <span style="color:#bb60d5">GPG_TTY</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>tty<span style="color:#007020;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">unset</span> SSH_AGENT_PID
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">gnupg_SSH_AUTH_SOCK_by</span><span style="color:#007020;font-weight:bold">:-</span><span style="color:#bb60d5">0</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span> -ne <span style="color:#bb60d5">$$</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">gnupg_SSH_AUTH_SOCK_by</span><span style="color:#007020;font-weight:bold">:-</span><span style="color:#bb60d5">0</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span> -ne <span style="color:#bb60d5">$$</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">export</span> <span style="color:#bb60d5">SSH_AUTH_SOCK</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">$(</span>gpgconf --list-dirs agent-ssh-socket<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Kill running agent (don&#39;t)</span>

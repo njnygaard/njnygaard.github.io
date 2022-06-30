@@ -15,7 +15,7 @@
       
       <guid>https://www.nygaard.site/post/0032-logging-with-systemd/</guid>
       <description>You can set your local timezone to look at the files in a sensible way. Everything is stored in UTC.
-timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status  Local time: Wed 2018-04-18 11:34:46 PDT  Universal time: Wed 2018-04-18 18:34:46 UTC  RTC time: Wed 2018-04-18 18:34:45  Time zone: America/Los_Angeles (PDT, -0700)  Network time on: yes NTP synchronized: yes  RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
+timedatectl list-timezones sudo timedatectl set-timezone America/Los_Angeles timedatectl status Local time: Wed 2018-04-18 11:34:46 PDT Universal time: Wed 2018-04-18 18:34:46 UTC RTC time: Wed 2018-04-18 18:34:45 Time zone: America/Los_Angeles (PDT, -0700) Network time on: yes NTP synchronized: yes RTC in local TZ: no You can see all the &amp;lsquo;units&amp;rsquo; that you have using the following command.</description>
     </item>
     
   </channel>
