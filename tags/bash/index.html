@@ -310,7 +310,7 @@
 Infrastructure Create Database Up
 echo &#34;create database hydra&#34; | mysql -uroot -proot Down
 echo &#34;drop database hydra&#34; | mysql -uroot -proot Export Stuff Up
-export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLU44byGmmKLwJHvramNknAmSQR27C Down
+export DATABASE_URL=mysql://root:root@tcp(docker.for.mac.localhost:3306)/hydra?parseTime=true export SYSTEM_SECRET=yJFLIU44byGmmKLwJHvrIamNknAmSQR27C Down
 Nothing. Migrations Up
 docker run -it --rm \  oryd/hydra:v0.10.10 \  migrate sql $DATABASE_URL Down
 Nothing. Run Hydra Container Up
