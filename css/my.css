@@ -1,5 +1,5 @@
 
-p,time {
+p,time, ul, h2, h3, td {
   color: #555555;
 }
 
@@ -8,12 +8,10 @@ a.post-taxonomy-tag {
 }
 
 div.post-meta > div {
-
   color: #555555;
 }
 
 nav.pagination {
-
   color: #555555;
 }
 
@@ -37,14 +35,22 @@ blockquote {
 
 body {
   font-family: sans-serif;
+  color: #999999;
 }
 
 a>code {
   color: rgba(173, 0, 0, 1);
 }
 
+.header {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-display: "swap"
+}
+
+
 a {
   color: #1178b3;
+  text-decoration: none;
 }
 
 .Aligner {
