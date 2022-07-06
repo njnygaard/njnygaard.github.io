@@ -1,9 +1,10 @@
 .header {
-  font-family: "Raleway", Helvetica, Arial, sans-serif
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-display: "swap"
 }
 
 a {
-  color: #3b8bba;
+  color: #1178b3;
   text-decoration: none;
 }
 a:hover,
