@@ -261,6 +261,65 @@
 <div class="content">
    <article>
   <header>
+    <h2><a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Arch Upgrade Postgres</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jul 2022, 21:24</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/postgres">postgres</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/psql">psql</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/database">database</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I upgraded Postgres on my Arch box accidentally. Unfortunately it was a major version so I can&rsquo;t get any of that data. You could do a downgrade if your package cache is intact.
+sudo pacman -U file:///var/cache/pacman/pkg/postgresql-13.6-1-x86_64.pkg.tar.zst; sudo pacman -U file:///var/cache/pacman/pkg/postgresql-libs-13.6-1-x86_64.pkg.tar.zst; But you&rsquo;ll run in to library issues because you&rsquo;re on a rolling release and old versions are for chumps.
+× postgresql.service - PostgreSQL database server Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; preset: disabled) Active: failed (Result: exit-code) since Thu 2022-07-14 19:29:36 MST; 1h 33min ago Main PID: 2564 (code=exited, status=127) CPU: 95ms Jul 14 19:29:36 tinman systemd[1]: Starting PostgreSQL database server.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+  <article>
+  <header>
     <h2><a href="https://www.nygaard.site/post/0059-vi-daily-driver/">Vi Daily Driver</a></h2>
 
     <div class="post-meta">

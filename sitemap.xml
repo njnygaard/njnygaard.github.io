@@ -3,21 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
-    <loc>https://www.nygaard.site/tags/neovim/</loc>
-    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+    <loc>https://www.nygaard.site/tags/arch/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0060-arch-upgrade-postgres/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/database/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/postgres/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/psql/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/topics/technology/</loc>
-    <lastmod>2022-06-29T21:35:45-07:00</lastmod>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/neovim/</loc>
     <lastmod>2022-06-29T21:35:45-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/vi/</loc>
@@ -76,9 +91,6 @@
   </url><url>
     <loc>https://www.nygaard.site/tags/stew/</loc>
     <lastmod>2020-03-28T08:29:52-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/arch/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</loc>
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>

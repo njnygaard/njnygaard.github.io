@@ -264,6 +264,67 @@
   
     <article>
   <header>
+    <h2><a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Arch Upgrade Postgres</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jul 2022, 21:24</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/postgres">postgres</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/psql">psql</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/database">database</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I upgraded Postgres on my Arch box accidentally. Unfortunately it was a major version so I can&rsquo;t get any of that data. You could do a downgrade if your package cache is intact.
+sudo pacman -U file:///var/cache/pacman/pkg/postgresql-13.6-1-x86_64.pkg.tar.zst; sudo pacman -U file:///var/cache/pacman/pkg/postgresql-libs-13.6-1-x86_64.pkg.tar.zst; But you&rsquo;ll run in to library issues because you&rsquo;re on a rolling release and old versions are for chumps.
+× postgresql.service - PostgreSQL database server Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; preset: disabled) Active: failed (Result: exit-code) since Thu 2022-07-14 19:29:36 MST; 1h 33min ago Main PID: 2564 (code=exited, status=127) CPU: 95ms Jul 14 19:29:36 tinman systemd[1]: Starting PostgreSQL database server.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://www.nygaard.site/post/0059-vi-daily-driver/">Vi Daily Driver</a></h2>
 
     <div class="post-meta">
@@ -789,64 +850,6 @@ This hike only takes a couple hours or so. It is nothing too strenuous, just a n
   
   <footer>
     <a href="https://www.nygaard.site/post/0051-extending-gpg-expiry/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://www.nygaard.site/post/0050-jalapeno-poppers/">Jalapeño Poppers</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>09 Sep 2019, 12:19</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/recipes">Recipes</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/jalape%C3%B1o">jalapeño</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/appetizer">appetizer</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/smoker">smoker</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Ash has been wanting these for 2 months. I couldn&rsquo;t say no when we were going to be using the Traeger anyways.
-Ingredient Quantity Jalapeños 18 Medium Thin-Cut Bacon 1 Pack Cream Cheese 8-10 Oz (room temperature) Colby Jack 4 Oz Chili Powder 1 tsp Granulated Garlic 1 tsp Salt 1 tsp Scallions 2 minced Procedure Split the jalapeños lengthwise. I liked splitting them through the stem so that they had little handles.
-  </p>
-
-  
-  <footer>
-    <a href="https://www.nygaard.site/post/0050-jalapeno-poppers/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

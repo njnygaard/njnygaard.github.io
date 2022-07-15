@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgres on A Large Properly Formatted Data File</title>
+    <link>https://www.nygaard.site/tags/postgres/</link>
+    <description>Recent content in postgres on A Large Properly Formatted Data File</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2022. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 14 Jul 2022 21:24:11 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Upgrade Postgres</title>
+      <link>https://www.nygaard.site/post/0060-arch-upgrade-postgres/</link>
+      <pubDate>Thu, 14 Jul 2022 21:24:11 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0060-arch-upgrade-postgres/</guid>
+      <description>I upgraded Postgres on my Arch box accidentally. Unfortunately it was a major version so I can&amp;rsquo;t get any of that data. You could do a downgrade if your package cache is intact.
+sudo pacman -U file:///var/cache/pacman/pkg/postgresql-13.6-1-x86_64.pkg.tar.zst; sudo pacman -U file:///var/cache/pacman/pkg/postgresql-libs-13.6-1-x86_64.pkg.tar.zst; But you&amp;rsquo;ll run in to library issues because you&amp;rsquo;re on a rolling release and old versions are for chumps.
+× postgresql.service - PostgreSQL database server Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; preset: disabled) Active: failed (Result: exit-code) since Thu 2022-07-14 19:29:36 MST; 1h 33min ago Main PID: 2564 (code=exited, status=127) CPU: 95ms Jul 14 19:29:36 tinman systemd[1]: Starting PostgreSQL database server.</description>
+    </item>
+    
+  </channel>
+</rss>
