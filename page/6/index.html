@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technology and Cooking">
+  <meta name="description"
+    content="">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>A Large Properly Formatted Data File</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css" defer>
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://www.nygaard.site/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://www.nygaard.site/css/blackburn.css">
+
+  
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" defer>
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" type="text/css" defer>
+
+  
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="A Large Properly Formatted Data File"
+    href='https://www.nygaard.site/index.xml' />
+  
+
+  
+
+  <link rel="shortcut icon" href="https://www.nygaard.site/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+  <link rel="stylesheet" href="https://www.nygaard.site/css/my.css">
+  
+  
+  
+  <link rel="stylesheet" href="https://www.nygaard.site/css/syntax.css">
+  
+  
+  
+  
+  <script src="https://www.nygaard.site/js/my.js"></script>
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://www.nygaard.site/">Nygaard.site</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://www.nygaard.site/topics/"><i class='fa fa-lightbulb fa-fw'></i>Topics</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://www.nygaard.site/index.xml'><i
+          class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/nopedotcom" target="_blank"><i
+          class="fab fa-twitter fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/nikhil-nygaard" target="_blank"><i
+          class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/njnygaard" target="_blank"><i
+          class="fab fa-github fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://gitlab.com/droneprime" target="_blank"><i
+          class="fab fa-gitlab fa-fw"></i>GitLab</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/1236359/droneprime" target="_blank"><i
+          class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/njnygaard" target="_blank"><i
+          class="fab fa-keybase fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2022. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/njnygaard/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>A Large Properly Formatted Data File</h1>
+  <h2></h2>
+</div>
+
+<div class="content">
+  
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Arch Upgrade Postgres</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jul 2022, 21:24</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/postgres">postgres</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/psql">psql</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/database">database</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I upgraded Postgres on my Arch box accidentally. Unfortunately it was a major version so I can&rsquo;t get any of that data. You could do a downgrade if your package cache is intact.
+sudo pacman -U file:///var/cache/pacman/pkg/postgresql-13.6-1-x86_64.pkg.tar.zst; sudo pacman -U file:///var/cache/pacman/pkg/postgresql-libs-13.6-1-x86_64.pkg.tar.zst; But you&rsquo;ll run in to library issues because you&rsquo;re on a rolling release and old versions are for chumps.
+× postgresql.service - PostgreSQL database server Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; preset: disabled) Active: failed (Result: exit-code) since Thu 2022-07-14 19:29:36 MST; 1h 33min ago Main PID: 2564 (code=exited, status=127) CPU: 95ms Jul 14 19:29:36 tinman systemd[1]: Starting PostgreSQL database server.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0060-arch-upgrade-postgres/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0060-mint-chocolate-chip-ice-cream/">Mint Chocolate Chip Ice Cream</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>09 Jul 2022, 17:30</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/recipes">Recipes</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/ice-cream">ice cream</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/mint">mint</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/chocolate">chocolate</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  This was a wonderful experiment for the 113°F Phoenix summer. My FiL got an automated garden for Christmas and has been growing mint like crazy. He warned me about it taking over my raised planter and I dismissed that because I love mint. Naturally, it took over half of it and had to be dealt with. I harvested half of it which yielded 250g of mint leaves. In retrospect, I could easily have doubled the mint quantity in this recipe.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0060-mint-chocolate-chip-ice-cream/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0059-vi-daily-driver/">Vi Daily Driver</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 Jun 2022, 21:35</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/vi">vi</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/vim">vim</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/neovim">neovim</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Motivation It would be really cool to have Neovim work like Foam and get away from VSCode. I was partially inspired by Cool desktops don’t change 😎. The article worried me about the collapse of Atom and what that might mean for VSCode.
+Caveats I used Neovim and it is aliased to vi on my system. I&rsquo;m not confusing the various projects (Neovim, Vim, vi, ed). vi is just very satisfying to type.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0059-vi-daily-driver/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0058-pilot-butte/">Pilot Butte</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>12 Oct 2020, 14:03</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/outdoors">Outdoors</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/oregon">Oregon</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/bend">Bend</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hiking">hiking</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I was looking on the map for something to do and I found a fucking Golden Spiral in the middle of the city. Done deal. Let&rsquo;s walk there.
+Pilot Butte I like the look of the track generated for walking up Pilot Butte. It&rsquo;s an old Cinder Cone and it is like a perfect pimple. There are trails that take a more direct path up, but the road follows the satisfying curve you see in the track.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0058-pilot-butte/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Streaming File Uploads to HDFS</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 Jul 2020, 13:56</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hdfs">hdfs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/node">node</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/express">express</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/fetch">fetch</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/http">http</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stream">stream</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I couldn&rsquo;t find a good source for this information in one place, that&rsquo;s a dead giveaway that I should be writing an article.
+Some meta discussion, it looks like I&rsquo;ve been away a while and that&rsquo;s because I&rsquo;ve been working on a organizing my cookbook. I used to just post recipes here (in the &lsquo;before times&rsquo;) but I&rsquo;ve found that I hate using a digital device when I need to reference a recipe in the heat of the moment.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0057-streaming-file-uploads-to-hdfs/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0056-beef-stew/">Beef Stew</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>28 Mar 2020, 08:29</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/recipes">Recipes</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/beef">beef</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/stew">stew</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  This is just a classic. I would hesitate to call this a recipe and really more of a &lsquo;method&rsquo;. This is really about getting as much beef in your mouth as you can and extending that experience with potatoes and carrots.
+Ingredient Quantity Butter 4 Tablespoons Beef, Chuck 4lbs whole Baking Powder 1 Tablespoon, For Dusting Onion, White 1 Large Celery 3 Large Stalks Garlic 1 Head, All Cloves Carrots 2 Large Carrots 3 Large Little Potatoes 20 Small Bay Leaves 4 Fresh Soy Sauce 1/4 Cup Apple Cider Vinegar 2 Tablespoons Thyme Lots of sprigs Chipotle Chiles 2 Tomato Paste 2 Tablespoons Bone Broth 1 Quart Wine 1 Cup Fire Roasted Canned Diced Tomatoes 2 14oz Cans Instant Pot 1 Procedure Firstly, let your beef come to room temperature.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0056-beef-stew/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/">Installing Arch on Older Hardware</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>23 Jan 2020, 08:49</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/technology">Technology</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arch">arch</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  First post of the New Year. Still got it in January. I moved States, bought a house, got a dog. So blogging has not been at the top of the list.
+Now that I emptied my storage unit, I found my old buddy Tinman. He&rsquo;s a Core i7 &lsquo;server&rsquo; with two GTX 480&rsquo;s and 2TB of space. He&rsquo;s old, but sturdy. He deserves a place of glory. And and Arch installation.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0054-williams-camping/">Williams Camping</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>16 Oct 2019, 12:58</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/outdoors">Outdoors</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/arizona">Arizona</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/shooting">shooting</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/camping">camping</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hiking">hiking</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Glad I found this one in my drafts and completed the photos. We had a lot of fun camping out there. A little cold but I bought a quilted thermal jacket and some wool socks from Walmart that really seemed to take the edge off.
+Not much of an interesting elevation profile from the GPS, but I think I was just experimenting with it then. This was a car camping trip so we just did some wandering and we drove both ways.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0054-williams-camping/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0053-engagement-hike/">Engagement Hike</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>20 Sep 2019, 13:14</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/outdoors">Outdoors</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hawaii">hawaii</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/kauai">kauai</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/engagement">engagement</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hiking">hiking</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  I proposed to my wife in Kauai at the Waimea Canyon Lookout. I couldn&rsquo;t have picked a better spot. Actually, I did. When we did the hike I picked the first spot you see here. You can see in the Google Earth picture the more teal trace as it curve along the rim. These two pictures are of that first spot. The &lsquo;real&rsquo; spot.
+However, in the following two, you can see the &lsquo;real real&rsquo; spot.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0053-engagement-hike/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://www.nygaard.site/post/0052-convict-lake-loop/">Convict Lake Loop</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>12 Sep 2019, 09:45</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://www.nygaard.site/topics/outdoors">Outdoors</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/convict-lake">convict lake</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/california">california</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/395">395</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/hiking">hiking</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://www.nygaard.site/tags/camping">camping</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  This is Convict Lake. I grew coming here to hike and camp. My two fondest birthday celebrations have been at this lake. The first with my parents for my 12th birthday. The second with my parents and now wife for my 35th birthday.
+Description AllTrails Description
+This hike only takes a couple hours or so. It is nothing too strenuous, just a nice loop around the lake. That purple area extends further in to the mountain during summer.
+  </p>
+
+  
+  <footer>
+    <a href="https://www.nygaard.site/post/0052-convict-lake-loop/">Continue Reading<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+
+  
+
+
+<nav class="pagination" role="link">
+  
+  <a href="https://www.nygaard.site/page/5/" aria-label="previous"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;6 / 6&nbsp;</span>
+  
+  <i class="fa fa-chevron-right"></i>
+  
+</nav>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="https://www.nygaard.site/js/ui.js"></script>
+<script src="https://www.nygaard.site/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-107573553-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+
+</html>
+
