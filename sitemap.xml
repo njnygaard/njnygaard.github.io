@@ -3,7 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/chili/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/fermentation/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0062-fermented-hot-sauce/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/recipes/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/arch/</loc>
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
@@ -17,19 +38,10 @@
     <loc>https://www.nygaard.site/tags/postgres/</loc>
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
-  </url><url>
     <loc>https://www.nygaard.site/tags/psql/</loc>
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
-  </url><url>
     <loc>https://www.nygaard.site/topics/technology/</loc>
-    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/chocolate/</loc>
@@ -42,9 +54,6 @@
     <lastmod>2022-07-09T17:30:41-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/0060-mint-chocolate-chip-ice-cream/</loc>
-    <lastmod>2022-07-09T17:30:41-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/recipes/</loc>
     <lastmod>2022-07-09T17:30:41-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/neovim/</loc>
@@ -301,9 +310,6 @@
   </url><url>
     <loc>https://www.nygaard.site/tags/java/</loc>
     <lastmod>2018-04-10T13:02:13-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/chili/</loc>
-    <lastmod>2018-03-26T08:09:27-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/condiment/</loc>
     <lastmod>2018-03-26T08:09:27-07:00</lastmod>
