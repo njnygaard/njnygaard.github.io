@@ -36,6 +36,7 @@ blockquote {
 body {
   font-family: sans-serif;
   color: #999999;
+  font-display: "swap"
 }
 
 a>code {

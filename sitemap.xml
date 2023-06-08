@@ -3,7 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nygaard.site/</loc>
-    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
+    <lastmod>2023-02-01T10:05:24-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0064-emergency-system-maintenance-with-luks/</loc>
+    <lastmod>2023-02-01T10:05:24-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/</loc>
+    <lastmod>2023-02-01T10:05:24-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/hypervisor/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/kubernetes/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/kvm/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/linux/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/post/0063-linux-hypervisor/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/qemu/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/technology/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/topics/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nygaard.site/tags/vm/</loc>
+    <lastmod>2023-01-14T21:57:54-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/chili/</loc>
     <lastmod>2022-09-08T08:43:17-07:00</lastmod>
@@ -14,16 +50,7 @@
     <loc>https://www.nygaard.site/post/0062-fermented-hot-sauce/</loc>
     <lastmod>2022-09-08T08:43:17-07:00</lastmod>
   </url><url>
-    <loc>https://www.nygaard.site/post/</loc>
-    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
-  </url><url>
     <loc>https://www.nygaard.site/topics/recipes/</loc>
-    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/</loc>
-    <lastmod>2022-09-08T08:43:17-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/</loc>
     <lastmod>2022-09-08T08:43:17-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/arch/</loc>
@@ -39,9 +66,6 @@
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/psql/</loc>
-    <lastmod>2022-07-14T21:24:11-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/topics/technology/</loc>
     <lastmod>2022-07-14T21:24:11-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/chocolate/</loc>
@@ -114,9 +138,6 @@
     <lastmod>2020-03-28T08:29:52-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/post/0055-installing-arch-on-older-hardware/</loc>
-    <lastmod>2020-01-23T08:49:04-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nygaard.site/tags/linux/</loc>
     <lastmod>2020-01-23T08:49:04-07:00</lastmod>
   </url><url>
     <loc>https://www.nygaard.site/tags/arizona/</loc>

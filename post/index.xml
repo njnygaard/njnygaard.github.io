@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2022. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 08 Sep 2022 08:43:17 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 10:05:24 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emergency System Maintenance with LUKS</title>
+      <link>https://www.nygaard.site/post/0064-emergency-system-maintenance-with-luks/</link>
+      <pubDate>Wed, 01 Feb 2023 10:05:24 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0064-emergency-system-maintenance-with-luks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux Hypervisor</title>
+      <link>https://www.nygaard.site/post/0063-linux-hypervisor/</link>
+      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/post/0063-linux-hypervisor/</guid>
+      <description>Introduction The hypervisor is the secret sauce to running virtual machines. If you&amp;rsquo;ve ever created an EC2 instance or a Droplet, you&amp;rsquo;ve leveraged the fruits of a hypervisor. I&amp;rsquo;ve been wanting to learn about this part of the cloud stack for a while and I finally have a project that enables me to do so. I have some pretty large servers where can take advantage of virtualization to horizontally leverage all of their available resources.</description>
+    </item>
+    
     <item>
       <title>Fermented Hot Sauce</title>
       <link>https://www.nygaard.site/post/0062-fermented-hot-sauce/</link>
