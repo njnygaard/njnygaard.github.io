@@ -7,22 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2022. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 14 Jan 2023 21:57:54 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/topics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Technology</title>
-      <link>https://www.nygaard.site/topics/technology/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/topics/technology/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 08 Sep 2022 08:43:17 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recipes</title>
       <link>https://www.nygaard.site/topics/recipes/</link>
       <pubDate>Thu, 08 Sep 2022 08:43:17 -0700</pubDate>
       
       <guid>https://www.nygaard.site/topics/recipes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technology</title>
+      <link>https://www.nygaard.site/topics/technology/</link>
+      <pubDate>Thu, 14 Jul 2022 21:24:11 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/topics/technology/</guid>
       <description></description>
     </item>
     

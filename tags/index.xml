@@ -7,61 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2022. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 14 Jan 2023 21:57:54 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>hypervisor</title>
-      <link>https://www.nygaard.site/tags/hypervisor/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/hypervisor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://www.nygaard.site/tags/kubernetes/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kvm</title>
-      <link>https://www.nygaard.site/tags/kvm/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/kvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://www.nygaard.site/tags/linux/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>qemu</title>
-      <link>https://www.nygaard.site/tags/qemu/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/qemu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vm</title>
-      <link>https://www.nygaard.site/tags/vm/</link>
-      <pubDate>Sat, 14 Jan 2023 21:57:54 -0700</pubDate>
-      
-      <guid>https://www.nygaard.site/tags/vm/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 08 Sep 2022 08:43:17 -0700</lastBuildDate><atom:link href="https://www.nygaard.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>chili</title>
       <link>https://www.nygaard.site/tags/chili/</link>
@@ -266,6 +212,15 @@
       <pubDate>Sat, 28 Mar 2020 08:29:52 -0700</pubDate>
       
       <guid>https://www.nygaard.site/tags/stew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.nygaard.site/tags/linux/</link>
+      <pubDate>Thu, 23 Jan 2020 08:49:04 -0700</pubDate>
+      
+      <guid>https://www.nygaard.site/tags/linux/</guid>
       <description></description>
     </item>
     
